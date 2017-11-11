@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
+  </ion-navbar> 
+	<ion-toolbar color="primary">
+    <ion-searchbar color="dark" debounce="2000"
+      placeholder="{{ 'Start Searching' | translate }}"
+      (ionInput)="onSearchAddress()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <empty-view *ngIf="isErrorViewVisible" icon="alert"
+    [text]="'ERROR_CATEGORIES' | translate">
+  </empty-view>
+
+  <empty-view *ngIf="isEmptyViewVisible" icon="bookmark"
+    [text]="'EMPTY_CATEGORIES' | translate">
+  </empty-view>
+
+  <ion-refresher (ionRefresh)="onReload($event)">
+    <ion-refresher-content
+      pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
+      refreshingText="{{ 'REFRESHING' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+<div *ngIf="isContentViewVisible"> 
+	<!-- <ion-card *ngFor="let place of places.results">
+
+    <img src="assets/img/location.png" offset="100"
+          [lazyLoad]="place.photos[0].photo_reference">
+  <ion-item>
+   
+    <h6 class="text-danger-big">{{place.name}}</h6>
+    <p class="text-danger-small">{{ place.vicinity}}</p>
+  </ion-item>
+  <ion-item >
+   <span item-left></span>
+    <span item-left class="text-danger-small">{{place.opening_hours.open_now==true? 'Open':'Closed'}}</span>
+    <button ion-button icon-left clear item-end>
+      <ion-icon name="navigate"></ion-icon>
+      Start
+    </button>
+  </ion-item> </ion-card> -->
+<div class="white_bg" >
+    <div class="container margin_60">
+        
+        <div class="main_title">
+            <h2 class="nomargin_top" style="
+    font-size: 22px;
+    font-family: -webkit-pictograph;">Choose from Most Popular</h2>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6" style="width: -webkit-fill-available;">
+                <a href="detail_page.html" class="strip_list" *ngFor="let place of places.results">
+                <div class="ribbon_1">Popular</div>
+                    <div class="desc">
+                        <div class="thumb_strip">
+												 <img src="{{place.photos[0].photo_reference}}" offset="100"
+         >
+                           
+                        </div>
+                        <div class="rating">
+                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                        </div>
+                        <h3>{{place.name}}</h3>
+                        <div class="type" >
+                            {{ place.types.join(', ') }}
+                        </div>
+                        <div class="location">
+                           {{place.vicinity}} <span class="opening">{{place.opening_hours.open_now==true? 'Open':'Closed'}}</span>
+                        </div>
+                        <ul>
+                            <li>Take away<i class="icon_check_alt2 ok"></i></li>
+                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>
+                        </ul>
+                    </div><!-- End desc-->
+                </a><!-- End strip_list-->
+              
+            </div>
+        </div><!-- End row -->   
+        
+        </div><!-- End container -->
+        </div>
+
+</div>
+	 <!-- <!-- <ion-list *ngIf="isContentViewVisible">
+    <ion-item *ngFor="let place of places.results" (click)="goToPlace(place)"
+      color="dark" no-lines>
+      <ion-thumbnail item-left>
+        <img src="assets/img/location.png" offset="100"
+          [lazyLoad]="place.photos[0].photo_reference"
+          >
+      </ion-thumbnail>
+      <h2 class="bold" ion-text color="primary">{{ place.name }}</h2>
+     
+      <ion-note ion-text color="light" item-right>
+        
+      </ion-note>
+     
+    </ion-item> 
+  </ion-list>  -->
+	
+	
+  
+  
+  
+ 
+ 
+</ion-content>

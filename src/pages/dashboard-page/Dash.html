@@ -1,0 +1,55 @@
+
+
+<ion-header>
+ <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
+		 <ion-buttons end>
+            
+						<i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i>
+     
+        </ion-buttons>
+  </ion-navbar> 
+	
+</ion-header>
+
+<ion-content padding #container style="background-size: cover;background-position: center center;background-image:url(http://www.ansonika.com/quickfood/img/sub_header_home.jpg);">
+
+<table class="table" style="
+    margin-top: 25%;">
+    
+    <tbody>
+      <tr>
+        <button ion-button block class="btn btn-lg btn-success"    icon-start (click)="login()">
+ <ion-icon ios="ios-restaurant" md="md-restaurant"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+  Order Now
+</button><br/><br/>
+      </tr>
+      <tr>
+      <button ion-button block class="btn btn-lg btn-success"   icon-start>
+ <ion-icon ios="ios-mail" md="md-mail"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+  Messages
+</button><br/><br/>
+      </tr>
+      <tr>
+        <button ion-button block class="btn btn-lg btn-success"   icon-start>
+  <ion-icon ios="ios-car" md="md-car"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+  Parking
+</button><br/><br/>
+      </tr>
+			<tr>
+        <button ion-button block class="btn btn-lg btn-success"   icon-start>
+  <ion-icon ios="ios-cash" md="md-cash"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Donate
+</button><br/><br/>
+      </tr>
+    </tbody>
+  </table>
+	
+
+
+
+</ion-content>
+
