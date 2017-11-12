@@ -13,7 +13,7 @@ import { User } from '../providers/user-service';
 import { LocalStorage } from '../providers/local-storage';
 import { Preference } from '../providers/preference';
 import { MapStyle } from '../providers/map-style';
-
+import { SharedDataService } from '../providers/SharedDataService';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
@@ -40,7 +40,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
-
+import { QRScanner } from '@ionic-native/qr-scanner';
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -69,7 +69,7 @@ export function HttpLoaderFactory(http: Http) {
   entryComponents: [
     MyApp
   ],
-  providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,
+  providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService, SharedDataService,
     StatusBar,
     SplashScreen,
     Diagnostic,
@@ -81,7 +81,7 @@ export function HttpLoaderFactory(http: Http) {
     SocialSharing,
     GoogleMaps,
     Camera,
-    GoogleAnalytics,
+      GoogleAnalytics, QRScanner,
     AdMobFree,
     AppVersion,
     HeaderColor,

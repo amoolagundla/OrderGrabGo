@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 805:
+/***/ 808:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up_page__ = __webpack_require__(825);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up_page__ = __webpack_require__(828);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpPageModule", function() { return SignUpPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,13 +44,13 @@ SignUpPageModule = __decorate([
 
 /***/ }),
 
-/***/ 807:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 808:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ __decorate([
 ], EmptyView.prototype, "icon", void 0);
 EmptyView = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/
+        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], EmptyView);
@@ -126,19 +126,19 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 809:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,27 +183,36 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
+
+
+
 
 
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
-        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]);
+        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
+        this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
+        this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
+        this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -221,9 +230,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    //this.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -317,15 +350,15 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 825:
+/***/ 828:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__ = __webpack_require__(215);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -445,7 +478,7 @@ var SignUpPage = (function (_super) {
 SignUpPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-sign-up-page',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\sign-up-page\sign-up-page.html"*/'<ion-header>\n  \n  <ion-toolbar color="primary">\n	<ion-title>{{ \'Create an Account\' | translate }}</ion-title>\n    <ion-buttons start>\n		\n      <button ion-button (click)="onCancel()">\n        <span showWhen="ios,core">{{ "CLOSE" | translate }}</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n </ion-toolbar>\n</ion-header>\n\n<ion-content padding text-center>\n<br/> \n  <div class="container">\n  <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)">\n   \n    <div class="form-group">\n     \n      <input type="email" class="form-control" name="email" [ngModel]="user.email" placeholder="Email"\n        required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">\n      <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">\n        Email is required and format should be <i>john@doe.com</i>.\n      </small>\n      <!--<pre *ngIf="email.errors" class="margin-20">{{ email.errors | json }}</pre>-->\n    </div>\n    <div class="form-group">\n     \n      <input type="password" class="form-control" name="password" [ngModel]="user.password"  placeholder="Password"\n        required validateEqual="confirmPassword" reverse="true" #password="ngModel">\n      <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">\n        Password is required\n      </small>\n      <small class="text-danger">\n        Password should have one Number,Upper Case Letter, special letter\n      </small>\n    </div>\n    <div class="form-group">\n     \n      <input type="password" class="form-control" name="confirmPassword" [ngModel]="user.confirmPassword"  placeholder="Confirm Password"\n        required validateEqual="password" reverse="false" #confirmPassword="ngModel">\n      <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">\n        Password mismatch\n      </small>\n      <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->\n    </div>\n		 <div class="form-group">\n      \n      <input type="tel" class="form-control" name="phonenumber" [ngModel]="user.phonenumber"  placeholder="Phone Number"\n        required  #phonenumber="ngModel">\n      <small [hidden]="phonenumber.valid || (phonenumber.pristine && !f.submitted)" class="text-danger">\n        phonenumber is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n		<div class="form-group">\n      \n      <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName"  placeholder="First Name"\n        required  #FirstName="ngModel">\n      <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">\n        FirstName is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n		<div class="form-group">\n    \n      <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName"  placeholder="Last Name"\n        required  #LastName="ngModel">\n      <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">\n        Last Name is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n    <button type="submit" class="btn btn-block btn-danger" >SignUp</button>\n     </form>\n</div>\n\n<div text-center margin-top>\n      <span color="" (click)="SignIn()">Already Registered? Sign in</span>\n    </div>\n</ion-content> '/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\sign-up-page\sign-up-page.html"*/
+        selector: 'page-sign-up-page',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\sign-up-page\sign-up-page.html"*/'<ion-header>\n\n  \n\n  <ion-toolbar color="primary">\n\n	<ion-title>{{ \'Create an Account\' | translate }}</ion-title>\n\n    <ion-buttons start>\n\n		\n\n      <button ion-button (click)="onCancel()">\n\n        <span showWhen="ios,core">{{ "CLOSE" | translate }}</span>\n\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content padding text-center>\n\n<br/> \n\n  <div class="container">\n\n      <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)" >\n\n          <div class="form-group">\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>\n\n                      <input type="email" class="form-control" name="email" placeholder="Enter Email Address" [ngModel]="user.email"\n\n                             required #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">\n\n                  </div>\n\n                  <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">\n\n                      Email is required and format should be <i>john@doe.com</i>.\n\n                  </small>\n\n              </div>\n\n          </div>\n\n          <div class="form-group">\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>\n\n                      <input type="password" class="form-control" name="password" [ngModel]="user.password" placeholder="Password"\n\n                             required validateEqual="confirmPassword" reverse="true" #password="ngModel">                    \n\n                    </div>\n\n                  <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">\n\n                      Password is required\n\n                  </small>\n\n                  <small class="text-danger">Password should have one Number,Upper Case Letter, special letter</small>\n\n              </div>\n\n          </div>\n\n          <div class="form-group">\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>\n\n                      <input type="password" class="form-control" name="confirmPassword" [ngModel]="user.confirmPassword" placeholder="Confirm Password"\n\n                             required validateEqual="password" reverse="false" #confirmPassword="ngModel">                      \n\n                  </div>\n\n                  <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">\n\n                      Password mismatch\n\n                  </small>\n\n              </div>\n\n          </div>\n\n          <div class="form-group">\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>\n\n                      <input type="tel" class="form-control" name="phonenumber" [ngModel]="user.phonenumber" placeholder="Phone Number"\n\n                             required #phonenumber="ngModel">                     \n\n                  </div>\n\n                  <small [hidden]="phonenumber.valid || (phonenumber.pristine && !f.submitted)" class="text-danger">\n\n                      phonenumber is required .\n\n                  </small>\n\n              </div>\n\n          </div>\n\n          <div class="form-group">\n\n\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>\n\n                      <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName" placeholder="First Name"\n\n                             required #FirstName="ngModel">                     \n\n                  </div>\n\n                  <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">\n\n                      FirstName is required .\n\n                  </small>\n\n              </div>\n\n          </div>\n\n          <div class="form-group">\n\n              <div class="cols-sm-10">\n\n                  <div class="input-group">\n\n                      <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>\n\n                      <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName" placeholder="Last Name"\n\n                             required #LastName="ngModel">                     \n\n                  </div>\n\n                  <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">\n\n                      Last Name is required .\n\n                  </small>\n\n              </div>\n\n          </div>\n\n          <button type="submit" class="btn btn-primary btn-lg btn-block login-button"  >SignUp</button>\n\n         \n\n      </form>\n\n    </div>\n\n   \n\n</ion-content> '/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\sign-up-page\sign-up-page.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
         __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* FormBuilder */],

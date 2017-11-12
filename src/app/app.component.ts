@@ -9,7 +9,7 @@ import { HeaderColor } from '@ionic-native/header-color';
 import Parse from 'parse';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from './app.config';
-
+import { ValuesService } from '../providers/ValuesService';
 import { User } from '../providers/user-service';
 import { LocalStorage } from '../providers/local-storage';
 import { Preference } from '../providers/preference';
@@ -36,7 +36,8 @@ export class MyApp {
     private splashScreen: SplashScreen,
     private googleAnalytics: GoogleAnalytics,
     private headerColor: HeaderColor,
-    private modalCtrl: ModalController) {
+    private modalCtrl: ModalController,
+    private shared: ValuesService  ) {
 
     this.initializeApp();
   }
@@ -59,11 +60,9 @@ export class MyApp {
       this.trans = values;
 
       this.pages = [
-        { title: values.CATEGORIES, icon: 'pricetag', component: 'CategoriesPage' },
-        { title: values.MAP, icon: 'map', component: 'MapPage' },
-        { title: values.ADD_PLACE, icon: 'create', component: 'AddPlacePage' },
-        { title: values.MY_FAVORITES, icon: 'heart', component: 'FavoritesPage' },
+        { title: values.CATEGORIES, icon: 'pricetag', component: 'DashPage' },       
         { title: values.SETTINGS, icon: 'settings', component: 'SettingsPage' },
+        { title: values.LOGOUT, icon: 'exit', component: null }
       ];
 
       if (User.getCurrentUser()) {
@@ -73,7 +72,7 @@ export class MyApp {
 
     });
   }
-
+ 
   initializeApp() {
 
     this.events.subscribe('user:login', (userEventData) => {
@@ -102,7 +101,26 @@ export class MyApp {
       this.preference.lang = lang;
 
       this.storage.skipIntroPage.then((skipIntroPage) => {
-        this.rootPage =  'HomePage' ;
+          if (skipIntroPage) {
+              this.storage.token.then((token: string) => {
+                  if (token != null) {
+                      this.shared.GetUserInfo();
+                      this.rootPage = 'DashPage';
+                    
+                  }
+                  else {
+                     
+                      this.rootPage='SignInPage';
+                  }
+              }, error => {  this.rootPage = 'SignInPage'; });
+          }
+      }).catch((e) => console.log(e));
+
+
+
+
+      this.storage.skipIntroPage.then((skipIntroPage) => {
+          this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
       }).catch((e) => console.log(e));
 
       this.buildMenu();

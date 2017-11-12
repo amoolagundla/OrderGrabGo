@@ -4,15 +4,15 @@
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Ads
      */
-    export class Ads    {
-         
+    export class Ads {
+
         Id: number;
         PageName: string;
         Action: string;
@@ -20,10 +20,10 @@ export module App {
         AdTitle: string;
         AdDescription: string;
         SiteId: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -37,23 +37,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetRoleClaims
      */
-    export class AspNetRoleClaims    {
-         
+    export class AspNetRoleClaims {
+
         Id: number;
         ClaimType: string;
         ClaimValue: string;
         RoleId: string;
-        Role: AspNetRoles;  
- 
-        constructor() {         
-          //nothing                   
+        Role: AspNetRoles;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -67,24 +67,24 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetRoles
      */
-    export class AspNetRoles    {
-         
+    export class AspNetRoles {
+
         Id: string;
         ConcurrencyStamp: string;
         Name: string;
         NormalizedName: string;
         AspNetRoleClaims: AspNetRoleClaims[];
-        AspNetUserRoles: AspNetUserRoles[];  
- 
-        constructor() {         
-          //nothing                   
+        AspNetUserRoles: AspNetUserRoles[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -98,23 +98,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetUserClaims
      */
-    export class AspNetUserClaims    {
-         
+    export class AspNetUserClaims {
+
         Id: number;
         ClaimType: string;
         ClaimValue: string;
         UserId: string;
-        User: AspNetUsers;  
- 
-        constructor() {         
-          //nothing                   
+        User: AspNetUsers;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -128,23 +128,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetUserLogins
      */
-    export class AspNetUserLogins    {
-         
+    export class AspNetUserLogins {
+
         LoginProvider: string;
         ProviderKey: string;
         ProviderDisplayName: string;
         UserId: string;
-        User: AspNetUsers;  
- 
-        constructor() {         
-          //nothing                   
+        User: AspNetUsers;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -158,22 +158,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetUserRoles
      */
-    export class AspNetUserRoles    {
-         
+    export class AspNetUserRoles {
+
         UserId: string;
         RoleId: string;
         Role: AspNetRoles;
-        User: AspNetUsers;  
- 
-        constructor() {         
-          //nothing                   
+        User: AspNetUsers;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -187,15 +187,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetUsers
      */
-    export class AspNetUsers    {
-         
+    export class AspNetUsers {
+
         Id: string;
         AccessFailedCount: number;
         ConcurrencyStamp: string;
@@ -213,10 +213,10 @@ export module App {
         UserName: string;
         AspNetUserClaims: AspNetUserClaims[];
         AspNetUserLogins: AspNetUserLogins[];
-        AspNetUserRoles: AspNetUserRoles[];  
- 
-        constructor() {         
-          //nothing                   
+        AspNetUserRoles: AspNetUserRoles[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -230,22 +230,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.AspNetUserTokens
      */
-    export class AspNetUserTokens    {
-         
+    export class AspNetUserTokens {
+
         UserId: string;
         LoginProvider: string;
         Name: string;
-        Value: string;  
- 
-        constructor() {         
-          //nothing                   
+        Value: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -259,22 +259,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.BusinessType
      */
-    export class BusinessType    {
-         
+    export class BusinessType {
+
         Id: number;
         Typedesc: string;
         Category: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -288,22 +288,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.ChangePasswordViewModel
      */
-    export class ChangePasswordViewModel    {
-         
+    export class ChangePasswordViewModel {
+
         OldPassword: string;
         NewPassword: string;
         ConfirmPassword: string;
-        StatusMessage: string;  
- 
-        constructor() {         
-          //nothing                   
+        StatusMessage: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -317,24 +317,24 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.ChartOfAccounts
      */
-    export class ChartOfAccounts    {
-         
+    export class ChartOfAccounts {
+
         Id: number;
         Account: number;
         Term: string;
         Department: string;
         Definition: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -348,15 +348,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Contactme
      */
-    export class Contactme    {
-         
+    export class Contactme {
+
         Id: number;
         Low: number;
         LoginId: number;
@@ -374,10 +374,10 @@ export module App {
         PreferredContact: number;
         UniqueId: number;
         ContactedByEmpId: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -391,15 +391,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.CreditCardTransactionInfo
      */
-    export class CreditCardTransactionInfo    {
-         
+    export class CreditCardTransactionInfo {
+
         Id: number;
         InternetProtocol: string;
         BuyerId: number;
@@ -455,10 +455,10 @@ export module App {
         Ssn: string;
         Dob: Date;
         Country: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -472,15 +472,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Creditnewcks
      */
-    export class Creditnewcks    {
-         
+    export class Creditnewcks {
+
         Id: number;
         Uuid: string;
         Ip: string;
@@ -496,10 +496,10 @@ export module App {
         ExpDate: string;
         Zip: string;
         CreditLimit: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -513,23 +513,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Credittypes
      */
-    export class Credittypes    {
-         
+    export class Credittypes {
+
         Id: number;
         CreditType: string;
         Description: string;
         Brand: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -543,23 +543,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Departments
      */
-    export class Departments    {
-         
+    export class Departments {
+
         Id: number;
         Name: string;
         SubDepartmentId: number;
         Description: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -573,25 +573,25 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Emails
      */
-    export class Emails    {
-         
+    export class Emails {
+
         Id: number;
         LoginId: number;
         Email: string;
         BlockedEmails: number;
         BadEmailAddress: number;
         Ip: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -605,15 +605,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Emailstosend
      */
-    export class Emailstosend    {
-         
+    export class Emailstosend {
+
         Id: number;
         Page: string;
         SiteId: number;
@@ -628,10 +628,10 @@ export module App {
         State: string;
         Zip: number;
         CellPhone: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -645,15 +645,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Employees
      */
-    export class Employees    {
-         
+    export class Employees {
+
         EmployeeId: number;
         MasterLookUpId: number;
         SquareId: string;
@@ -722,10 +722,10 @@ export module App {
         Fri: string;
         Sat: string;
         Sun: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -739,21 +739,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.EnableAuthenticatorViewModel
      */
-    export class EnableAuthenticatorViewModel    {
-         
+    export class EnableAuthenticatorViewModel {
+
         Code: string;
         SharedKey: string;
-        AuthenticatorUri: string;  
- 
-        constructor() {         
-          //nothing                   
+        AuthenticatorUri: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -763,21 +763,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ErrorViewModel
      */
-    export class ErrorList    {
-         
+    export class ErrorList {
+
         Error: string;
-  token: string;
-        IsSuccess: boolean;  
- 
-        constructor() {         
-          //nothing                   
+        token: string;
+        IsSuccess: boolean;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -791,20 +791,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ErrorViewModel
      */
-    export class ErrorViewModel    {
-         
+    export class ErrorViewModel {
+
         RequestId: string;
-        ShowRequestId: boolean;  
- 
-        constructor() {         
-          //nothing                   
+        ShowRequestId: boolean;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -818,19 +818,19 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.ExternalLoginViewModel
      */
-    export class ExternalLoginViewModel    {
-         
-        Email: string;  
- 
-        constructor() {         
-          //nothing                   
+    export class ExternalLoginViewModel {
+
+        Email: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -844,24 +844,82 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
+    /**
+     * Base view model for OrderGrabGo.Web.Models.FacebookAppAccess
+     */
+    export class FacebookAppAccess {
+
+        access_token: string;
+        token_type: string;
+
+        constructor() {
+            //nothing                   
+        }
+    }
+}
+
+
+
+
+//*************************DO NOT MODIFY**************************
+//
+//THESE FILES ARE AUTOGENERATED WITH TYPEWRITER AND ANY MODIFICATIONS MADE HERE WILL BE LOST
+//PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
+//
+//*************************DO NOT MODIFY**************************
+
+export module App {
+
+
+    /**
+     * Base view model for OrderGrabGo.Web.Models.FacebookOptions
+     */
+    export class FacebookOptions {
+
+        ApiUrl: string;
+        AppId: string;
+        AppSecret: string;
+        AppTokenUrl: string;
+        DebugUrl: string;
+        PicUrl: string;
+
+        constructor() {
+            //nothing                   
+        }
+    }
+}
+
+
+
+
+//*************************DO NOT MODIFY**************************
+//
+//THESE FILES ARE AUTOGENERATED WITH TYPEWRITER AND ANY MODIFICATIONS MADE HERE WILL BE LOST
+//PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
+//
+//*************************DO NOT MODIFY**************************
+
+export module App {
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Favs
      */
-    export class Favs    {
-         
+    export class Favs {
+
         Id: number;
         BuyerId: number;
         UniqueId: number;
         SellerId: number;
         SortBy: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -875,19 +933,19 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.ForgotPasswordViewModel
      */
-    export class ForgotPasswordViewModel    {
-         
-        Email: string;  
- 
-        constructor() {         
-          //nothing                   
+    export class ForgotPasswordViewModel {
+
+        Email: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -901,15 +959,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Forgotsent
      */
-    export class Forgotsent    {
-         
+    export class Forgotsent {
+
         Id: number;
         Page: string;
         SiteId: number;
@@ -924,10 +982,10 @@ export module App {
         State: string;
         Zip: number;
         Phone: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -941,19 +999,19 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.GenerateRecoveryCodesViewModel
      */
-    export class GenerateRecoveryCodesViewModel    {
-         
-        RecoveryCodes: string[];  
- 
-        constructor() {         
-          //nothing                   
+    export class GenerateRecoveryCodesViewModel {
+
+        RecoveryCodes: string[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -967,20 +1025,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Geometry
      */
-    export class Geometry    {
-         
+    export class Geometry {
+
         location: Location;
-        viewport: Viewport;  
- 
-        constructor() {         
-          //nothing                   
+        viewport: Viewport;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -994,20 +1052,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.GoogleApi
      */
-    export class GoogleApi    {
-         
+    export class GoogleApi {
+
         NearByPlacesUrl: string;
-        ApiKey: string;  
- 
-        constructor() {         
-          //nothing                   
+        ApiKey: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1021,22 +1079,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.GooglePlaces
      */
-    export class GooglePlaces    {
-         
+    export class GooglePlaces {
+
         html_attributions: any[];
         next_page_token: string;
         results: Result[];
-        status: string;  
- 
-        constructor() {         
-          //nothing                   
+        status: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1050,23 +1108,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.IndexViewModel
      */
-    export class IndexViewModel    {
-         
+    export class IndexViewModel {
+
         Username: string;
         IsEmailConfirmed: boolean;
         Email: string;
         PhoneNumber: string;
-        StatusMessage: string;  
- 
-        constructor() {         
-          //nothing                   
+        StatusMessage: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1080,15 +1138,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Invites
      */
-    export class Invites    {
-         
+    export class Invites {
+
         Id: number;
         Ip: string;
         InvitedToRestId: number;
@@ -1100,10 +1158,10 @@ export module App {
         StatusId: number;
         RecOrderId: number;
         SenderOrderId: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1117,20 +1175,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Location
      */
-    export class Location    {
-         
+    export class Location {
+
         lat: number;
-        lng: number;  
- 
-        constructor() {         
-          //nothing                   
+        lng: number;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1144,22 +1202,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.LoginInputModel
      */
-    export class LoginInputModel    {
-         
+    export class LoginInputModel {
+
         Username: string;
         Password: string;
         RememberLogin: boolean;
-        ReturnUrl: string;  
- 
-        constructor() {         
-          //nothing                   
+        ReturnUrl: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1173,21 +1231,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.LoginViewModel
      */
-    export class LoginViewModel    {
-         
+    export class LoginViewModel {
+
         Email: string;
         Password: string;
-        RememberMe: boolean;  
- 
-        constructor() {         
-          //nothing                   
+        RememberMe: boolean;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1201,21 +1259,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.LoginWith2faViewModel
      */
-    export class LoginWith2faViewModel    {
-         
+    export class LoginWith2faViewModel {
+
         TwoFactorCode: string;
         RememberMachine: boolean;
-        RememberMe: boolean;  
- 
-        constructor() {         
-          //nothing                   
+        RememberMe: boolean;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1229,19 +1287,19 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.LoginWithRecoveryCodeViewModel
      */
-    export class LoginWithRecoveryCodeViewModel    {
-         
-        RecoveryCode: string;  
- 
-        constructor() {         
-          //nothing                   
+    export class LoginWithRecoveryCodeViewModel {
+
+        RecoveryCode: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1255,15 +1313,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Masterbank
      */
-    export class Masterbank    {
-         
+    export class Masterbank {
+
         Id: number;
         RoutingNum: string;
         BankName: string;
@@ -1277,10 +1335,10 @@ export module App {
         BankCountry: string;
         Verified: string;
         EditDate: Date;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1294,15 +1352,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Masterlookup
      */
-    export class Masterlookup    {
-         
+    export class Masterlookup {
+
         UserId: number;
         IsApp: number;
         InstantCash: number;
@@ -1376,10 +1434,10 @@ export module App {
         CarLat: number;
         ReadyToWork: number;
         EditDate: Date;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1393,22 +1451,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Msgsglobal
      */
-    export class Msgsglobal    {
-         
+    export class Msgsglobal {
+
         MsgId: number;
         Msg: string;
         Internal: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1422,20 +1480,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Northeast
      */
-    export class Northeast    {
-         
+    export class Northeast {
+
         lat: number;
-        lng: number;  
- 
-        constructor() {         
-          //nothing                   
+        lng: number;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1449,20 +1507,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.OpeningHours
      */
-    export class OpeningHours    {
-         
+    export class OpeningHours {
+
         open_now: boolean;
-        weekday_text: any[];  
- 
-        constructor() {         
-          //nothing                   
+        weekday_text: any[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1476,22 +1534,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Photo
      */
-    export class Photo    {
-         
+    export class Photo {
+
         height: number;
         html_attributions: string[];
         photo_reference: string;
-        width: number;  
- 
-        constructor() {         
-          //nothing                   
+        width: number;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1505,15 +1563,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Punchclock
      */
-    export class Punchclock    {
-         
+    export class Punchclock {
+
         Id: number;
         Empid: number;
         Ip: string;
@@ -1528,10 +1586,10 @@ export module App {
         Note: string;
         WhoInputId: number;
         EmpNote: string;
-        CreateDate: number[];  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: number[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1545,21 +1603,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.PushNotifications
      */
-    export class PushNotifications    {
-         
+    export class PushNotifications {
+
         Token: string;
         AppId: string;
-        ApiKey: string;  
- 
-        constructor() {         
-          //nothing                   
+        ApiKey: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1573,22 +1631,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.RegisterViewModel
      */
-    export class RegisterViewModel    {
-         
+    export class RegisterViewModel {
+
         Email: string;
         Password: string;
         ConfirmPassword: string;
-        PhoneNumber: string;  
- 
-        constructor() {         
-          //nothing                   
+        PhoneNumber: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1602,20 +1660,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.RemoveLoginViewModel
      */
-    export class RemoveLoginViewModel    {
-         
+    export class RemoveLoginViewModel {
+
         LoginProvider: string;
-        ProviderKey: string;  
- 
-        constructor() {         
-          //nothing                   
+        ProviderKey: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1629,22 +1687,22 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.AccountViewModels.ResetPasswordViewModel
      */
-    export class ResetPasswordViewModel    {
-         
+    export class ResetPasswordViewModel {
+
         Email: string;
         Password: string;
         ConfirmPassword: string;
-        Code: string;  
- 
-        constructor() {         
-          //nothing                   
+        Code: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1658,15 +1716,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Result
      */
-    export class Result    {
-         
+    export class Result {
+
         formatted_address: string;
         geometry: Geometry;
         icon: string;
@@ -1678,10 +1736,10 @@ export module App {
         price_level: number;
         rating: number;
         reference: string;
-        types: string[];  
- 
-        constructor() {         
-          //nothing                   
+        types: string[];
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1695,15 +1753,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.RuntimeAds
      */
-    export class RuntimeAds    {
-         
+    export class RuntimeAds {
+
         Id: number;
         BuyerId: number;
         RunDate: Date;
@@ -1711,10 +1769,10 @@ export module App {
         VenderId: number;
         Cost: number;
         Headline: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1728,21 +1786,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.SetPasswordViewModel
      */
-    export class SetPasswordViewModel    {
-         
+    export class SetPasswordViewModel {
+
         NewPassword: string;
         ConfirmPassword: string;
-        StatusMessage: string;  
- 
-        constructor() {         
-          //nothing                   
+        StatusMessage: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1756,23 +1814,23 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.SmsSettings
      */
-    export class SmsSettings    {
-         
+    export class SmsSettings {
+
         Sid: string;
         Token: string;
         BaseUri: string;
         RequestUri: string;
-        From: string;  
- 
-        constructor() {         
-          //nothing                   
+        From: string;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1786,20 +1844,20 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Southwest
      */
-    export class Southwest    {
-         
+    export class Southwest {
+
         lat: number;
-        lng: number;  
- 
-        constructor() {         
-          //nothing                   
+        lng: number;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1813,15 +1871,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Taccounts
      */
-    export class Taccounts    {
-         
+    export class Taccounts {
+
         Id: number;
         MasterLookId: number;
         IsBiz: number;
@@ -1836,10 +1894,10 @@ export module App {
         CreditLimit: number;
         WhoEnteredCid: number;
         StatusId: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1853,15 +1911,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Tests
      */
-    export class Tests    {
-         
+    export class Tests {
+
         Id: number;
         ALevList: string;
         DepartList: string;
@@ -1871,10 +1929,10 @@ export module App {
         Name: string;
         MotivationalSubHeading: string;
         Mission: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1888,24 +1946,24 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Testsqa
      */
-    export class Testsqa    {
-         
+    export class Testsqa {
+
         Id: number;
         TestId: number;
         Question: number;
         Answer: string;
         QuestionBody: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1919,25 +1977,25 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Tnews
      */
-    export class Tnews    {
-         
+    export class Tnews {
+
         Id: number;
         SellerId: number;
         Title: string;
         Msg: string;
         Lon: number;
         Lat: number;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1951,15 +2009,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Tuuid
      */
-    export class Tuuid    {
-         
+    export class Tuuid {
+
         Id: number;
         MasterLookupId: number;
         GlobalRefreshTime: Date;
@@ -1967,10 +2025,10 @@ export module App {
         Osid: number;
         UniqueId: string;
         Token: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -1984,24 +2042,24 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Tvideos
      */
-    export class Tvideos    {
-         
+    export class Tvideos {
+
         Id: number;
         Importance: number;
         Type: number;
         Name: string;
         Link: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -2015,21 +2073,21 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.ManageViewModels.TwoFactorAuthenticationViewModel
      */
-    export class TwoFactorAuthenticationViewModel    {
-         
+    export class TwoFactorAuthenticationViewModel {
+
         HasAuthenticator: boolean;
         RecoveryCodesLeft: number;
-        Is2faEnabled: boolean;  
- 
-        constructor() {         
-          //nothing                   
+        Is2faEnabled: boolean;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -2043,20 +2101,52 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
+    /**
+     * Base view model for OrderGrabGo.Web.Models.UserInfoViewModel
+     */
+    export class UserInfoViewModel {
+
+        FirstName: string;
+        LastName: string;
+        DateOfBirth: Date;
+        ZipCode: string;
+        UserId: string;
+        Email: string;
+        Picture: string;
+
+        constructor() {
+            //nothing                   
+        }
+    }
+}
+
+
+
+
+//*************************DO NOT MODIFY**************************
+//
+//THESE FILES ARE AUTOGENERATED WITH TYPEWRITER AND ANY MODIFICATIONS MADE HERE WILL BE LOST
+//PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
+//
+//*************************DO NOT MODIFY**************************
+
+export module App {
+
+
     /**
      * Base view model for OrderGrabGo.Web.Models.Viewport
      */
-    export class Viewport    {
-         
+    export class Viewport {
+
         northeast: Northeast;
-        southwest: Southwest;  
- 
-        constructor() {         
-          //nothing                   
+        southwest: Southwest;
+
+        constructor() {
+            //nothing                   
         }
     }
 }
@@ -2070,15 +2160,15 @@ export module App {
 //PLEASE VISIT http://frhagn.github.io/Typewriter/ TO LEARN MORE ABOUT THIS VISUAL STUDIO EXTENSION
 //
 //*************************DO NOT MODIFY**************************
- 
+
 export module App {
-     
-   
+
+
     /**
      * Base view model for OrderGrabGo.Dll.Models.Ziplist
      */
-    export class Ziplist    {
-         
+    export class Ziplist {
+
         Id: number;
         Zip: string;
         ZipcodeType: string;
@@ -2097,10 +2187,10 @@ export module App {
         Latitude: number;
         Longitude: number;
         Country: string;
-        CreateDate: Date;  
- 
-        constructor() {         
-          //nothing                   
+        CreateDate: Date;
+
+        constructor() {
+            //nothing                   
         }
     }
 }

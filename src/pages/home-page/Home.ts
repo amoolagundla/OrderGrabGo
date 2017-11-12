@@ -2,7 +2,8 @@
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 
-
+import {  MenuController } from 'ionic-angular';
+import { LocalStorage } from '../../providers/local-storage';
 
 import { BasePage } from '../base-page/base-page';
 
@@ -12,30 +13,24 @@ import { BasePage } from '../base-page/base-page';
   templateUrl: 'home.html'
 })
 export class HomePage extends BasePage {
-
-  constructor(injector: Injector,
+    private skipIntroPage;
+   
+    constructor(injector: Injector, 
+        public storage: LocalStorage,
+        public menu: MenuController
    ) {
-    super(injector);
-this.getName('token').then((token:string)=>
-	{
-		if(token!=null)
-		{
-		console.log(token);
-		this.setRoot('DashPage');
-		}
-		
-	},error=>
-	{
-		this.setRoot('SignInPage');
-	});
-  }
+      super(injector);
+      this.storage.skipIntroPage.then(skipIntroPage => this.skipIntroPage = skipIntroPage);
+       }
 
   enableMenuSwipe() {
-    return true;
+    return false;
   }
 login()
 { 
-this.setRoot('SignInPage');
+    this.skipIntroPage = true;
+    this.storage.skipIntroPage = this.skipIntroPage;
+    this.navigatePage();
 	
 }
 

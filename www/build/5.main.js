@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 799:
+/***/ 802:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__place_detail_page__ = __webpack_require__(819);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__place_detail_page__ = __webpack_require__(822);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaceDetailPageModule", function() { return PlaceDetailPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,13 +44,13 @@ PlaceDetailPageModule = __decorate([
 
 /***/ }),
 
-/***/ 807:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 808:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ __decorate([
 ], EmptyView.prototype, "icon", void 0);
 EmptyView = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/
+        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], EmptyView);
@@ -126,19 +126,19 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 809:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,27 +183,36 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
+
+
+
 
 
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
-        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]);
+        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
+        this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
+        this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
+        this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -221,9 +230,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    //this.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -317,23 +350,23 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 819:
+/***/ 822:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_place_service__ = __webpack_require__(386);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_preference__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_local_storage__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_call_number__ = __webpack_require__(398);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(387);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(400);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_browser_tab__ = __webpack_require__(397);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_launch_navigator__ = __webpack_require__(401);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_social_sharing__ = __webpack_require__(403);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__base_page_base_page__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_user_service__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_place_service__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_preference__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_call_number__ = __webpack_require__(399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_in_app_browser__ = __webpack_require__(401);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_browser_tab__ = __webpack_require__(398);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_launch_navigator__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_social_sharing__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__base_page_base_page__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_user_service__ = __webpack_require__(217);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlaceDetailPage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -464,7 +497,7 @@ var PlaceDetailPage = (function (_super) {
 PlaceDetailPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-place-detail-page',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\place-detail-page\place-detail-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ place.title }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content #container>\n\n  <ion-slides pager>\n    <ion-slide *ngFor="let image of images">\n      <img src="assets/img/avatar.png" offset="100"\n        [lazyLoad]="image.url()"\n        [scrollTarget]="container.getScrollElement()" />\n    </ion-slide>\n  </ion-slides>\n\n  <ion-card class="card-secondary" text-center>\n    <ion-card-header>\n      <span ion-text color="primary">{{ place.title }}</span>\n    </ion-card-header>\n    <ion-card-content>\n      <span ion-text color="light">{{ place.description }}</span>\n    </ion-card-content>\n    <ion-grid>\n      <ion-row no-padding>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onLike()">\n            <ion-icon name="heart"></ion-icon>\n            {{ "LIKE" | translate }}\n          </button>\n        </ion-col>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onRate()">\n            <ion-icon name="star"></ion-icon>\n            {{ "RATE" | translate }}\n          </button>\n        </ion-col>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onShare()">\n            <ion-icon name="share"></ion-icon>\n            {{ "SHARE" | translate }}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n\n  <ion-card>\n\n    <img src="assets/img/avatar.png" offset="100"\n      lazyLoad="https://maps.googleapis.com/maps/api/staticmap?markers=color:yellow%7C{{place.location.latitude}},{{place.location.longitude}}&zoom=18&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0x242f3e&style=element:labels.text.fill%7Ccolor:0x746855&style=element:labels.text.stroke%7Ccolor:0x242f3e&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&style=feature:road%7Celement:geometry%7Ccolor:0x38414e&style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:water%7Celement:geometry%7Ccolor:0x17263c&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&size=600x250"\n      [scrollTarget]="container.getScrollElement()">\n    <ion-fab right top>\n      <button ion-fab>\n        <ion-icon name="pin"></ion-icon>\n      </button>\n    </ion-fab>\n\n    <ion-item color="secondary" *ngIf="place.address">\n      <h2 ion-text color="primary">{{ "ADDRESS" | translate }}</h2>\n      <p>{{ place.address }}</p>\n    </ion-item>\n\n    <ion-item color="secondary">\n      <span class="bold" item-left ion-text color="primary" *ngIf="location">\n        <small>({{ place.distance(location, unit) }})</small>\n      </span>\n      <button ion-button item-right color="primary" (click)="goToMap()">\n        <ion-icon name="navigate"></ion-icon>\n        {{ "START" | translate }}\n      </button>\n    </ion-item>\n\n  </ion-card>\n\n  <ion-card class="card-secondary">\n    <ion-card-header>\n      <span ion-text color="primary">{{ "EXPLORE_MORE" | translate }}</span>\n    </ion-card-header>\n\n    <ion-list no-lines>\n      <button ion-item (click)="goToMap()">\n        <ion-icon name="map" item-left color="primary"></ion-icon>\n        {{ "GET_DIRECTIONS" | translate }}\n      </button>\n\n      <button ion-item (click)="onCall()" *ngIf="place.phone">\n        <ion-icon name="call" item-left color="primary"></ion-icon>\n        {{ "PHONE" | translate }}\n      </button>\n\n      <button ion-item (click)="openUrl()" *ngIf="place.website && place.website !== \'http://\'">\n        <ion-icon name="globe" item-left color="primary"></ion-icon>\n        {{ "WEBSITE" | translate }}\n      </button>\n\n      <button ion-item (click)="goToReviews()">\n        <ion-icon name="star" item-left color="primary"></ion-icon>\n        {{ "REVIEWS" | translate }}\n      </button>\n\n    </ion-list>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\place-detail-page\place-detail-page.html"*/
+        selector: 'page-place-detail-page',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\place-detail-page\place-detail-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ place.title }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content #container>\n\n  <ion-slides pager>\n    <ion-slide *ngFor="let image of images">\n      <img src="assets/img/avatar.png" offset="100"\n        [lazyLoad]="image.url()"\n        [scrollTarget]="container.getScrollElement()" />\n    </ion-slide>\n  </ion-slides>\n\n  <ion-card class="card-secondary" text-center>\n    <ion-card-header>\n      <span ion-text color="primary">{{ place.title }}</span>\n    </ion-card-header>\n    <ion-card-content>\n      <span ion-text color="light">{{ place.description }}</span>\n    </ion-card-content>\n    <ion-grid>\n      <ion-row no-padding>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onLike()">\n            <ion-icon name="heart"></ion-icon>\n            {{ "LIKE" | translate }}\n          </button>\n        </ion-col>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onRate()">\n            <ion-icon name="star"></ion-icon>\n            {{ "RATE" | translate }}\n          </button>\n        </ion-col>\n        <ion-col col-4>\n          <button ion-button icon-left small round block\n            color="primary" (click)="onShare()">\n            <ion-icon name="share"></ion-icon>\n            {{ "SHARE" | translate }}\n          </button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-card>\n\n  <ion-card>\n\n    <img src="assets/img/avatar.png" offset="100"\n      lazyLoad="https://maps.googleapis.com/maps/api/staticmap?markers=color:yellow%7C{{place.location.latitude}},{{place.location.longitude}}&zoom=18&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0x242f3e&style=element:labels.text.fill%7Ccolor:0x746855&style=element:labels.text.stroke%7Ccolor:0x242f3e&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:poi.park%7Celement:geometry%7Ccolor:0x263c3f&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x6b9a76&style=feature:road%7Celement:geometry%7Ccolor:0x38414e&style=feature:road%7Celement:geometry.stroke%7Ccolor:0x212a37&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x9ca5b3&style=feature:road.highway%7Celement:geometry%7Ccolor:0x746855&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x1f2835&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xf3d19c&style=feature:transit%7Celement:geometry%7Ccolor:0x2f3948&style=feature:transit.station%7Celement:labels.text.fill%7Ccolor:0xd59563&style=feature:water%7Celement:geometry%7Ccolor:0x17263c&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x515c6d&style=feature:water%7Celement:labels.text.stroke%7Ccolor:0x17263c&size=600x250"\n      [scrollTarget]="container.getScrollElement()">\n    <ion-fab right top>\n      <button ion-fab>\n        <ion-icon name="pin"></ion-icon>\n      </button>\n    </ion-fab>\n\n    <ion-item color="secondary" *ngIf="place.address">\n      <h2 ion-text color="primary">{{ "ADDRESS" | translate }}</h2>\n      <p>{{ place.address }}</p>\n    </ion-item>\n\n    <ion-item color="secondary">\n      <span class="bold" item-left ion-text color="primary" *ngIf="location">\n        <small>({{ place.distance(location, unit) }})</small>\n      </span>\n      <button ion-button item-right color="primary" (click)="goToMap()">\n        <ion-icon name="navigate"></ion-icon>\n        {{ "START" | translate }}\n      </button>\n    </ion-item>\n\n  </ion-card>\n\n  <ion-card class="card-secondary">\n    <ion-card-header>\n      <span ion-text color="primary">{{ "EXPLORE_MORE" | translate }}</span>\n    </ion-card-header>\n\n    <ion-list no-lines>\n      <button ion-item (click)="goToMap()">\n        <ion-icon name="map" item-left color="primary"></ion-icon>\n        {{ "GET_DIRECTIONS" | translate }}\n      </button>\n\n      <button ion-item (click)="onCall()" *ngIf="place.phone">\n        <ion-icon name="call" item-left color="primary"></ion-icon>\n        {{ "PHONE" | translate }}\n      </button>\n\n      <button ion-item (click)="openUrl()" *ngIf="place.website && place.website !== \'http://\'">\n        <ion-icon name="globe" item-left color="primary"></ion-icon>\n        {{ "WEBSITE" | translate }}\n      </button>\n\n      <button ion-item (click)="goToReviews()">\n        <ion-icon name="star" item-left color="primary"></ion-icon>\n        {{ "REVIEWS" | translate }}\n      </button>\n\n    </ion-list>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\place-detail-page\place-detail-page.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
         __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["n" /* ModalController */],

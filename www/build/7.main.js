@@ -1,14 +1,14 @@
 webpackJsonp([7],{
 
-/***/ 797:
+/***/ 800:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Home__ = __webpack_require__(817);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Home__ = __webpack_require__(820);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -44,13 +44,13 @@ HomePageModule = __decorate([
 
 /***/ }),
 
-/***/ 807:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 808:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ __decorate([
 ], EmptyView.prototype, "icon", void 0);
 EmptyView = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/
+        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], EmptyView);
@@ -126,19 +126,19 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 809:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,27 +183,36 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
+
+
+
 
 
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
-        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]);
+        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
+        this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
+        this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
+        this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -221,9 +230,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    //this.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -317,13 +350,14 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 817:
+/***/ 820:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(813);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -347,34 +381,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomePage = (function (_super) {
     __extends(HomePage, _super);
-    function HomePage(injector) {
+    function HomePage(injector, storage, menu) {
         var _this = _super.call(this, injector) || this;
-        _this.getName('token').then(function (token) {
-            if (token != null) {
-                console.log(token);
-                _this.setRoot('DashPage');
-            }
-        }, function (error) {
-            _this.setRoot('SignInPage');
-        });
+        _this.storage = storage;
+        _this.menu = menu;
+        _this.storage.skipIntroPage.then(function (skipIntroPage) { return _this.skipIntroPage = skipIntroPage; });
         return _this;
     }
     HomePage.prototype.enableMenuSwipe = function () {
-        return true;
+        return false;
     };
     HomePage.prototype.login = function () {
-        this.setRoot('SignInPage');
+        this.skipIntroPage = true;
+        this.storage.skipIntroPage = this.skipIntroPage;
+        this.navigatePage();
     };
     return HomePage;
-}(__WEBPACK_IMPORTED_MODULE_2__base_page_base_page__["a" /* BasePage */]));
+}(__WEBPACK_IMPORTED_MODULE_3__base_page_base_page__["a" /* BasePage */]));
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'home',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\home-page\home.html"*/'\n	<ion-content padding text-center>\n\n <section class="parallax-window" data-image-src="https://ordergrabgo.com/img/hero.jpg" data-natural-height="550" data-natural-width="1400" data-parallax="scroll" id="home" style="\n    height: 400px;\n    background-image: url(https://ordergrabgo.com/img/hero.jpg);\n    background-size: cover;\n    background-position: center center;\n    ">\n    <div id="subheader" style="\n    background: transparent;\n">\n        <div class="animated zoomIn" id="sub_content" style="padding-top: 348px;">\n			\n            <h1 style="font-size: 28px!important;margin-top: -68%;text-align: center;color: #78ef98;font-family: inherit;">OrderGrabGo</h1>\n\n           \n           <h4 style="color:white">First in line - EVERYWHERE!</h4>\n			<h6 style="color:white">Tired of waiting in line for lunch?\nOne Profile for restaurants nationwide!</h6>\n			<button type="button" class="btn btn-default" ion-button block (click)="login()"\n         >\n        {{ "Let\'s Explore" | translate }}\n      </button>\n        </div>\n				\n    </div>\n    \n    </section>\n		\n		<div class="container margin_60">\n        \n         <div class="main_title">\n            <h2 class="nomargin_top" style="padding-top:0">How it works</h2>\n            \n        </div>\n				\n		<div class="row">\n		\n            <div class="col-md-5" style="width: -webkit-fill-available;">\n                <div class="box_home" id="one">\n                    <span>1</span>\n                    <h3>Search by address</h3>\n                    <p>\n                        Find all restaurants available in your zone.\n                    </p>\n                </div>\n            </div>\n            <div class="col-md-5" style="width: -webkit-fill-available;">\n                <div class="box_home" id="two">\n                    <span>2</span>\n                    <h3>Choose a restaurant</h3>\n                    <p>\n                        We have more than 1000s of menus online.\n                    </p>\n                </div>\n            </div>\n            <div class="col-md-5" style="width: -webkit-fill-available;">\n                <div class="box_home" id="three">\n                    <span>3</span>\n                    <h3>Pay by card or cash</h3>\n                    <p>\n                        It\'s quick, easy and totally secure.\n                    </p>\n                </div>\n            </div>\n            <div class="col-md-5" style="width: -webkit-fill-available;">\n                <div class="box_home" id="four">\n                    <span>4</span>\n                    <h3>Delivery or takeaway</h3>\n                    <p>\n                        You are lazy? Are you backing home?\n                    </p>\n                </div>\n            </div>\n        </div>\n		</div>\n		\n		<div class="white_bg" style="display:none">\n    <div class="container margin_60">\n        \n        <div class="main_title">\n            <h2 class="nomargin_top">Choose from Most Popular</h2>\n            <p>\n                Cum doctus civibus efficiantur in imperdiet deterruisset.\n            </p>\n        </div>\n        \n        <div class="row">\n            <div class="col-md-6" style="width: -webkit-fill-available;">\n                <a href="detail_page.html" class="strip_list">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>Taco Mexican</h3>\n                        <div class="type">\n                            Mexican / American\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n               <a href="detail_page.html" class="strip_list">\n               <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_2.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>Naples Pizza</h3>\n                        <div class="type">\n                            Italian / Pizza\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n                <a href="detail_page.html" class="strip_list">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_3.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>Japan Food</h3>\n                        <div class="type">\n                            Sushi / Japanese\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n            </div><!-- End col-md-6-->\n            <div class="col-md-6" style="width: -webkit-fill-available;">\n                <a href="detail_page.html" class="strip_list">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_4.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>Sushi Gold</h3>\n                        <div class="type">\n                            Sushi / Japanese\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_close_alt2 no"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n                <a href="detail_page.html" class="strip_list">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_5.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>Dragon Tower</h3>\n                        <div class="type">\n                            Chinese / Thai\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n                <a href="detail_page.html" class="strip_list">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n                            <img src="http://www.ansonika.com/quickfood/img/thumb_restaurant_6.jpg" alt="">\n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>China Food</h3>\n                        <div class="type">\n                            Chinese / Vietnam\n                        </div>\n                        <div class="location">\n                            135 Newtownards Road, Belfast, BT4. <span class="opening">Opens at 17:00</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n            </div>\n        </div><!-- End row -->   \n        \n        </div><!-- End container -->\n        </div>\n				\n		<div class="high_light">\n      	<div class="container">\n      		<h3>Choose from over 2,000 Restaurants</h3>\n            <p>Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</p>\n            <a href="">View all Restaurants</a>\n        </div><!-- End container -->\n      </div>\n		<div class="row">\n            <div class="col-md-4 ">\n            	<a class="box_work" href="">\n                <img src="http://www.ansonika.com/quickfood/img/submit_restaurant.jpg" width="848" height="480" alt="" class="img-responsive">\n                <h3>Submit your Restaurant<span>Start to earn customers</span></h3>\n                <p>Lorem ipsum dolor sit amet, ut virtute fabellas vix, no pri falli eloquentiam adversarium. Ea legere labore eam. Et eum sumo ocurreret, eos ei saepe oratio omittantur, legere eligendi partiendo pro te.</p>\n                <div class="btn_1">Read more</div>\n                </a>\n            </div>\n          \n      </div>\n			\n			\n			\n			<footer>\n    <div class="container">\n        <div class="row">\n            <div class="col-md-4 col-sm-3">\n                <h3>Secure payments with</h3>\n                <p>\n                    <img src="http://www.ansonika.com/quickfood/img/cards.png" alt="" class="img-responsive">\n                </p>\n            </div>\n            \n            <div class="col-md-3 col-sm-3" id="newsletter">\n                <h3>Newsletter</h3>\n                <p>\n                    Join our newsletter to keep be informed about offers and news.\n                </p>\n                <div id="message-newsletter_2">\n                </div>\n                <form method="post" action="" name="newsletter_2" id="newsletter_2">\n                    <div class="form-group">\n                        <input name="email_newsletter_2" id="email_newsletter_2" type="email" value="" placeholder="Your mail" class="form-control">\n                    </div>\n                    <input type="submit" value="Subscribe" class="btn_1" id="submit-newsletter_2">\n                </form>\n            </div>\n           \n        </div><!-- End row -->\n       \n    </div><!-- End container -->\n    </footer>\n		\n		\n		</ion-content>		'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\home-page\home.html"*/
+        selector: 'home',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\home-page\home.html"*/'<ion-content>\n\n    <ion-slides pager="true" parallax="true">\n\n        <ion-slide class="slide-1" color="dark">\n\n            <img src="https://ordergrabgo.com/img/hero.jpg" class="slide-image" />            \n\n            <section class="parallax-window" data-image-src="https://ordergrabgo.com/img/hero.jpg" data-natural-height="550" data-natural-width="1400" data-parallax="scroll" id="home" style="height: 400px;background-image: url(https://ordergrabgo.com/img/hero.jpg);\n\n    background-size: cover;\n\n    background-position: center center;\n\n    ">\n\n                <div id="subheader" style="background: transparent;">\n\n                    <div class="animated zoomIn" id="sub_content" style="padding-top: 348px;">\n\n\n\n                        <h1 style="font-size: 28px!important;margin-top: -140%;text-align: center;color: #78ef98;font-family: inherit;">OrderGrabGo</h1>\n\n\n\n                        <h4 style="color:white">First in line - EVERYWHERE!</h4>\n\n                        <h6 style="color:white">\n\n                            Tired of waiting in line for lunch?\n\n                            One Profile for restaurants nationwide!\n\n                        </h6>\n\n                        <button type="button" class="btn btn-default" ion-button block (click)="login()">\n\n                            {{ "Let\'s Explore" | translate }}\n\n                        </button>\n\n                    </div>\n\n\n\n                </div>\n\n\n\n            </section>\n\n        </ion-slide>\n\n        <ion-slide class="slide-2">\n\n            <div class="row">\n\n\n\n                <div class="col-md-5" style="margin-left: 14%;">\n\n                    <div class="box_home" id="one">\n\n                        <span>1</span>\n\n                        <h3>Search by address</h3>\n\n                        <p>\n\n                            Find all restaurants available in your zone.\n\n                        </p>\n\n                    </div>\n\n                </div>\n\n                </div>\n\n</ion-slide>\n\n        <ion-slide class="slide-3">\n\n            <div class="row">\n\n                <div class="col-md-5" style=" margin-left: 14%;">\n\n                    <div class="box_home" id="two">\n\n                        <span>2</span>\n\n                        <h3>Choose a restaurant</h3>\n\n                        <p>\n\n                            We have more than 1000s of menus online.\n\n                        </p>\n\n                    </div>\n\n                </div>\n\n                </div>\n\n</ion-slide>\n\n       \n\n        <ion-slide class="slide-4">\n\n            <div class="row">\n\n                <div class="col-md-5" style=" margin-left: 20%;">\n\n                    <div class="box_home" id="three">\n\n                        <span>3</span>\n\n                        <h3>Pay by card or cash</h3>\n\n                        <p>\n\n                            It\'s quick, easy and totally secure.\n\n                        </p>\n\n                    </div>\n\n                </div>\n\n                </div>\n\n</ion-slide>\n\n\n\n        <ion-slide class="slide-5">\n\n            <div class="row">\n\n                <div class="col-md-5" style=" margin-left: 14%;">\n\n                    <div class="box_home" id="four">\n\n                        <span>4</span>\n\n                        <h3>Delivery or takeaway</h3>\n\n                        <p>\n\n                            You are lazy? Are you backing home?\n\n                        </p>\n\n                    </div>\n\n                </div>\n\n            </div>\n\n        </ion-slide>\n\n        <ion-slide class="slide-6">\n\n            \n\n\n\n                <div class="caption" style="margin-top:-34%;">\n\n\n\n                    <h2 color="light" ion-text="" class="text text-md text-md-light" ng-reflect-color="light" style="font-size:21px;font-family:-webkit-body;">\n\n                        Ready to discover?\n\n                    </h2>\n\n</div>\n\n                    <button ion-button large icon-right color="primary" (click)="login()">\n\n                        {{ "GET_STARTED" | translate }}\n\n                        <ion-icon name="arrow-forward"></ion-icon>\n\n                    </button>\n\n        </ion-slide>\n\n       \n\n    </ion-slides>\n\n\n\n    \n\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\home-page\home.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
+        __WEBPACK_IMPORTED_MODULE_2__providers_local_storage__["a" /* LocalStorage */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* MenuController */]])
 ], HomePage);
 
 //# sourceMappingURL=Home.js.map
