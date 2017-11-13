@@ -42427,8 +42427,85 @@ page-reviews-page ul.rating li ion-icon {
   font-size: 16px;
 }
 
-page-sign-in-page ion-content {
-  padding-top: 60px;
+@media (min-width: 768px) {
+  page-sign-in-page ion-content .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+    margin-left: 25%;
+  }
+}
+
+page-sign-in-page ion-content .omb_login .omb_authTitle {
+  text-align: center;
+  line-height: 300%;
+}
+
+page-sign-in-page ion-content .omb_login .omb_socialButtons a {
+  color: white;
+  opacity: 0.9;
+}
+
+page-sign-in-page ion-content .omb_login .omb_socialButtons a:hover {
+  color: white;
+  opacity: 1;
+}
+
+page-sign-in-page ion-content .omb_login .omb_socialButtons .omb_btn-facebook {
+  background: #3b5998;
+}
+
+page-sign-in-page ion-content .omb_login .omb_socialButtons .omb_btn-twitter {
+  background: #00aced;
+}
+
+page-sign-in-page ion-content .omb_login .omb_socialButtons .omb_btn-google {
+  background: #c32f10;
+}
+
+page-sign-in-page ion-content .omb_login .omb_loginOr {
+  position: relative;
+  font-size: 1.5em;
+  color: #aaa;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+page-sign-in-page ion-content .omb_login .omb_loginOr .omb_hrOr {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+page-sign-in-page ion-content .omb_login .omb_loginOr .omb_spanOr {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -0.6em;
+  margin-left: -1.5em;
+  background-color: white;
+  width: 3em;
+  text-align: center;
+}
+
+page-sign-in-page ion-content .omb_login .omb_loginForm .input-group.i {
+  width: 2em;
+}
+
+page-sign-in-page ion-content .omb_login .omb_loginForm .help-block {
+  color: red;
+}
+
+@media (min-width: 768px) {
+  page-sign-in-page ion-content .omb_login .omb_forgotPwd {
+    text-align: right;
+    margin-top: 10px;
+  }
+}
+
+page-sign-up-page .input-group-addon {
+  background-color: white;
+  color: #5db6ff;
 }
 
 page-walkthrough-page ion-slides {

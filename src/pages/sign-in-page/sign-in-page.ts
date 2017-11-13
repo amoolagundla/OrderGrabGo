@@ -60,8 +60,10 @@ export class SignInPage extends BasePage {
 		this.valuesService.login(this.email,this.password).subscribe((data:any)=>
       {
 				this.showContentView();
-				console.log(data._body);
-        this.setName('token',data._body);
+                console.log(data._body);
+               
+                this.setName('token', data._body);
+
 				this.setRoot('DashPage');
      
     },error => {

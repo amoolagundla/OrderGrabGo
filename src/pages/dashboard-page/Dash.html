@@ -5,10 +5,10 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
+    <ion-title >{{firstName}}</ion-title>
 		 <ion-buttons end>
-            
-						<i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i>
+           <button ion-button (click)="scan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i></button>
+						
      
         </ion-buttons>
   </ion-navbar> 
@@ -16,7 +16,16 @@
 </ion-header>
 
 <ion-content padding #container style="background-size: cover;background-position: center center;background-image:url(http://www.ansonika.com/quickfood/img/sub_header_home.jpg);">
+    
+    <button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
 
+    
+    
+    <ion-card *ngIf="scannedCode">
+        <ion-card-content>
+            Result from Scan: {{ scannedCode }}
+        </ion-card-content>
+    </ion-card>
 <table class="table" style="
     margin-top: 25%;">
     

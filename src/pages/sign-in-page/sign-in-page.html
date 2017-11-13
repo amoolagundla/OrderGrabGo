@@ -1,37 +1,96 @@
-<ion-header>
-  <ion-navbar color="primary">
-    <ion-title>{{ 'LOGIN' | translate }}</ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-content padding text-center>
-  
-   
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="container" style="margin-top: 11%;">
 
- 
-    <ion-item>
-      <ion-label stacked color="primary">{{ "EMAIL" | translate }}</ion-label>
-      <ion-input type="email" formControlName="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
+        <div class="omb_login">
+            <h3 class="omb_authTitle">Login or <a (click)="goToSignUp()">Sign up</a></h3>
+            <div class="row omb_row-sm-offset-1 omb_socialButtons">
+                <div class="col-xs-6 col-sm-2">
+                    <a  class="btn btn-lg btn-block omb_btn-facebook">
+                        <i class="fa fa-facebook visible-xs"></i>
+                        <span class="hidden-xs">Facebook</span>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <a  class="btn btn-lg btn-block omb_btn-google">
+                        <i class="fa fa-google-plus visible-xs"></i>
+                        <span class="hidden-xs">Google+</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row omb_row-sm-offset-3 omb_loginOr">
+                <div class="col-xs-12 col-sm-6">
+                    <hr class="omb_hrOr">
+                    <span class="omb_spanOr">or</span>
+                </div>
+            </div>
+            <div class="row omb_row-sm-offset-3">
+                <div class="col-xs-12 col-sm-6">
+                    <form class="omb_loginForm" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+                        
+                            <div class="input-group">
+                                <span class="input-group-addon" color="primary"><i class="fa fa-user"></i></span>
+                                <input  type="email" class="form-control" formControlName="email" [(ngModel)]="email" placeholder="email address">
+                            </div>
+                            <span class="help-block"></span>
 
-    <ion-item>
-      <ion-label stacked color="primary">{{ "PASSWORD" | translate }}</ion-label>
-      <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" formControlName="password" [(ngModel)]="password" placeholder="Password">
+                            </div>
+                            <br/>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid">Login</button>
+                        </form>
+</div>
+            </div>
+            <div class="row omb_row-sm-offset-3">
+                <div class="col-xs-12 col-sm-3">
+                    <label class="checkbox">
+                       <br/>
+                    </label>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <p class="omb_forgotPwd">
+                        <a >Forgot password?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <div padding>
-      <button type="submit" color="primary" ion-button block
-        [disabled]="!form.valid">
-        {{ "LOGIN" | translate }}
-      </button>
     </div>
-    <div padding>
-      <button type="button" ion-button clear (click)="goToSignUp()">
-        {{ "NO_ACCOUNT_YET_CREATE_ONE" | translate }}
-      </button>
-    </div>
 
-  </form>
+    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+
+
+         <ion-item>
+             <ion-label stacked color="primary">{{ "EMAIL" | translate }}</ion-label>
+             <ion-input type="email" formControlName="email" [(ngModel)]="email"></ion-input>
+         </ion-item>
+
+         <ion-item>
+             <ion-label stacked color="primary">{{ "PASSWORD" | translate }}</ion-label>
+             <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>
+         </ion-item>
+
+         <div padding>
+             <button type="submit" color="primary" ion-button block
+                     [disabled]="!form.valid">
+                 {{ "LOGIN" | translate }}
+             </button>
+             <!--<button ion-button block icon-right (click)="facebookLogin()">
+                 LOGIN with
+                 <ion-icon name="logo-facebook"></ion-icon>
+             </button>
+             <button ion-button block (click)="googleLogin()">Login With Google</button>-->
+    <!--</div>
+
+        <div padding>
+            <button type="button" ion-button clear (click)="goToSignUp()">
+                {{ "NO_ACCOUNT_YET_CREATE_ONE" | translate }}
+            </button>
+        </div>
+
+    </form>-->
 </ion-content>

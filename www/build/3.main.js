@@ -1,15 +1,15 @@
 webpackJsonp([3],{
 
-/***/ 802:
+/***/ 806:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reviews_page__ = __webpack_require__(822);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsPageModule", function() { return ReviewsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_in_page__ = __webpack_require__(827);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(811);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignInPageModule", function() { return SignInPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ReviewsPageModule = (function () {
-    function ReviewsPageModule() {
+var SignInPageModule = (function () {
+    function SignInPageModule() {
     }
-    return ReviewsPageModule;
+    return SignInPageModule;
 }());
-ReviewsPageModule = __decorate([
+SignInPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__reviews_page__["a" /* ReviewsPage */],
+            __WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__reviews_page__["a" /* ReviewsPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__reviews_page__["a" /* ReviewsPage */]
+            __WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */]
         ]
     })
-], ReviewsPageModule);
+], SignInPageModule);
 
-//# sourceMappingURL=reviews-page.module.js.map
+//# sourceMappingURL=sign-in-page.module.js.map
 
 /***/ }),
 
-/***/ 807:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(810);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 808:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ __decorate([
 ], EmptyView.prototype, "icon", void 0);
 EmptyView = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/
+        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], EmptyView);
@@ -126,19 +126,19 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 809:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,27 +183,36 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
+
+
+
 
 
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
-        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]);
+        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
+        this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
+        this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
+        this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -221,9 +230,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    //this.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -317,15 +350,16 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 822:
+/***/ 827:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service__ = __webpack_require__(391);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(810);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__ = __webpack_require__(215);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignInPage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -349,63 +383,74 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var ReviewsPage = (function (_super) {
-    __extends(ReviewsPage, _super);
-    function ReviewsPage(injector) {
+
+
+var SignInPage = (function (_super) {
+    __extends(SignInPage, _super);
+    function SignInPage(injector, formBuilder, events, viewCtrl, valuesService) {
         var _this = _super.call(this, injector) || this;
-        _this.params = {};
-        _this.params.place = _this.navParams.data;
+        _this.formBuilder = formBuilder;
+        _this.events = events;
+        _this.viewCtrl = viewCtrl;
+        _this.valuesService = valuesService;
+        _this.email = '';
+        _this.password = '';
+        _this.form = new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* FormGroup */]({
+            email: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["g" /* Validators */].required),
+            password: new __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["g" /* Validators */].required)
+        });
+        var trans = ['LOGGED_IN_AS', 'INVALID_CREDENTIALS', 'ERROR_UNKNOWN'];
+        _this.translate.get(trans).subscribe(function (values) {
+            _this.trans = values;
+        });
+        _this.events.subscribe('user:login', function (userEventData) {
+            _this.onCancel();
+        });
         return _this;
     }
-    ReviewsPage.prototype.enableMenuSwipe = function () {
+    SignInPage.prototype.enableMenuSwipe = function () {
         return false;
     };
-    ReviewsPage.prototype.ionViewDidLoad = function () {
-        this.showLoadingView();
-        this.onReload();
+    SignInPage.prototype.ionViewDidLoad = function () {
     };
-    ReviewsPage.prototype.loadData = function () {
+    SignInPage.prototype.onCancel = function () {
+        this.viewCtrl.dismiss();
+    };
+    SignInPage.prototype.onSubmit = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_2__providers_review_service__["a" /* Review */].load(this.params).then(function (reviews) {
-            for (var _i = 0, reviews_1 = reviews; _i < reviews_1.length; _i++) {
-                var review = reviews_1[_i];
-                _this.reviews.push(review);
-            }
-            _this.onRefreshComplete(reviews);
-            if (_this.reviews.length) {
-                _this.showContentView();
+        this.showLoadingView();
+        this.valuesService.login(this.email, this.password).subscribe(function (data) {
+            _this.showContentView();
+            console.log(data._body);
+            _this.setName('token', data._body);
+            _this.setRoot('DashPage');
+        }, function (error) {
+            if (error.status === 401) {
+                _this.showToast(_this.trans.INVALID_CREDENTIALS);
             }
             else {
-                _this.showEmptyView();
+                _this.showToast(_this.trans.ERROR_UNKNOWN);
             }
-        }, function (error) {
             _this.showErrorView();
-            _this.onRefreshComplete();
         });
     };
-    ReviewsPage.prototype.onLoadMore = function (infiniteScroll) {
-        this.infiniteScroll = infiniteScroll;
-        this.params.page++;
-        this.loadData();
+    SignInPage.prototype.goToSignUp = function () {
+        this.navigateTo('SignUpPage');
     };
-    ReviewsPage.prototype.onReload = function (refresher) {
-        if (refresher === void 0) { refresher = null; }
-        this.refresher = refresher;
-        this.reviews = [];
-        this.params.page = 0;
-        this.loadData();
-    };
-    return ReviewsPage;
-}(__WEBPACK_IMPORTED_MODULE_3__base_page_base_page__["a" /* BasePage */]));
-ReviewsPage = __decorate([
+    return SignInPage;
+}(__WEBPACK_IMPORTED_MODULE_2__base_page_base_page__["a" /* BasePage */]));
+SignInPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-reviews-page',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\reviews-page\reviews-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>{{ "REVIEWS" | translate }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding #container>\n\n  <ion-refresher (ionRefresh)="onReload($event)">\n    <ion-refresher-content\n      pullingText="{{ \'PULL_TO_REFRESH\' | translate }}"\n      refreshingText="{{ \'REFRESHING\' | translate }}">\n    </ion-refresher-content>\n  </ion-refresher>\n\n  <empty-view *ngIf="isErrorViewVisible" icon="alert"\n    [text]="\'ERROR_REVIEWS\' | translate">\n  </empty-view>\n\n  <empty-view *ngIf="isEmptyViewVisible" icon="star"\n    [text]="\'EMPTY_REVIEWS\' | translate">\n  </empty-view>\n\n  <ion-list>\n    <ion-item *ngFor="let review of reviews" color="dark" text-wrap>\n      <ion-avatar item-left>\n\n        <img src="assets/img/avatar.png" offset="100"\n          [lazyLoad]="review.userData.get(\'photo\') ? review.userData.get(\'photo\').url() : \'\'"\n          [scrollTarget]="container.getScrollElement()">\n      </ion-avatar>\n      <h2>{{ review.userData.get(\'name\') }}</h2>\n      <rating [(ngModel)]="review.rating" readOnly="true"></rating>\n      <p>{{ review.comment }}</p>\n    </ion-item>\n  </ion-list>\n\n  <ion-infinite-scroll (ionInfinite)="onLoadMore($event)">\n    <ion-infinite-scroll-content></ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\reviews-page\reviews-page.html"*/
+        selector: 'page-sign-in-page',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\sign-in-page\sign-in-page.html"*/'\n\n\n\n<ion-content padding text-center>\n\n\n\n    <div class="container" style="margin-top: 11%;">\n\n\n\n        <div class="omb_login">\n\n            <h3 class="omb_authTitle">Login or <a (click)="goToSignUp()">Sign up</a></h3>\n\n            <div class="row omb_row-sm-offset-1 omb_socialButtons">\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a  class="btn btn-lg btn-block omb_btn-facebook">\n\n                        <i class="fa fa-facebook visible-xs"></i>\n\n                        <span class="hidden-xs">Facebook</span>\n\n                    </a>\n\n                </div>\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a  class="btn btn-lg btn-block omb_btn-google">\n\n                        <i class="fa fa-google-plus visible-xs"></i>\n\n                        <span class="hidden-xs">Google+</span>\n\n                    </a>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3 omb_loginOr">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <hr class="omb_hrOr">\n\n                    <span class="omb_spanOr">or</span>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <form class="omb_loginForm" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>\n\n                        \n\n                            <div class="input-group">\n\n                                <span class="input-group-addon" color="primary"><i class="fa fa-user"></i></span>\n\n                                <input  type="email" class="form-control" formControlName="email" [(ngModel)]="email" placeholder="email address">\n\n                            </div>\n\n                            <span class="help-block"></span>\n\n\n\n                            <div class="input-group">\n\n                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n\n                                <input type="password" class="form-control" formControlName="password" [(ngModel)]="password" placeholder="Password">\n\n                            </div>\n\n                            <br/>\n\n                            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid">Login</button>\n\n                        </form>\n\n</div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <label class="checkbox">\n\n                       <br/>\n\n                    </label>\n\n                </div>\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <p class="omb_forgotPwd">\n\n                        <a >Forgot password?</a>\n\n                    </p>\n\n                </div>\n\n            </div>\n\n        </div>\n\n\n\n    </div>\n\n\n\n    <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>\n\n\n\n\n\n         <ion-item>\n\n             <ion-label stacked color="primary">{{ "EMAIL" | translate }}</ion-label>\n\n             <ion-input type="email" formControlName="email" [(ngModel)]="email"></ion-input>\n\n         </ion-item>\n\n\n\n         <ion-item>\n\n             <ion-label stacked color="primary">{{ "PASSWORD" | translate }}</ion-label>\n\n             <ion-input type="password" formControlName="password" [(ngModel)]="password"></ion-input>\n\n         </ion-item>\n\n\n\n         <div padding>\n\n             <button type="submit" color="primary" ion-button block\n\n                     [disabled]="!form.valid">\n\n                 {{ "LOGIN" | translate }}\n\n             </button>\n\n             <!--<button ion-button block icon-right (click)="facebookLogin()">\n\n                 LOGIN with\n\n                 <ion-icon name="logo-facebook"></ion-icon>\n\n             </button>\n\n             <button ion-button block (click)="googleLogin()">Login With Google</button>-->\n\n    <!--</div>\n\n\n\n        <div padding>\n\n            <button type="button" ion-button clear (click)="goToSignUp()">\n\n                {{ "NO_ACCOUNT_YET_CREATE_ONE" | translate }}\n\n            </button>\n\n        </div>\n\n\n\n    </form>-->\n\n</ion-content>'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\sign-in-page\sign-in-page.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"]])
-], ReviewsPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
+        __WEBPACK_IMPORTED_MODULE_3__angular_forms__["h" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* Events */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__["a" /* ValuesService */]])
+], SignInPage);
 
-//# sourceMappingURL=reviews-page.js.map
+//# sourceMappingURL=sign-in-page.js.map
 
 /***/ })
 

@@ -39,10 +39,21 @@ export class LocalStorage {
     this.storage.set('distance', val);
   }
 
+
   get lang(): Promise<any> {
     return this.storage.get('lang');
   }
 
+  get token(): Promise<any> {
+      return this.storage.get('token');
+  }
+
+   RemoveToken() {
+       return this.storage.remove('token');
+  }
+  set token(val) {
+      this.storage.set('token', val);
+  }
   set lang(val) {
     this.storage.set('lang', val);
   }

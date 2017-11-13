@@ -1,15 +1,15 @@
 webpackJsonp([0],{
 
-/***/ 805:
+/***/ 800:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_up_page__ = __webpack_require__(825);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpPageModule", function() { return SignUpPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_page__ = __webpack_require__(821);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(811);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SignUpPageModule = (function () {
-    function SignUpPageModule() {
+var MapPageModule = (function () {
+    function MapPageModule() {
     }
-    return SignUpPageModule;
+    return MapPageModule;
 }());
-SignUpPageModule = __decorate([
+MapPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__sign_up_page__["a" /* SignUpPage */],
+            __WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_up_page__["a" /* SignUpPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__sign_up_page__["a" /* SignUpPage */]
+            __WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */]
         ]
     })
-], SignUpPageModule);
+], MapPageModule);
 
-//# sourceMappingURL=sign-up-page.module.js.map
+//# sourceMappingURL=map-page.module.js.map
 
 /***/ }),
 
-/***/ 807:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(808);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(810);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 808:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -117,7 +117,7 @@ __decorate([
 ], EmptyView.prototype, "icon", void 0);
 EmptyView = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\components\empty-view\empty-view.html"*/
+        selector: 'empty-view',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\components\empty-view\empty-view.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], EmptyView);
@@ -126,19 +126,19 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 809:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(807);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(385);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(809);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -183,27 +183,36 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
+
+
+
 
 
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["j" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["f" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
-        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* MenuController */]);
+        this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
+        this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
+        this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
+        this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -221,9 +230,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    //this.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -317,16 +350,2222 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 825:
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_fromEvent__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GoogleMapsEvent; });
+/* unused harmony export GoogleMapsAnimation */
+/* unused harmony export GoogleMapsMapTypeId */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return GoogleMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return GoogleMaps; });
+/* unused harmony export Marker */
+/* unused harmony export Circle */
+/* unused harmony export Polyline */
+/* unused harmony export Polygon */
+/* unused harmony export TileOverlay */
+/* unused harmony export GroundOverlay */
+/* unused harmony export KmlOverlay */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LatLngBounds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LatLng; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Geocoder; });
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * @hidden
+ * You can listen to these events where appropriate
+ */
+var GoogleMapsEvent = {
+    MAP_CLICK: 'click',
+    MAP_LONG_CLICK: 'long_click',
+    MY_LOCATION_CHANGE: 'my_location_change',
+    MY_LOCATION_BUTTON_CLICK: 'my_location_button_click',
+    INDOOR_BUILDING_FOCUSED: 'indoor_building_focused',
+    INDOOR_LEVEL_ACTIVATED: 'indoor_level_activated',
+    CAMERA_CHANGE: 'camera_change',
+    CAMERA_IDLE: 'camera_idle',
+    MAP_READY: 'map_ready',
+    MAP_LOADED: 'map_loaded',
+    MAP_WILL_MOVE: 'will_move',
+    MAP_CLOSE: 'map_close',
+    MARKER_CLICK: 'click',
+    OVERLAY_CLICK: 'overlay_click',
+    INFO_CLICK: 'info_click',
+    MARKER_DRAG: 'drag',
+    MARKER_DRAG_START: 'drag_start',
+    MARKER_DRAG_END: 'drag_end'
+};
+/**
+ * @hidden
+ */
+var GoogleMapsAnimation = {
+    BOUNCE: 'BOUNCE',
+    DROP: 'DROP'
+};
+/**
+ * @hidden
+ */
+var GoogleMapsMapTypeId = {
+    HYBRID: 'MAP_TYPE_HYBRID',
+    NONE: 'MAP_TYPE_NONE',
+    NORMAL: 'MAP_TYPE_NORMAL',
+    ROADMAP: 'MAP_TYPE_ROADMAP',
+    SATELLITE: 'MAP_TYPE_SATELLITE',
+    TERAIN: 'MAP_TYPE_TERRAIN'
+};
+/**
+ * @hidden
+ */
+var GoogleMap = (function () {
+    function GoogleMap(element, options) {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["a" /* checkAvailability */])('plugin.google.maps.Map', null, 'GoogleMaps') === true) {
+            if (typeof element === 'string') {
+                element = document.getElementById(element);
+            }
+            this._objectInstance = plugin.google.maps.Map.getMap(element, options);
+        }
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    GoogleMap.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    GoogleMap.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    GoogleMap.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    GoogleMap.prototype.on = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.one = function (eventName) {
+        var _this = this;
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    GoogleMap.prototype.empty = function () { };
+    GoogleMap.prototype.setDebuggable = function (isDebuggable) { };
+    GoogleMap.prototype.setClickable = function (isClickable) { };
+    /**
+     * Get the position of the camera.
+     *
+     * @returns {Promise<CameraPosition>}
+     */
+    GoogleMap.prototype.getCameraPosition = function () { return; };
+    /**
+     * Get the location of the user.
+     *
+     * @returns {Promise<MyLocation>}
+     */
+    GoogleMap.prototype.getMyLocation = function (options) { return; };
+    /**
+     * Get the visible region.
+     *
+     * @returns {Promise<VisibleRegion>}
+     */
+    GoogleMap.prototype.getVisibleRegion = function () { return; };
+    GoogleMap.prototype.showDialog = function () { };
+    GoogleMap.prototype.closeDialog = function () { };
+    GoogleMap.prototype.getLicenseInfo = function () { return; };
+    GoogleMap.prototype.setCenter = function (latLng) { };
+    GoogleMap.prototype.setZoom = function (zoomLevel) { };
+    GoogleMap.prototype.setMapTypeId = function (mapTypeId) { };
+    GoogleMap.prototype.setTilt = function (tiltLevel) { };
+    /**
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.animateCamera = function (animateCameraOptions) { return; };
+    /**
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.moveCamera = function (cameraPosition) { return; };
+    GoogleMap.prototype.setMyLocationEnabled = function (enabled) { };
+    GoogleMap.prototype.setIndoorEnabled = function (enabled) { };
+    GoogleMap.prototype.setTrafficEnabled = function (enabled) { };
+    GoogleMap.prototype.setCompassEnabled = function (enabled) { };
+    GoogleMap.prototype.setAllGesturesEnabled = function (enabled) { };
+    /**
+     * @returns {Promise<Marker | any>}
+     */
+    GoogleMap.prototype.addMarker = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addMarker(options, function (marker) {
+                if (marker) {
+                    resolve(new Marker(marker));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<Circle | any>}
+     */
+    GoogleMap.prototype.addCircle = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addCircle(options, function (circle) {
+                if (circle) {
+                    resolve(new Circle(circle));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<Polygon | any>}
+     */
+    GoogleMap.prototype.addPolygon = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addPolygon(options, function (polygon) {
+                if (polygon) {
+                    resolve(new Polygon(polygon));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<Polyline | any>}
+     */
+    GoogleMap.prototype.addPolyline = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addPolyline(options, function (polyline) {
+                if (polyline) {
+                    resolve(new Polyline(polyline));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<TileOverlay | any>}
+     */
+    GoogleMap.prototype.addTileOverlay = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addTileOverlay(options, function (tileOverlay) {
+                if (tileOverlay) {
+                    resolve(new TileOverlay(tileOverlay));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<GroundOverlay | any>}
+     */
+    GoogleMap.prototype.addGroundOverlay = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addGroundOverlay(options, function (groundOverlay) {
+                if (groundOverlay) {
+                    resolve(new GroundOverlay(groundOverlay));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    /**
+     * @returns {Promise<KmlOverlay | any>}
+     */
+    GoogleMap.prototype.addKmlOverlay = function (options) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            _this._objectInstance.addKmlOverlay(options, function (kmlOverlay) {
+                if (kmlOverlay) {
+                    resolve(new KmlOverlay(kmlOverlay));
+                }
+                else {
+                    reject();
+                }
+            });
+        });
+    };
+    GoogleMap.prototype.setDiv = function (domNode) { };
+    GoogleMap.prototype.setVisible = function (visible) { };
+    GoogleMap.prototype.setOptions = function (options) { };
+    GoogleMap.prototype.setBackgroundColor = function (backgroundColor) { };
+    GoogleMap.prototype.setPadding = function (top, right, bottom, left) { };
+    GoogleMap.prototype.clear = function () { };
+    GoogleMap.prototype.refreshLayout = function () { };
+    /**
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.fromLatLngToPoint = function (latLng, point) { return; };
+    /**
+     * @returns {Promise<LatLng>}
+     */
+    GoogleMap.prototype.fromPointToLatLng = function (point) { return; };
+    /**
+     * @returns {Promise<any>}
+     */
+    GoogleMap.prototype.toDataURL = function () { return; };
+    GoogleMap.prototype.remove = function () { };
+    GoogleMap.prototype.panBy = function (x, y) { };
+    return GoogleMap;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], GoogleMap.prototype, "addEventListener", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addListenerOnce", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], GoogleMap.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])({ observable: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"])
+], GoogleMap.prototype, "on", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "one", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setDebuggable", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setClickable", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "getCameraPosition", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "getMyLocation", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "getVisibleRegion", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "showDialog", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "closeDialog", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "getLicenseInfo", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setCenter", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setZoom", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setMapTypeId", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setTilt", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "animateCamera", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "moveCamera", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setMyLocationEnabled", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setIndoorEnabled", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setTrafficEnabled", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setCompassEnabled", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setAllGesturesEnabled", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addMarker", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addCircle", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addPolygon", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addPolyline", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addTileOverlay", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addGroundOverlay", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["b" /* InstanceCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "addKmlOverlay", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [HTMLElement]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setDiv", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setOptions", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setBackgroundColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number, Number, Number]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "setPadding", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "clear", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "refreshLayout", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng, Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "fromLatLngToPoint", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "fromPointToLatLng", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GoogleMap.prototype, "toDataURL", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], GoogleMap.prototype, "panBy", null);
+GoogleMap = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
+        pluginName: 'GoogleMaps',
+        plugin: 'cordova-plugin-googlemaps'
+    }),
+    __metadata("design:paramtypes", [Object, Object])
+], GoogleMap);
+
+/**
+ * @name Google Maps
+ * @description This plugin uses the native Google Maps SDK
+ * @usage
+ * ```typescript
+ * import {
+ *  GoogleMaps,
+ *  GoogleMap,
+ *  GoogleMapsEvent,
+ *  LatLng,
+ *  CameraPosition,
+ *  MarkerOptions,
+ *  Marker
+ * } from '@ionic-native/google-maps';
+ *
+ * export class MapPage {
+ *  constructor(private googleMaps: GoogleMaps) {}
+ *
+ * // Load map only after view is initialized
+ * ngAfterViewInit() {
+ *  this.loadMap();
+ * }
+ *
+ * loadMap() {
+ *  // make sure to create following structure in your view.html file
+ *  // and add a height (for example 100%) to it, else the map won't be visible
+ *  // <ion-content>
+ *  //  <div #map id="map" style="height:100%;"></div>
+ *  // </ion-content>
+ *
+ *  // create a new map by passing HTMLElement
+ *  let element: HTMLElement = document.getElementById('map');
+ *
+ *  let map: GoogleMap = this.googleMaps.create(element);
+ *
+ *  // listen to MAP_READY event
+ *  // You must wait for this event to fire before adding something to the map or modifying it in anyway
+ *  map.one(GoogleMapsEvent.MAP_READY).then(
+ *    () => {
+ *      console.log('Map is ready!');
+ *      // Now you can add elements to the map like the marker
+ *    }
+ *  );
+ *
+ *  // create LatLng object
+ *  let ionic: LatLng = new LatLng(43.0741904,-89.3809802);
+ *
+ *  // create CameraPosition
+ *  let position: CameraPosition = {
+ *    target: ionic,
+ *    zoom: 18,
+ *    tilt: 30
+ *  };
+ *
+ *  // move the map's camera to position
+ *  map.moveCamera(position);
+ *
+ *  // create new marker
+ *  let markerOptions: MarkerOptions = {
+ *    position: ionic,
+ *    title: 'Ionic'
+ *  };
+ *
+ *  const marker: Marker = map.addMarker(markerOptions)
+ *    .then((marker: Marker) => {
+ *       marker.showInfoWindow();
+ *     });
+ *  }
+ *
+ * }
+ * ```
+ * @classes
+ * GoogleMap
+ * Marker
+ * LatLng
+ * Geocoder
+ * @interfaces
+ * AnimateCameraOptions
+ * MarkerOptions
+ * MyLocation
+ * MyLocationOptions
+ * VisibleRegion
+ *
+ */
+var GoogleMaps = (function (_super) {
+    __extends(GoogleMaps, _super);
+    function GoogleMaps() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Checks if a map object has been created and is available.
+     *
+     * @returns {Promise<boolean>}
+     */
+    GoogleMaps.prototype.isAvailable = function () { return; };
+    /**
+     * Creates a new GoogleMap instance
+     * @param element {string | HTMLElement} Element ID or reference to attach the map to
+     * @param options {any} Options
+     * @returns {GoogleMap}
+     */
+    GoogleMaps.prototype.create = function (element, options) {
+        return new GoogleMap(element, options);
+    };
+    return GoogleMaps;
+}(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["e" /* IonicNativePlugin */]));
+GoogleMaps.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+GoogleMaps.ctorParameters = function () { return []; };
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["f" /* Cordova */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], GoogleMaps.prototype, "isAvailable", null);
+GoogleMaps = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
+        pluginName: 'GoogleMaps',
+        pluginRef: 'plugin.google.maps.Map',
+        plugin: 'cordova-plugin-googlemaps',
+        repo: 'https://github.com/mapsplugin/cordova-plugin-googlemaps',
+        install: 'ionic cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE" --variable API_KEY_FOR_IOS="YOUR_IOS_API_KEY_IS_HERE"',
+        installVariables: ['API_KEY_FOR_ANDROID', 'API_KEY_FOR_IOS'],
+        platforms: ['Android', 'iOS']
+    })
+], GoogleMaps);
+
+/**
+ * @hidden
+ */
+var Marker = (function () {
+    function Marker(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    Marker.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    Marker.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    Marker.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    Marker.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    Marker.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    Marker.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    Marker.prototype.empty = function () { };
+    /**
+     * Return true if the marker is visible
+     */
+    Marker.prototype.isVisible = function () { return; };
+    /**
+     * Set false if you want to hide the marker.
+     * @param visible
+     */
+    Marker.prototype.setVisible = function (visible) { };
+    /**
+     * Return the marker hash code.
+     * @return {string} Marker hash code
+     */
+    Marker.prototype.getHashCode = function () { return; };
+    /**
+     * Remove the marker completely.
+     */
+    Marker.prototype.remove = function () { };
+    /**
+     * Change the marker opacity.
+     * @param alpha {number} Opacity
+     */
+    Marker.prototype.setOpacity = function (alpha) { };
+    /**
+     * Return the marker opacity.
+     * @return {number} Opacity
+     */
+    Marker.prototype.getOpacity = function () { return; };
+    /**
+     * iOS only, Plugin Version >= 1.3.3 Higher zIndex value overlays will be drawn on top of lower zIndex value tile layers and overlays. (You're able to run this on Android, but it will have no effect)
+     * @return {number}
+     */
+    Marker.prototype.setZIndex = function () { return; };
+    /**
+     * Change the info window anchor. This defaults to 50% from the left of the image and at the bottom of the image.
+     * @param x {number}
+     * @param y {number}
+     */
+    Marker.prototype.setIconAnchor = function (x, y) { };
+    /**
+     * Change the info window anchor. This defaults to 50% from the left of the image and at the top of the image.
+     * @param x {number}
+     * @param y {number}
+     */
+    Marker.prototype.setInfoWindowAnchor = function (x, y) { };
+    /**
+     * 	Set true if you allows all users to drag the marker.
+     * @param draggable {boolean}
+     */
+    Marker.prototype.setDraggable = function (draggable) { };
+    /**
+     * Return true if the marker drag is enabled.
+     * @return {boolean}
+     */
+    Marker.prototype.isDraggable = function () { return; };
+    /**
+     * Set true if you want to be flat marker.
+     * @param flat {boolean}
+     */
+    Marker.prototype.setFlat = function (flat) { return; };
+    /**
+     * Change icon url and/or size
+     * @param icon
+     */
+    Marker.prototype.setIcon = function (icon) { return; };
+    /**
+     * Change title of the infoWindow.
+     * @param title {string}
+     */
+    Marker.prototype.setTitle = function (title) { };
+    /**
+     * Return the title strings.
+     * @return {string}
+     */
+    Marker.prototype.getTitle = function () { return; };
+    /**
+     * Change snippet of the infoWindow.
+     * @param snippet {string}
+     */
+    Marker.prototype.setSnippet = function (snippet) { };
+    /**
+     * Return the snippet strings.
+     * @return {string}
+     */
+    Marker.prototype.getSnippet = function () { return; };
+    /**
+     * Set the marker rotation angle.
+     * @param rotation {number}
+     */
+    Marker.prototype.setRotation = function (rotation) { };
+    /**
+     * Return the marker rotation angle.
+     * @return {number}
+     */
+    Marker.prototype.getRotation = function () { return; };
+    /**
+     * Show the infoWindow of the marker.
+     * @return {number}
+     */
+    Marker.prototype.showInfoWindow = function () { return; };
+    /**
+     * Hide the infoWindow of the marker.
+     * @return {number}
+     */
+    Marker.prototype.hideInfoWindow = function () { return; };
+    /**
+     * Set the marker position.
+     * @param latLng {LatLng}
+     */
+    Marker.prototype.setPosition = function (latLng) { return; };
+    /**
+     * Return the marker position.
+     * @return {Promise<LatLng>}
+     */
+    Marker.prototype.getPosition = function () { return; };
+    /**
+     * Return the map instance.
+     * @return {GoogleMap}
+     */
+    Marker.prototype.getMap = function () { return; };
+    /**
+     * Specify the animation either `DROP` or `BOUNCE`
+     * @param animation {string}
+     */
+    Marker.prototype.setAnimation = function (animation) { };
+    return Marker;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], Marker.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Marker.prototype, "isVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Marker.prototype, "getHashCode", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Marker.prototype, "getOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Marker.prototype, "setZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setIconAnchor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setInfoWindowAnchor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setDraggable", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Marker.prototype, "isDraggable", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setFlat", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setIcon", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setTitle", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Marker.prototype, "getTitle", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setSnippet", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Marker.prototype, "getSnippet", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setRotation", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Marker.prototype, "getRotation", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Marker.prototype, "showInfoWindow", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Marker.prototype, "hideInfoWindow", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setPosition", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], Marker.prototype, "getPosition", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", GoogleMap)
+], Marker.prototype, "getMap", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Marker.prototype, "setAnimation", null);
+/**
+ * @hidden
+ */
+var Circle = (function () {
+    function Circle(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    Circle.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    Circle.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    Circle.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    Circle.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    Circle.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    Circle.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    Circle.prototype.empty = function () { };
+    Circle.prototype.getCenter = function () { return; };
+    Circle.prototype.getRadius = function () { return; };
+    Circle.prototype.getStrokeColor = function () { return; };
+    Circle.prototype.getVisible = function () { return; };
+    Circle.prototype.getZIndex = function () { return; };
+    Circle.prototype.remove = function () { };
+    Circle.prototype.setCenter = function (latLng) { };
+    Circle.prototype.setFillColor = function (fillColor) { };
+    Circle.prototype.setStrokeColor = function (strokeColor) { };
+    Circle.prototype.setStrokeWidth = function (strokeWidth) { };
+    Circle.prototype.setVisible = function (visible) { };
+    Circle.prototype.setZIndex = function (zIndex) { };
+    Circle.prototype.setRadius = function (radius) { };
+    Circle.prototype.getMap = function () { return; };
+    return Circle;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], Circle.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", LatLng)
+], Circle.prototype, "getCenter", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Circle.prototype, "getRadius", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Circle.prototype, "getStrokeColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Circle.prototype, "getVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Circle.prototype, "getZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setCenter", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setFillColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setStrokeColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setStrokeWidth", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Circle.prototype, "setRadius", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", GoogleMap)
+], Circle.prototype, "getMap", null);
+/**
+ * @hidden
+ */
+var Polyline = (function () {
+    function Polyline(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    Polyline.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    Polyline.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    Polyline.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    Polyline.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    Polyline.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    Polyline.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    Polyline.prototype.empty = function () { };
+    Polyline.prototype.getPoints = function () { return; };
+    Polyline.prototype.getCOlor = function () { return; };
+    Polyline.prototype.getWidth = function () { return; };
+    Polyline.prototype.getGeodesic = function () { return; };
+    Polyline.prototype.getZIndex = function () { return; };
+    Polyline.prototype.remove = function () { };
+    Polyline.prototype.setPoints = function (points) { };
+    Polyline.prototype.setColor = function (color) { };
+    Polyline.prototype.setWidth = function (width) { };
+    Polyline.prototype.setVisible = function (visible) { };
+    Polyline.prototype.setZIndex = function (zIndex) { };
+    Polyline.prototype.setGeoDesic = function (geoDesic) { };
+    Polyline.prototype.getMap = function () { return; };
+    return Polyline;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], Polyline.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Array)
+], Polyline.prototype, "getPoints", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Polyline.prototype, "getCOlor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Polyline.prototype, "getWidth", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Polyline.prototype, "getGeodesic", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Polyline.prototype, "getZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setPoints", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setWidth", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Polyline.prototype, "setGeoDesic", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", GoogleMap)
+], Polyline.prototype, "getMap", null);
+/**
+ * @hidden
+ */
+var Polygon = (function () {
+    function Polygon(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    Polygon.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    Polygon.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    Polygon.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    Polygon.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    Polygon.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    Polygon.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    Polygon.prototype.empty = function () { };
+    Polygon.prototype.getPoints = function () { return; };
+    Polygon.prototype.getStrokeColor = function () { return; };
+    Polygon.prototype.getFillColor = function () { return; };
+    Polygon.prototype.getStrokeWidth = function () { return; };
+    Polygon.prototype.getGeodesic = function () { return; };
+    Polygon.prototype.getVisible = function () { return; };
+    Polygon.prototype.getZIndex = function () { return; };
+    Polygon.prototype.remove = function () { };
+    Polygon.prototype.setPoints = function (points) { };
+    Polygon.prototype.setStrokeColor = function (strokeColor) { };
+    Polygon.prototype.setFillColor = function (fillColor) { };
+    Polygon.prototype.setStrokeWidth = function (strokeWidth) { };
+    Polygon.prototype.setVisible = function (visible) { };
+    Polygon.prototype.setZIndex = function (zIndex) { };
+    Polygon.prototype.setGeodesic = function (geodesic) { };
+    return Polygon;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], Polygon.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Array)
+], Polygon.prototype, "getPoints", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Polygon.prototype, "getStrokeColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], Polygon.prototype, "getFillColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], Polygon.prototype, "getStrokeWidth", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Polygon.prototype, "getGeodesic", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Polygon.prototype, "getVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], Polygon.prototype, "getZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Array]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setPoints", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setStrokeColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setFillColor", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setStrokeWidth", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], Polygon.prototype, "setGeodesic", null);
+/**
+ * @hidden
+ */
+var TileOverlay = (function () {
+    function TileOverlay(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    TileOverlay.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    TileOverlay.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    TileOverlay.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    TileOverlay.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    TileOverlay.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    TileOverlay.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    TileOverlay.prototype.empty = function () { };
+    TileOverlay.prototype.getVisible = function () { return; };
+    TileOverlay.prototype.setVisible = function (visible) { };
+    TileOverlay.prototype.getFadeIn = function () { return; };
+    TileOverlay.prototype.setFadeIn = function (fadeIn) { };
+    TileOverlay.prototype.getZIndex = function () { return; };
+    TileOverlay.prototype.setZIndex = function (zIndex) { };
+    TileOverlay.prototype.getOpacity = function () { return; };
+    TileOverlay.prototype.setOpacity = function (opacity) { };
+    TileOverlay.prototype.clearTileCache = function () { };
+    TileOverlay.prototype.remove = function () { };
+    return TileOverlay;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], TileOverlay.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], TileOverlay.prototype, "getVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], TileOverlay.prototype, "getFadeIn", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "setFadeIn", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], TileOverlay.prototype, "getZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "setZIndex", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], TileOverlay.prototype, "getOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "setOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "clearTileCache", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], TileOverlay.prototype, "remove", null);
+/**
+ * @hidden
+ */
+var GroundOverlay = (function () {
+    function GroundOverlay(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    GroundOverlay.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    GroundOverlay.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    GroundOverlay.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    GroundOverlay.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    GroundOverlay.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    GroundOverlay.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    GroundOverlay.prototype.empty = function () { };
+    GroundOverlay.prototype.setBearing = function (bearing) { };
+    GroundOverlay.prototype.getBearing = function () { return; };
+    GroundOverlay.prototype.setOpacity = function (opacity) { };
+    GroundOverlay.prototype.getOpacity = function () { return; };
+    GroundOverlay.prototype.setVisible = function (visible) { };
+    GroundOverlay.prototype.getVisible = function () { return; };
+    GroundOverlay.prototype.setImage = function (image) { };
+    ;
+    GroundOverlay.prototype.remove = function () { };
+    return GroundOverlay;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], GroundOverlay.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "setBearing", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], GroundOverlay.prototype, "getBearing", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "setOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Number)
+], GroundOverlay.prototype, "getOpacity", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Boolean]),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "setVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Boolean)
+], GroundOverlay.prototype, "getVisible", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "setImage", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], GroundOverlay.prototype, "remove", null);
+/**
+ * @hidden
+ */
+var KmlOverlay = (function () {
+    function KmlOverlay(_objectInstance) {
+        this._objectInstance = _objectInstance;
+    }
+    /**
+     * Adds an event listener.
+     *
+     * @returns {Observable<any>}
+     */
+    KmlOverlay.prototype.addEventListener = function (eventName) {
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].fromEvent(this._objectInstance, eventName);
+    };
+    /**
+     * Adds an event listener that works once.
+     *
+     * @returns {Promise<any>}
+     */
+    KmlOverlay.prototype.addListenerOnce = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.addListenerOnce(eventName, resolve); });
+    };
+    /**
+     * Gets a value
+     * @param key
+     */
+    KmlOverlay.prototype.get = function (key) { return; };
+    /**
+     * Sets a value
+     * @param key
+     * @param value
+     */
+    KmlOverlay.prototype.set = function (key, value) { };
+    /**
+     * Listen to a map event.
+     *
+     * @returns {Observable<any>}
+     */
+    KmlOverlay.prototype.on = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+                observer.error({ error: 'plugin_not_installed' });
+            });
+        }
+        return new __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"](function (observer) {
+            _this._objectInstance.on(eventName, observer.next.bind(observer));
+            return function () { return _this._objectInstance.off(event); };
+        });
+    };
+    /**
+     * Listen to a map event only once.
+     *
+     * @returns {Promise<any>}
+     */
+    KmlOverlay.prototype.one = function (eventName) {
+        var _this = this;
+        if (!this._objectInstance) {
+            return Promise.reject({ error: 'plugin_not_installed' });
+        }
+        return new Promise(function (resolve) { return _this._objectInstance.one(eventName, resolve); });
+    };
+    /**
+     * Clears all stored values
+     */
+    KmlOverlay.prototype.empty = function () { };
+    KmlOverlay.prototype.remove = function () { };
+    KmlOverlay.prototype.getOverlays = function () { return; };
+    return KmlOverlay;
+}());
+
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Object)
+], KmlOverlay.prototype, "get", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", void 0)
+], KmlOverlay.prototype, "set", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], KmlOverlay.prototype, "empty", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], KmlOverlay.prototype, "remove", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Array)
+], KmlOverlay.prototype, "getOverlays", null);
+/**
+ * @hidden
+ */
+var LatLngBounds = (function () {
+    function LatLngBounds(southwestOrArrayOfLatLng, northeast) {
+        var args = !!northeast ? [southwestOrArrayOfLatLng, northeast] : southwestOrArrayOfLatLng;
+        this._objectInstance = new plugin.google.maps.LatLngBounds(args);
+    }
+    LatLngBounds.prototype.toString = function () { return; };
+    LatLngBounds.prototype.toUrlValue = function (precision) { return; };
+    LatLngBounds.prototype.extend = function (LatLng) { };
+    LatLngBounds.prototype.contains = function (LatLng) { return; };
+    LatLngBounds.prototype.getCenter = function () { return; };
+    return LatLngBounds;
+}());
+
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["g" /* InstanceProperty */],
+    __metadata("design:type", LatLng)
+], LatLngBounds.prototype, "northeast", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["g" /* InstanceProperty */],
+    __metadata("design:type", LatLng)
+], LatLngBounds.prototype, "southwest", void 0);
+__decorate([
+    __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["g" /* InstanceProperty */],
+    __metadata("design:type", String)
+], LatLngBounds.prototype, "type", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], LatLngBounds.prototype, "toString", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", String)
+], LatLngBounds.prototype, "toUrlValue", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng]),
+    __metadata("design:returntype", void 0)
+], LatLngBounds.prototype, "extend", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [LatLng]),
+    __metadata("design:returntype", Boolean)
+], LatLngBounds.prototype, "contains", null);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["c" /* CordovaInstance */])({ sync: true }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", LatLng)
+], LatLngBounds.prototype, "getCenter", null);
+/**
+ * @hidden
+ */
+var LatLng = (function () {
+    function LatLng(lat, lng) {
+        this.lat = lat;
+        this.lng = lng;
+    }
+    LatLng.prototype.equals = function (other) {
+        return this.lat === other.lat && this.lng === other.lng;
+    };
+    LatLng.prototype.toString = function () {
+        return this.lat + ',' + this.lng;
+    };
+    LatLng.prototype.toUrlValue = function (precision) {
+        precision = precision || 6;
+        return this.lat.toFixed(precision) + ',' + this.lng.toFixed(precision);
+    };
+    return LatLng;
+}());
+
+/**
+ * @hidden
+ */
+var Geocoder = (function () {
+    function Geocoder() {
+    }
+    /**
+     * Converts position to address and vice versa
+     * @param {GeocoderRequest} request Request object with either an address or a position
+     * @returns {Promise<GeocoderResult[]>}
+     */
+    Geocoder.prototype.geocode = function (request) {
+        return new Promise(function (resolve) {
+            plugin.google.maps.Geocoder.geocode(request, resolve);
+        });
+    };
+    return Geocoder;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["h" /* CordovaCheck */])(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], Geocoder.prototype, "geocode", null);
+Geocoder = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__ionic_native_core__["d" /* Plugin */])({
+        pluginName: 'Geocoder',
+        pluginRef: 'plugin.google.maps.Geocoder',
+        plugin: 'cordova-plugin-googlemaps',
+        repo: ''
+    })
+], Geocoder);
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 821:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(810);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__ = __webpack_require__(388);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignUpPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_place_service__ = __webpack_require__(388);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_style__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_page_base_page__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__ = __webpack_require__(813);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -352,108 +2591,206 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var SignUpPage = (function (_super) {
-    __extends(SignUpPage, _super);
-    function SignUpPage(injector, formBuilder, events, viewCtrl, valuesService) {
+
+
+
+var MapPage = (function (_super) {
+    __extends(MapPage, _super);
+    function MapPage(injector, events, storage, geolocation, platform) {
         var _this = _super.call(this, injector) || this;
-        _this.formBuilder = formBuilder;
+        _this.injector = injector;
         _this.events = events;
-        _this.viewCtrl = viewCtrl;
-        _this.valuesService = valuesService;
-        _this.user = {
-            email: '',
-            password: '',
-            confirmPassword: '',
-            phonenumber: '',
-            FirstName: '',
-            LastName: ''
-        };
-        //public user:App.RegisterViewModel= new App.RegisterViewModel();
-        _this.email = '';
-        _this.password = '';
-        _this.phonenumber = '';
-        _this.dob = '';
-        _this.form = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormGroup */]({
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required),
-            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required),
-            password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* FormControl */]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["g" /* Validators */].minLength(6)])
+        _this.storage = storage;
+        _this.geolocation = geolocation;
+        _this.platform = platform;
+        _this.params = {};
+        _this.events.subscribe('onMenuOpened', function (e) {
+            if (_this.map) {
+                _this.map.setClickable(false);
+            }
         });
-        var trans = ['LOGGED_IN_AS', 'EMAIL_TAKEN', 'ERROR_UNKNOWN'];
-        _this.translate.get(trans).subscribe(function (values) {
-            _this.trans = values;
+        _this.events.subscribe('onMenuClosed', function (e) {
+            if (_this.map) {
+                _this.map.setClickable(true);
+            }
         });
         return _this;
     }
-    SignUpPage.prototype.enableMenuSwipe = function () {
-        return false;
+    MapPage.prototype.enableMenuSwipe = function () {
+        return true;
     };
-    SignUpPage.prototype.ionViewDidLoad = function () {
-    };
-    SignUpPage.prototype.onCancel = function () {
-        this.viewCtrl.dismiss();
-    };
-    SignUpPage.prototype.save = function (model, isValid, event) {
-        var _this = this;
-        // call API to save customer
-        event.preventDefault();
-        if (isValid) {
-            this.showLoadingView();
-            this.valuesService.Register(model)
-                .subscribe(function (data) {
-                _this.showContentView();
-                if (data.isSuccess == true) {
-                    _this.setName('token', data.token);
-                    _this.setRoot('DashPage');
-                }
-                else {
-                    console.log(data);
-                    _this.showToast(data.error);
-                }
-            }, function (err) {
-                console.log(err);
-                _this.showContentView();
-            });
+    MapPage.prototype.ionViewWillUnload = function () {
+        this.isViewLoaded = false;
+        if (this.map) {
+            this.map.clear();
+            this.map.setZoom(1);
+            this.map.setCenter(new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["a" /* LatLng */](0, 0));
         }
     };
-    SignUpPage.prototype.onSubmit = function () {
+    MapPage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        this.showLoadingView();
-        this.user.Email = this.email;
-        this.user.Password = this.password;
-        this.user.ConfirmPassword = this.password;
-        this.user.PhoneNumber = this.phonenumber;
-        this.valuesService.Register(this.user).subscribe(function (data) {
-            if (data != undefined && data != '') {
-                _this.showContentView();
-                _this.setRoot('DashPage');
-            }
-            else {
-                _this.showToast('Sorry there was a problem Try Again');
+        this.isViewLoaded = true;
+        if (this.platform.is('cordova')) {
+            this.showLoadingView();
+            this.map = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["b" /* GoogleMap */]('map', {
+                styles: __WEBPACK_IMPORTED_MODULE_3__providers_map_style__["a" /* MapStyle */].dark(),
+                backgroundColor: '#333333'
+            });
+            this.map.one(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MAP_READY).then(function () {
+                _this.storage.unit.then(function (unit) {
+                    _this.params.unit = unit;
+                    var options = {
+                        enableHighAccuracy: true,
+                        timeout: 7000
+                    };
+                    _this.geolocation.getCurrentPosition(options).then(function (pos) {
+                        _this.params.location = pos.coords;
+                        _this.loadData();
+                    }, function (error) {
+                        _this.translate.get('ERROR_LOCATION_UNAVAILABLE').subscribe(function (str) { return _this.showToast(str); });
+                        _this.showErrorView();
+                    });
+                });
+            });
+            this.storage.mapStyle.then(function (mapStyle) {
+                _this.map.setMapTypeId(mapStyle);
+            });
+            this.map.on(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MY_LOCATION_BUTTON_CLICK).subscribe(function (map) {
+                if (_this.isViewLoaded) {
+                    _this.map.getCameraPosition().then(function (camera) {
+                        var target = camera.target;
+                        _this.params.location = {
+                            latitude: target.lat,
+                            longitude: target.lng
+                        };
+                        _this.showLoadingView();
+                        _this.onReload();
+                    });
+                }
+            });
+            this.map.setMyLocationEnabled(true);
+        }
+        else {
+            console.warn('Native: tried calling Google Maps.isAvailable, but Cordova is not available. Make sure to include cordova.js or run in a device/simulator');
+        }
+    };
+    MapPage.prototype.goToPlace = function (place) {
+        this.navigateTo('PlaceDetailPage', place);
+    };
+    MapPage.prototype.onSearchAddress = function (event) {
+        var _this = this;
+        if (this.platform.is('cordova')) {
+            var query = event.target.value;
+            var request = {
+                address: query
+            };
+            var geocoder = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* Geocoder */];
+            geocoder.geocode(request).then(function (results) {
+                var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["a" /* LatLng */](results[0].position.lat, results[0].position.lng);
+                var position = {
+                    target: target,
+                    zoom: 10
+                };
+                _this.map.moveCamera(position);
+                _this.params.location = {
+                    latitude: target.lat,
+                    longitude: target.lng
+                };
+                _this.showLoadingView();
+                _this.onReload();
+            });
+        }
+        else {
+            console.warn('Native: tried calling Google Maps.isAvailable, but Cordova is not available. Make sure to include cordova.js or run in a device/simulator');
+        }
+    };
+    MapPage.prototype.loadData = function () {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_2__providers_place_service__["a" /* Place */].load(this.params).then(function (places) {
+            _this.onPlacesLoaded(places);
+            _this.showContentView();
+            if (!places.length) {
+                _this.translate.get('EMPTY_PLACES').subscribe(function (str) { return _this.showToast(str); });
             }
         }, function (error) {
-            if (error.status === 401) {
-                _this.showToast(_this.trans.INVALID_CREDENTIALS);
-            }
-            else {
-                _this.showToast(_this.trans.ERROR_UNKNOWN);
-            }
+            _this.translate.get('ERROR_PLACES').subscribe(function (str) { return _this.showToast(str); });
             _this.showErrorView();
         });
     };
-    return SignUpPage;
-}(__WEBPACK_IMPORTED_MODULE_3__base_page_base_page__["a" /* BasePage */]));
-SignUpPage = __decorate([
+    MapPage.prototype.onPlacesLoaded = function (places) {
+        var _this = this;
+        var points = [];
+        for (var _i = 0, places_1 = places; _i < places_1.length; _i++) {
+            var place = places_1[_i];
+            var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["a" /* LatLng */](place.location.latitude, place.location.longitude);
+            var icon = (place.category && place.category.get('icon')) ? {
+                url: place.category.get('icon').url(),
+                size: {
+                    width: 32,
+                    height: 32
+                }
+            } : 'yellow';
+            var markerOptions = {
+                position: target,
+                title: place.title,
+                snippet: place.description,
+                icon: icon,
+                place: place,
+                styles: {
+                    maxWidth: '80%'
+                },
+            };
+            this.map.addMarker(markerOptions).then(function (marker) {
+                marker.addEventListener(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].INFO_CLICK).subscribe(function (e) {
+                    _this.goToPlace(e.get('place'));
+                });
+            });
+            points.push(target);
+        }
+        if (points.length) {
+            this.map.moveCamera({
+                target: new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["e" /* LatLngBounds */](points),
+                zoom: 10
+            });
+        }
+    };
+    MapPage.prototype.onReload = function () {
+        this.map.clear();
+        this.places = [];
+        this.loadData();
+    };
+    MapPage.prototype.onSearchButtonTapped = function () {
+        var _this = this;
+        if (this.platform.is('cordova')) {
+            this.map.getCameraPosition().then(function (camera) {
+                var position = camera.target;
+                _this.params.location = {
+                    latitude: position.lat,
+                    longitude: position.lng
+                };
+                _this.showLoadingView();
+                _this.onReload();
+            });
+        }
+        else {
+            console.warn('Native: tried calling GoogleMaps.getCameraPosition, but Cordova is not available. Make sure to include cordova.js or run in a device/simulator');
+        }
+    };
+    return MapPage;
+}(__WEBPACK_IMPORTED_MODULE_4__base_page_base_page__["a" /* BasePage */]));
+MapPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-sign-up-page',template:/*ion-inline-start:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\sign-up-page\sign-up-page.html"*/'<ion-header>\n  \n  <ion-toolbar color="primary">\n	<ion-title>{{ \'Create an Account\' | translate }}</ion-title>\n    <ion-buttons start>\n		\n      <button ion-button (click)="onCancel()">\n        <span showWhen="ios,core">{{ "CLOSE" | translate }}</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n </ion-toolbar>\n</ion-header>\n\n<ion-content padding text-center>\n<br/> \n  <div class="container">\n  <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)">\n   \n    <div class="form-group">\n     \n      <input type="email" class="form-control" name="email" [ngModel]="user.email" placeholder="Email"\n        required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">\n      <small [hidden]="email.valid || (email.pristine && !f.submitted)" class="text-danger">\n        Email is required and format should be <i>john@doe.com</i>.\n      </small>\n      <!--<pre *ngIf="email.errors" class="margin-20">{{ email.errors | json }}</pre>-->\n    </div>\n    <div class="form-group">\n     \n      <input type="password" class="form-control" name="password" [ngModel]="user.password"  placeholder="Password"\n        required validateEqual="confirmPassword" reverse="true" #password="ngModel">\n      <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">\n        Password is required\n      </small>\n      <small class="text-danger">\n        Password should have one Number,Upper Case Letter, special letter\n      </small>\n    </div>\n    <div class="form-group">\n     \n      <input type="password" class="form-control" name="confirmPassword" [ngModel]="user.confirmPassword"  placeholder="Confirm Password"\n        required validateEqual="password" reverse="false" #confirmPassword="ngModel">\n      <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">\n        Password mismatch\n      </small>\n      <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->\n    </div>\n		 <div class="form-group">\n      \n      <input type="tel" class="form-control" name="phonenumber" [ngModel]="user.phonenumber"  placeholder="Phone Number"\n        required  #phonenumber="ngModel">\n      <small [hidden]="phonenumber.valid || (phonenumber.pristine && !f.submitted)" class="text-danger">\n        phonenumber is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n		<div class="form-group">\n      \n      <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName"  placeholder="First Name"\n        required  #FirstName="ngModel">\n      <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">\n        FirstName is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n		<div class="form-group">\n    \n      <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName"  placeholder="Last Name"\n        required  #LastName="ngModel">\n      <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">\n        Last Name is required .\n      </small>\n      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->\n    </div>\n    <button type="submit" class="btn btn-block btn-danger" >SignUp</button>\n     </form>\n</div>\n\n<div text-center margin-top>\n      <span color="" (click)="SignIn()">Already Registered? Sign in</span>\n    </div>\n</ion-content> '/*ion-inline-end:"C:\nearme\ORdergRabGo\OrderGrabGo.git\src\pages\sign-up-page\sign-up-page.html"*/
+        selector: 'page-map-page',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\map-page\map-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ "MAP" | translate }}</ion-title>\n  </ion-navbar>\n  <ion-toolbar color="primary">\n    <ion-searchbar color="dark" debounce="2000"\n      placeholder="{{ \'ENTER_ADDRESS\' | translate }}"\n      (ionInput)="onSearchAddress($event)"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div id="map" class="map" #map showWhen="android,ios"></div>\n  <empty-view [text]="\'ERROR_CORDOVA_MAPS\' | translate" icon="map" showWhen="core">\n  </empty-view>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="secondary" text-center>\n    <button ion-button outline (click)="onSearchButtonTapped()">\n      {{ "SEARCH" | translate }}\n    </button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\map-page\map-page.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
-        __WEBPACK_IMPORTED_MODULE_2__angular_forms__["h" /* FormBuilder */],
         __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* Events */],
-        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_4__providers_ValuesService__["a" /* ValuesService */]])
-], SignUpPage);
+        __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__["a" /* LocalStorage */],
+        __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["o" /* Platform */]])
+], MapPage);
 
-//# sourceMappingURL=sign-up-page.js.map
+//# sourceMappingURL=map-page.js.map
 
 /***/ })
 
