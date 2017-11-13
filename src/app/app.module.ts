@@ -25,22 +25,21 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { CallNumber } from '@ionic-native/call-number';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { GoogleMaps } from '@ionic-native/google-maps';
+
 import { AppVersion } from '@ionic-native/app-version';
 import { HeaderColor } from '@ionic-native/header-color';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { AdMobFree } from '@ionic-native/admob-free';
 import { BrowserTab } from '@ionic-native/browser-tab';
-
 import { IonicStorageModule } from '@ionic/storage';
 import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { Ionic2RatingModule } from 'ionic2-rating';
-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
-import { QRScanner } from '@ionic-native/qr-scanner';
+
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -56,7 +55,7 @@ export function HttpLoaderFactory(http: Http) {
     Ng2ImgFallbackModule,
     LazyLoadImageModule,
     Ionic2RatingModule,
-    HttpModule,    
+      HttpModule, 
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -69,7 +68,7 @@ export function HttpLoaderFactory(http: Http) {
   entryComponents: [
     MyApp
   ],
-  providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService, SharedDataService,
+  providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService, SharedDataService, BarcodeScanner,
     StatusBar,
     SplashScreen,
     Diagnostic,
@@ -79,14 +78,13 @@ export function HttpLoaderFactory(http: Http) {
     CallNumber,
     InAppBrowser,
     SocialSharing,
-    GoogleMaps,
     Camera,
-      GoogleAnalytics, QRScanner,
+      GoogleAnalytics,
     AdMobFree,
     AppVersion,
     HeaderColor,
     BrowserTab,
     File,
-    Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+      Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler } ]
 })
 export class AppModule {}

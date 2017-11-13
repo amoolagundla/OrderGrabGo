@@ -6,10 +6,10 @@ webpackJsonp([10],{
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dash__ = __webpack_require__(817);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashPageModule", function() { return DashPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_profile_page__ = __webpack_require__(818);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(811);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditProfilePageModule", function() { return EditProfilePageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DashPageModule = (function () {
-    function DashPageModule() {
+var EditProfilePageModule = (function () {
+    function EditProfilePageModule() {
     }
-    return DashPageModule;
+    return EditProfilePageModule;
 }());
-DashPageModule = __decorate([
+EditProfilePageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */],
+            __WEBPACK_IMPORTED_MODULE_2__edit_profile_page__["a" /* EditProfilePage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__edit_profile_page__["a" /* EditProfilePage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */]
+            __WEBPACK_IMPORTED_MODULE_2__edit_profile_page__["a" /* EditProfilePage */]
         ]
     })
-], DashPageModule);
+], EditProfilePageModule);
 
-//# sourceMappingURL=Dash.module.js.map
+//# sourceMappingURL=edit-profile-page.module.js.map
 
 /***/ }),
 
-/***/ 810:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(810);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 811:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,14 +126,14 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 812:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(809);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
@@ -183,7 +183,7 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 813:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -191,8 +191,8 @@ SharedModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
 
 
@@ -350,16 +350,18 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 817:
+/***/ 818:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(813);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_qr_scanner__ = __webpack_require__(404);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashPage; });
-/// <reference path="../../providers/shareddataservice.ts" />
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_user_service__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_parse_file_service__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(30);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfilePage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -383,75 +385,108 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var DashPage = (function (_super) {
-    __extends(DashPage, _super);
-    function DashPage(injector, qrScanner) {
+
+
+
+
+var EditProfilePage = (function (_super) {
+    __extends(EditProfilePage, _super);
+    function EditProfilePage(injector, formBuilder, actionSheetCtrl, camera, viewCtrl) {
         var _this = _super.call(this, injector) || this;
-        _this.qrScanner = qrScanner;
-        _this.user = _this.userInfo;
-        _this.firstName = 'OrderGrabGo';
-        _this.scannedObject = '';
-        _this.sharedData.UserInfo.subscribe(function (data) {
-            if (data.FirstName != undefined) {
-                _this.user = data;
-                _this.userInfo = _this.user;
-                _this.firstName = 'Hello ' + _this.userInfo.FirstName;
-            }
-            _this.init();
+        _this.formBuilder = formBuilder;
+        _this.actionSheetCtrl = actionSheetCtrl;
+        _this.camera = camera;
+        _this.viewCtrl = viewCtrl;
+        var user = _this.navParams.get('user');
+        _this.form = new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["e" /* FormGroup */]({
+            name: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* FormControl */](user.get('name'), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].required),
+            email: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* FormControl */](user.get('email'), __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].required),
+            password: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* FormControl */]('', __WEBPACK_IMPORTED_MODULE_6__angular_forms__["g" /* Validators */].minLength(6)),
+            photo: new __WEBPACK_IMPORTED_MODULE_6__angular_forms__["f" /* FormControl */](user.get('photo')),
+        });
+        var trans = ['PROFILE_UPDATED', 'PROFILE_UPDATE_ERROR', 'CAMERA', 'CANCEL',
+            'CHOOSE_AN_OPTION', 'PHOTO_LIBRARY', 'FILE_UPLOADED', 'ERROR_FILE_UPLOAD'];
+        _this.translate.get(trans).subscribe(function (values) {
+            _this.trans = values;
         });
         return _this;
     }
-    DashPage.prototype.enableMenuSwipe = function () {
+    EditProfilePage.prototype.enableMenuSwipe = function () {
         return true;
     };
-    DashPage.prototype.onFilter = function (filter) {
+    EditProfilePage.prototype.ionViewDidLoad = function () { };
+    EditProfilePage.prototype.onDismiss = function () {
+        this.viewCtrl.dismiss();
     };
-    DashPage.prototype.init = function () {
-        this.navigatePage();
-    };
-    DashPage.prototype.login = function () {
-        this.navigateTo('CategoriesPage');
-    };
-    DashPage.prototype.scan = function () {
+    EditProfilePage.prototype.chooseImage = function (sourceType) {
         var _this = this;
-        // Optionally request the permission early
-        this.qrScanner.prepare()
-            .then(function (status) {
-            if (status.authorized) {
-                // camera permission was granted
-                // start scanning
-                var scanSub_1 = _this.qrScanner.scan().subscribe(function (text) {
-                    console.log('Scanned something', text);
-                    _this.scannedObject = text;
-                    _this.qrScanner.hide(); // hide camera preview
-                    scanSub_1.unsubscribe(); // stop scanning
-                });
-                // show camera preview
-                _this.qrScanner.show();
-                // wait for user to scan something, then the observable callback will be called
-            }
-            else if (status.denied) {
-                // camera permission was permanently denied
-                // you must use QRScanner.openSettings() method to guide the user to the settings page
-                // then they can grant the permission from there
-            }
-            else {
-                // permission was denied, but not permanently. You can ask for permission again at a later time.
-            }
-        })
-            .catch(function (e) { return console.log('Error is', e); });
+        var options = {
+            sourceType: sourceType,
+            destinationType: this.camera.DestinationType.DATA_URL,
+            targetWidth: 1000,
+            targetHeight: 1000,
+            quality: 80,
+        };
+        this.camera.getPicture(options).then(function (imageData) {
+            _this.showLoadingView();
+            __WEBPACK_IMPORTED_MODULE_5__providers_parse_file_service__["a" /* ParseFile */].upload(imageData).then(function (file) {
+                _this.form.value.photo = file;
+                _this.showContentView();
+                _this.showToast(_this.trans.FILE_UPLOADED);
+            }, function (error) {
+                _this.showContentView();
+                _this.showToast(_this.trans.ERROR_FILE_UPLOAD);
+            });
+        });
     };
-    return DashPage;
+    EditProfilePage.prototype.onUpload = function () {
+        var _this = this;
+        var actionSheet = this.actionSheetCtrl.create({
+            title: this.trans.CHOOSE_AN_OPTION,
+            buttons: [{
+                    text: this.trans.PHOTO_LIBRARY,
+                    handler: function () {
+                        _this.chooseImage(_this.camera.PictureSourceType.PHOTOLIBRARY);
+                    }
+                }, {
+                    text: this.trans.CAMERA,
+                    handler: function () {
+                        _this.chooseImage(_this.camera.PictureSourceType.CAMERA);
+                    }
+                }, {
+                    text: this.trans.CANCEL,
+                    role: 'cancel'
+                }]
+        });
+        actionSheet.present();
+    };
+    EditProfilePage.prototype.onSubmit = function () {
+        var _this = this;
+        this.showLoadingView();
+        __WEBPACK_IMPORTED_MODULE_3__providers_user_service__["a" /* User */].save(this.form.value).then(function () {
+            _this.showContentView();
+            _this.showToast(_this.trans.PROFILE_UPDATED);
+            _this.onDismiss();
+        }, function (error) {
+            _this.showContentView();
+            _this.showToast(_this.trans.PROFILE_UPDATE_ERROR);
+        });
+    };
+    return EditProfilePage;
 }(__WEBPACK_IMPORTED_MODULE_2__base_page_base_page__["a" /* BasePage */]));
-DashPage = __decorate([
+EditProfilePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'Dash',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\dashboard-page\Dash.html"*/'\n\n<ion-header>\n <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title >{{firstName}}</ion-title>\n		 <ion-buttons end>\n            \n						<a (click)="scan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true" ></i></a>\n     \n        </ion-buttons>\n  </ion-navbar> \n	\n</ion-header>\n\n<ion-content padding #container style="background-size: cover;background-position: center center;background-image:url(http://www.ansonika.com/quickfood/img/sub_header_home.jpg);">\n    <p>{{scannedObject}}</p>\n<table class="table" style="\n    margin-top: 25%;">\n    \n    <tbody>\n      <tr>\n        <button ion-button block class="btn btn-lg btn-success"    icon-start (click)="login()">\n <ion-icon ios="ios-restaurant" md="md-restaurant"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Order Now\n</button><br/><br/>\n      </tr>\n      <tr>\n      <button ion-button block class="btn btn-lg btn-success"   icon-start>\n <ion-icon ios="ios-mail" md="md-mail"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Messages\n</button><br/><br/>\n      </tr>\n      <tr>\n        <button ion-button block class="btn btn-lg btn-success"   icon-start>\n  <ion-icon ios="ios-car" md="md-car"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Parking\n</button><br/><br/>\n      </tr>\n			<tr>\n        <button ion-button block class="btn btn-lg btn-success"   icon-start>\n  <ion-icon ios="ios-cash" md="md-cash"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  Donate\n</button><br/><br/>\n      </tr>\n    </tbody>\n  </table>\n	\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\dashboard-page\Dash.html"*/
+        selector: 'page-edit-profile',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\edit-profile-page\edit-profile-page.html"*/'<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-buttons start>\n      <button ion-button clear (click)="onDismiss()">\n        <span showWhen="ios,core">{{ "CLOSE" | translate }}</span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>{{ \'EDIT_PROFILE\' | translate }}</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n\n    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>\n\n      <ion-item>\n        <ion-icon name="contact" item-left color="primary"></ion-icon>\n        <ion-label color="primary">{{ \'NAME\' | translate }}</ion-label>\n        <ion-input type="text" formControlName="name"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon name="at" item-left color="primary"></ion-icon>\n        <ion-label color="primary">{{ \'EMAIL\' | translate }}</ion-label>\n        <ion-input type="email" formControlName="email"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-icon name="lock" item-left color="primary"></ion-icon>\n        <ion-label color="primary">{{ \'PASSWORD\' | translate }}</ion-label>\n        <ion-input type="text" formControlName="password"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label color="primary">\n          {{ \'UPLOAD_PICTURE\' | translate }}\n        </ion-label>\n        <button type="button" ion-button clear item-right icon-only (click)="onUpload()">\n          <ion-icon name="camera" item-left color="primary"></ion-icon>\n        </button>\n      </ion-item>\n\n      <div padding>\n        <button type="submit" ion-button block [disabled]="!form.valid">\n          {{ \'SUBMIT\' | translate }}\n        </button>\n      </div>\n\n    </form>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\edit-profile-page\edit-profile-page.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"], __WEBPACK_IMPORTED_MODULE_3__ionic_native_qr_scanner__["a" /* QRScanner */]])
-], DashPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
+        __WEBPACK_IMPORTED_MODULE_6__angular_forms__["h" /* FormBuilder */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ActionSheetController */],
+        __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ViewController */]])
+], EditProfilePage);
 
-//# sourceMappingURL=Dash.js.map
+//# sourceMappingURL=edit-profile-page.js.map
 
 /***/ })
 

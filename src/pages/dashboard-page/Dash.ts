@@ -3,7 +3,8 @@
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 import { BasePage } from '../base-page/base-page';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
+
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import {App} from '../../models/models';
 @IonicPage()
 @Component({
@@ -11,10 +12,14 @@ import {App} from '../../models/models';
     templateUrl: 'Dash.html'
 })
 export class DashPage extends BasePage {
+    qrData = null;
+    createdCode = null;
+    scannedCode = null;
     public user: App.UserInfoViewModel = this.userInfo;
     public firstName: string = 'OrderGrabGo';
     public scannedObject: string = '';
-    constructor(injector: Injector, private qrScanner: QRScanner
+    public scanData: boolean = false;
+    constructor(injector: Injector, private _barcodeScanner: BarcodeScanner
     ) {
         super(injector);
         
@@ -35,9 +40,25 @@ export class DashPage extends BasePage {
     onFilter(filter) {
 
     }
-
+  
     init() {
         this.navigatePage();
+        // Optionally request the permission early
+        //this.qrScanner.prepare()
+        //    .then((status: QRScannerStatus) => {
+        //        if (status.authorized) {
+        //            // camera permission was granted
+        //            // wait for user to scan something, then the observable callback will be called
+        //            this.scanData = true;
+        //        } else if (status.denied) {
+        //            // camera permission was permanently denied
+        //            // you must use QRScanner.openSettings() method to guide the user to the settings page
+        //            // then they can grant the permission from there
+        //        } else {
+        //            // permission was denied, but not permanently. You can ask for permission again at a later time.
+        //        }
+        //    })
+        //    .catch((e: any) => console.log('Error is', e));
 
     }
 
@@ -48,35 +69,24 @@ export class DashPage extends BasePage {
     }
 
     scan() {
-        // Optionally request the permission early
-        this.qrScanner.prepare()
-            .then((status: QRScannerStatus) => {
-                if (status.authorized) {
-                    // camera permission was granted
+        this._barcodeScanner.scan().then((barcodeData) => {
+            if (barcodeData.cancelled) {
+                console.log("User cancelled the action!");
+                
+                return false;
+            }
+            console.log("Scanned successfully!");
+            console.log(barcodeData);
+            this.scannedObject = barcodeData.text;
+        }, (err) => {
+            console.log(err);
+        });
+        //this.barcodeScanner.scan().then((barcodeData) => {
+        //    this.scannedCode = barcodeData;
+        //}, (err) => {
+            
+        //});
 
-
-                    // start scanning
-                    let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-                        console.log('Scanned something', text);
-                        this.scannedObject = text;
-                        this.qrScanner.hide(); // hide camera preview
-                        scanSub.unsubscribe(); // stop scanning
-                    });
-
-                    // show camera preview
-                    this.qrScanner.show();
-
-                    // wait for user to scan something, then the observable callback will be called
-
-                } else if (status.denied) {
-                    // camera permission was permanently denied
-                    // you must use QRScanner.openSettings() method to guide the user to the settings page
-                    // then they can grant the permission from there
-                } else {
-                    // permission was denied, but not permanently. You can ask for permission again at a later time.
-                }
-            })
-            .catch((e: any) => console.log('Error is', e));
+        
     }
-
 }

@@ -6,10 +6,10 @@ webpackJsonp([11],{
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories__ = __webpack_require__(816);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesPageModule", function() { return CategoriesPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Dash__ = __webpack_require__(817);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(811);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashPageModule", function() { return DashPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CategoriesPageModule = (function () {
-    function CategoriesPageModule() {
+var DashPageModule = (function () {
+    function DashPageModule() {
     }
-    return CategoriesPageModule;
+    return DashPageModule;
 }());
-CategoriesPageModule = __decorate([
+DashPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */],
+            __WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]
+            __WEBPACK_IMPORTED_MODULE_2__Dash__["a" /* DashPage */]
         ]
     })
-], CategoriesPageModule);
+], DashPageModule);
 
-//# sourceMappingURL=categories.module.js.map
+//# sourceMappingURL=Dash.module.js.map
 
 /***/ }),
 
-/***/ 810:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(810);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 811:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,14 +126,14 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 812:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(809);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
@@ -183,7 +183,7 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 813:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -191,8 +191,8 @@ SharedModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
 
 
@@ -350,18 +350,16 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 816:
+/***/ 817:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_location_accuracy__ = __webpack_require__(403);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_diagnostic__ = __webpack_require__(400);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_page_base_page__ = __webpack_require__(813);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(389);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_ValuesService__ = __webpack_require__(215);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__ = __webpack_require__(397);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashPage; });
+/// <reference path="../../providers/shareddataservice.ts" />
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -385,79 +383,84 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
-
-var CategoriesPage = (function (_super) {
-    __extends(CategoriesPage, _super);
-    function CategoriesPage(injector, events, locationAccuracy, diagnostic, valuesService, geolocation) {
+var DashPage = (function (_super) {
+    __extends(DashPage, _super);
+    function DashPage(injector, _barcodeScanner) {
         var _this = _super.call(this, injector) || this;
-        _this.events = events;
-        _this.locationAccuracy = locationAccuracy;
-        _this.diagnostic = diagnostic;
-        _this.valuesService = valuesService;
-        _this.geolocation = geolocation;
-        _this.locationAccuracy.canRequest().then(function (canRequest) {
-            if (canRequest) {
-                var priority = _this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY;
-                _this.locationAccuracy.request(priority)
-                    .then(function () { return console.log('Request successful'); })
-                    .catch(function (error) {
-                    if (error && error.code !== _this.locationAccuracy.ERROR_USER_DISAGREED) {
-                        _this.translate.get('ERROR_LOCATION_MODE').subscribe(function (res) {
-                            _this.showConfirm(res).then(function () { return _this.diagnostic.switchToLocationSettings(); });
-                        });
-                    }
-                });
+        _this._barcodeScanner = _barcodeScanner;
+        _this.qrData = null;
+        _this.createdCode = null;
+        _this.scannedCode = null;
+        _this.user = _this.userInfo;
+        _this.firstName = 'OrderGrabGo';
+        _this.scannedObject = '';
+        _this.scanData = false;
+        _this.sharedData.UserInfo.subscribe(function (data) {
+            if (data.FirstName != undefined) {
+                _this.user = data;
+                _this.userInfo = _this.user;
+                _this.firstName = 'Hello ' + _this.userInfo.FirstName;
             }
-        }).catch(function (err) { return console.log(err); });
+            _this.init();
+        });
         return _this;
     }
-    CategoriesPage.prototype.enableMenuSwipe = function () {
+    DashPage.prototype.enableMenuSwipe = function () {
         return true;
     };
-    CategoriesPage.prototype.ionViewDidLoad = function () {
-        this.showLoadingView();
-        this.loadData();
+    DashPage.prototype.onFilter = function (filter) {
     };
-    CategoriesPage.prototype.goToPlaces = function () {
-        this.navigateTo('PlacesPage', this.categories[0]);
+    DashPage.prototype.init = function () {
+        this.navigatePage();
+        // Optionally request the permission early
+        //this.qrScanner.prepare()
+        //    .then((status: QRScannerStatus) => {
+        //        if (status.authorized) {
+        //            // camera permission was granted
+        //            // wait for user to scan something, then the observable callback will be called
+        //            this.scanData = true;
+        //        } else if (status.denied) {
+        //            // camera permission was permanently denied
+        //            // you must use QRScanner.openSettings() method to guide the user to the settings page
+        //            // then they can grant the permission from there
+        //        } else {
+        //            // permission was denied, but not permanently. You can ask for permission again at a later time.
+        //        }
+        //    })
+        //    .catch((e: any) => console.log('Error is', e));
     };
-    CategoriesPage.prototype.getlocation = function () {
-        return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+    DashPage.prototype.login = function () {
+        this.navigateTo('CategoriesPage');
     };
-    CategoriesPage.prototype.loadData = function () {
+    DashPage.prototype.scan = function () {
         var _this = this;
-        this.getlocation().then(function (resp) {
-            _this.valuesService.CheckLocation(resp.coords.latitude, resp.coords.longitude).subscribe(function (data) {
-                _this.places = data;
-                _this.showContentView();
-                _this.onRefreshComplete();
-            });
-        }).catch(function (error) {
-            _this.showEmptyView();
+        this._barcodeScanner.scan().then(function (barcodeData) {
+            if (barcodeData.cancelled) {
+                console.log("User cancelled the action!");
+                return false;
+            }
+            console.log("Scanned successfully!");
+            console.log(barcodeData);
+            _this.scannedObject = barcodeData.text;
+        }, function (err) {
+            console.log(err);
         });
+        //this.barcodeScanner.scan().then((barcodeData) => {
+        //    this.scannedCode = barcodeData;
+        //}, (err) => {
+        //});
     };
-    CategoriesPage.prototype.onReload = function (refresher) {
-        this.refresher = refresher;
-        this.loadData();
-    };
-    return CategoriesPage;
-}(__WEBPACK_IMPORTED_MODULE_4__base_page_base_page__["a" /* BasePage */]));
-CategoriesPage = __decorate([
+    return DashPage;
+}(__WEBPACK_IMPORTED_MODULE_2__base_page_base_page__["a" /* BasePage */]));
+DashPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-categories',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\categories\categories.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ \'OrderGrabNGo\' | translate }}</ion-title>\n  </ion-navbar> \n	<ion-toolbar color="primary">\n    <ion-searchbar color="dark" debounce="2000"\n      placeholder="{{ \'Start Searching\' | translate }}"\n      (ionInput)="onSearchAddress()"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n\n  <empty-view *ngIf="isErrorViewVisible" icon="alert"\n    [text]="\'ERROR_CATEGORIES\' | translate">\n  </empty-view>\n\n  <empty-view *ngIf="isEmptyViewVisible" icon="bookmark"\n    [text]="\'EMPTY_CATEGORIES\' | translate">\n  </empty-view>\n\n  <ion-refresher (ionRefresh)="onReload($event)">\n    <ion-refresher-content\n      pullingText="{{ \'PULL_TO_REFRESH\' | translate }}"\n      refreshingText="{{ \'REFRESHING\' | translate }}">\n    </ion-refresher-content>\n  </ion-refresher>\n<div *ngIf="isContentViewVisible"> \n	<!-- <ion-card *ngFor="let place of places.results">\n\n    <img src="assets/img/location.png" offset="100"\n          [lazyLoad]="place.photos[0].photo_reference">\n  <ion-item>\n   \n    <h6 class="text-danger-big">{{place.name}}</h6>\n    <p class="text-danger-small">{{ place.vicinity}}</p>\n  </ion-item>\n  <ion-item >\n   <span item-left></span>\n    <span item-left class="text-danger-small">{{place.opening_hours.open_now==true? \'Open\':\'Closed\'}}</span>\n    <button ion-button icon-left clear item-end>\n      <ion-icon name="navigate"></ion-icon>\n      Start\n    </button>\n  </ion-item> </ion-card> -->\n<div class="white_bg" >\n    <div class="container margin_60">\n        \n        <div class="main_title">\n            <h2 class="nomargin_top" style="\n    font-size: 22px;\n    font-family: -webkit-pictograph;">Choose from Most Popular</h2>\n            \n        </div>\n        \n        <div class="row">\n            <div class="col-md-6" style="width: -webkit-fill-available;">\n                <a href="detail_page.html" class="strip_list" *ngFor="let place of places.results">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n												 <img src="{{place.photos[0].photo_reference}}" offset="100"\n         >\n                           \n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>{{place.name}}</h3>\n                        <div class="type" >\n                            {{ place.types.join(\', \') }}\n                        </div>\n                        <div class="location">\n                           {{place.vicinity}} <span class="opening">{{place.opening_hours.open_now==true? \'Open\':\'Closed\'}}</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n              \n            </div>\n        </div><!-- End row -->   \n        \n        </div><!-- End container -->\n        </div>\n\n</div>\n	 <!-- <!-- <ion-list *ngIf="isContentViewVisible">\n    <ion-item *ngFor="let place of places.results" (click)="goToPlace(place)"\n      color="dark" no-lines>\n      <ion-thumbnail item-left>\n        <img src="assets/img/location.png" offset="100"\n          [lazyLoad]="place.photos[0].photo_reference"\n          >\n      </ion-thumbnail>\n      <h2 class="bold" ion-text color="primary">{{ place.name }}</h2>\n     \n      <ion-note ion-text color="light" item-right>\n        \n      </ion-note>\n     \n    </ion-item> \n  </ion-list>  -->\n	\n	\n  \n  \n  \n \n \n</ion-content>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\categories\categories.html"*/
+        selector: 'Dash',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\dashboard-page\Dash.html"*/'\n\n<ion-header>\n <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title >{{firstName}}</ion-title>\n		 <ion-buttons end>\n           <button ion-button (click)="scan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i></button>\n						\n     \n        </ion-buttons>\n  </ion-navbar> \n	\n</ion-header>\n\n<ion-content padding #container style="background-size: cover;background-position: center center;background-image:url(http://www.ansonika.com/quickfood/img/sub_header_home.jpg);">\n    \n\n    <button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>\n\n\n\n    \n\n    \n\n    <ion-card *ngIf="scannedCode">\n\n        <ion-card-content>\n\n            Result from Scan: {{ scannedCode }}\n\n        </ion-card-content>\n\n    </ion-card>\n<table class="table" style="\n    margin-top: 25%;">\n    \n    <tbody>\n      <tr>\n        <button ion-button block class="btn btn-lg btn-success"    icon-start (click)="login()">\n <ion-icon ios="ios-restaurant" md="md-restaurant"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Order Now\n</button><br/><br/>\n      </tr>\n      <tr>\n      <button ion-button block class="btn btn-lg btn-success"   icon-start>\n <ion-icon ios="ios-mail" md="md-mail"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Messages\n</button><br/><br/>\n      </tr>\n      <tr>\n        <button ion-button block class="btn btn-lg btn-success"   icon-start>\n  <ion-icon ios="ios-car" md="md-car"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;\n  Parking\n</button><br/><br/>\n      </tr>\n			<tr>\n        <button ion-button block class="btn btn-lg btn-success"   icon-start>\n  <ion-icon ios="ios-cash" md="md-cash"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n  Donate\n</button><br/><br/>\n      </tr>\n    </tbody>\n  </table>\n	\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\dashboard-page\Dash.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
-        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* Events */],
-        __WEBPACK_IMPORTED_MODULE_2__ionic_native_location_accuracy__["a" /* LocationAccuracy */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_diagnostic__["a" /* Diagnostic */],
-        __WEBPACK_IMPORTED_MODULE_6__providers_ValuesService__["a" /* ValuesService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__["a" /* Geolocation */]])
-], CategoriesPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"], __WEBPACK_IMPORTED_MODULE_3__ionic_native_barcode_scanner__["a" /* BarcodeScanner */]])
+], DashPage);
 
-//# sourceMappingURL=categories.js.map
+//# sourceMappingURL=Dash.js.map
 
 /***/ })
 

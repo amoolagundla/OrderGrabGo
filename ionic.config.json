@@ -1,6 +1,6 @@
 {
-  "name": "NearmeApp v3",
-  "app_id": "com.quanlabs.nearmeapp",
+  "name": "OrderGrabGo",
+  "app_id": "com.EPathUsa.OrderGrabGo",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

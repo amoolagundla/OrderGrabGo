@@ -6,10 +6,10 @@ webpackJsonp([12],{
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_review_page__ = __webpack_require__(815);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(812);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddReviewPageModule", function() { return AddReviewPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__categories__ = __webpack_require__(816);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(811);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesPageModule", function() { return CategoriesPageModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddReviewPageModule = (function () {
-    function AddReviewPageModule() {
+var CategoriesPageModule = (function () {
+    function CategoriesPageModule() {
     }
-    return AddReviewPageModule;
+    return CategoriesPageModule;
 }());
-AddReviewPageModule = __decorate([
+CategoriesPageModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__add_review_page__["a" /* AddReviewPage */],
+            __WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_review_page__["a" /* AddReviewPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__add_review_page__["a" /* AddReviewPage */]
+            __WEBPACK_IMPORTED_MODULE_2__categories__["a" /* CategoriesPage */]
         ]
     })
-], AddReviewPageModule);
+], CategoriesPageModule);
 
-//# sourceMappingURL=add-review-page.module.js.map
+//# sourceMappingURL=categories.module.js.map
 
 /***/ }),
 
-/***/ 810:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(810);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -84,7 +84,7 @@ EmptyViewModule = __decorate([
 
 /***/ }),
 
-/***/ 811:
+/***/ 810:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,14 +126,14 @@ EmptyView = __decorate([
 
 /***/ }),
 
-/***/ 812:
+/***/ 811:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(809);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(387);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(386);
@@ -183,7 +183,7 @@ SharedModule = __decorate([
 
 /***/ }),
 
-/***/ 813:
+/***/ 812:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -191,8 +191,8 @@ SharedModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_local_storage__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(129);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BasePage; });
 
 
@@ -350,15 +350,18 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 815:
+/***/ 816:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_review_service__ = __webpack_require__(392);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_page_base_page__ = __webpack_require__(813);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddReviewPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_location_accuracy__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_diagnostic__ = __webpack_require__(400);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_page_base_page__ = __webpack_require__(812);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_ValuesService__ = __webpack_require__(215);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoriesPage; });
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -383,49 +386,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AddReviewPage = (function (_super) {
-    __extends(AddReviewPage, _super);
-    function AddReviewPage(injector, viewCtrl) {
+
+
+
+var CategoriesPage = (function (_super) {
+    __extends(CategoriesPage, _super);
+    function CategoriesPage(injector, events, locationAccuracy, diagnostic, valuesService, geolocation) {
         var _this = _super.call(this, injector) || this;
-        _this.viewCtrl = viewCtrl;
-        _this.review = {
-            rating: 3,
-            comment: ''
-        };
-        _this.review.place = _this.navParams.get('place');
+        _this.events = events;
+        _this.locationAccuracy = locationAccuracy;
+        _this.diagnostic = diagnostic;
+        _this.valuesService = valuesService;
+        _this.geolocation = geolocation;
+        _this.locationAccuracy.canRequest().then(function (canRequest) {
+            if (canRequest) {
+                var priority = _this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY;
+                _this.locationAccuracy.request(priority)
+                    .then(function () { return console.log('Request successful'); })
+                    .catch(function (error) {
+                    if (error && error.code !== _this.locationAccuracy.ERROR_USER_DISAGREED) {
+                        _this.translate.get('ERROR_LOCATION_MODE').subscribe(function (res) {
+                            _this.showConfirm(res).then(function () { return _this.diagnostic.switchToLocationSettings(); });
+                        });
+                    }
+                });
+            }
+        }).catch(function (err) { return console.log(err); });
         return _this;
     }
-    AddReviewPage.prototype.enableMenuSwipe = function () {
-        return false;
+    CategoriesPage.prototype.enableMenuSwipe = function () {
+        return true;
     };
-    AddReviewPage.prototype.ionViewDidLoad = function () {
-    };
-    AddReviewPage.prototype.onSubmit = function () {
-        var _this = this;
+    CategoriesPage.prototype.ionViewDidLoad = function () {
         this.showLoadingView();
-        __WEBPACK_IMPORTED_MODULE_2__providers_review_service__["a" /* Review */].create(this.review).then(function (review) {
-            _this.showContentView();
-            _this.onDismiss();
-            _this.translate.get('REVIEW_ADDED').subscribe(function (str) { return _this.showToast(str); });
-        }, function (error) {
-            _this.showErrorView();
-            _this.translate.get('ERROR_REVIEW_ADD').subscribe(function (str) { return _this.showToast(str); });
+        this.loadData();
+    };
+    CategoriesPage.prototype.goToPlaces = function () {
+        this.navigateTo('PlacesPage', this.categories[0]);
+    };
+    CategoriesPage.prototype.getlocation = function () {
+        return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+    };
+    CategoriesPage.prototype.loadData = function () {
+        var _this = this;
+        this.getlocation().then(function (resp) {
+            _this.valuesService.CheckLocation(resp.coords.latitude, resp.coords.longitude).subscribe(function (data) {
+                _this.places = data;
+                _this.showContentView();
+                _this.onRefreshComplete();
+            });
+        }).catch(function (error) {
+            _this.showEmptyView();
         });
     };
-    AddReviewPage.prototype.onDismiss = function () {
-        this.viewCtrl.dismiss();
+    CategoriesPage.prototype.onReload = function (refresher) {
+        this.refresher = refresher;
+        this.loadData();
     };
-    return AddReviewPage;
-}(__WEBPACK_IMPORTED_MODULE_3__base_page_base_page__["a" /* BasePage */]));
-AddReviewPage = __decorate([
+    return CategoriesPage;
+}(__WEBPACK_IMPORTED_MODULE_4__base_page_base_page__["a" /* BasePage */]));
+CategoriesPage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-        selector: 'page-add-review-page',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\add-review-page\add-review-page.html"*/'<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-buttons start>\n      <button ion-button clear (click)="onDismiss()">\n        <span showWhen="ios,core">{{ \'CLOSE\' | translate }}</span>\n        <ion-icon name="md-close" showWhen="android"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-title>\n      {{ \'ADD_REVIEW\' | translate }}\n    </ion-title>\n </ion-toolbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list text-center>\n    <rating [(ngModel)]="review.rating"></rating>\n    <ion-item>\n      <ion-label color="primary" stacked>{{ \'COMMENT\' | translate }}</ion-label>\n      <ion-textarea [(ngModel)]="review.comment" rows="6"></ion-textarea>\n    </ion-item>\n    <div padding>\n      <button ion-button block color="primary" (click)="onSubmit()">\n        {{ \'SUBMIT\' | translate }}\n      </button>\n    </div>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\add-review-page\add-review-page.html"*/
+        selector: 'page-categories',template:/*ion-inline-start:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\categories\categories.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ \'OrderGrabNGo\' | translate }}</ion-title>\n  </ion-navbar> \n	<ion-toolbar color="primary">\n    <ion-searchbar color="dark" debounce="2000"\n      placeholder="{{ \'Start Searching\' | translate }}"\n      (ionInput)="onSearchAddress()"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class="card-background-page">\n\n  <empty-view *ngIf="isErrorViewVisible" icon="alert"\n    [text]="\'ERROR_CATEGORIES\' | translate">\n  </empty-view>\n\n  <empty-view *ngIf="isEmptyViewVisible" icon="bookmark"\n    [text]="\'EMPTY_CATEGORIES\' | translate">\n  </empty-view>\n\n  <ion-refresher (ionRefresh)="onReload($event)">\n    <ion-refresher-content\n      pullingText="{{ \'PULL_TO_REFRESH\' | translate }}"\n      refreshingText="{{ \'REFRESHING\' | translate }}">\n    </ion-refresher-content>\n  </ion-refresher>\n<div *ngIf="isContentViewVisible"> \n	<!-- <ion-card *ngFor="let place of places.results">\n\n    <img src="assets/img/location.png" offset="100"\n          [lazyLoad]="place.photos[0].photo_reference">\n  <ion-item>\n   \n    <h6 class="text-danger-big">{{place.name}}</h6>\n    <p class="text-danger-small">{{ place.vicinity}}</p>\n  </ion-item>\n  <ion-item >\n   <span item-left></span>\n    <span item-left class="text-danger-small">{{place.opening_hours.open_now==true? \'Open\':\'Closed\'}}</span>\n    <button ion-button icon-left clear item-end>\n      <ion-icon name="navigate"></ion-icon>\n      Start\n    </button>\n  </ion-item> </ion-card> -->\n<div class="white_bg" >\n    <div class="container margin_60">\n        \n        <div class="main_title">\n            <h2 class="nomargin_top" style="\n    font-size: 22px;\n    font-family: -webkit-pictograph;">Choose from Most Popular</h2>\n            \n        </div>\n        \n        <div class="row">\n            <div class="col-md-6" style="width: -webkit-fill-available;">\n                <a href="detail_page.html" class="strip_list" *ngFor="let place of places.results">\n                <div class="ribbon_1">Popular</div>\n                    <div class="desc">\n                        <div class="thumb_strip">\n												 <img src="{{place.photos[0].photo_reference}}" offset="100"\n         >\n                           \n                        </div>\n                        <div class="rating">\n                            <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>\n                        </div>\n                        <h3>{{place.name}}</h3>\n                        <div class="type" >\n                            {{ place.types.join(\', \') }}\n                        </div>\n                        <div class="location">\n                           {{place.vicinity}} <span class="opening">{{place.opening_hours.open_now==true? \'Open\':\'Closed\'}}</span>\n                        </div>\n                        <ul>\n                            <li>Take away<i class="icon_check_alt2 ok"></i></li>\n                            <li>Delivery<i class="icon_check_alt2 ok"></i></li>\n                        </ul>\n                    </div><!-- End desc-->\n                </a><!-- End strip_list-->\n              \n            </div>\n        </div><!-- End row -->   \n        \n        </div><!-- End container -->\n        </div>\n\n</div>\n	 <!-- <!-- <ion-list *ngIf="isContentViewVisible">\n    <ion-item *ngFor="let place of places.results" (click)="goToPlace(place)"\n      color="dark" no-lines>\n      <ion-thumbnail item-left>\n        <img src="assets/img/location.png" offset="100"\n          [lazyLoad]="place.photos[0].photo_reference"\n          >\n      </ion-thumbnail>\n      <h2 class="bold" ion-text color="primary">{{ place.name }}</h2>\n     \n      <ion-note ion-text color="light" item-right>\n        \n      </ion-note>\n     \n    </ion-item> \n  </ion-list>  -->\n	\n	\n  \n  \n  \n \n \n</ion-content>\n'/*ion-inline-end:"C:\nearme\OrderGrabGo.git\OrderGrabGo\src\pages\categories\categories.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ViewController */]])
-], AddReviewPage);
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"],
+        __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* Events */],
+        __WEBPACK_IMPORTED_MODULE_2__ionic_native_location_accuracy__["a" /* LocationAccuracy */],
+        __WEBPACK_IMPORTED_MODULE_3__ionic_native_diagnostic__["a" /* Diagnostic */],
+        __WEBPACK_IMPORTED_MODULE_6__providers_ValuesService__["a" /* ValuesService */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_geolocation__["a" /* Geolocation */]])
+], CategoriesPage);
 
-//# sourceMappingURL=add-review-page.js.map
+//# sourceMappingURL=categories.js.map
 
 /***/ })
 
