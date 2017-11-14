@@ -7,7 +7,7 @@
     </button>
     <ion-title >{{firstName}}</ion-title>
 		 <ion-buttons end>
-           <button ion-button (click)="scan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i></button>
+           <button ion-button (click)="qrCodeScan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i></button>
 						
      
         </ion-buttons>
@@ -17,9 +17,7 @@
 
 <ion-content padding #container style="background-size: cover;background-position: center center;background-image:url(http://www.ansonika.com/quickfood/img/sub_header_home.jpg);">
     
-    <button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
-
-    
+    <!--<button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>-->
     
     <ion-card *ngIf="scannedCode">
         <ion-card-content>

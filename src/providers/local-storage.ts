@@ -48,7 +48,7 @@ export class LocalStorage {
       return this.storage.get('token');
   }
 
-   RemoveToken() {
+  RemoveToken() {
        return this.storage.remove('token');
   }
   set token(val) {

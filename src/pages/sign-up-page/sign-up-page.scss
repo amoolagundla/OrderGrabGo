@@ -3,4 +3,19 @@ page-sign-up-page {
                 background-color: white;
                 color: #5db6ff;
         }
+        .omb_authTitle {
+                text-align: center;
+                line-height: 300%;
+        }
+        .omb_socialButtons a {
+                color: white; // In yourUse @body-bg
+                opacity:0.9;
+        }
+        .omb_socialButtons a:hover {
+                color: white;
+                opacity:1;
+        }
+        .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
+        .omb_socialButtons .omb_btn-twitter {background: #00aced;}
+        .omb_socialButtons .omb_btn-google {background: #c32f10;}
 }

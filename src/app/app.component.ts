@@ -62,12 +62,12 @@ export class MyApp {
       this.pages = [
         { title: values.CATEGORIES, icon: 'pricetag', component: 'DashPage' },       
         { title: values.SETTINGS, icon: 'settings', component: 'SettingsPage' },
-        { title: values.LOGOUT, icon: 'exit', component: null }
+        { title: values.LOGOUT, icon: 'exit', component: 'SignInPage' }
       ];
 
       if (User.getCurrentUser()) {
         this.pages.push({ title: values.PROFILE, icon: 'contact', component: 'ProfilePage' })
-        this.pages.push({ title: values.LOGOUT, icon: 'exit', component: null })
+        this.pages.push({ title: values.LOGOUT, icon: 'exit', component: 'SignInPage' })
       }
 
     });
@@ -91,7 +91,6 @@ export class MyApp {
 
     this.translate.setDefaultLang(AppConfig.DEFAULT_LANG);
 
-
     this.storage.lang.then(val => {
 
       let lang = val || AppConfig.DEFAULT_LANG;
@@ -103,21 +102,16 @@ export class MyApp {
       this.storage.skipIntroPage.then((skipIntroPage) => {
           if (skipIntroPage) {
               this.storage.token.then((token: string) => {
-                  if (token != null) {
+                  if (token != null && token != "") {
                       this.shared.GetUserInfo();
                       this.rootPage = 'DashPage';
-                    
                   }
                   else {
-                     
                       this.rootPage='SignInPage';
                   }
               }, error => {  this.rootPage = 'SignInPage'; });
           }
       }).catch((e) => console.log(e));
-
-
-
 
       this.storage.skipIntroPage.then((skipIntroPage) => {
           this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
