@@ -39,7 +39,10 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
 
-import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { Facebook } from '@ionic-native/facebook';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Toast } from '@ionic-native/toast';
+
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -55,7 +58,7 @@ export function HttpLoaderFactory(http: Http) {
     Ng2ImgFallbackModule,
     LazyLoadImageModule,
     Ionic2RatingModule,
-      HttpModule, 
+    HttpModule,    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -68,7 +71,7 @@ export function HttpLoaderFactory(http: Http) {
   entryComponents: [
     MyApp
   ],
-  providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService, SharedDataService, BarcodeScanner,
+  providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,SharedDataService, 
     StatusBar,
     SplashScreen,
     Diagnostic,
@@ -79,12 +82,15 @@ export function HttpLoaderFactory(http: Http) {
     InAppBrowser,
     SocialSharing,
     Camera,
-      GoogleAnalytics,
+    GoogleAnalytics,
     AdMobFree,
     AppVersion,
     HeaderColor,
     BrowserTab,
     File,
-      Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler } ]
+    Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler },
+	Facebook,
+    BarcodeScanner,
+    Toast]
 })
 export class AppModule {}

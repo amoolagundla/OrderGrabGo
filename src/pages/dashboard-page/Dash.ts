@@ -29,64 +29,28 @@ export class DashPage extends BasePage {
                 this.user = data;
                 this.userInfo = this.user;
                 this.firstName = 'Hello '+this.userInfo.FirstName;
-            } this.init();
-        });
-    }
-
-    enableMenuSwipe() {
-        return true;
-    }
-
-    onFilter(filter) {
-
-    }
-  
-    init() {
-        this.navigatePage();
-        // Optionally request the permission early
-        //this.qrScanner.prepare()
-        //    .then((status: QRScannerStatus) => {
-        //        if (status.authorized) {
-        //            // camera permission was granted
-        //            // wait for user to scan something, then the observable callback will be called
-        //            this.scanData = true;
-        //        } else if (status.denied) {
-        //            // camera permission was permanently denied
-        //            // you must use QRScanner.openSettings() method to guide the user to the settings page
-        //            // then they can grant the permission from there
-        //        } else {
-        //            // permission was denied, but not permanently. You can ask for permission again at a later time.
-        //        }
-        //    })
-        //    .catch((e: any) => console.log('Error is', e));
-
-    }
-
-
-    login() {
-        this.navigateTo('CategoriesPage');
-
-    }
-
-    scan() {
-        this._barcodeScanner.scan().then((barcodeData) => {
-            if (barcodeData.cancelled) {
-                console.log("User cancelled the action!");
-                
-                return false;
             }
-            console.log("Scanned successfully!");
-            console.log(barcodeData);
-            this.scannedObject = barcodeData.text;
-        }, (err) => {
-            console.log(err);
         });
-        //this.barcodeScanner.scan().then((barcodeData) => {
-        //    this.scannedCode = barcodeData;
-        //}, (err) => {
-            
-        //});
-
-        
     }
+
+  enableMenuSwipe() {
+    return true;
+  }
+
+  onFilter(filter) {
+    
+  }
+  qrCodeScan() {
+    this._barcodeScanner.scan().then((barcodeData) => {
+        this.scannedObject = barcodeData.text;
+    }, (err) => {
+        console.log(err);
+    });
+  }
+	
+	
+  login() { this.navigateTo('CategoriesPage');
+	
+}
+
 }
