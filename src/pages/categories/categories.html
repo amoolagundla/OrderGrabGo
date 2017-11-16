@@ -5,7 +5,7 @@
     </button>
     <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
   </ion-navbar> 
-	<ion-toolbar color="primary">
+	<ion-toolbar color="secondary">
     <ion-searchbar color="dark" debounce="2000"
       placeholder="{{ 'Start Searching' | translate }}"
       (ionInput)="onSearchAddress()"></ion-searchbar>
@@ -22,7 +22,7 @@
     [text]="'EMPTY_CATEGORIES' | translate">
   </empty-view>
 
-  <ion-refresher (ionRefresh)="onReload($event)">
+  <ion-refresher (ionRefresh)="onReload($event)" >
     <ion-refresher-content
       pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
       refreshingText="{{ 'REFRESHING' | translate }}">
@@ -50,8 +50,7 @@
     <div class="container margin_60">
         
         <div class="main_title">
-            <h2 class="nomargin_top" style="
-    font-size: 22px;
+            <h2 class="nomargin_top" style="margin-top:-5%;font-size: 22px;
     font-family: -webkit-pictograph;">Choose from Most Popular</h2>
             
         </div>

@@ -23,8 +23,9 @@ $card-header-color:   $text-color;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #5db6ff,
+  primary:    red,
   secondary:  #ffffff,
+    third:red,
   danger:     #f53d3d,
   light:      #070707,
   dark:       rgba(255, 255, 255, 0.96)
