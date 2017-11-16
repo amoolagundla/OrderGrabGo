@@ -1,6 +1,6 @@
 {
-  "name": "NearmeApp",
-  "short_name": "NearmeApp",
+  "name": "OrderGrabGo",
+  "short_name": "OGG",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
