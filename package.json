@@ -70,7 +70,6 @@
     "cordova-plugin-x-toast": "^2.6.0",
     "cordova-promise-polyfill": "0.0.2",
     "cordova.plugins.diagnostic": "^3.6.5",
-    "cordova-android-support-gradle-release": "1.1.5",
     "es6-promise-plugin": "^4.1.1",
     "font-awesome": "^4.7.0",
     "gradle": "^1.0.8",
