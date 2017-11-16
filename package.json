@@ -80,7 +80,7 @@
     "ng-lazyload-image": "3.1.1",
     "ng2-img-fallback": "0.2.3",
     "parse": "1.9.2",
-    "phonegap-plugin-barcodescanner": "^7.0.0",
+      "phonegap-plugin-barcodescanner": "^6.0.8",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2",
