@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { TranslateModule } from '@ngx-translate/core';
 import { EmptyViewModule } from './components/empty-view/empty-view.module';
 import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
@@ -24,14 +23,12 @@ SharedModule = __decorate([
         declarations: [],
         imports: [
             IonicModule,
-            TranslateModule,
             EmptyViewModule,
             Ng2ImgFallbackModule,
             LazyLoadImageModule,
             Ionic2RatingModule,
         ],
         exports: [
-            TranslateModule,
             EmptyViewModule,
             Ng2ImgFallbackModule,
             LazyLoadImageModule,

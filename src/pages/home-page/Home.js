@@ -14,14 +14,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
+import { MenuController } from 'ionic-angular';
+import { LocalStorage } from '../../providers/local-storage';
 import { BasePage } from '../base-page/base-page';
 var HomePage = (function (_super) {
     __extends(HomePage, _super);
-    function HomePage(injector) {
-        return _super.call(this, injector) || this;
+    function HomePage(injector, storage, menu) {
+        var _this = _super.call(this, injector) || this;
+        _this.storage = storage;
+        _this.menu = menu;
+        _this.storage.skipIntroPage.then(function (skipIntroPage) { return _this.skipIntroPage = skipIntroPage; });
+        return _this;
     }
     HomePage.prototype.enableMenuSwipe = function () {
-        return true;
+        return false;
+    };
+    HomePage.prototype.login = function () {
+        this.skipIntroPage = true;
+        this.storage.skipIntroPage = this.skipIntroPage;
+        this.navigatePage();
     };
     return HomePage;
 }(BasePage));
@@ -31,7 +42,9 @@ HomePage = __decorate([
         selector: 'home',
         templateUrl: 'home.html'
     }),
-    __metadata("design:paramtypes", [Injector])
+    __metadata("design:paramtypes", [Injector,
+        LocalStorage,
+        MenuController])
 ], HomePage);
 export { HomePage };
 //# sourceMappingURL=Home.js.map

@@ -36,7 +36,7 @@ export class SignUpPage extends BasePage {
     trans: any;
 
     constructor(injector: Injector,
-        private formBuilder: FormBuilder,
+      
         private events: Events,
         private viewCtrl: ViewController, private valuesService: ValuesService, private fb: Facebook, private googlePlus: GooglePlus) {
 
@@ -48,11 +48,7 @@ export class SignUpPage extends BasePage {
             password: new FormControl('', [Validators.required, Validators.minLength(6)])
         });
 
-        let trans = ['LOGGED_IN_AS', 'EMAIL_TAKEN', 'ERROR_UNKNOWN'];
-
-        this.translate.get(trans).subscribe(values => {
-            this.trans = values;
-        });
+      
     }
 
     enableMenuSwipe() {

@@ -17,28 +17,38 @@ import { Component, Injector } from '@angular/core';
 import { ViewController, Events } from 'ionic-angular';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { BasePage } from '../base-page/base-page';
-import { App } from '../../models/models';
+import { Facebook } from '@ionic-native/facebook';
+import { GooglePlus } from '@ionic-native/google-plus';
 import { ValuesService } from '../../providers/ValuesService';
 var SignUpPage = (function (_super) {
     __extends(SignUpPage, _super);
-    function SignUpPage(injector, formBuilder, events, viewCtrl, valuesService) {
+    function SignUpPage(injector, formBuilder, events, viewCtrl, valuesService, fb, googlePlus) {
         var _this = _super.call(this, injector) || this;
         _this.formBuilder = formBuilder;
         _this.events = events;
         _this.viewCtrl = viewCtrl;
         _this.valuesService = valuesService;
-        _this.user = new App.RegisterViewModel();
+        _this.fb = fb;
+        _this.googlePlus = googlePlus;
+        _this.user = {
+            email: '',
+            password: '',
+            confirmPassword: '',
+            phonenumber: '',
+            FirstName: '',
+            LastName: ''
+        };
+        //public user:App.RegisterViewModel= new App.RegisterViewModel();
         _this.email = '';
         _this.password = '';
         _this.phonenumber = '';
+        _this.FirstName = '';
+        _this.LastName = '';
+        _this.dob = '';
         _this.form = new FormGroup({
             name: new FormControl('', Validators.required),
             email: new FormControl('', Validators.required),
             password: new FormControl('', [Validators.required, Validators.minLength(6)])
-        });
-        var trans = ['LOGGED_IN_AS', 'EMAIL_TAKEN', 'ERROR_UNKNOWN'];
-        _this.translate.get(trans).subscribe(function (values) {
-            _this.trans = values;
         });
         return _this;
     }
@@ -50,6 +60,29 @@ var SignUpPage = (function (_super) {
     SignUpPage.prototype.onCancel = function () {
         this.viewCtrl.dismiss();
     };
+    SignUpPage.prototype.save = function (model, isValid, event) {
+        var _this = this;
+        // call API to save customer
+        event.preventDefault();
+        if (isValid) {
+            this.showLoadingView();
+            this.valuesService.Register(model)
+                .subscribe(function (data) {
+                _this.showContentView();
+                if (data.isSuccess == true) {
+                    _this.setName('token', data.token);
+                    _this.setRoot('DashPage');
+                }
+                else {
+                    console.log(data);
+                    _this.showToast(data.error);
+                }
+            }, function (err) {
+                console.log(err);
+                _this.showContentView();
+            });
+        }
+    };
     SignUpPage.prototype.onSubmit = function () {
         var _this = this;
         this.showLoadingView();
@@ -59,10 +92,11 @@ var SignUpPage = (function (_super) {
         this.user.PhoneNumber = this.phonenumber;
         this.valuesService.Register(this.user).subscribe(function (data) {
             if (data != undefined && data != '') {
-                _this.setRoot('CategoriesPage');
+                _this.showContentView();
+                _this.setRoot('DashPage');
             }
             else {
-                _this.showToast('UserName or PassWord Do No Match');
+                _this.showToast('Sorry there was a problem Try Again');
             }
         }, function (error) {
             if (error.status === 401) {
@@ -74,18 +108,57 @@ var SignUpPage = (function (_super) {
             _this.showErrorView();
         });
     };
+    SignUpPage.prototype.googleSignUp = function () {
+        var _this = this;
+        this.googlePlus.login({})
+            .then(function (res) {
+            console.log(res);
+            _this.email = res.email;
+            _this.FirstName = res.familyName;
+            _this.LastName = res.givenName;
+            _this.onSubmit();
+        })
+            .catch(function (err) { return alert(err); });
+    };
+    SignUpPage.prototype.facebookSignUp = function () {
+        var _this = this;
+        this.fb.login(['public_profile', 'user_friends', 'email'])
+            .then(function (res) {
+            if (res.status === "connected") {
+                _this.getUserDetail(res.authResponse.userID);
+            }
+        })
+            .catch(function (e) { return console.log('Error logging into Facebook', e); });
+    };
+    SignUpPage.prototype.getUserDetail = function (userid) {
+        var _this = this;
+        this.fb.api("/" + userid + "/?fields=id,email,name,gender,picture", ["public_profile"])
+            .then(function (res) {
+            console.log(res);
+            _this.email = res.email;
+            _this.phonenumber = res.mobile_phone;
+            _this.password = "sadAsasd12335#@$@";
+            _this.FirstName = res.first_name;
+            _this.LastName = res.last_name;
+            _this.onSubmit();
+        })
+            .catch(function (e) {
+            console.log(e);
+        });
+    };
     return SignUpPage;
 }(BasePage));
 SignUpPage = __decorate([
     IonicPage(),
     Component({
         selector: 'page-sign-up-page',
-        templateUrl: 'sign-up-page.html'
+        templateUrl: 'sign-up-page.html',
+        providers: [GooglePlus]
     }),
     __metadata("design:paramtypes", [Injector,
         FormBuilder,
         Events,
-        ViewController, ValuesService])
+        ViewController, ValuesService, Facebook, GooglePlus])
 ], SignUpPage);
 export { SignUpPage };
 //# sourceMappingURL=sign-up-page.js.map

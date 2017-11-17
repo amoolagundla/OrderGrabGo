@@ -1,4 +1,6 @@
-import { TranslateService } from '@ngx-translate/core';
+import { LocalStorage } from '../../providers/local-storage';
+import { SharedDataService } from '../../providers/SharedDataService';
+import { ValuesService } from '../../providers/ValuesService';
 import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 var BasePage = (function () {
@@ -8,29 +10,51 @@ var BasePage = (function () {
         this.navCtrl = injector.get(NavController);
         this.alertCtrl = injector.get(AlertController);
         this.navParams = injector.get(NavParams);
-        this.translate = injector.get(TranslateService);
         this.localStorage = injector.get(Storage);
+        this.storageProviderClass = injector.get(LocalStorage);
+        this.sharedData = injector.get(SharedDataService);
+        this._valuesService = injector.get(ValuesService);
         var menu = injector.get(MenuController);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
-        var _this = this;
         this.isErrorViewVisible = false;
         this.isEmptyViewVisible = false;
         this.isContentViewVisible = false;
         this.isLoadingViewVisible = true;
-        this.translate.get('LOADING').subscribe(function (loadingText) {
-            _this.loader = _this.loadingCtrl.create({
-                content: "<p class=\"item\">" + loadingText + "</p>",
-            });
-            _this.loader.present();
+        this.loader = this.loadingCtrl.create({
+            content: "<p class=\"item\">Loading Please Wait</p>",
         });
+        this.loader.present();
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };
@@ -87,27 +111,7 @@ var BasePage = (function () {
         toast.present();
     };
     BasePage.prototype.showConfirm = function (message) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            _this.translate.get(['OK', 'CANCEL']).subscribe(function (values) {
-                var confirm = _this.alertCtrl.create({
-                    title: '',
-                    message: message,
-                    buttons: [{
-                            text: values.CANCEL,
-                            handler: function () {
-                                reject();
-                            }
-                        }, {
-                            text: values.OK,
-                            handler: function () {
-                                resolve(true);
-                            }
-                        }]
-                });
-                confirm.present();
-            });
-        });
+        return Promise.resolve(true);
     };
     BasePage.prototype.navigateTo = function (page, params) {
         if (params === void 0) { params = {}; }

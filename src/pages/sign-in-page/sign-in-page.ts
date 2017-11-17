@@ -34,11 +34,7 @@ export class SignInPage extends BasePage {
       password: new FormControl('', Validators.required)
     });
 
-    let trans = ['LOGGED_IN_AS', 'INVALID_CREDENTIALS', 'ERROR_UNKNOWN'];
-
-    this.translate.get(trans).subscribe(values => {
-      this.trans = values;
-    });
+    
 
     this.events.subscribe('user:login', (userEventData) => {
       this.onCancel();

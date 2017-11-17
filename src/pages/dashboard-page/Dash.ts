@@ -41,7 +41,7 @@ export class DashPage extends BasePage {
     
   }
   qrCodeScan() {
-    this._barcodeScanner.scan().then((barcodeData) => {
+     this._barcodeScanner.scan().then((barcodeData) => {
         this.scannedObject = barcodeData.text;
     }, (err) => {
         console.log(err);

@@ -1,7 +1,6 @@
 
 import {App} from '../../models/models';
 import { Injector } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { LocalStorage } from '../../providers/local-storage';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { ValuesService } from '../../providers/ValuesService';
@@ -20,7 +19,6 @@ export abstract class BasePage {
   protected refresher: any;
   protected infiniteScroll: any;
   protected navParams: NavParams;
-  protected translate: TranslateService;
   private storageProviderClass: LocalStorage;
   private loader: any;
   private navCtrl: NavController;
@@ -37,7 +35,7 @@ export abstract class BasePage {
     this.navCtrl = injector.get(NavController);
     this.alertCtrl = injector.get(AlertController);
     this.navParams = injector.get(NavParams);
-    this.translate = injector.get(TranslateService);
+   
     this.localStorage = injector.get(Storage);
     this.storageProviderClass = injector.get(LocalStorage);
     this.sharedData = injector.get(SharedDataService);
@@ -57,13 +55,10 @@ export abstract class BasePage {
     this.isContentViewVisible = false;
     this.isLoadingViewVisible = true;
 
-    this.translate.get('LOADING').subscribe((loadingText: string) => {
-
-      this.loader = this.loadingCtrl.create({
-        content: `<p class="item">${loadingText}</p>`,
+    this.loader = this.loadingCtrl.create({
+        content: `<p class="item">Loading Please Wait</p>`,
       });
       this.loader.present();
-    });
   }
 
 	//This returns a promise but we can get away without handling it in this case.
@@ -171,30 +166,7 @@ export abstract class BasePage {
   }
 
   showConfirm(message: string): Promise<boolean> {
-
-    return new Promise((resolve, reject) => {
-
-      this.translate.get(['OK', 'CANCEL']).subscribe(values => {
-
-        let confirm = this.alertCtrl.create({
-          title: '',
-          message: message,
-          buttons: [{
-            text: values.CANCEL,
-            handler: () => {
-              reject();
-            }
-          }, {
-            text: values.OK,
-            handler: () => {
-              resolve(true);
-            }
-          }]
-        });
-
-        confirm.present();
-      });
-    });
+		return  Promise.resolve(true);
   }
 
   navigateTo(page: any, params: any = {}) {

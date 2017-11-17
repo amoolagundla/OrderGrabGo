@@ -3,8 +3,6 @@ import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 import { Events } from 'ionic-angular';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
-import { Diagnostic } from '@ionic-native/diagnostic';
-import { Category } from '../../providers/categories';
 import { BasePage } from '../base-page/base-page';
 import { Geolocation } from '@ionic-native/geolocation';
 import {App} from '../../models/models';
@@ -18,12 +16,11 @@ import {
 })
 export class CategoriesPage extends BasePage {
 
-  private categories: Array<Category>;
 public places:App.GooglePlaces;
   constructor(injector: Injector,
-    private events: Events,
+  
     private locationAccuracy: LocationAccuracy,
-    private diagnostic: Diagnostic,
+   
 		 private valuesService: ValuesService,public geolocation: Geolocation) {
     super(injector);
 
@@ -39,9 +36,7 @@ public places:App.GooglePlaces;
           .catch((error) => {
 
             if (error && error.code !== this.locationAccuracy.ERROR_USER_DISAGREED) {
-              this.translate.get('ERROR_LOCATION_MODE').subscribe((res: string) => {
-                this.showConfirm(res).then(() => this.diagnostic.switchToLocationSettings());
-              });
+              
             }
 
           });
@@ -59,7 +54,7 @@ public places:App.GooglePlaces;
   }
 
   goToPlaces() {
-    this.navigateTo('PlacesPage', this.categories[0]);
+    
   }
 getlocation() {
     return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });

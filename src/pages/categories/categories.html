@@ -3,11 +3,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
+    <ion-title>{{ 'OrderGrabNGo'  }}</ion-title>
   </ion-navbar> 
 	<ion-toolbar color="secondary">
     <ion-searchbar color="dark" debounce="2000"
-      placeholder="{{ 'Start Searching' | translate }}"
+      placeholder="{{ 'Start Searching'  }}"
       (ionInput)="onSearchAddress()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -15,17 +15,17 @@
 <ion-content class="card-background-page">
 
   <empty-view *ngIf="isErrorViewVisible" icon="alert"
-    [text]="'ERROR_CATEGORIES' | translate">
+    [text]="'ERROR_CATEGORIES' ">
   </empty-view>
 
   <empty-view *ngIf="isEmptyViewVisible" icon="bookmark"
-    [text]="'EMPTY_CATEGORIES' | translate">
+    [text]="'EMPTY_CATEGORIES' ">
   </empty-view>
 
   <ion-refresher (ionRefresh)="onReload($event)" >
     <ion-refresher-content
-      pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
-      refreshingText="{{ 'REFRESHING' | translate }}">
+      pullingText="{{ 'PULL_TO_REFRESH'  }}"
+      refreshingText="{{ 'REFRESHING'  }}">
     </ion-refresher-content>
   </ion-refresher>
 <div *ngIf="isContentViewVisible"> 
