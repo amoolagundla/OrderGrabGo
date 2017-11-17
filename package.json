@@ -46,7 +46,7 @@
     "@ngx-translate/http-loader": "0.0.3",
     "call-number": "^1.0.1",
     "cordova-admob-sdk": "^0.7.0",
-    "cordova-android": "7.0.0",
+    "cordova-android": "6.3.0",
     "cordova-ios": "~4.3.1",
     "cordova-multidex": "git+https://github.com/jwall149/cordova-multidex.git",
     "cordova-plugin-actionsheet": "^2.3.3",
