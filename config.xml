@@ -109,7 +109,6 @@
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.895563480131-gt18li2jqr4fh74p7or415jsf03m2mqj" />
     </plugin>
     <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
-    <plugin name="me.tonny.cordova.plugins.multidex" spec="https://github.com/jwall149/cordova-multidex" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
     <engine name="android" spec="~6.3.0" />
 </widget>
