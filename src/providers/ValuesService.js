@@ -10,12 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { HttpClient } from './HttpClient';
-import { SharedDataService } from './SharedDataService';
 import 'rxjs/add/operator/mergeMap';
 var ValuesService = (function () {
-    function ValuesService(http, shared) {
+    function ValuesService(http) {
         this.http = http;
-        this.shared = shared;
     }
     ValuesService.prototype.login = function (userName, Password) {
         return this.http.login(userName, Password).map(function (response) { return response; });
@@ -24,23 +22,14 @@ var ValuesService = (function () {
         return this.http
             .get('api/ads/GetPlaces/' + start + '/' + end).map(function (response) { return response.json(); });
     };
-    ValuesService.prototype.GetUserInfo = function () {
-        var _this = this;
-        this.http
-            .get('api/user/').map(function (response) { return response.json(); }).subscribe(function (data) {
-            _this.shared.USerInfoChanged(data);
-        }, function (error) {
-        });
-        ;
-    };
     ValuesService.prototype.Register = function (user) {
-        return this.http.post('api/Account/Registers', user).map(function (response) { return response.json(); });
+        return this.http.post('api/Account/Registers', user).map(function (response) { return response; });
     };
     return ValuesService;
 }());
 ValuesService = __decorate([
     Injectable(),
-    __metadata("design:paramtypes", [HttpClient, SharedDataService])
+    __metadata("design:paramtypes", [HttpClient])
 ], ValuesService);
 export { ValuesService };
 //# sourceMappingURL=ValuesService.js.map

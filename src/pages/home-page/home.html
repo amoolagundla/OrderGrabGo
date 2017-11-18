@@ -1,15 +1,15 @@
 <ion-content>
-    <ion-slides pager="true" parallax="true" autoplay="500" loop="true" speed="900">
+    <ion-slides pager="true" parallax="true" >
         <ion-slide class="slide-1" color="dark">
-            <img src="https://ordergrabgo.com/img/hero.jpg" class="slide-image" />            
-            <section class="parallax-window" data-image-src="https://ordergrabgo.com/img/hero.jpg" data-natural-height="550" data-natural-width="1400" data-parallax="scroll" id="home" style="height: 400px;background-image: url(https://ordergrabgo.com/img/hero.jpg);
+                       
+            <section class="parallax-window" data-image-src="/img/hero.jpg"  (click)="login()" data-natural-height="550" data-natural-width="1400" data-parallax="scroll" id="home" style="height: 650px;background-image: url(https://ordergrabgo.com/img/hero.jpg);
     background-size: cover;
     background-position: center center;
     ">
                 <div id="subheader" style="background: transparent;">
                     <div class="animated zoomIn" id="sub_content" style="padding-top: 348px;">
 
-                        <h1 style="font-size: 28px!important;margin-top: -140%;text-align: center;color: #78ef98;font-family: inherit;">OrderGrabGo</h1>
+                        <h1 style="font-size: 28px!important;margin-top: -100%;text-align: center;color: #78ef98;font-family: inherit;">OrderGrabGo</h1>
 
                         <h4 style="color:white">First in line - EVERYWHERE!</h4>
                         <h6 style="color:white">
@@ -28,7 +28,7 @@
         <ion-slide class="slide-2">
             <div class="row">
 
-                <div class="col-md-5" style="margin-left: 14%;">
+                <div class="col-md-5" style="margin-left: 10%;">
                     <div class="box_home" id="one">
                         <span>1</span>
                         <h3>Search by address</h3>
@@ -41,7 +41,7 @@
 </ion-slide>
         <ion-slide class="slide-3">
             <div class="row">
-                <div class="col-md-5" style=" margin-left: 14%;">
+                <div class="col-md-5" style=" margin-left: 10%;">
                     <div class="box_home" id="two">
                         <span>2</span>
                         <h3>Choose a restaurant</h3>
@@ -55,7 +55,7 @@
        
         <ion-slide class="slide-4">
             <div class="row">
-                <div class="col-md-5" style=" margin-left: 20%;">
+                <div class="col-md-5" style=" margin-left: 16%;">
                     <div class="box_home" id="three">
                         <span>3</span>
                         <h3>Pay by card or cash</h3>
@@ -69,7 +69,7 @@
 
         <ion-slide class="slide-5">
             <div class="row">
-                <div class="col-md-5" style=" margin-left: 14%;">
+                <div class="col-md-5" style=" margin-left: 10%;">
                     <div class="box_home" id="four">
                         <span>4</span>
                         <h3>Delivery or takeaway</h3>
@@ -80,10 +80,10 @@
                 </div>
             </div>
         </ion-slide>
-        <ion-slide class="slide-6">
+        <ion-slide class="slide-6" >
             
 
-                <div class="caption" style="margin-top:-34%;">
+                <div class="caption" style="margin-top:-34%;" (click)="login()">
 
                     <h2 color="light" ion-text="" class="text text-md text-md-light" ng-reflect-color="light" style="font-size:21px;font-family:-webkit-body;">
                         Ready to discover?

@@ -3,18 +3,18 @@
 <ion-content padding text-center>
     <img src="../assets/img/icon.png" style="width:36%;height:85px;">
     <div class="container" style="margin-top: 11%;">
-        
+
         <div class="omb_login">
             <h3 class="omb_authTitle">Login or <a (click)="goToSignUp()">Sign up</a></h3>
             <div class="row omb_row-sm-offset-1 omb_socialButtons">
                 <div class="col-xs-6 col-sm-2">
-                    <a  (click)="facebookLogin()" class="btn btn-lg btn-block omb_btn-facebook">
+                    <a (click)="facebookLogIn()" class="btn btn-lg btn-block omb_btn-facebook">
                         <i class="fa fa-facebook visible-xs"></i>
                         <span class="hidden-xs">Facebook</span>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-2">
-                    <a  (click)="googleLogin()" class="btn btn-lg btn-block omb_btn-google">
+                    <a (click)="googleSignIn()" class="btn btn-lg btn-block omb_btn-google">
                         <i class="fa fa-google-plus visible-xs"></i>
                         <span class="hidden-xs">Google+</span>
                     </a>

@@ -35,7 +35,17 @@ export class ValuesService {
              });    ;
 
      }
-		
+     googlelogin(user: any) {
+         var token={
+             AccessToken:user
+         };
+        return this.http.post('api/FacebookApi/GoogleLogin/',token ).map((response: Response) => response.json());
+    }
+    FacebookLogin(token: any) {
+       
+       return this.http.get('api/FacebookApi/Login/'+token ).map((response: Response) => response.json());
+   }
+
 		Register(user: any) {
         return this.http.post('api/Account/Registers', user).map((response: Response) => response.json());
     }

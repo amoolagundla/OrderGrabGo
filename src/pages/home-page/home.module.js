@@ -32,4 +32,4 @@ HomePageModule = __decorate([
     __metadata("design:paramtypes", [])
 ], HomePageModule);
 export { HomePageModule };
-//# sourceMappingURL=Home.module.js.map
+//# sourceMappingURL=home.module.js.map

@@ -3,11 +3,11 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ 'OrderGrabNGo'  }}</ion-title>
+    <ion-title>{{ 'OrderGrabNGo' | translate }}</ion-title>
   </ion-navbar> 
-	<ion-toolbar color="secondary">
+	<ion-toolbar color="primary">
     <ion-searchbar color="dark" debounce="2000"
-      placeholder="{{ 'Start Searching'  }}"
+      placeholder="{{ 'Start Searching' | translate }}"
       (ionInput)="onSearchAddress()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -15,17 +15,17 @@
 <ion-content class="card-background-page">
 
   <empty-view *ngIf="isErrorViewVisible" icon="alert"
-    [text]="'ERROR_CATEGORIES' ">
+    [text]="'ERROR_CATEGORIES' | translate">
   </empty-view>
 
   <empty-view *ngIf="isEmptyViewVisible" icon="bookmark"
-    [text]="'EMPTY_CATEGORIES' ">
+    [text]="'EMPTY_CATEGORIES' | translate">
   </empty-view>
 
-  <ion-refresher (ionRefresh)="onReload($event)" >
+  <ion-refresher (ionRefresh)="onReload($event)">
     <ion-refresher-content
-      pullingText="{{ 'PULL_TO_REFRESH'  }}"
-      refreshingText="{{ 'REFRESHING'  }}">
+      pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
+      refreshingText="{{ 'REFRESHING' | translate }}">
     </ion-refresher-content>
   </ion-refresher>
 <div *ngIf="isContentViewVisible"> 
@@ -50,7 +50,8 @@
     <div class="container margin_60">
         
         <div class="main_title">
-            <h2 class="nomargin_top" style="margin-top:-5%;font-size: 22px;
+            <h2 class="nomargin_top" style="
+    font-size: 22px;
     font-family: -webkit-pictograph;">Choose from Most Popular</h2>
             
         </div>

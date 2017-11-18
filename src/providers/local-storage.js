@@ -63,19 +63,6 @@ var LocalStorage = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(LocalStorage.prototype, "token", {
-        get: function () {
-            return this.storage.get('token');
-        },
-        set: function (val) {
-            this.storage.set('token', val);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    LocalStorage.prototype.RemoveToken = function () {
-        return this.storage.remove('token');
-    };
     return LocalStorage;
 }());
 LocalStorage = __decorate([

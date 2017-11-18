@@ -33,8 +33,12 @@ export class SignInPage extends BasePage {
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
+       //this.getUserDetailGoogle('ji');
+    let trans = ['LOGGED_IN_AS', 'INVALID_CREDENTIALS', 'ERROR_UNKNOWN'];
 
-    
+    this.translate.get(trans).subscribe(values => {
+      this.trans = values;
+    });
 
     this.events.subscribe('user:login', (userEventData) => {
       this.onCancel();
@@ -60,6 +64,7 @@ export class SignInPage extends BasePage {
 		this.showContentView();
 		console.log(data._body);
         this.setName('token',data._body);
+				
 		this.setRoot('DashPage');
      
     },error => {
@@ -72,39 +77,76 @@ export class SignInPage extends BasePage {
     });
   }
 
-  facebookLogin() {
+  facebookLogIn() {
     this.fb.login(['public_profile', 'user_friends', 'email'])
         .then(res => {
           if(res.status === "connected") {
-            this.getUserDetail(res.authResponse.userID);
+          
+            this.getUserDetail(res.authResponse.accessToken);
           }
         })
         .catch(e => console.log('Error logging into Facebook', e));
   }
 
   getUserDetail(userid) {
-    this.fb.api("/"+userid+"/?fields=id,email,name,gender,picture",["public_profile"])
-        .then(res => {
-          console.log(res);
-          this.email = res.email;
-          this.password = "sadAsasd12335#@$@";
-          this.onSubmit();
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    this.showLoadingView();
+    this.valuesService.FacebookLogin(userid).subscribe((data:any)=>
+  {
+    this.showContentView();
+    this.sharedData.USerInfoChanged(data);
+
+    this.setName('token',data.token);
+    this.setRoot('DashPage');
+  },error => {
+    this.showContentView();
+		if (error.status === 401) {
+        this.showToast(this.trans.INVALID_CREDENTIALS);
+      } else {
+        this.showToast(this.trans.ERROR_UNKNOWN);
+      }
+     
+    });
   }
 
-  googleLogin() {
-    this.googlePlus.login({})
-        .then(res => {
-          console.log(res);
-          this.email = res.email;
-          this.password = "sadAsasd12335#@$@";
-          this.onSubmit();
-        })
-        .catch(err => console.error(err));
+  googleSignIn() {
+    let glog = this;
+    this.googlePlus.login({
+      
+                  'webClientId': '587791248488-u60e99ojmqsj4d855jumi75hlomd8k1q.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+                  'offline': true
+              })
+                  .then(function (user) {
+                    
+                    glog.getUserDetailGoogle(user.idToken);
+      
+                     
+      
+                  }, function (error) {
+                      let er = error;
+                     alert(er);
+                      
+                  });
   }
+
+  getUserDetailGoogle(userid) {
+    this.showLoadingView();
+    this.valuesService.googlelogin(userid).subscribe((data:any)=>
+  {
+    this.showContentView();
+    this.sharedData.USerInfoChanged(data);
+    this.setName('token',data.token);
+    this.setRoot('DashPage');
+  },error => {
+    this.showContentView();
+		if (error.status === 401) {
+        this.showToast(this.trans.INVALID_CREDENTIALS);
+      } else {
+        this.showToast(this.trans.ERROR_UNKNOWN);
+      }
+     
+    });
+  }
+
 
   goToSignUp() {
     this.navigateTo('SignUpPage');

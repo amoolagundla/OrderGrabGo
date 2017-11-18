@@ -15,8 +15,7 @@ var HttpClient = (function () {
     function HttpClient(http, storage) {
         this.http = http;
         this.storage = storage;
-        //public baseurl:any ='https://localhost:44395/';
-        this.baseurl = 'http://ordergrabngo.azurewebsites.net/';
+        this.baseurl = 'https://localhost:44395/';
     }
     HttpClient.prototype.enableMenuSwipe = function () {
         return false;
