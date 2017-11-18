@@ -1,0 +1,100 @@
+<ion-content>
+    <ion-slides pager="true" parallax="true" >
+        <ion-slide class="slide-1" color="dark">
+            <img src="https://ordergrabgo.com/img/hero.jpg" class="slide-image" />            
+            <section class="parallax-window" data-image-src="https://ordergrabgo.com/img/hero.jpg" data-natural-height="550" data-natural-width="1400" data-parallax="scroll" id="home" style="height: 400px;background-image: url(https://ordergrabgo.com/img/hero.jpg);
+    background-size: cover;
+    background-position: center center;
+    ">
+                <div id="subheader" style="background: transparent;">
+                    <div class="animated zoomIn" id="sub_content" style="padding-top: 348px;">
+
+                        <h1 style="font-size: 28px!important;margin-top: -140%;text-align: center;color: #78ef98;font-family: inherit;">OrderGrabGo</h1>
+
+                        <h4 style="color:white">First in line - EVERYWHERE!</h4>
+                        <h6 style="color:white">
+                            Tired of waiting in line for lunch?
+                            One Profile for restaurants nationwide!
+                        </h6>
+                        <button type="button" class="btn btn-default" ion-button block (click)="login()">
+                            {{ "Let's Explore" | translate }}
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+        </ion-slide>
+        <ion-slide class="slide-2">
+            <div class="row">
+
+                <div class="col-md-5" style="margin-left: 14%;">
+                    <div class="box_home" id="one">
+                        <span>1</span>
+                        <h3>Search by address</h3>
+                        <p>
+                            Find all restaurants available in your zone.
+                        </p>
+                    </div>
+                </div>
+                </div>
+</ion-slide>
+        <ion-slide class="slide-3">
+            <div class="row">
+                <div class="col-md-5" style=" margin-left: 14%;">
+                    <div class="box_home" id="two">
+                        <span>2</span>
+                        <h3>Choose a restaurant</h3>
+                        <p>
+                            We have more than 1000s of menus online.
+                        </p>
+                    </div>
+                </div>
+                </div>
+</ion-slide>
+       
+        <ion-slide class="slide-4">
+            <div class="row">
+                <div class="col-md-5" style=" margin-left: 20%;">
+                    <div class="box_home" id="three">
+                        <span>3</span>
+                        <h3>Pay by card or cash</h3>
+                        <p>
+                            It's quick, easy and totally secure.
+                        </p>
+                    </div>
+                </div>
+                </div>
+</ion-slide>
+
+        <ion-slide class="slide-5">
+            <div class="row">
+                <div class="col-md-5" style=" margin-left: 14%;">
+                    <div class="box_home" id="four">
+                        <span>4</span>
+                        <h3>Delivery or takeaway</h3>
+                        <p>
+                            You are lazy? Are you backing home?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide class="slide-6">
+            
+
+                <div class="caption" style="margin-top:-34%;">
+
+                    <h2 color="light" ion-text="" class="text text-md text-md-light" ng-reflect-color="light" style="font-size:21px;font-family:-webkit-body;">
+                        Ready to discover?
+                    </h2>
+</div>
+                    <button ion-button large icon-right color="primary" (click)="login()">
+                        {{ "GET_STARTED" | translate }}
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </button>
+        </ion-slide>
+       
+    </ion-slides>
+
+    
