@@ -23,7 +23,6 @@ export class DashPage extends BasePage {
     ) {
         super(injector);
         
-        
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
                 this.user = data;

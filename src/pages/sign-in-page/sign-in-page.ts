@@ -6,10 +6,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { LocalStorage } from '../../providers/local-storage';
-
-import {
-    ValuesService
-} from '../../providers/ValuesService';
+import { ValuesService} from '../../providers/ValuesService';
 @IonicPage()
 @Component({
   selector: 'page-sign-in-page',

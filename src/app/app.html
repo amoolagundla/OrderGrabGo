@@ -2,10 +2,10 @@
   <ion-header>
     <ion-toolbar class="menu-toolbar" color="dark">
       <ion-item no-lines *ngIf="user">
-        <ion-avatar item-left>
-          <img [src]="user.get('photo') ? user.get('photo').url() : ''" src-fallback="assets/img/avatar.png">
+        <ion-avatar>
+          <img [src]="user.picture" src-fallback="assets/img/avatar.png" />
         </ion-avatar>
-        <span>{{ user.get('name') }}</span>
+        <span>{{ user.FirstName }}</span>
       </ion-item>
     </ion-toolbar>
   </ion-header>

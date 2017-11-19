@@ -13,6 +13,7 @@ import { ValuesService } from '../providers/ValuesService';
 import { User } from '../providers/user-service';
 import { LocalStorage } from '../providers/local-storage';
 import { Preference } from '../providers/preference';
+import { SharedDataService} from '../providers/SharedDataService';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,7 +22,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any;
-  user: User;
+  user: any;
   trans: any;
 
   pages: Array<{ title: string, icon: string, component: any }>;
@@ -37,9 +38,11 @@ export class MyApp {
     private googleAnalytics: GoogleAnalytics,
     private headerColor: HeaderColor,
     private modalCtrl: ModalController,
-    private shared: ValuesService  ) {
+    private shared: ValuesService ,
+  private _shared:SharedDataService ) {
 
     this.initializeApp();
+    this.shared.GetUserInfo();
   }
 
   onMenuOpened() {
@@ -73,6 +76,12 @@ export class MyApp {
   }
  
   initializeApp() {
+    this._shared.UserInfo.subscribe((data) => {
+      if (data.FirstName != undefined) {
+          this.user = data;
+         
+      }
+  });
 
     this.events.subscribe('user:login', (userEventData) => {
       this.user = userEventData[0];
