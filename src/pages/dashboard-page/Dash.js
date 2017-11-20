@@ -16,11 +16,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 import { BasePage } from '../base-page/base-page';
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 var DashPage = (function (_super) {
     __extends(DashPage, _super);
-    function DashPage(injector //, private _barcodeScanner: BarcodeScanner
-    ) {
+    function DashPage(injector, _barcodeScanner) {
         var _this = _super.call(this, injector) || this;
+        _this._barcodeScanner = _barcodeScanner;
         _this.qrData = null;
         _this.createdCode = null;
         _this.scannedCode = null;
@@ -43,9 +44,15 @@ var DashPage = (function (_super) {
     DashPage.prototype.onFilter = function (filter) {
     };
     DashPage.prototype.qrCodeScan = function () {
+        var _this = this;
+        this._barcodeScanner.scan().then(function (barcodeData) {
+            _this.scannedObject = barcodeData.text;
+        }, function (err) {
+            console.log(err);
+        });
     };
     DashPage.prototype.login = function () {
-        this.navigateTo('CategoriesPage');
+        this.navigateTo('RestaurentPage');
     };
     return DashPage;
 }(BasePage));
@@ -55,8 +62,7 @@ DashPage = __decorate([
         selector: 'Dash',
         templateUrl: 'Dash.html'
     }),
-    __metadata("design:paramtypes", [Injector //, private _barcodeScanner: BarcodeScanner
-    ])
+    __metadata("design:paramtypes", [Injector, BarcodeScanner])
 ], DashPage);
 export { DashPage };
 //# sourceMappingURL=Dash.js.map

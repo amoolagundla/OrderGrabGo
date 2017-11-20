@@ -65,17 +65,24 @@ getlocation() {
     return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
   }
   loadData() {
-		
-    this.valuesService.CheckLocation('41.5572470' , '-93.7985550').subscribe((data:App.GooglePlaces)=>
-    {
+    
+    this.getlocation().then((resp) => {
       
-      this.places=data;
-      this.showContentView();
-      
+        this.valuesService.CheckLocation(resp.coords.latitude , resp.coords.longitude).subscribe((data:App.GooglePlaces)=>
+        {
+          
+          this.places=data;
+          this.showContentView();
+          
+  
+        this.onRefreshComplete();
+          
+        });
+      }).catch((error) => {
+        this.showEmptyView();
+      }); 
 
-    this.onRefreshComplete();
-      
-    });
+    
 		
     
   }

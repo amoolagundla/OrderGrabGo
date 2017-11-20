@@ -16,11 +16,13 @@ import { HeaderColor } from '@ionic-native/header-color';
 import Parse from 'parse';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from './app.config';
+import { ValuesService } from '../providers/ValuesService';
 import { User } from '../providers/user-service';
 import { LocalStorage } from '../providers/local-storage';
 import { Preference } from '../providers/preference';
+import { SharedDataService } from '../providers/SharedDataService';
 var MyApp = (function () {
-    function MyApp(platform, events, storage, translate, toastCtrl, preference, statusBar, splashScreen, googleAnalytics, headerColor, modalCtrl) {
+    function MyApp(platform, events, storage, translate, toastCtrl, preference, statusBar, splashScreen, googleAnalytics, headerColor, modalCtrl, shared, _shared) {
         this.platform = platform;
         this.events = events;
         this.storage = storage;
@@ -32,7 +34,10 @@ var MyApp = (function () {
         this.googleAnalytics = googleAnalytics;
         this.headerColor = headerColor;
         this.modalCtrl = modalCtrl;
+        this.shared = shared;
+        this._shared = _shared;
         this.initializeApp();
+        this.shared.GetUserInfo();
     }
     MyApp.prototype.onMenuOpened = function () {
         this.events.publish('onMenuOpened');
@@ -47,20 +52,20 @@ var MyApp = (function () {
         this.translate.get(trans).subscribe(function (values) {
             _this.trans = values;
             _this.pages = [
-                { title: values.CATEGORIES, icon: 'pricetag', component: 'CategoriesPage' },
-                { title: values.MAP, icon: 'map', component: 'MapPage' },
-                { title: values.ADD_PLACE, icon: 'create', component: 'AddPlacePage' },
-                { title: values.MY_FAVORITES, icon: 'heart', component: 'FavoritesPage' },
-                { title: values.SETTINGS, icon: 'settings', component: 'SettingsPage' },
+                { title: values.CATEGORIES, icon: 'pricetag', component: 'DashPage' },
+                { title: values.SETTINGS, icon: 'settings', component: 'SettingsPage' }
             ];
-            if (User.getCurrentUser()) {
-                _this.pages.push({ title: values.PROFILE, icon: 'contact', component: 'ProfilePage' });
-                _this.pages.push({ title: values.LOGOUT, icon: 'exit', component: null });
-            }
+            _this.pages.push({ title: values.PROFILE, icon: 'contact', component: 'ProfilePage' });
+            _this.pages.push({ title: values.LOGOUT, icon: 'exit', component: 'SignInPage' });
         });
     };
     MyApp.prototype.initializeApp = function () {
         var _this = this;
+        this._shared.UserInfo.subscribe(function (data) {
+            if (data.FirstName != undefined) {
+                _this.user = data;
+            }
+        });
         this.events.subscribe('user:login', function (userEventData) {
             _this.user = userEventData[0];
             _this.buildMenu();
@@ -79,7 +84,20 @@ var MyApp = (function () {
             _this.storage.lang = lang;
             _this.preference.lang = lang;
             _this.storage.skipIntroPage.then(function (skipIntroPage) {
-                _this.rootPage = skipIntroPage ? 'HomePage' : 'WalkthroughPage';
+                if (skipIntroPage) {
+                    _this.storage.token.then(function (token) {
+                        if (token != null && token != "") {
+                            _this.shared.GetUserInfo();
+                            _this.rootPage = 'DashPage';
+                        }
+                        else {
+                            _this.rootPage = 'SignInPage';
+                        }
+                    }, function (error) { _this.rootPage = 'SignInPage'; });
+                }
+            }).catch(function (e) { return console.log(e); });
+            _this.storage.skipIntroPage.then(function (skipIntroPage) {
+                _this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
             }).catch(function (e) { return console.log(e); });
             _this.buildMenu();
         }).catch(function (e) { return console.log(e); });
@@ -154,7 +172,9 @@ MyApp = __decorate([
         SplashScreen,
         GoogleAnalytics,
         HeaderColor,
-        ModalController])
+        ModalController,
+        ValuesService,
+        SharedDataService])
 ], MyApp);
 export { MyApp };
 //# sourceMappingURL=app.component.js.map

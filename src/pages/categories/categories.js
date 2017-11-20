@@ -33,7 +33,7 @@ var CategoriesPage = (function (_super) {
             if (canRequest) {
                 var priority = _this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY;
                 _this.locationAccuracy.request(priority)
-                    .then(function () { return console.log('Request successful'); })
+                    .then(function (data) { return console.log(data); })
                     .catch(function (error) {
                     if (error && error.code !== _this.locationAccuracy.ERROR_USER_DISAGREED) {
                         _this.translate.get('ERROR_LOCATION_MODE').subscribe(function (res) {
@@ -60,24 +60,10 @@ var CategoriesPage = (function (_super) {
     };
     CategoriesPage.prototype.loadData = function () {
         var _this = this;
-        this.getlocation().then(function (resp) {
-            _this.valuesService.CheckLocation(resp.coords.latitude, resp.coords.longitude).subscribe(function (data) {
-                if (data != undefined) {
-                    _this.places = data;
-                    if (_this.places.results.length > 0) {
-                        _this.showContentView();
-                    }
-                    else {
-                        _this.showEmptyView();
-                    }
-                }
-                else {
-                    _this.showEmptyView();
-                }
-                _this.onRefreshComplete();
-            });
-        }).catch(function (error) {
-            _this.showEmptyView();
+        this.valuesService.CheckLocation('41.5572470', '-93.7985550').subscribe(function (data) {
+            _this.places = data;
+            _this.showContentView();
+            _this.onRefreshComplete();
         });
     };
     CategoriesPage.prototype.onReload = function (refresher) {

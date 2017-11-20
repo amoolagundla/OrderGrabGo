@@ -7,7 +7,7 @@
     </button>
     <ion-title >{{firstName}}</ion-title>
 		 <ion-buttons end>
-           <button ion-button (click)="qrCodeScan()"><i class="fa fa-qrcode  fa-4x" aria-hidden="true"></i></button>
+           <button ion-button (click)="qrCodeScan()"><i class="fa fa-qrcode   qr-code fa-4x" aria-hidden="true"></i></button>
 						
      
         </ion-buttons>
@@ -17,38 +17,52 @@
 
 <ion-content padding #container style="background-size: cover;background-position: center center;">
     
-    <!--<button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>-->
+    <div class="order-page">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <div class="media-body">
+                        <a  class="btn"  (click)="login()">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="media-body">
+                        <a href="" class="btn">Messages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <div class="media-body">
+                        <a href="" class="btn">Parking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="media-body">
+                        <a href="" class="btn">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
     
-    
-<table class="table" style="margin-top: 40%;">
-    
-    <tbody>
-      <tr>
-        <button ion-button block class="btn btn-lg " color="primary" style="width: 68%;margin-left: 15%;"   icon-start (click)="login()">
-            <ion-icon ios="ios-restaurant" md="md-restaurant"></ion-icon>&nbsp;&nbsp;&nbsp;
-  Order Now
-</button><br/><br/>
-      </tr>
-      <tr>
-      <button ion-button block class="btn btn-lg " color="primary" style="width: 68%;margin-left: 15%;"  icon-start>
- <ion-icon ios="ios-mail" md="md-mail"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-  Messages
-</button><br/><br/>
-      </tr>
-      <tr>
-        <button ion-button block class="btn btn-lg " color="primary" style="width: 68%;margin-left: 15%;"  icon-start>
-  <ion-icon ios="ios-car" md="md-car"></ion-icon>&nbsp;&nbsp;&nbsp;
-  Parking
-</button><br/><br/>
-      </tr>
-			<tr>
-        <button ion-button block class="btn btn-lg " color="primary" style="width: 68%;margin-left: 15%;"  icon-start>
-  <ion-icon ios="ios-cash" md="md-cash"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;
-  Donate
-</button><br/><br/>
-      </tr>
-    </tbody>
-  </table>
+
 	
 
 

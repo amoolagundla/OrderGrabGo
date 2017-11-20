@@ -1,4 +1,7 @@
 import { TranslateService } from '@ngx-translate/core';
+import { LocalStorage } from '../../providers/local-storage';
+import { SharedDataService } from '../../providers/SharedDataService';
+import { ValuesService } from '../../providers/ValuesService';
 import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 var BasePage = (function () {
@@ -10,6 +13,9 @@ var BasePage = (function () {
         this.navParams = injector.get(NavParams);
         this.translate = injector.get(TranslateService);
         this.localStorage = injector.get(Storage);
+        this.storageProviderClass = injector.get(LocalStorage);
+        this.sharedData = injector.get(SharedDataService);
+        this._valuesService = injector.get(ValuesService);
         var menu = injector.get(MenuController);
         menu.swipeEnable(this.enableMenuSwipe());
     }
@@ -28,9 +34,33 @@ var BasePage = (function () {
     };
     //This returns a promise but we can get away without handling it in this case.
     BasePage.prototype.setName = function (name, value) {
-        this.localStorage.set(name, value);
+        var _this = this;
+        this.localStorage.set(name, value).then(function () {
+            _this.storageProviderClass.token.then(function (token) {
+                if (token != null) {
+                    _this._valuesService.GetUserInfo();
+                }
+                else {
+                    _this.setRoot('SignInPage');
+                }
+            }, function (error) { _this.setRoot('SignInPage'); });
+        });
     };
     ;
+    BasePage.prototype.navigatePage = function () {
+        var _this = this;
+        this.storageProviderClass.skipIntroPage.then(function (skipIntroPage) {
+            if (skipIntroPage) {
+                _this.storageProviderClass.token.then(function (token) {
+                    if (token != null) {
+                    }
+                    else {
+                        _this.setRoot('SignInPage');
+                    }
+                }, function (error) { _this.setRoot('SignInPage'); });
+            }
+        }).catch(function (e) { return console.log(e); });
+    };
     BasePage.prototype.getName = function (name) {
         return this.localStorage.get(name);
     };

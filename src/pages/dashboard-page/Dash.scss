@@ -1,0 +1,62 @@
+.qr-code{
+    
+    margin-left: 30%;
+    margin-top: 6%;
+}
+
+.order-page {
+    padding: 60px 0;
+}
+
+.order-page .media {
+    max-width: 280px;
+    margin: 0 auto 60px;
+}
+
+.order-page .media-left {
+    padding-right: 30px;
+}
+
+.order-page .row {
+    margin: 0;
+}
+
+.order-page [class^="col-"] {
+    padding: 0 5px;
+}
+
+.order-page .media .btn {
+    display: block;
+    background-color: #009e0f;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    margin-top: 5px;
+}
+
+.order-page .media .btn:hover,
+.order-page .media .btn:focus,
+.order-page .media .btn:active {
+    background-color: #03860f;
+}
+
+.order-page .media .fa {
+    font-size: 50px;
+}
+
+.order-page .media .fa-cutlery {
+    color: #c00;
+}
+
+.order-page .media .fa-envelope {
+    color: #2a78e4;
+}
+
+.order-page .media .fa-car {
+    color: #1ab4b4;
+}
+
+.order-page .media .fa-heart {
+    color: #be1e2d;
+}

@@ -17,11 +17,20 @@ export class ValuesService {
 			
 			return this.http.login(userName,Password).map((response:any)=> response);
     }
-     CheckLocation(start:any,end:any)
+     
+    CheckLocation(start:any,end:any)
     {
         
         return this.http
               .get('api/ads/GetPlaces/'+start+'/'+end).map((response: Response) => response.json());
+   
+    }
+
+    GetPlacesWithZomato(start:any,end:any)
+    {
+        
+        return this.http
+              .get('api/ads/GetPlaceswithzomato/'+start+'/'+end).map((response: Response) => response.json());
    
     }
 

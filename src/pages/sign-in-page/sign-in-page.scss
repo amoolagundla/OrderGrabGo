@@ -1,4 +1,5 @@
 page-sign-in-page {
+	
   ion-content {
    @media (min-width: 768px) {
     .omb_row-sm-offset-3 div:first-child[class*="col-"] {
@@ -67,5 +68,13 @@ page-sign-in-page {
   }
 }
 
-
+.banner
+{
+	
+    margin-left: -5%;
+    display: block;
+    max-width: 112%;
+    height: 201px;
+    margin-top: -10%;
+}
 

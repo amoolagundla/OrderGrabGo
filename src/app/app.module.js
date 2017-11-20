@@ -21,6 +21,7 @@ import { User } from '../providers/user-service';
 import { LocalStorage } from '../providers/local-storage';
 import { Preference } from '../providers/preference';
 import { MapStyle } from '../providers/map-style';
+import { SharedDataService } from '../providers/SharedDataService';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from '@ionic-native/camera';
@@ -32,11 +33,9 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { CallNumber } from '@ionic-native/call-number';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import { AppVersion } from '@ionic-native/app-version';
 import { HeaderColor } from '@ionic-native/header-color';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
-import { AdMobFree } from '@ionic-native/admob-free';
 import { BrowserTab } from '@ionic-native/browser-tab';
 import { IonicStorageModule } from '@ionic/storage';
 import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
@@ -45,6 +44,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
+import { Facebook } from '@ionic-native/facebook';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Toast } from '@ionic-native/toast';
 export function HttpLoaderFactory(http) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -78,7 +80,7 @@ AppModule = __decorate([
         entryComponents: [
             MyApp
         ],
-        providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService,
+        providers: [Category, Place, ParseFile, Review, LocalStorage, User, HttpClient, ValuesService, SharedDataService,
             StatusBar,
             SplashScreen,
             Diagnostic,
@@ -88,15 +90,16 @@ AppModule = __decorate([
             CallNumber,
             InAppBrowser,
             SocialSharing,
-            GoogleMaps,
             Camera,
             GoogleAnalytics,
-            AdMobFree,
             AppVersion,
             HeaderColor,
             BrowserTab,
             File,
-            Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+            Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler },
+            Facebook,
+            BarcodeScanner,
+            Toast]
     }),
     __metadata("design:paramtypes", [])
 ], AppModule);
