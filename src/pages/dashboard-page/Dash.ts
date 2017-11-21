@@ -4,6 +4,7 @@ import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 import { BasePage } from '../base-page/base-page';
 
+
 //import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import {App} from '../../models/models';
 @IonicPage()
@@ -12,6 +13,7 @@ import {App} from '../../models/models';
     templateUrl: 'Dash.html'
 })
 export class DashPage extends BasePage {
+
     qrData = null;
     createdCode = null;
     scannedCode = null;
@@ -42,9 +44,11 @@ export class DashPage extends BasePage {
   qrCodeScan() {
    
   }
+  
+	parkings(){this.navigateTo('ParkingPage');}
 	
-	
-  login() { this.navigateTo('RestaurentPage');
+
+  login() {debugger; this.navigateTo('RestaurentPage');
 	
 }
 

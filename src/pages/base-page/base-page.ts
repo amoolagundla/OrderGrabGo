@@ -84,6 +84,7 @@ export abstract class BasePage {
   
   navigatePage() {
       this.storageProviderClass.skipIntroPage.then((skipIntroPage) => {
+	  
           if (skipIntroPage) {
               this.storageProviderClass.token.then((token: string) => {
                   if (token != null) {

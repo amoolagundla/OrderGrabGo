@@ -51,7 +51,9 @@ var DashPage = (function (_super) {
             console.log(err);
         });
     };
+	
     DashPage.prototype.login = function () {
+		debugger;
         this.navigateTo('RestaurentPage');
     };
     return DashPage;

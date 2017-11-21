@@ -50,6 +50,7 @@ export function HttpLoaderFactory(http: Http) {
 @NgModule({
   declarations: [
     MyApp
+
   ],
   imports: [
     BrowserModule,

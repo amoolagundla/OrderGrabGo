@@ -33,7 +33,22 @@ export class ValuesService {
               .get('api/ads/GetPlaceswithzomato/'+start+'/'+end).map((response: Response) => response.json());
    
     }
+  FindCuisineWithZomato(start: any, end: any) {
 
+        return this.http
+            .get('api/ads/FindCuisineWithZomato/' + start + '/' + end).map((response: Response) => response.json());
+
+    }
+	 FindplcaesWithCuinesSelected(start: any, end: any,dat:any) {
+	 debugger;
+        var jdata = {
+            "lat": start,
+            "log": end,
+            "cuisineIdList": dat
+        };
+        var resdata= this.http.post('api/ads/FindplcaesWithCuinesSelected/', jdata).map((response: Response) => response.json());
+return resdata;
+    }
      GetUserInfo() {
 
           this.http
