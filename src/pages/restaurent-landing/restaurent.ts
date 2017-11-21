@@ -117,8 +117,7 @@ export class RestaurentPage extends BasePage {
 
                  var jdata = JSON.stringify(data);
                 var pdata = JSON.parse(jdata);
-                this.cuisines = pdata;
-                //this.showContentView();
+                this.cuisines = pdata;               
                 let alert = this.atrCtrl.create();
                 alert.setTitle('What sounds good?');
 				 for (var i = 0; i < this.cuisines.cuisines.length; i++) {
@@ -135,26 +134,22 @@ export class RestaurentPage extends BasePage {
                 alert.addButton({
                     text: 'Apply',
                     handler: data => {
-                        console.log('Checkbox data:', data);
-						debugger;
-                        //this.navigateTo('RestaurentPage')
+						
                         this.getlocation().then((resp) => {
 
                             this.valuesService.FindplcaesWithCuinesSelected(resp.coords.latitude, resp.coords.longitude,data).subscribe((data: App.GooglePlaces) => {
-                                debugger;
+                               
                                 this.places = data;
-                                this.showContentView();
-
-
+                                
                                 this.onRefreshComplete();
 
                             });
                         }).catch((error) => {
-						debugger;
-                            this.showEmptyView();
+						
+                           
                         });
-						this.showLoadingView();
-						this.loadData();
+						
+						
                     }
                 });
 

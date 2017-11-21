@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 807:
+/***/ 805:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignInPageModule", function() { return SignInPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_in_page__ = __webpack_require__(830);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sign_in_page__ = __webpack_require__(826);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ SignInPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sign_in_page__["a" /* SignInPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
@@ -44,146 +44,7 @@ SignInPageModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(811);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-var SharedModule = (function () {
-    function SharedModule() {
-    }
-    return SharedModule;
-}());
-SharedModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        declarations: [],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicModule */],
-            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
-            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
-            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
-            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
-            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
-            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
-            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
-        ]
-    })
-], SharedModule);
-
-//# sourceMappingURL=shared.module.js.map
-
-/***/ }),
-
-/***/ 811:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(812);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var EmptyViewModule = (function () {
-    function EmptyViewModule() {
-    }
-    return EmptyViewModule;
-}());
-EmptyViewModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */],
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */])
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */]
-        ]
-    })
-], EmptyViewModule);
-
-//# sourceMappingURL=empty-view.module.js.map
-
-/***/ }),
-
-/***/ 812:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyView; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var EmptyView = (function () {
-    function EmptyView() {
-        this.text = '';
-        this.icon = 'alert';
-    }
-    return EmptyView;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", String)
-], EmptyView.prototype, "text", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", String)
-], EmptyView.prototype, "icon", void 0);
-EmptyView = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\OrderGrabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\OrderGrabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/
-    }),
-    __metadata("design:paramtypes", [])
-], EmptyView);
-
-//# sourceMappingURL=empty-view.js.map
-
-/***/ }),
-
-/***/ 813:
+/***/ 808:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -202,17 +63,17 @@ EmptyView = __decorate([
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
         this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
         this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
         this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
         this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* MenuController */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -350,7 +211,146 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 815:
+/***/ 809:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    return SharedModule;
+}());
+SharedModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicModule */],
+            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
+            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
+            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
+            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
+            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
+            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
+            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
+        ]
+    })
+], SharedModule);
+
+//# sourceMappingURL=shared.module.js.map
+
+/***/ }),
+
+/***/ 810:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var EmptyViewModule = (function () {
+    function EmptyViewModule() {
+    }
+    return EmptyViewModule;
+}());
+EmptyViewModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */])
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */]
+        ]
+    })
+], EmptyViewModule);
+
+//# sourceMappingURL=empty-view.module.js.map
+
+/***/ }),
+
+/***/ 811:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyView; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EmptyView = (function () {
+    function EmptyView() {
+        this.text = '';
+        this.icon = 'alert';
+    }
+    return EmptyView;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", String)
+], EmptyView.prototype, "text", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", String)
+], EmptyView.prototype, "icon", void 0);
+EmptyView = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'empty-view',template:/*ion-inline-start:"C:\OrderGRabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\OrderGRabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/
+    }),
+    __metadata("design:paramtypes", [])
+], EmptyView);
+
+//# sourceMappingURL=empty-view.js.map
+
+/***/ }),
+
+/***/ 813:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -472,17 +472,17 @@ var GooglePlus = (function (_super) {
 
 /***/ }),
 
-/***/ 830:
+/***/ 826:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignInPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__base_page_base_page__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(394);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(815);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__ = __webpack_require__(390);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(813);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_local_storage__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_ValuesService__ = __webpack_require__(215);
 var __extends = (this && this.__extends) || (function () {
@@ -632,15 +632,13 @@ var SignInPage = (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_2__base_page_base_page__["a" /* BasePage */]));
 SignInPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-sign-in-page',template:/*ion-inline-start:"C:\OrderGrabGo\branches\Refreshed_Branch\src\pages\sign-in-page\sign-in-page.html"*/'\n\n\n\n<ion-content padding text-center>\n\n    \n\n    <img src="assets/img/banner.png" class="banner">\n\n    <div class="container" >\n\n\n\n        <div class="omb_login">\n\n            <h3 class="omb_authTitle">Login or <a (click)="goToSignUp()">Sign up</a></h3>\n\n            <div class="row omb_row-sm-offset-1 omb_socialButtons">\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a (click)="facebookLogIn()" class="btn btn-lg btn-block omb_btn-facebook">\n\n                        <i class="fa fa-facebook visible-xs"></i>\n\n                        <span class="hidden-xs">Facebook</span>\n\n                    </a>\n\n                </div>\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a (click)="googleSignIn()" class="btn btn-lg btn-block omb_btn-google">\n\n                        <i class="fa fa-google-plus visible-xs"></i>\n\n                        <span class="hidden-xs">Google+</span>\n\n                    </a>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3 omb_loginOr">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <hr class="omb_hrOr">\n\n                    <span class="omb_spanOr">or</span>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <form class="omb_loginForm" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>\n\n                        \n\n                            <div class="input-group">\n\n                                <span class="input-group-addon" color="primary"><i class="fa fa-user"></i></span>\n\n                                <input  type="email" class="form-control" formControlName="email" [(ngModel)]="email" placeholder="email address">\n\n                            </div>\n\n                            <span class="help-block"></span>\n\n\n\n                            <div class="input-group">\n\n                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n\n                                <input type="password" class="form-control" formControlName="password" [(ngModel)]="password" placeholder="Password">\n\n                            </div>\n\n                            <br/>\n\n                            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid">Login</button>\n\n                        </form>\n\n</div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <label class="checkbox">\n\n                       <br/>\n\n                    </label>\n\n                </div>\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <p class="omb_forgotPwd">\n\n                        <a >Forgot password?</a>\n\n                    </p>\n\n                </div>\n\n            </div>\n\n        </div>\n\n\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\OrderGrabGo\branches\Refreshed_Branch\src\pages\sign-in-page\sign-in-page.html"*/,
+        selector: 'page-sign-in-page',template:/*ion-inline-start:"C:\OrderGRabGo\branches\Refreshed_Branch\src\pages\sign-in-page\sign-in-page.html"*/'\n\n\n\n<ion-content padding text-center>\n\n    \n\n    <img src="assets/img/banner.png" class="banner">\n\n    <div class="container" >\n\n\n\n        <div class="omb_login">\n\n            <h3 class="omb_authTitle">Login or <a (click)="goToSignUp()">Sign up</a></h3>\n\n            <div class="row omb_row-sm-offset-1 omb_socialButtons">\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a (click)="facebookLogIn()" class="btn btn-lg btn-block omb_btn-facebook">\n\n                        <i class="fa fa-facebook visible-xs"></i>\n\n                        <span class="hidden-xs">Facebook</span>\n\n                    </a>\n\n                </div>\n\n                <div class="col-xs-6 col-sm-2">\n\n                    <a (click)="googleSignIn()" class="btn btn-lg btn-block omb_btn-google">\n\n                        <i class="fa fa-google-plus visible-xs"></i>\n\n                        <span class="hidden-xs">Google+</span>\n\n                    </a>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3 omb_loginOr">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <hr class="omb_hrOr">\n\n                    <span class="omb_spanOr">or</span>\n\n                </div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-6">\n\n                    <form class="omb_loginForm" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>\n\n                        \n\n                            <div class="input-group">\n\n                                <span class="input-group-addon" color="primary"><i class="fa fa-user"></i></span>\n\n                                <input  type="email" class="form-control" formControlName="email" [(ngModel)]="email" placeholder="email address">\n\n                            </div>\n\n                            <span class="help-block"></span>\n\n\n\n                            <div class="input-group">\n\n                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>\n\n                                <input type="password" class="form-control" formControlName="password" [(ngModel)]="password" placeholder="Password">\n\n                            </div>\n\n                            <br/>\n\n                            <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!form.valid">Login</button>\n\n                        </form>\n\n</div>\n\n            </div>\n\n            <div class="row omb_row-sm-offset-3">\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <label class="checkbox">\n\n                       <br/>\n\n                    </label>\n\n                </div>\n\n                <div class="col-xs-12 col-sm-3">\n\n                    <p class="omb_forgotPwd">\n\n                        <a >Forgot password?</a>\n\n                    </p>\n\n                </div>\n\n            </div>\n\n        </div>\n\n\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\OrderGRabGo\branches\Refreshed_Branch\src\pages\sign-in-page\sign-in-page.html"*/,
         providers: [__WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */]]
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"],
-        __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */], __WEBPACK_IMPORTED_MODULE_7__providers_ValuesService__["a" /* ValuesService */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */], __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */], __WEBPACK_IMPORTED_MODULE_6__providers_local_storage__["a" /* LocalStorage */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__providers_ValuesService__["a" /* ValuesService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__providers_ValuesService__["a" /* ValuesService */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_facebook__["a" /* Facebook */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__["a" /* GooglePlus */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__providers_local_storage__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_local_storage__["a" /* LocalStorage */]) === "function" && _h || Object])
 ], SignInPage);
 
+var _a, _b, _c, _d, _e, _f, _g, _h;
 //# sourceMappingURL=sign-in-page.js.map
 
 /***/ })

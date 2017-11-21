@@ -40,7 +40,7 @@ export class ValuesService {
 
     }
 	 FindplcaesWithCuinesSelected(start: any, end: any,dat:any) {
-	 debugger;
+	 
         var jdata = {
             "lat": start,
             "log": end,

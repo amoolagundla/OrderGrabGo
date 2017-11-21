@@ -48,7 +48,7 @@ export class DashPage extends BasePage {
 	parkings(){this.navigateTo('ParkingPage');}
 	
 
-  login() {debugger; this.navigateTo('RestaurentPage');
+  login() { this.navigateTo('RestaurentPage');
 	
 }
 

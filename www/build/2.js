@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 800:
+/***/ 798:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MapPageModule", function() { return MapPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_page__ = __webpack_require__(823);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__map_page__ = __webpack_require__(819);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_module__ = __webpack_require__(809);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +31,7 @@ MapPageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__map_page__["a" /* MapPage */]),
             __WEBPACK_IMPORTED_MODULE_3__shared_module__["a" /* SharedModule */]
         ],
         exports: [
@@ -44,146 +44,7 @@ MapPageModule = __decorate([
 
 /***/ }),
 
-/***/ 810:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(811);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(383);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-
-
-
-
-var SharedModule = (function () {
-    function SharedModule() {
-    }
-    return SharedModule;
-}());
-SharedModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        declarations: [],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicModule */],
-            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
-            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
-            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
-            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
-            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
-            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
-            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
-        ]
-    })
-], SharedModule);
-
-//# sourceMappingURL=shared.module.js.map
-
-/***/ }),
-
-/***/ 811:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(812);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var EmptyViewModule = (function () {
-    function EmptyViewModule() {
-    }
-    return EmptyViewModule;
-}());
-EmptyViewModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-        declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */],
-        ],
-        imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */])
-        ],
-        exports: [
-            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */]
-        ]
-    })
-], EmptyViewModule);
-
-//# sourceMappingURL=empty-view.module.js.map
-
-/***/ }),
-
-/***/ 812:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyView; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var EmptyView = (function () {
-    function EmptyView() {
-        this.text = '';
-        this.icon = 'alert';
-    }
-    return EmptyView;
-}());
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", String)
-], EmptyView.prototype, "text", void 0);
-__decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", String)
-], EmptyView.prototype, "icon", void 0);
-EmptyView = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'empty-view',template:/*ion-inline-start:"C:\OrderGrabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\OrderGrabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/
-    }),
-    __metadata("design:paramtypes", [])
-], EmptyView);
-
-//# sourceMappingURL=empty-view.js.map
-
-/***/ }),
-
-/***/ 813:
+/***/ 808:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -202,17 +63,17 @@ EmptyView = __decorate([
 
 var BasePage = (function () {
     function BasePage(injector) {
-        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* LoadingController */]);
-        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["o" /* ToastController */]);
-        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */]);
-        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["b" /* AlertController */]);
-        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */]);
+        this.loadingCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* LoadingController */]);
+        this.toastCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["n" /* ToastController */]);
+        this.navCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["k" /* NavController */]);
+        this.alertCtrl = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["a" /* AlertController */]);
+        this.navParams = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavParams */]);
         this.translate = injector.get(__WEBPACK_IMPORTED_MODULE_0__ngx_translate_core__["c" /* TranslateService */]);
         this.localStorage = injector.get(__WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]);
         this.storageProviderClass = injector.get(__WEBPACK_IMPORTED_MODULE_1__providers_local_storage__["a" /* LocalStorage */]);
         this.sharedData = injector.get(__WEBPACK_IMPORTED_MODULE_2__providers_SharedDataService__["a" /* SharedDataService */]);
         this._valuesService = injector.get(__WEBPACK_IMPORTED_MODULE_3__providers_ValuesService__["a" /* ValuesService */]);
-        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["i" /* MenuController */]);
+        var menu = injector.get(__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["h" /* MenuController */]);
         menu.swipeEnable(this.enableMenuSwipe());
     }
     BasePage.prototype.showLoadingView = function () {
@@ -350,15 +211,154 @@ var BasePage = (function () {
 
 /***/ }),
 
-/***/ 814:
+/***/ 809:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return GoogleMapsEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__ = __webpack_require__(810);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__ = __webpack_require__(385);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    return SharedModule;
+}());
+SharedModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicModule */],
+            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
+            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
+            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
+            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["b" /* TranslateModule */],
+            __WEBPACK_IMPORTED_MODULE_3__components_empty_view_empty_view_module__["a" /* EmptyViewModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_img_fallback__["Ng2ImgFallbackModule"],
+            __WEBPACK_IMPORTED_MODULE_5_ng_lazyload_image__["LazyLoadImageModule"],
+            __WEBPACK_IMPORTED_MODULE_6_ionic2_rating__["a" /* Ionic2RatingModule */],
+        ]
+    })
+], SharedModule);
+
+//# sourceMappingURL=shared.module.js.map
+
+/***/ }),
+
+/***/ 810:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyViewModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__empty_view__ = __webpack_require__(811);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var EmptyViewModule = (function () {
+    function EmptyViewModule() {
+    }
+    return EmptyViewModule;
+}());
+EmptyViewModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */])
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_2__empty_view__["a" /* EmptyView */]
+        ]
+    })
+], EmptyViewModule);
+
+//# sourceMappingURL=empty-view.module.js.map
+
+/***/ }),
+
+/***/ 811:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmptyView; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EmptyView = (function () {
+    function EmptyView() {
+        this.text = '';
+        this.icon = 'alert';
+    }
+    return EmptyView;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", String)
+], EmptyView.prototype, "text", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", String)
+], EmptyView.prototype, "icon", void 0);
+EmptyView = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'empty-view',template:/*ion-inline-start:"C:\OrderGRabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/'<div class="container">\n  <ion-icon [name]="icon"></ion-icon>\n  <p ion-item no-lines>{{ text }}</p>\n</div>\n'/*ion-inline-end:"C:\OrderGRabGo\branches\Refreshed_Branch\src\components\empty-view\empty-view.html"*/
+    }),
+    __metadata("design:paramtypes", [])
+], EmptyView);
+
+//# sourceMappingURL=empty-view.js.map
+
+/***/ }),
+
+/***/ 812:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GoogleMapsEvent; });
 /* unused harmony export GoogleMapsAnimation */
 /* unused harmony export GoogleMapsMapTypeId */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return GoogleMap; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GoogleMaps; });
+/* unused harmony export GoogleMaps */
 /* unused harmony export Marker */
 /* unused harmony export Circle */
 /* unused harmony export Polyline */
@@ -366,8 +366,8 @@ var BasePage = (function () {
 /* unused harmony export TileOverlay */
 /* unused harmony export GroundOverlay */
 /* unused harmony export KmlOverlay */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return LatLngBounds; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LatLng; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return LatLngBounds; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return LatLng; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Geocoder; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_native_core__ = __webpack_require__(16);
@@ -2553,19 +2553,19 @@ Geocoder = __decorate([
 
 /***/ }),
 
-/***/ 823:
+/***/ 819:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_place_service__ = __webpack_require__(386);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_style__ = __webpack_require__(388);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_page_base_page__ = __webpack_require__(813);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_place_service__ = __webpack_require__(387);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_map_style__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__base_page_base_page__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(387);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__ = __webpack_require__(814);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__ = __webpack_require__(386);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__ = __webpack_require__(812);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -2623,7 +2623,7 @@ var MapPage = (function (_super) {
         if (this.map) {
             this.map.clear();
             this.map.setZoom(1);
-            this.map.setCenter(new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["e" /* LatLng */](0, 0));
+            this.map.setCenter(new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* LatLng */](0, 0));
         }
     };
     MapPage.prototype.ionViewDidLoad = function () {
@@ -2635,7 +2635,7 @@ var MapPage = (function (_super) {
                 styles: __WEBPACK_IMPORTED_MODULE_3__providers_map_style__["a" /* MapStyle */].dark(),
                 backgroundColor: '#333333'
             });
-            this.map.one(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* GoogleMapsEvent */].MAP_READY).then(function () {
+            this.map.one(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MAP_READY).then(function () {
                 _this.storage.unit.then(function (unit) {
                     _this.params.unit = unit;
                     var options = {
@@ -2654,7 +2654,7 @@ var MapPage = (function (_super) {
             this.storage.mapStyle.then(function (mapStyle) {
                 _this.map.setMapTypeId(mapStyle);
             });
-            this.map.on(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* GoogleMapsEvent */].MY_LOCATION_BUTTON_CLICK).subscribe(function (map) {
+            this.map.on(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].MY_LOCATION_BUTTON_CLICK).subscribe(function (map) {
                 if (_this.isViewLoaded) {
                     _this.map.getCameraPosition().then(function (camera) {
                         var target = camera.target;
@@ -2685,7 +2685,7 @@ var MapPage = (function (_super) {
             };
             var geocoder = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["a" /* Geocoder */];
             geocoder.geocode(request).then(function (results) {
-                var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["e" /* LatLng */](results[0].position.lat, results[0].position.lng);
+                var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* LatLng */](results[0].position.lat, results[0].position.lng);
                 var position = {
                     target: target,
                     zoom: 10
@@ -2721,7 +2721,7 @@ var MapPage = (function (_super) {
         var points = [];
         for (var _i = 0, places_1 = places; _i < places_1.length; _i++) {
             var place = places_1[_i];
-            var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["e" /* LatLng */](place.location.latitude, place.location.longitude);
+            var target = new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* LatLng */](place.location.latitude, place.location.longitude);
             var icon = (place.category && place.category.get('icon')) ? {
                 url: place.category.get('icon').url(),
                 size: {
@@ -2740,7 +2740,7 @@ var MapPage = (function (_super) {
                 },
             };
             this.map.addMarker(markerOptions).then(function (marker) {
-                marker.addEventListener(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["d" /* GoogleMapsEvent */].INFO_CLICK).subscribe(function (e) {
+                marker.addEventListener(__WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["c" /* GoogleMapsEvent */].INFO_CLICK).subscribe(function (e) {
                     _this.goToPlace(e.get('place'));
                 });
             });
@@ -2748,7 +2748,7 @@ var MapPage = (function (_super) {
         }
         if (points.length) {
             this.map.moveCamera({
-                target: new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["f" /* LatLngBounds */](points),
+                target: new __WEBPACK_IMPORTED_MODULE_7__ionic_native_google_maps__["e" /* LatLngBounds */](points),
                 zoom: 10
             });
         }
@@ -2779,15 +2779,12 @@ var MapPage = (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_4__base_page_base_page__["a" /* BasePage */]));
 MapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-map-page',template:/*ion-inline-start:"C:\OrderGrabGo\branches\Refreshed_Branch\src\pages\map-page\map-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ "MAP" | translate }}</ion-title>\n  </ion-navbar>\n  <ion-toolbar color="primary">\n    <ion-searchbar color="dark" debounce="2000"\n      placeholder="{{ \'ENTER_ADDRESS\' | translate }}"\n      (ionInput)="onSearchAddress($event)"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div id="map" class="map" #map showWhen="android,ios"></div>\n  <empty-view [text]="\'ERROR_CORDOVA_MAPS\' | translate" icon="map" showWhen="core">\n  </empty-view>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="secondary" text-center>\n    <button ion-button outline (click)="onSearchButtonTapped()">\n      {{ "SEARCH" | translate }}\n    </button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\OrderGrabGo\branches\Refreshed_Branch\src\pages\map-page\map-page.html"*/
+        selector: 'page-map-page',template:/*ion-inline-start:"C:\OrderGRabGo\branches\Refreshed_Branch\src\pages\map-page\map-page.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{ "MAP" | translate }}</ion-title>\n  </ion-navbar>\n  <ion-toolbar color="primary">\n    <ion-searchbar color="dark" debounce="2000"\n      placeholder="{{ \'ENTER_ADDRESS\' | translate }}"\n      (ionInput)="onSearchAddress($event)"></ion-searchbar>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div id="map" class="map" #map showWhen="android,ios"></div>\n  <empty-view [text]="\'ERROR_CORDOVA_MAPS\' | translate" icon="map" showWhen="core">\n  </empty-view>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar color="secondary" text-center>\n    <button ion-button outline (click)="onSearchButtonTapped()">\n      {{ "SEARCH" | translate }}\n    </button>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\OrderGRabGo\branches\Refreshed_Branch\src\pages\map-page\map-page.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */],
-        __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__["a" /* LocalStorage */],
-        __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Events */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__["a" /* LocalStorage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_local_storage__["a" /* LocalStorage */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__ionic_native_geolocation__["a" /* Geolocation */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */]) === "function" && _e || Object])
 ], MapPage);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=map-page.js.map
 
 /***/ })
