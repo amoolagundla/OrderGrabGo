@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">Your Location WEST DES MOINES</span></ion-title>
+  </ion-navbar> 
+	<ion-toolbar color="danger">
+    <ion-searchbar color="dark" debounce="2000"
+      placeholder="{{ 'Start Searching' | translate }}"
+      (ionInput)="onSearchAddress()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="restaurent">
+  
+  <ion-refresher (ionRefresh)="onReload($event)">
+    <ion-refresher-content
+      pullingText="{{ 'PULL_TO_REFRESH' | translate }}"
+      refreshingText="{{ 'REFRESHING' | translate }}">
+    </ion-refresher-content>
+  </ion-refresher>
+<div *ngIf="isContentViewVisible"> 
+	
+<div class="white_bg" >
+    <div class="container margin_60">        
+        <div class="menu-section">
+            <ul class="list-inline">
+                <li (click)="gotocat()"><a >Near by Restaurents</a></li>
+                <li><a >what sounds good?</a></li>
+                <li><a >Dine in</a></li>
+                <li><a >Take Out</a></li>
+                <li><a >Delivery</a></li>
+                <li><a >Parties</a></li>
+            </ul>
+            <div class="search">
+                <ion-searchbar color="dark" debounce="2000"
+                placeholder="{{ 'Filter Restaurents' | translate }}" [(ngModel)]="searchTerm"
+               ></ion-searchbar>
+            </div>
+        </div>   
+        
+        <div class="view-rest" *ngIf="isContentViewVisible">            
+                <div class="row">
+                    <div class="col-xs-6"  *ngFor="let place of places.restaurants">
+                        <div class="rest-addr">
+                            <img src="assets/img/food-item-1.jpg" />
+                            <h3>{{place.restaurant.name}}</h3>
+                            
+                            <p> {{place.restaurant.average_cost_for_two}} $ average cost for two</p>
+
+                            <p>{{ place.restaurant.has_table_booking ==0? 'has Online Table Booking':'no Online Table Booking'}} </p>
+                               <p>{{ place.restaurant.has_online_delivery ==0? 'has Delivery':'no Delivery'}}</p>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+        </div>
+        
+        
+        </div><!-- End container -->
+        </div>
+
+</div>
+</ion-content>

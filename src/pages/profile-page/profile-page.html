@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'PROFILE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="onPresentEditModal()">
+        {{ 'EDIT' | translate }}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content text-center>
+  <ion-avatar>
+    <img [src]="user.picture" src-fallback="assets/img/avatar.png" />
+  </ion-avatar>
+  <h3>{{ user.FirstName  +' ' + user.LastName }}</h3>
+ 
+  <ion-item>
+    <h2 ion-text color="primary">{{ 'EMAIL' | translate }}</h2>
+    <p>{{ user.Email }}</p>
+  </ion-item>
+  
+</ion-content>
