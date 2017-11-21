@@ -67,7 +67,7 @@ getlocation() {
   loadData() {
     
     this.getlocation().then((resp) => {
-      
+
         this.valuesService.CheckLocation(resp.coords.latitude , resp.coords.longitude).subscribe((data:App.GooglePlaces)=>
         {
           
