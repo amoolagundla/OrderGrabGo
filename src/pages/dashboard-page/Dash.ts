@@ -53,7 +53,7 @@ export class DashPage extends BasePage {
 	
 
   login() { this.navigateTo('RestaurentPage');
-	
+  
 }
-
+messages(){ this.navigateTo('MessagesPage');}
 }
