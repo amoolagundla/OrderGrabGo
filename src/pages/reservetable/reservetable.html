@@ -1,0 +1,74 @@
+<!--
+  Generated template for the ReservetablePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    
+    <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
+	<ion-title> <p class="nav-title">{{name}}</p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="reserve-cont">
+<ion-card class="headinside">
+    <img src="../assets/img/bg.png"/>
+    <!-- <div class="card-title">{{firstName}}</div> -->
+    <!-- <div class="card-subtitle">{{name}}</div> -->
+  </ion-card>
+
+  <ion-item>
+  <ion-label>Location</ion-label>
+  <ion-select [(ngModel)]="Hotal_Location"> 
+   <ion-option>{{location}}</ion-option>
+  </ion-select>
+</ion-item> 
+ <ion-item>  
+    <ion-label><ion-icon name="calendar"></ion-icon> Date</ion-label>  
+	<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="ReservationDate"></ion-datetime>
+  </ion-item>
+   <ion-item> 
+    <ion-label>  <ion-icon name="time"></ion-icon> Time</ion-label>
+	<ion-datetime displayFormat="h:mm A" [(ngModel)]="ReservationTime"></ion-datetime>
+  </ion-item>
+  <ion-item> 
+<ion-label><ion-icon name="people"></ion-icon> Party Size</ion-label>
+  <ion-select [(ngModel)]="party_size">
+    <ion-option>1</ion-option>
+    <ion-option>2</ion-option>
+    <ion-option>3</ion-option> 
+    <ion-option>4</ion-option> 
+    <ion-option>5</ion-option>
+    <ion-option>6</ion-option>
+    <ion-option>7</ion-option>
+    <ion-option>8</ion-option>
+    <ion-option>9</ion-option>
+    <ion-option>10</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item> 
+<ion-label>  <ion-icon name="flower"></ion-icon> Special Request?</ion-label>
+  <ion-select [(ngModel)]="Special_Request"> 
+    <ion-option>None</ion-option> 
+    <ion-option>Special Occasions</ion-option>
+    <ion-option>Birthday Party</ion-option>
+    <ion-option>Anniversary</ion-option> 
+    <ion-option>Others</ion-option> 
+  </ion-select>
+</ion-item>
+<!-- <ul class="list-inline text-center">
+            <li><a>Book Table</a></li>
+            <li><a>Reserve Table</a></li>
+            <li><a>Delivery</a></li>
+</ul> -->
+<ion-grid class="btncenter"> 
+
+		 <button [navPush]="HomePage" ion-button (click)="showAlert()">Reserve Table</button> 
+</ion-grid>
+</ion-content>

@@ -8,6 +8,7 @@ import { Category } from '../../providers/categories';
 import { BasePage } from '../base-page/base-page';
 import { Geolocation } from '@ionic-native/geolocation';
 import { App } from '../../models/models';
+
 import {
     ValuesService
 } from '../../providers/ValuesService';
@@ -164,5 +165,8 @@ export class RestaurentPage extends BasePage {
     }
     filter() {
         this.places = this.places.filter(res => res.restaurent.name == this.searchTerm);
+    }
+	 indRest(restuarants: any) {
+		this.navigateTo('RestaurantDetailPage',restuarants);
     }
 }

@@ -1,0 +1,168 @@
+page-restaurant-detail {
+.toolbar-background-md{ background:none; border:0px;}
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before { display:none;}
+.scroll-content { margin:0px !important;}
+.headinside { margin:0px !important; width:100% !important;}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default { color:#fff !important;}
+.headinside img { width:100%;}
+.toolbar-md-danger .toolbar-background-md { background:none !important;}
+
+    .book-table .carousel .carousel-control {
+        width: auto;
+        font-size: 35px;
+        margin-top: -35px;
+        top: 50%;
+        background: none;
+        left: 15px;
+    }
+
+    .book-table .carousel .right.carousel-control {
+        left: auto;
+        right: 15px;
+    }
+
+    .address-section {
+        padding: 20px 5px;
+    }
+
+    .address-section h1 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 0 5px;
+    }
+
+    .address-section p {
+        color: #777777;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .address-section address {
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .address-section address span {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .booking-process {
+        padding: 0 5px;
+    }
+
+    .booking-process ul {
+        margin-left: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        float: left;
+    }
+
+    .booking-process ul li {
+        text-align: center;
+    }
+
+    .booking-process ul:first-child {
+        margin-bottom: 25px;
+    }
+
+    .booking-process ul:first-child li a {
+        border: 1px solid #45818e;
+        color: #45818e;
+        font-weight: 600;
+        padding: 6px 12px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .booking-process ul:first-child li a:hover,
+    .booking-process ul:first-child li a:focus,
+    .booking-process ul:first-child li a:active {
+        background-color: #45818e;
+        color: #ffffff;
+    }
+
+    .booking-process ul:nth-of-type(2) li,
+    .booking-process ul:nth-of-type(3) li {
+        padding: 0 15px;
+    }
+
+    .booking-process ul:nth-of-type(2) li .fa,
+    .booking-process ul:nth-of-type(3) li .fa {
+        font-size: 30px;
+        color: #45818e;
+        margin-bottom: 5px;
+    }
+
+    .booking-process ul:nth-of-type(2) li span,
+    .booking-process ul:nth-of-type(3) li span {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        max-width: 100px;
+        margin: auto;
+        height: 35px;
+        overflow: hidden;
+    }
+
+    .booking-form .banner {
+        margin: 0 -5px;
+    }
+
+    .booking-form form [class^="col-"] {
+        padding: 0 8px;
+    }
+
+    .booking-form form .form-group {
+        width: 100%;
+        float: left;
+    }
+
+    .booking-form form [class^="field-"] {
+        position: relative;
+    }
+
+    .booking-form form [class^="field-"]:before {
+        content: '';
+        font: 18px 'fontawesome';
+        position: absolute;
+        top: 7px;
+        left: 10px;
+    }
+
+    .booking-form form .form-group .field-date:before {
+        content: '\f073';
+    }
+
+    .booking-form form .form-group .field-time:before {
+        content: '\f017';
+    }
+
+    .booking-form form .form-group .field-user:before {
+        content: '\f0c0';
+    }
+
+    .booking-form form .form-group [class^="field-"] .form-control {
+        padding: 6px 12px 6px 35px;
+    }
+
+    .booking-form form .form-control {
+        box-shadow: none;
+        border: 2px solid #000;
+        border-radius: 0;
+    }
+
+    .booking-form form label {
+        font-weight: 600;
+    }
+
+    .booking-form form {
+        padding: 20px 0;
+        width: 100%;
+        float: left;
+    }
+
+    .booking-form form label.control-label {
+        padding-top: 7px;
+    }
+}
