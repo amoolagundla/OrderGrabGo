@@ -5,7 +5,7 @@ import { Component, Injector } from '@angular/core';
 import { BasePage } from '../base-page/base-page';
 
 
-//import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import {App} from '../../models/models';
 @IonicPage()
 @Component({
@@ -21,7 +21,7 @@ export class DashPage extends BasePage {
     public firstName: string = 'OrderGrabGo';
     public scannedObject: string = '';
     public scanData: boolean = false;
-    constructor(injector: Injector//, private _barcodeScanner: BarcodeScanner
+    constructor(injector: Injector, private _barcodeScanner: BarcodeScanner
     ) {
         super(injector);
         
@@ -42,7 +42,11 @@ export class DashPage extends BasePage {
     
   }
   qrCodeScan() {
-   
+    this._barcodeScanner.scan().then((barcodeData) => {
+        this.scannedObject = barcodeData.text;
+    }, (err) => {
+        console.log(err);
+    });
   }
   
 	parkings(){this.navigateTo('ParkingPage');}

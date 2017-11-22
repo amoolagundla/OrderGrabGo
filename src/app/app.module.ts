@@ -40,7 +40,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
 
 import { Facebook } from '@ionic-native/facebook';
-
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Toast } from '@ionic-native/toast';
 
 export function HttpLoaderFactory(http: Http) {
@@ -88,7 +88,7 @@ export function HttpLoaderFactory(http: Http) {
     AppVersion,
     HeaderColor,
     BrowserTab,
-    File,
+    File,BarcodeScanner,
     Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler },
 	Facebook,
   

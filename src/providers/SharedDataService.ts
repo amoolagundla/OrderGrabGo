@@ -6,7 +6,6 @@ export class SharedDataService {
 
     public UserInfo = new BehaviorSubject<any>(new App.UserInfoViewModel());
     public USerInfoChanged(newData: App.UserInfoViewModel) {
-        console.log(newData);
         this.UserInfo.next(newData);
 
     }   

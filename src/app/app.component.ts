@@ -119,11 +119,9 @@ export class MyApp {
                   }
               }, error => {  this.rootPage = 'SignInPage'; });
           }
-      }).catch((e) => console.log(e));
+      }).catch((e) => this.rootPage = 'SignInPage');
 
-      this.storage.skipIntroPage.then((skipIntroPage) => {
-          this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
-      }).catch((e) => console.log(e));
+      
 
       this.buildMenu();
     }).catch((e) => console.log(e));
