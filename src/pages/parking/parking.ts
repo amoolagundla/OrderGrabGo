@@ -21,8 +21,8 @@ declare var google;
     templateUrl: 'parking.html',
 })
 export class ParkingPage extends BasePage {
-    @ViewChild('map_add') mapElement: ElementRef;
-    private map: GoogleMap;
+    @ViewChild('map') mapElement: ElementRef;
+    map: any;
     private marker: Marker;
     isViewLoaded: boolean;
     
@@ -72,87 +72,57 @@ export class ParkingPage extends BasePage {
 
         this.isViewLoaded = false;
 
-        if (this.map) {
-            this.map.clear();
-            this.map.setZoom(1);
-            this.map.setCenter(new LatLng(0, 0));
-        }
+        
     }
     getlocation() {
         return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
     }
     ionViewDidLoad() {
         this.isViewLoaded = true;
-        console.log('ionViewDidLoad ParkingPage');
         this.loadMap();
-        //if (this.platform.is('cordova')) {
-
-        //    this.map = new GoogleMap('map_add', {
-        //        styles: MapStyle.dark(),
-        //        backgroundColor: '#333333'
-        //    });
-
-        //    let markerOptions: MarkerOptions = {
-        //        position: new LatLng(0, 0),
-        //        icon: 'yellow'
-        //    };
-        //    this.getlocation().then((resp) => {
-        //        markerOptions.position.lat = resp.coords.latitude,
-        //            markerOptions.position.lng = resp.coords.longitude
-        //    });
-
-
-        //    this.map.addMarker(markerOptions).then((marker: Marker) => {
-        //        this.marker = marker;
-        //    });
-
-        //    this.map.one(GoogleMapsEvent.MAP_READY);
-        //    this.map.setMyLocationEnabled(true);
-        //    this.map.on(GoogleMapsEvent.MY_LOCATION_BUTTON_CLICK).subscribe((map: GoogleMap) => {
-
-        //        if (this.isViewLoaded) {
-
-        //            this.map.getCameraPosition().then((camera: CameraPosition) => {
-
-        //                let target: LatLng = <LatLng>camera.target;
-        //                this.marker.setPosition(target);
-        //            });
-        //        }
-
-        //    });
-        //}
+        
     }
-
+    addMarker(){
+        
+         let marker = new google.maps.Marker({
+           map: this.map,
+           animation: google.maps.Animation.DROP,
+           position: this.map.getCenter()
+         });
+        
+         let content = "<h4>Information!</h4>";         
+        
+         this.addInfoWindow(marker, content);
+        
+       }
+       addInfoWindow(marker, content){
+        
+         let infoWindow = new google.maps.InfoWindow({
+           content: content
+         });
+        
+         google.maps.event.addListener(marker, 'click', () => {
+           infoWindow.open(this.map, marker);
+         });
+        
+       }
+    
     loadMap() {
-
-        let location = new LatLng(-34.9290, 138.6010);
-
-        this.map = new GoogleMap('map_add', {
-            'backgroundColor': 'white',
-            'controls': {
-                'compass': true,
-                'myLocationButton': true,
-                'indoorPicker': true,
-                'zoom': true
-            },
-            'gestures': {
-                'scroll': true,
-                'tilt': true,
-                'rotate': true,
-                'zoom': true
-            },
-            'camera': {
-                'latLng': location,
-                'tilt': 30,
-                'zoom': 15,
-                'bearing': 50
-            }
-        });
-
-        this.map.on(GoogleMapsEvent.MAP_READY).subscribe(() => {
-            console.log('Map is ready!');
-        });
-
+        this.geolocation.getCurrentPosition().then((position) => {
+            
+                 let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            
+                 let mapOptions = {
+                   center: latLng,
+                   zoom: 15,
+                   mapTypeId: google.maps.MapTypeId.ROADMAP
+                 }
+            
+                 this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+              this.addMarker();
+               }, (err) => {
+                 console.log(err);
+               });
 
     }
 
