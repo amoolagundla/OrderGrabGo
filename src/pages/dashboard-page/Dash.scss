@@ -17,6 +17,9 @@
     padding-right: 30px;
 }
 
+.media-body {
+    width: 100%!important;
+}
 .order-page .row {
     margin: 0;
 }
@@ -42,7 +45,9 @@
 }
 
 .order-page .media .fa {
-    font-size: 50px;
+    
+    font-size: 30px;
+    margin-top: 34%;
 }
 
 .order-page .media .fa-cutlery {
