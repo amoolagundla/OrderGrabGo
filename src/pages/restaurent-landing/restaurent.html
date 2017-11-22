@@ -44,13 +44,11 @@
                 <div class="row">
                     <div class="col-xs-6"  *ngFor="let place of places.restaurants">
                         <div class="rest-addr" (click)="indRest(place.restaurant)">
-                            <img src="assets/img/food-item-1.jpg" />
-                            <h3>{{place.restaurant.name}}</h3>
+                          <img src="assets/img/bg.png"  />
+                            <h5 class="cardText">{{place.restaurant.name}}</h5>
                             
-                            <p> {{place.restaurant.average_cost_for_two}} $ average cost for two</p>
-
-                            <p>{{ place.restaurant.has_table_booking ==0? 'has Online Table Booking':'no Online Table Booking'}} </p>
-                               <p>{{ place.restaurant.has_online_delivery ==0? 'has Delivery':'no Delivery'}}</p>
+                            
+                         
                            
                         </div>
                     </div>

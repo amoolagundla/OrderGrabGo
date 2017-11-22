@@ -75,30 +75,30 @@ export class RestaurentPage extends BasePage {
         return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
     }
     loadData() {
-        this.getlocation().then((resp) => {
+        // this.getlocation().then((resp) => {
 
-            this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
+        //     this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
 
-                this.places = data;
-                this.showContentView();
-
-
-                this.onRefreshComplete();
-
-            });
-        }).catch((error) => {
-            this.showEmptyView();
-        });
-        // this.valuesService.GetPlacesWithZomato('41.5572470' , '-93.7985550').subscribe((data:App.GooglePlaces)=>
-        // {
-
-        //   this.places=data;
-        //   this.showContentView();
+        //         this.places = data;
+        //         this.showContentView();
 
 
-        // this.onRefreshComplete();
+        //         this.onRefreshComplete();
 
+        //     });
+        // }).catch((error) => {
+        //     this.showEmptyView();
         // });
+        this.valuesService.GetPlacesWithZomato('41.5572470' , '-93.7985550').subscribe((data:App.GooglePlaces)=>
+        {
+
+          this.places=data;
+          this.showContentView();
+
+
+        this.onRefreshComplete();
+
+        });
 
 
     }
