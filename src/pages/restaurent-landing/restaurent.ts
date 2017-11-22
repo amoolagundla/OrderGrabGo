@@ -134,18 +134,18 @@ export class RestaurentPage extends BasePage {
                 alert.addButton({
                     text: 'Apply',
                     handler: data => {
-						
+						this.showLoadingView();
                         this.getlocation().then((resp) => {
 
                             this.valuesService.FindplcaesWithCuinesSelected(resp.coords.latitude, resp.coords.longitude,data).subscribe((data: App.GooglePlaces) => {
                                
                                 this.places = data;
-                                
+                                this.showContentView();
                                 this.onRefreshComplete();
 
                             });
                         }).catch((error) => {
-						
+                            this.showContentView();
                            
                         });
 						
