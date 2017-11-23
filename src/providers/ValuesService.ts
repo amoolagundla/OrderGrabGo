@@ -49,6 +49,12 @@ export class ValuesService {
         var resdata= this.http.post('api/ads/FindplcaesWithCuinesSelected/', jdata).map((response: Response) => response.json());
 return resdata;
     }
+	FindCuisineMenu(id: any) {
+
+        return this.http
+            .get('api/ProductsApi/GetMenu/' + id).map((response: Response) => response.json());
+
+    }
      GetUserInfo() {
 
           this.http
