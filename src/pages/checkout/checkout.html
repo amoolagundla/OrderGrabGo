@@ -1,0 +1,88 @@
+<!--
+  Generated template for the CheckoutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title><p class="nav-title">Checkout<p></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid class="checkoutitems">
+
+	<ion-row class="checkhead">
+		<ion-col col-2>Qty</ion-col>
+		<ion-col col-7>Items</ion-col>
+		<ion-col col-3>Price</ion-col>
+	</ion-row>
+	<ion-row class="checkrow">
+		<ion-col col-2>1</ion-col>
+		<ion-col col-7>Vegitarian Lettuce Wraps</ion-col>
+		<ion-col col-3>$9.50</ion-col>
+	</ion-row>
+	<ion-row class="checkrow">
+		<ion-col col-2>1</ion-col>
+		<ion-col col-7>Crispy Green Beans</ion-col>
+		<ion-col col-3>$7.95</ion-col>
+	</ion-row>
+	
+	<ion-row class="checkouttotal">
+		<ion-col col-9>Sub Total (Tax may Apply)</ion-col>
+		<ion-col>$17.45</ion-col>
+	</ion-row>
+	<ion-row ion-button color="secondary">Total $17:45 </ion-row>
+	
+	
+	<ion-row>
+		<ion-item>
+		<ion-label floating>Name of Card</ion-label>
+		<ion-input type="text"></ion-input>
+		</ion-item> 
+	</ion-row>
+	<ion-row>
+		<ion-item>
+		<ion-label floating>Card Number</ion-label>
+		<ion-input type="number"></ion-input>
+		</ion-item> 
+	</ion-row>
+	<ion-row>
+	 <ion-col>
+		<ion-item>
+		<ion-label floating>Expair Date</ion-label>
+		<ion-datetime displayFormat="MMM" [(ngModel)]="ExpairDate"></ion-datetime>
+		</ion-item> 
+	 </ion-col>
+	 <ion-col>
+		<ion-item>
+		<ion-label floating>Expair Year</ion-label>
+		<ion-datetime displayFormat="YYYY" [(ngModel)]="ExpairYear"></ion-datetime>
+		</ion-item> 
+	 </ion-col> 
+	</ion-row>
+	<ion-row>
+	 <ion-col>
+		<ion-item>
+		<ion-label floating>Security Code</ion-label>
+		<ion-input type="number"></ion-input>
+		</ion-item> 
+	 </ion-col>
+	 <ion-col>
+		<ion-item>
+		<ion-label floating>Zip Code</ion-label>
+		<ion-input type="number"></ion-input>
+		</ion-item> 
+	 </ion-col><br />
+	
+	</ion-row>
+	 <button ion-button block style="background:#009e0f">
+		Pay $17.50
+	 </button>
+	 
+</ion-grid>
+</ion-content>

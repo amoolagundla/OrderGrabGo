@@ -44,4 +44,10 @@ export class RestaurantDetailPage extends BasePage{
 directions(){
 		this.navigateTo('MapdirectionPage',this.navParams);
 }
+takout(){
+		this.navigateTo('TakeoutPage',this.navParams);
+}
+delivery(){
+	this.navigateTo('DeliveryPage',this.navParams);
+}
 }

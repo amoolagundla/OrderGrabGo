@@ -1,0 +1,42 @@
+<!--
+  Generated template for the PickupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="danger">
+        <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
+        <ion-title> <p class="nav-title">Delivery Details</p></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        
+        <h4><br />Your Contact Information</h4>
+        <ion-item>
+            <ion-label><ion-icon name="person"></ion-icon> First Name</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="person"></ion-icon> last name</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="call"></ion-icon> Phone Number</ion-label>
+            <ion-input type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="mail"></ion-icon> Email Address</ion-label>
+            <ion-input type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label><ion-icon name="address"></ion-icon> Delivery Address</ion-label>
+           <ion-input type="text"></ion-input>
+        </ion-item>
+        <button ion-button block class="pickupbtn" (click)="checkout()">
+            CheckOut
+        </button>
+    </ion-list>
+</ion-content>

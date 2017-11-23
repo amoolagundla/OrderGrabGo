@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
+        <ion-title> <p class="nav-title">{{name}}</p></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card class="headinside">
+        <img src="../assets/img/bg.png" />
+    </ion-card>
+    <ion-list padding>
+        <ion-grid *ngFor="let d of data">
+            <ion-row class="itemlist">
+                <ion-col col-4>
+                    <img src="../assets/img/noimage.png" alt="" />
+                </ion-col>
+                <ion-col col-8>
+                    <h3>{{d.ProductName}}</h3>
+                    <h4 class="desc">{{d.ProductDescription}}</h4>
+                    <ion-row class="itemprice">
+                        <ion-col col-6>
+                            <h4><div text-left><strong>Price: ${{d.Price}}</strong></div></h4>
+                        </ion-col>
+                        <ion-col col-6>
+                            <h4>
+                                <ion-row>
+                                    <ion-col col-7>
+                                        <strong>Quantity:</strong>
+                                    </ion-col>
+                                    <ion-col col-5 class="marginctrl">
+                                        <ion-input type="text" placeholder="0" maxlength="5"></ion-input>
+                                    </ion-col>
+                                </ion-row>
+                            </h4>
+                        </ion-col>
+                    </ion-row>
+
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <!-- <button (click)="openActionSheet()" class="button">
+            <ion-row>
+                <ion-col col-4>
+                    <img src="../assets/img/sampFood.jpg"  alt="" />
+                </ion-col>
+                <ion-col col-8 text-left>
+                    <h3>{{d.ProductName}}</h3>
+                    <h4>{{d.ProductDescription}}</h4>
+                    <h4><span>Price: ${{d.Price}}</span><span text-right>Quantity: 0</span></h4>
+                </ion-col>
+            </ion-row>
+        </button> -->
+    </ion-list>
+    <!--  <div style="position: absolute; bottom: 0px; width: 100%">
+        <div style="text-align: center">
+          <button (click)="pickup()">Continue</button>
+        </div>
+    </div> -->
+
+</ion-content>
+<ion-footer>
+    <button ion-button block class="pickupbtn" (click)="deliverydetails()" style="background:#009e0f">
+        Continue
+    </button>
+</ion-footer>
