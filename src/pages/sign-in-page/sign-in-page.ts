@@ -61,7 +61,8 @@ export class SignInPage extends BasePage {
 		this.showContentView();
 		console.log(data._body);
         this.setName('token',data._body);
-       this.savePushToken();
+		this.setRoot('DashPage'); 
+       //this.savePushToken();
 			
 		
      

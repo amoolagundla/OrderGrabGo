@@ -1,0 +1,50 @@
+page-itemdetail {
+    ion-label {
+        color: #45818e !important;
+        font-size:16px !important;
+        text-align:left !important;
+    }
+    ion-item-divider ion-label{
+        color: #f00 !important;
+        font-weight:bold !important;
+        font-size:19px !important; 
+    }
+    ion-slides {
+        height: auto;
+    }
+
+    .cover {
+        position: relative;
+
+        img {
+            display: block;
+        }
+
+        .slider-pager {
+            bottom: 45px;
+
+            .slider-pager-page.active {
+                /*color: color(, light);*/
+            }
+        }
+
+        .overlay {
+            bottom: 0;
+            padding: 10px;
+            position: absolute;
+            width: 100%;
+            color: #ffffff !important;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            
+            .pull-left {
+                line-height: 1.2em;
+            }
+
+            .price {
+                font-size: 1.2em;
+                color: #ffffff !important;
+            }
+        }
+    }
+}

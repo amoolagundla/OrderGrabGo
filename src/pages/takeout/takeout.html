@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
+      <ion-buttons left>
+          <button ion-button (click)="back()">
+              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
      <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
 	<ion-title> <p class="nav-title">{{name}}</p></ion-title>
   </ion-navbar>
@@ -10,7 +15,7 @@
   </ion-card>
 	<ion-list padding>
 	<ion-grid *ngFor="let d of data">
-		<ion-row class="itemlist">
+		<ion-row class="itemlist" (click)="itemdetails(d)">
 			<ion-col col-4>
 			<img src="assets/img/noimage.png"  alt="" />
 			</ion-col>
@@ -18,20 +23,8 @@
 			 <h3>{{d.ProductName}}</h3>
 					<h4 class="desc">{{d.ProductDescription}}</h4>
 					<ion-row class="itemprice">
-					<ion-col col-6>
+					<ion-col col-12>
 						<h4><div text-left><strong>Price: ${{d.Price}}</strong></div></h4>
-					</ion-col>
-					<ion-col col-6>
-					<h4>
-					<ion-row>
-						<ion-col col-7>
-							<strong>Quantity:</strong>
-						</ion-col>
-						<ion-col col-5 class="marginctrl">
-							<ion-input type="text" placeholder="0" maxlength="5"></ion-input>
-						</ion-col>
-						</ion-row>
-					</h4>
 					</ion-col>
 					</ion-row>
 					

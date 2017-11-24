@@ -1,8 +1,9 @@
 import { Component, Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
+import { CART } from '../cart/cartitems';
 /**
  * Generated class for the TakeoutPage page.
  *
@@ -17,8 +18,9 @@ import { ValuesService } from '../../providers/ValuesService';
 export class TakeoutPage extends BasePage {
     public firstName: string = 'OrderGrabGo';
     public name: string;
-    public data: any;
-    constructor(injector: Injector, private valuesService: ValuesService,private actionSheetCtrl: ActionSheetController) {
+    public data: any; public pageDetails: any;
+    constructor(injector: Injector, private valuesService: ValuesService,
+        private actionSheetCtrl: ActionSheetController, private altController: AlertController) {
         super(injector);
     }
     enableMenuSwipe() {
@@ -47,26 +49,50 @@ export class TakeoutPage extends BasePage {
             data.icon = 'md-arrow-dropup';
         }
     }
+    itemdetails(product: any) {
+        this.pageDetails = {
+            product: product,
+            restuarant: this.navParams,
+            pagename: 'Takeout'
+        };
+        this.navigateTo('ItemdetailPage', this.pageDetails);
+    }
 	
-	openActionSheet(){
-	 console.log('opening');
-	 let actionsheet = this.actionSheetCtrl.create({
-	 title:"Choose Quantiy",
-	 buttons:[{ 
-		 text: '',
-		 icon: 'add',  
-	 },
-	 { 
-		 text: '',
-		 icon: 'remove',  
-	 }
-	 ]
-	 });
-	 actionsheet.present();
-	}
 	
 	pickup(){
-		this.navigateTo('PickupPage');
+        //this.navigateTo('PickupPage');
+        this.pageDetails = {
+            restuarant: this.navParams,
+            pagename: 'Takeout'
+        };
+        if (CART.total > 0) {
+            this.navigateTo('CartPage', this.pageDetails);
+        }
+        else {
+            let alert = this.altController.create({
+                title: 'Cart is empty',
+                subTitle: 'Kindly add some item to cart before continue!',
+            });
+            alert.addButton({
+                text: 'Ok'
+            });
+            alert.present();
+        }
 	}
-
+    back() {
+        let alert = this.altController.create({
+            title: 'Clear Cart',
+            subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+        });
+        alert.addButton({
+            text: 'Cancel'
+        });
+        alert.addButton({
+            text: 'Yes',
+            handler: data => {
+                this.navigateTo('RestaurantDetailPage', this.navParams);
+            }
+        });
+        alert.present();
+    }
 }
