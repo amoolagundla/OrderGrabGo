@@ -5,18 +5,14 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalStorage } from '../../providers/local-storage';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { ValuesService } from '../../providers/ValuesService';
-import { NavController, LoadingController, ToastController, NavParams,
-  AlertController, MenuController } from 'ionic-angular';
-import {
-    Storage
-} from '@ionic/storage';
+import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController } from 'ionic-angular';
+import {  Storage} from '@ionic/storage';
 export abstract class BasePage {
 
   public isErrorViewVisible: boolean;
   public isEmptyViewVisible: boolean;
   public isContentViewVisible: boolean;
   public isLoadingViewVisible: boolean;
-  
   protected refresher: any;
   protected infiniteScroll: any;
   protected navParams: NavParams;
@@ -42,6 +38,7 @@ export abstract class BasePage {
     this.storageProviderClass = injector.get(LocalStorage);
     this.sharedData = injector.get(SharedDataService);
     this._valuesService = injector.get(ValuesService);
+    
     let menu = injector.get(MenuController);
     menu.swipeEnable(this.enableMenuSwipe());
 

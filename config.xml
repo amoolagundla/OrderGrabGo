@@ -114,4 +114,5 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDpSuWDPh-32TBJQ2p_fdulykweF7x9iPo" />
     </plugin>
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
+    <plugin name="onesignal-cordova-plugin" spec="^2.2.2" />
 </widget>

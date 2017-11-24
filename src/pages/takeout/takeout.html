@@ -6,13 +6,13 @@
 </ion-header> 
 <ion-content> 
 <ion-card class="headinside">
-    <img src="../assets/img/bg.png"/>
+    <img src="assets/img/bg.png"/>
   </ion-card>
 	<ion-list padding>
 	<ion-grid *ngFor="let d of data">
 		<ion-row class="itemlist">
 			<ion-col col-4>
-			<img src="../assets/img/noimage.png"  alt="" />
+			<img src="assets/img/noimage.png"  alt="" />
 			</ion-col>
 			<ion-col col-8>
 			 <h3>{{d.ProductName}}</h3>
@@ -38,24 +38,9 @@
 			</ion-col>
 		</ion-row>
 	</ion-grid>
-		<!-- <button (click)="openActionSheet()" class="button">
-			<ion-row>
-				<ion-col col-4>
-					<img src="../assets/img/sampFood.jpg"  alt="" />
-				</ion-col> 
-				<ion-col col-8 text-left>
-					<h3>{{d.ProductName}}</h3>
-					<h4>{{d.ProductDescription}}</h4>
-					<h4><span>Price: ${{d.Price}}</span><span text-right>Quantity: 0</span></h4>
-				</ion-col> 
-			</ion-row> 
-		</button> -->
+	
 	</ion-list>
-	 <!--  <div style="position: absolute; bottom: 0px; width: 100%">
-        <div style="text-align: center">
-          <button (click)="pickup()">Continue</button>
-        </div>
-    </div> -->
+
 	
 </ion-content>
 <ion-footer>

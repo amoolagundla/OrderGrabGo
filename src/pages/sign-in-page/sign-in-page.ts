@@ -61,8 +61,9 @@ export class SignInPage extends BasePage {
 		this.showContentView();
 		console.log(data._body);
         this.setName('token',data._body);
-				
-		this.setRoot('DashPage');
+       this.savePushToken();
+			
+		
      
     },error => {
 		if (error.status === 401) {
@@ -72,6 +73,15 @@ export class SignInPage extends BasePage {
       }
       this.showErrorView();
     });
+  }
+
+  savePushToken()
+  {
+    this.storage.oneSingalPushToken.then(data=>{
+      this.valuesService.SaveToken(data).subscribe((res:any)=>{
+        this.setRoot('DashPage'); 
+      });
+    }).catch(e=>this.setRoot('DashPage')) ;
   }
 
   facebookLogIn() {
@@ -93,7 +103,7 @@ export class SignInPage extends BasePage {
     this.sharedData.USerInfoChanged(data);
 
     this.setName('token',data.token);
-    this.setRoot('DashPage');
+     this.savePushToken();
   },error => {
     this.showContentView();
 		if (error.status === 401) {
@@ -132,7 +142,7 @@ export class SignInPage extends BasePage {
     this.showContentView();
     this.sharedData.USerInfoChanged(data);
     this.setName('token',data.token);
-    this.setRoot('DashPage');
+    this.savePushToken();
   },error => {
     this.showContentView();
 		if (error.status === 401) {

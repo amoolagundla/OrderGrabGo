@@ -42,7 +42,7 @@ import { HttpModule, Http } from '@angular/http';
 import { Facebook } from '@ionic-native/facebook';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Toast } from '@ionic-native/toast';
-
+import { OneSignal } from '@ionic-native/onesignal';
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -73,7 +73,7 @@ export function HttpLoaderFactory(http: Http) {
     MyApp
   ],
   providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,SharedDataService, 
-    StatusBar,
+    StatusBar, OneSignal,
     SplashScreen,
     Diagnostic,
     LocationAccuracy,

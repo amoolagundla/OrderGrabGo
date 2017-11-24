@@ -5,7 +5,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HeaderColor } from '@ionic-native/header-color';
-
+import { OneSignal } from '@ionic-native/onesignal';
 import Parse from 'parse';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from './app.config';
@@ -38,8 +38,9 @@ export class MyApp {
     private googleAnalytics: GoogleAnalytics,
     private headerColor: HeaderColor,
     private modalCtrl: ModalController,
-    private shared: ValuesService ,
-  private _shared:SharedDataService ) {
+    private shared: ValuesService , 
+    private oneSignal: OneSignal,
+    private _shared:SharedDataService ) {
 
     this.initializeApp();
     this.shared.GetUserInfo();
@@ -126,6 +127,11 @@ export class MyApp {
       this.buildMenu();
     }).catch((e) => console.log(e));
 
+    this.storage.skipIntroPage.then((skipIntroPage) => {
+      this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
+  }).catch((e) => console.log(e));
+
+
     this.storage.unit.then(val => {
       let unit = val || AppConfig.DEFAULT_UNIT;
 
@@ -163,11 +169,39 @@ export class MyApp {
       if (AppConfig.HEADER_COLOR && this.platform.is('android')) {
         this.headerColor.tint(AppConfig.HEADER_COLOR);
       }
+      if (this.platform.is('cordova') ) {
+       
+        this.oneSignal.startInit('38d8ddd8-4e73-4efc-97c3-1e65ade1d26e', '58788612269');
+        this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+        this.oneSignal.setSubscription(true);
+        this.oneSignal.handleNotificationReceived().subscribe(() => {
+            // do something when the notification is received.
+        });
+        this.oneSignal.handleNotificationOpened().subscribe(() => {
+            // do something when the notification is opened.
+        });
+        this.oneSignal.endInit();
+        this.registerPushToken();
+      }
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
+
+  registerPushToken() {
+    
+            this.oneSignal.getIds().then(data => {
+              let mapStyle :any = data.pushToken || {};
+                this.storage.oneSingalPushToken=mapStyle;
+                
+            });
+    
+        }
+
+
+
+
 
   openPage(page) {
 

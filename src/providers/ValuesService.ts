@@ -6,6 +6,7 @@ import { HttpClient } from './HttpClient';
 import {SharedDataService} from './SharedDataService';
 
 import 'rxjs/add/operator/mergeMap';
+import { Storage } from '@ionic/storage';
 @Injectable()
 export class ValuesService {
     public UserInfo: any;
@@ -61,6 +62,7 @@ return resdata;
              .get('api/user/').map((response: Response) => response.json()).subscribe((data: any) => {
 
                  this.shared.USerInfoChanged(data);
+                
              }, error => {
              });    ;
 
@@ -78,5 +80,14 @@ return resdata;
 
 		Register(user: any) {
         return this.http.post('api/Account/Registers', user).map((response: Response) => response.json());
+    }
+    SaveToken(token:any)
+    {
+        let tokens ={
+            UserId:null,
+            Pushtoken:token,
+            isActive:true
+        }
+        return this.http.post('api/PushTokenApi/SaveToken', JSON.stringify(tokens)).map((response: Response) => response.json());
     }
 }

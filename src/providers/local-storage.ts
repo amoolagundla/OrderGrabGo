@@ -30,7 +30,14 @@ export class LocalStorage {
   set mapStyle(val) {
     this.storage.set('mapStyle', val);
   }
-
+  set pushToken(val)
+  {
+     this.storage.set('pushToken',val);
+  }
+  get pushToken():Promise<any>
+  {
+   return this.storage.get('pushToken');
+  }
   get distance(): Promise<any> {
     return this.storage.get('distance');
   }
@@ -38,7 +45,13 @@ export class LocalStorage {
   set distance(val) {
     this.storage.set('distance', val);
   }
+  get oneSingalPushToken() : Promise<any> {
+    return this.storage.get('oneSingalPushToken');
+  }
 
+  set oneSingalPushToken(val) {
+    this.storage.set('oneSingalPushToken', val);
+  }
 
   get lang(): Promise<any> {
     return this.storage.get('lang');
