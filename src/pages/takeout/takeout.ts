@@ -80,19 +80,24 @@ export class TakeoutPage extends BasePage {
         }
 	}
     back() {
-        let alert = this.altController.create({
-            title: 'Clear Cart',
-            subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
-        });
-        alert.addButton({
-            text: 'Cancel'
-        });
-        alert.addButton({
-            text: 'Yes',
-            handler: data => {
-                this.navigateTo('RestaurantDetailPage', this.navParams);
-            }
-        });
-        alert.present();
+        if (CART.total > 0) {
+            let alert = this.altController.create({
+                title: 'Clear Cart',
+                subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+            });
+            alert.addButton({
+                text: 'Cancel'
+            });
+            alert.addButton({
+                text: 'Yes',
+                handler: data => {
+                    this.navigateTo('RestaurantDetailPage', this.navParams);
+                }
+            });
+            alert.present();
+        }
+        else {
+            this.navigateTo('RestaurantDetailPage', this.navParams);
+        }
     }
 }

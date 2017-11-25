@@ -1,21 +1,26 @@
 <ion-menu [content]="content" (ionOpen)="onMenuOpened()" (ionClose)="onMenuClosed()">
   <ion-header>
-    <ion-toolbar class="menu-toolbar" color="dark">
-      <ion-item no-lines *ngIf="user">
+    <!--<ion-toolbar class="menu-toolbar" color="dark">-->
+        <ion-title> <p class="nav-title" style="margin-right:6% !important">OrderGrabGo</p></ion-title>
+      <ion-title> <p class="nav-title" style="margin-right:6% !important">Version 1.0</p></ion-title>
+      <!--<ion-item no-lines *ngIf="user">
         <ion-avatar>
           <img [src]="user.picture" src-fallback="assets/img/avatar.png" />
         </ion-avatar>
         <span>{{ user.FirstName }}</span>
-      </ion-item>
-    </ion-toolbar>
+      </ion-item>-->
+    <!--</ion-toolbar>-->
   </ion-header>
 
   <ion-content>
-    <ion-list>
+      <ion-card class="headinside">
+          <img src="assets/img/bg.png" />
+      </ion-card>
+    <ion-list padding>
       <button class="bold" menuClose text-uppercase no-lines ion-item
         *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon [name]="p.icon" item-left color="primary"></ion-icon>
-        <p ion-text color="primary">
+        <ion-icon [name]="p.icon" item-left color="danger"></ion-icon>
+        <p ion-text color="primary" text-left>
           {{ p.title }}
         </p>
       </button>

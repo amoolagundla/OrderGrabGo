@@ -25,7 +25,7 @@ export class SignInPage extends BasePage {
     private viewCtrl: ViewController,private valuesService: ValuesService, private fb: Facebook, private googlePlus: GooglePlus, private storage: LocalStorage) {
 
     super(injector);
-    this.storage.RemoveToken();
+    //this.storage.RemoveToken();
     this.form = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)

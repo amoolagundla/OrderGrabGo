@@ -57,4 +57,7 @@ export class RestaurantDetailPage extends BasePage {
         CART.items = [];
         this.navigateTo('DeliveryPage', this.navParams);
     }
+    back() {
+        this.navigateTo('RestaurentPage');
+    }
 }

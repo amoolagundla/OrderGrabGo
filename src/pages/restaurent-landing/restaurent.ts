@@ -168,5 +168,8 @@ export class RestaurentPage extends BasePage {
     }
 	 indRest(restuarants: any) {
 		this.navigateTo('RestaurantDetailPage',restuarants);
-    }
+     }
+     back() {
+         this.navigateTo('DashPage');
+     }
 }
