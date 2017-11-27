@@ -6,7 +6,13 @@ export class LocalStorage {
 
   constructor(private storage: Storage) {
   }
+  get LoggedIn(): Promise<any> {
+    return this.storage.get('LoggedIn');
+  }
 
+  set LoggedIn(val) {
+    this.storage.set('LoggedIn', val);
+  }
   get skipIntroPage(): Promise<any> {
     return this.storage.get('skipIntroPage');
   }

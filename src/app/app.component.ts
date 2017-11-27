@@ -24,7 +24,7 @@ export class MyApp {
   rootPage: any;
   user: any;
   trans: any;
-
+  
   pages: Array<{ title: string, icon: string, component: any }>;
 
   constructor(public platform: Platform,
@@ -42,6 +42,33 @@ export class MyApp {
     private oneSignal: OneSignal,
     private _shared:SharedDataService ) {
 
+      this.storage.skipIntroPage.then((skipIntroPage) => {
+        if (skipIntroPage) {
+            this.storage.token.then((token: string) => {
+                if (token != null && token != "") {
+                
+                    this.shared.GetUserInfo();
+                    this.rootPage = 'DashPage';
+                }
+                else {
+                 
+                    this.rootPage='SignInPage';
+                }
+            }).catch((e)=> {
+             
+              this.rootPage = 'SignInPage';
+            });
+        }else
+        {
+       
+          this.rootPage='HomePage';
+        }
+    }).catch((e) =>
+    {
+    
+     this.rootPage = 'SignInPage';
+    });
+    
     this.initializeApp();
     this.shared.GetUserInfo();
   }
@@ -84,19 +111,7 @@ export class MyApp {
       }
   });
 
-    this.events.subscribe('user:login', (userEventData) => {
-      this.user = userEventData[0];
-      this.buildMenu();
-    });
-
-    this.events.subscribe('user:logout', () => {
-      this.user = null;
-      this.buildMenu();
-    });
-
-    this.events.subscribe('lang:change', (e) => {
-      this.buildMenu();
-    });
+    
 
     this.translate.setDefaultLang(AppConfig.DEFAULT_LANG);
 
@@ -107,56 +122,13 @@ export class MyApp {
       this.translate.use(lang);
       this.storage.lang = lang;
       this.preference.lang = lang;
-
-      this.storage.skipIntroPage.then((skipIntroPage) => {
-          if (skipIntroPage) {
-              this.storage.token.then((token: string) => {
-                  if (token != null && token != "") {
-                      this.shared.GetUserInfo();
-                      this.rootPage = 'DashPage';
-                  }
-                  else {
-                      this.rootPage='SignInPage';
-                  }
-              }, error => {  this.rootPage = 'SignInPage'; });
-          }
-      }).catch((e) => this.rootPage = 'SignInPage');
-
-      
-
       this.buildMenu();
-    }).catch((e) => console.log(e));
-
-    this.storage.skipIntroPage.then((skipIntroPage) => {
-      this.rootPage = skipIntroPage ? 'SignInPage' : 'HomePage';
-  }).catch((e) => console.log(e));
-
-
-    this.storage.unit.then(val => {
-      let unit = val || AppConfig.DEFAULT_UNIT;
-
-      this.storage.unit = unit;
-      this.preference.unit = unit;
-    }).catch((e) => console.log(e));
-
-    this.storage.mapStyle.then(val => {
-
-      let mapStyle = val || AppConfig.DEFAULT_MAP_STYLE;
-
-      this.storage.mapStyle = mapStyle;
-      this.preference.mapStyle = mapStyle;
     }).catch((e) => console.log(e));
 
     Parse.serverURL = AppConfig.SERVER_URL;
     Parse.initialize(AppConfig.APP_ID);
-
-    User.getInstance();
-    this.user = User.getCurrentUser();
-
-    if (this.user) {
-      this.user.fetch();
-    }
-
+  
+   
     this.platform.ready().then(() => {
 
       if (AppConfig.TRACKING_ID) {
@@ -185,6 +157,8 @@ export class MyApp {
       }
 
       this.statusBar.styleDefault();
+     
+
       this.splashScreen.hide();
     });
   }
@@ -204,7 +178,7 @@ export class MyApp {
 
 
   openPage(page) {
-      debugger;
+    
       if ((page.component === 'FavoritesPage' || page.component === 'AddPlacePage') && !User.getCurrentUser()) {
 
           this.nav.push('SignInPage');

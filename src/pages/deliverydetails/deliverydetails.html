@@ -12,31 +12,59 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-        
-        <h4><br />Your Contact Information</h4>
-        <ion-item>
-            <ion-label><ion-icon name="person"></ion-icon> First Name</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="person"></ion-icon> last name</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="call"></ion-icon> Phone Number</ion-label>
-            <ion-input type="number"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="mail"></ion-icon> Email Address</ion-label>
-            <ion-input type="email"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="address"></ion-icon> Delivery Address</ion-label>
-           <ion-input type="text"></ion-input>
-        </ion-item>
-        <button ion-button block class="pickupbtn" (click)="checkout()">
-            CheckOut
-        </button>
-    </ion-list>
+        <div class="container">
+                <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)" > 
+                    <div class="form-group">
+          
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName" placeholder="First Name"
+                                       required #FirstName="ngModel">                     
+                            </div>
+                            <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">
+                                FirstName is required .
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName" placeholder="Last Name"
+                                       required #LastName="ngModel">                     
+                            </div>
+                            <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">
+                                Last Name is required .
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
+                                    <input type="tel" class="form-control" name="PhoneNumber" [ngModel]="user.PhoneNumber" placeholder="Phone Number"
+                                           required #PhoneNumber="ngModel">                     
+                                </div>
+                                <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">
+                                        PhoneNumber is required .
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="address" [ngModel]="address" placeholder="Address"
+                                               required #address="ngModel">                     
+                                    </div>
+                                    <small [hidden]="address.valid || (address.pristine && !f.submitted)" class="text-danger">
+                                            Address is required .
+                                    </small>
+                                </div>
+                            </div> 
+                    <button type="submit" class="btn btn-primary btn-lg btn-block login-button"  >CheckOut</button>
+                </form>
+</div>
+    
 </ion-content>

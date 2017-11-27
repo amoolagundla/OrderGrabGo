@@ -75,9 +75,9 @@ export class SignUpPage extends BasePage {
                 .subscribe(
                 (data: any) => {
                     this.showContentView();
-                    if (data.isSuccess == true) {
-                        this.setName('token', data.token);
-                        this.setRoot('DashPage');
+                    if (data.Error == null) {
+                        
+                        this.setRoot('SignInPage');
                     }
                     else {
 
@@ -103,9 +103,9 @@ export class SignUpPage extends BasePage {
         this.user.PhoneNumber = this.phonenumber;
 
         this.valuesService.Register(this.user).subscribe((data: any) => {
-            if (data != undefined && data != '') {
+            if (data.IsSuccess) {
                 this.showContentView();
-                this.setRoot('DashPage');
+                this.setRoot('SignInPage');
 
             }
             else {

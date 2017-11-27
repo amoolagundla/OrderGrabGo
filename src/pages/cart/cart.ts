@@ -17,16 +17,17 @@ import { CART } from '../cart/cartitems';
 export class CartPage extends BasePage {
     public cart: any;
     constructor(injector: Injector,private decimalPipe: DecimalPipe) {
-        super(injector);
-        debugger;
+        super(injector);       
         this.cart = CART;
+
+      
+
   }
     enableMenuSwipe() {
         return true;
     }
     ionViewDidLoad() {
         
-    console.log('ionViewDidLoad CartPage');
   }
 
   // plus quantity
