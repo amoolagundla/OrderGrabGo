@@ -1,10 +1,9 @@
-
 import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { HttpClient } from './HttpClient';
 import {SharedDataService} from './SharedDataService';
-
+import { App } from '../models.bundles';
 import 'rxjs/add/operator/mergeMap';
 import { Storage } from '@ionic/storage';
 @Injectable()
@@ -89,5 +88,10 @@ return resdata;
             isActive:true
         }
         return this.http.post('api/PushTokenApi/SaveToken', JSON.stringify(tokens)).map((response: Response) => response.json());
+        }
+
+    SaveOrders(Orders: App.Orders) {
+        var ds = JSON.stringify(Orders);
+        return this.http.post('api/ProductsApi/PostOrderMaster', JSON.stringify(Orders)).map((response: Response) => response.json());
     }
 }

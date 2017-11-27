@@ -19,9 +19,6 @@ export class CartPage extends BasePage {
     constructor(injector: Injector,private decimalPipe: DecimalPipe) {
         super(injector);       
         this.cart = CART;
-
-      
-
   }
     enableMenuSwipe() {
         return true;
@@ -54,10 +51,10 @@ export class CartPage extends BasePage {
   // click buy button
   buy() {
       if (this.navParams.get('pagename') == "Delivery") {
-          this.navigateTo('DeliverydetailsPage');
+          this.navigateTo('DeliverydetailsPage', this.navParams.get('restuarant'));
       }
       else {
-          this.navigateTo('PickupPage');
+          this.navigateTo('PickupPage', this.navParams.get('restuarant'));
       }
   }
   back() {

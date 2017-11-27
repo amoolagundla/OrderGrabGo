@@ -25,7 +25,7 @@ import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { CallNumber } from '@ionic-native/call-number';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SocialSharing } from '@ionic-native/social-sharing';
-
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { AppVersion } from '@ionic-native/app-version';
 import { HeaderColor } from '@ionic-native/header-color';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';

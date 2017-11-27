@@ -1,9 +1,14 @@
 page-pickup {
-ion-label{
-	text-align:left !important;
-	font-size:100% !important;
-}
-ion-input{
-	text-align:right !important;
-}
+    ion-label {
+        text-align: left !important;
+        font-size: 100% !important;
+    }
+
+    ion-input {
+        text-align: right !important;
+    }
+
+    .text-input-md {
+        text-align: right !important;
+    }
 }

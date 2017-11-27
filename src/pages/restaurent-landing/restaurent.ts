@@ -73,6 +73,7 @@ export class RestaurentPage extends BasePage {
     }
     getlocation() {
         return this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
+        
     }
     loadData() {
         // this.getlocation().then((resp) => {
