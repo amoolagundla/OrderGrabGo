@@ -1,6 +1,6 @@
 
 import { IonicPage } from 'ionic-angular';
-import { Component, Injector } from '@angular/core';
+import { Component, Injector,ViewChild } from '@angular/core';
 import { Events, AlertController } from 'ionic-angular';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import { Diagnostic } from '@ionic-native/diagnostic';
@@ -16,8 +16,14 @@ import {
 @Component({
     selector: 'page-categories',
     templateUrl: 'restaurent.html'
-})
+    })
+
 export class RestaurentPage extends BasePage {
+    @ViewChild('sounds') sounds;
+    @ViewChild('dine') dine;
+    @ViewChild('deliver') deliver;
+    @ViewChild('take') take;
+    @ViewChild('party') party;
     public searchTerm: any = '';
     private categories: Array<Category>;
     public places: any;
@@ -111,13 +117,17 @@ export class RestaurentPage extends BasePage {
     gotocat() {
         this.navigateTo('CategoriesPage');
     }
-    soundsgood() {
-	
+    soundsgood(event) {
+        event.target.classList.add('activeli');
+        this.dine.nativeElement.classList.remove("activeli");
+        this.take.nativeElement.classList.remove("activeli");
+        this.deliver.nativeElement.classList.remove("activeli");
+        this.party.nativeElement.classList.remove("activeli");
         this.getlocation().then((resp) => {
 			
             this.valuesService.FindCuisineWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
 
-                 var jdata = JSON.stringify(data);
+                var jdata = JSON.stringify(data);
                 var pdata = JSON.parse(jdata);
                 this.cuisines = pdata;               
                 let alert = this.atrCtrl.create();
@@ -172,5 +182,34 @@ export class RestaurentPage extends BasePage {
      }
      back() {
          this.navigateTo('DashPage');
+     }
+     dinein(event) {
+         event.target.classList.add('activeli');
+         this.sounds.nativeElement.classList.remove("activeli");
+         this.take.nativeElement.classList.remove("activeli");
+         this.deliver.nativeElement.classList.remove("activeli");
+         this.party.nativeElement.classList.remove("activeli");
+     }
+     takeout(event) {
+         event.target.classList.add('activeli');
+         this.dine.nativeElement.classList.remove("activeli");
+         this.sounds.nativeElement.classList.remove("activeli");
+         this.deliver.nativeElement.classList.remove("activeli");
+         this.party.nativeElement.classList.remove("activeli");
+     }
+     delivery(event) {
+         event.target.classList.add('activeli');
+         this.dine.nativeElement.classList.remove("activeli");
+         this.take.nativeElement.classList.remove("activeli");
+         this.sounds.nativeElement.classList.remove("activeli");
+         this.party.nativeElement.classList.remove("activeli");
+     }
+     parties(event) {
+         event.target.classList.add('activeli');
+         event.target.classList.add('activeli');
+         this.dine.nativeElement.classList.remove("activeli");
+         this.take.nativeElement.classList.remove("activeli");
+         this.deliver.nativeElement.classList.remove("activeli");
+         this.sounds.nativeElement.classList.remove("activeli");
      }
 }

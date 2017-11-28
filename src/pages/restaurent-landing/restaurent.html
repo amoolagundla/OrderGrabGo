@@ -1,8 +1,10 @@
 <ion-header>
-  <ion-navbar color="danger">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+  <ion-navbar color="danger" hideBackButton>
+      <ion-buttons left>
+          <button ion-button (click)="back()">
+              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
     <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">Your Location WEST DES MOINES</span></ion-title>
   </ion-navbar> 
 	<ion-toolbar color="danger">
@@ -26,12 +28,12 @@
     <div class="container margin_60">        
         <div class="menu-section">
             <ul class="list-inline">
-                <li (click)="gotocat()"><a >Near by Restaurents</a></li>
-                <li (click)="soundsgood()"><a >what sounds good?</a></li>
-                <li><a >Dine in</a></li>
-                <li><a >Take Out</a></li>
-                <li><a >Delivery</a></li>
-                <li><a >Parties</a></li>
+                <li (click)="gotocat()"><a #near>Near by Restaurents</a></li>
+                <li (click)="soundsgood($event);"><a #sounds>what sounds good?</a></li>
+                <li (click)="dinein($event);"><a #dine>Dine in</a></li>
+                <li (click)="takeout($event);"><a #take>Take Out</a></li>
+                <li (click)="delivery($event);"><a #deliver>Delivery</a></li>
+                <li (click)="parties($event);"><a #party>Parties</a></li>
             </ul>
             <div class="search">
                 <ion-searchbar color="dark" debounce="2000"

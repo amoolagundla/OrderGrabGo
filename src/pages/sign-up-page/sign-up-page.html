@@ -90,6 +90,30 @@
                   </small>
               </div>
           </div>
+          <div class="form-group">
+              <div class="cols-sm-10">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-address-card fa-lg" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" name="Address" [ngModel]="address" placeholder="Address"
+                             required #Address="ngModel">
+                  </div>
+                  <small [hidden]="Address.valid || (Address.pristine && !f.submitted)" class="text-danger">
+                      Address is required .
+                  </small>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="cols-sm-10">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-address-book fa-lg" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control" name="ZipCode" [ngModel]="zipcode" placeholder="Zipcode"
+                             required #ZipCode="ngModel">
+                  </div>
+                  <small [hidden]="ZipCode.valid || (ZipCode.pristine && !f.submitted)" class="text-danger">
+                      ZipCode is required .
+                  </small>
+              </div>
+          </div>
           <button type="submit" class="btn btn-primary btn-lg btn-block login-button"  >SignUp</button>
       </form>
       

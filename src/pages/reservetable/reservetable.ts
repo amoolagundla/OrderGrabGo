@@ -13,7 +13,10 @@ import { BasePage } from '../base-page/base-page';
     templateUrl: 'reservetable.html',
 })
 export class ReservetablePage extends BasePage{
-    public name: string; public firstName: string;public location:string;
+    //form: any;
+    special: string = '';
+    guests: string = '';
+    public name: string; public firstName: string; location:string = '';
     constructor(injector: Injector, public atrCtrl: AlertController) {
         super(injector);
     }
@@ -26,17 +29,21 @@ export class ReservetablePage extends BasePage{
 		this.location = this.navParams.get('location').locality_verbose;
         console.log('ionViewDidLoad ReservetablePage');
     }
-    showAlert() {
-        let alert = this.atrCtrl.create({
-            title: 'Success',
-            subTitle: 'You have reserved successfully!',
-        });
-        alert.addButton({
-            text: 'Ok',
-            handler: data => {
-                this.navigateTo('RestaurentPage');
-            }
-        });
-        alert.present();
+   
+
+    save(model: any, isValid: boolean, event: Event) {
+        if (isValid) {
+            this.navigateTo('ReservetableConfirmationPage', model);
+        }
+        else {
+            let alert = this.atrCtrl.create({
+                title: 'Required',
+                subTitle: 'All fields are required!',
+            });
+            alert.addButton({
+                text: 'Ok'
+            });
+            alert.present();
+        }
     }
 }

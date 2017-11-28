@@ -160,5 +160,7 @@ export class SignInPage extends BasePage {
   goToSignUp() {
     this.navigateTo('SignUpPage');
   }
-
+  forgotpwd() {
+      this.navigateTo('ForgotpasswordPage');
+  }
 }
