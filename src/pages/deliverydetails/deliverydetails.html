@@ -51,13 +51,41 @@
                                 </small>
                             </div>
                         </div>
+                    <div class="form-group">
+
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
+                                <input type="date" class="form-control" name="DevlieryDate" [ngModel]="deliverydate" placeholder="Delivery Date"
+                                       required #DevlieryDate="ngModel">
+                            </div>
+                            <small [hidden]="DevlieryDate.valid || (DevlieryDate.pristine && !f.submitted)" class="text-danger">
+                                Delivery Date is required .
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+                                <input type="time" class="form-control" name="DeliveryTime" [ngModel]="deliveryTime" placeholder="Devliery Time"
+                                       required #DeliveryTime="ngModel">
+                            </div>
+                            <small [hidden]="DeliveryTime.valid || (DeliveryTime.pristine && !f.submitted)" class="text-danger">
+                                Delivery Time is required .
+                            </small>
+                        </div>
+                    </div>
                         <div class="form-group">
                                 <div class="cols-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
                                         <input type="text" class="form-control" name="Address" [ngModel]="address" placeholder="Address"
-                                               required #Address="ngModel">                     
+                                               required #Address="ngModel">
+                                                             
                                     </div>
+                                    <a (click)="showAddressModal()" style="float:right">Change Address</a>
                                     <small [hidden]="Address.valid || (Address.pristine && !f.submitted)" class="text-danger">
                                             Address is required .
                                     </small>

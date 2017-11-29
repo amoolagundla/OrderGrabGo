@@ -1,9 +1,10 @@
-import { Component,Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Component,Injector,NgZone } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController,ViewController,ModalController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
-
+import { LocationsearchPage } from '../locationsearch/locationsearch';
+declare var google;
 /**
  * Generated class for the DeliverydetailsPage page.
  *
@@ -17,8 +18,18 @@ import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResul
 })
 export class DeliverydetailsPage extends BasePage {
 public user:any;
-public address:string='';
-constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder) {
+    public address: string = '';
+    autocompleteItems;
+    autocomplete;
+
+    latitude: number = 0;
+    longitude: number = 0;
+    geo: any
+
+    service = new google.maps.places.AutocompleteService();
+
+    constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder,
+        private modalCtrl: ModalController) {
     super(injector);
 
     this._shared.UserInfo.subscribe((data) => {
@@ -28,10 +39,16 @@ constructor(injector: Injector, private _shared: SharedDataService, private altc
 
     });
     this.nativeGeocoder.reverseGeocode(41.5572470, -93.7985550)
-        .then((result: NativeGeocoderReverseResult) => { console.log(JSON.stringify(result));this.address = result.locality; })
+        .then((result: NativeGeocoderReverseResult) => {
+            console.log(JSON.stringify(result));
+            this.address = result.locality;
+        })
         .catch((error: any) => {  console.log(error) });
         console.log(this.address);
-
+        this.autocompleteItems = [];
+        //this.autocomplete = {
+        //    query: ''
+        //};
   }
     enableMenuSwipe() {
         return true;
@@ -39,7 +56,14 @@ constructor(injector: Injector, private _shared: SharedDataService, private altc
   ionViewDidLoad() {
     
   }
-
+  showAddressModal() {
+      let modal = this.modalCtrl.create(LocationsearchPage);
+      let me = this;
+      modal.onDidDismiss(data => {
+          this.address = data;
+      });
+      modal.present();
+  }
   onSubmit() {
     this.navigateTo('CheckoutPage');
   }
@@ -58,5 +82,5 @@ constructor(injector: Injector, private _shared: SharedDataService, private altc
           });
           alert.present();
       }
-}
+  }
 }

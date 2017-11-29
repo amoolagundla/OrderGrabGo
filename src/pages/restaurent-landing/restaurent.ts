@@ -1,14 +1,15 @@
 
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector,ViewChild } from '@angular/core';
-import { Events, AlertController } from 'ionic-angular';
+import { Events, AlertController, ModalController } from 'ionic-angular';
 import { LocationAccuracy } from '@ionic-native/location-accuracy';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { Category } from '../../providers/categories';
 import { BasePage } from '../base-page/base-page';
 import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { App } from '../../models/models';
-
+import { LocationsearchPage } from '../locationsearch/locationsearch';
 import {
     ValuesService
 } from '../../providers/ValuesService';
@@ -27,14 +28,16 @@ export class RestaurentPage extends BasePage {
     public searchTerm: any = '';
     private categories: Array<Category>;
     public places: any;
-	public cuisines: any;
+    public cuisines: any;
+    address: string = '';
+    searchlocation: string = '';
     //public cuisine: Array;
     public user: App.UserInfoViewModel; public firstName: string = 'OrderGrabGo';
     constructor(injector: Injector, public atrCtrl: AlertController,
         private events: Events,
         private locationAccuracy: LocationAccuracy,
         private diagnostic: Diagnostic,
-        private valuesService: ValuesService, public geolocation: Geolocation) {
+        private valuesService: ValuesService, public geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private modalCtrl:ModalController) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -42,6 +45,15 @@ export class RestaurentPage extends BasePage {
                 this.userInfo = this.user;
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
+        });
+        this.getlocation().then((resp) => {
+            this.nativeGeocoder.reverseGeocode(41.5572470, -93.7985550)
+                .then((result: NativeGeocoderReverseResult) => {
+                    console.log(JSON.stringify(result));
+                    this.address = result.locality;
+                })
+                .catch((error: any) => { console.log(error) });
+            console.log(this.address);
         });
 
         this.locationAccuracy.canRequest().then((canRequest: boolean) => {
@@ -109,7 +121,14 @@ export class RestaurentPage extends BasePage {
 
 
     }
-
+    onSearchAddress() {
+     let modal = this.modalCtrl.create(LocationsearchPage);
+      let me = this;
+      modal.onDidDismiss(data => {
+          this.searchlocation = data;
+      });
+      modal.present();
+    }
     onReload(refresher) {
         this.refresher = refresher;
         this.loadData();

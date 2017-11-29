@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LocationsearchPage } from '../pages/locationsearch/locationsearch';
+
 import {HttpClient} from '../providers/HttpClient';
 import {ValuesService} from '../providers/ValuesService';
 import { Category } from '../providers/categories';
@@ -49,8 +51,8 @@ export function HttpLoaderFactory(http: Http) {
 
 @NgModule({
   declarations: [
-    MyApp
-
+    MyApp,
+    LocationsearchPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +72,8 @@ export function HttpLoaderFactory(http: Http) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+      MyApp,
+      LocationsearchPage
   ],
   providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,SharedDataService, 
     StatusBar, OneSignal,

@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { RestaurentPage } from './restaurent';
 import { SharedModule } from '../../shared.module';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
  
 @NgModule({
   declarations: [
-    RestaurentPage,
+      RestaurentPage
   ],
   imports: [
     IonicPageModule.forChild(RestaurentPage),
@@ -13,6 +14,9 @@ import { SharedModule } from '../../shared.module';
   ],
   exports: [
     RestaurentPage
+  ],
+  providers: [
+    NativeGeocoder
   ]
 })
 export class RestaurentPageModule {}
