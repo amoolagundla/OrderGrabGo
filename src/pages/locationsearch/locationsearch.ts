@@ -44,9 +44,19 @@ export class LocationsearchPage extends BasePage {
     }
 
     chooseItem(item: any) {
-        this.viewCtrl.dismiss(item);
-        this.geo = item;
-        this.geoCode(this.geo);//convert Address to lat and long
+        //this.geo = item;
+        //this.geoCode(this.geo);//convert Address to lat and long
+        let geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address': item }, (results, status) => {
+            this.latitude = results[0].geometry.location.lat();
+            this.longitude = results[0].geometry.location.lng();
+            var res = {
+                location: item,
+                lat: this.latitude,
+                lng: this.longitude
+            }
+            this.viewCtrl.dismiss(res);
+        });
     }
 
     updateSearch() {
@@ -71,6 +81,7 @@ export class LocationsearchPage extends BasePage {
     geoCode(address: any) {
         let geocoder = new google.maps.Geocoder();
         geocoder.geocode({ 'address': address }, (results, status) => {
+            debugger;
             this.latitude = results[0].geometry.location.lat();
             this.longitude = results[0].geometry.location.lng();
             //alert("lat: " + this.latitude + ", long: " + this.longitude);

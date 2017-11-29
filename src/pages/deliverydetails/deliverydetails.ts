@@ -60,7 +60,7 @@ public user:any;
       let modal = this.modalCtrl.create(LocationsearchPage);
       let me = this;
       modal.onDidDismiss(data => {
-          this.address = data;
+          this.address = data.location;
       });
       modal.present();
   }

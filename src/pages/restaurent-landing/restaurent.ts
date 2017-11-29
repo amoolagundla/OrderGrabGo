@@ -125,7 +125,15 @@ export class RestaurentPage extends BasePage {
      let modal = this.modalCtrl.create(LocationsearchPage);
       let me = this;
       modal.onDidDismiss(data => {
-          this.searchlocation = data;
+          this.searchlocation = data.location;
+          debugger;
+          this.valuesService.GetPlacesWithZomato(data.lat, data.lng).subscribe((data: App.GooglePlaces) => {
+              debugger;
+              this.places = data;
+              this.showContentView();
+              this.onRefreshComplete();
+
+          });
       });
       modal.present();
     }
