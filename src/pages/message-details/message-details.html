@@ -14,14 +14,17 @@
 
 
 <ion-content padding>
-  <ul class="timeline" *ngIf="orderStatus.length>0">
-    <li  *ngFor="let d of  orderStatus"   [class.even]="timeline-inverted">
+  <ul class="timeline" >
+    <li  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;" 
+    [ngClass]="{ odd: isodd, even: isEven }">
+    
       <div class="timeline-badge"><i class="fa fa-globe" aria-hidden="true"></i>
       </div>
       <div class="timeline-panel">       
         <div class="timeline-body">
           <p>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</p>
         </div>
+      
       </div>
     </li>
     
