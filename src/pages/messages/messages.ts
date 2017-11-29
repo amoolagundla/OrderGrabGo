@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,Injector } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {  ValuesService} from '../../providers/ValuesService';
+import { BasePage } from '../base-page/base-page';
 /**
  * Generated class for the MessagesPage page.
  *
@@ -12,13 +13,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-messages',
   templateUrl: 'messages.html',
 })
-export class MessagesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+export class MessagesPage extends BasePage {
+public orders:any;
+  constructor(injector: Injector, public navParams: NavParams,private valuesService: ValuesService) {
+    super(injector);
+    this.showLoadingView();
+    this.valuesService.GetOrders().subscribe((res:any)=>
+    {
+     
+          this.orders=res;
+          this.showContentView();
+          this.onRefreshComplete();
+    },error=> this.showContentView());
   }
-
+  enableMenuSwipe() {
+    return true;
+}
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MessagesPage');
+  
   }
-
+  itemdetails(id:any)
+  {
+    this.navigateTo('MessageDetailsPage', {id: id});
+  }
 }

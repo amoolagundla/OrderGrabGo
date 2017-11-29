@@ -1,0 +1,29 @@
+<!--
+  Generated template for the MessageDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Order-details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ul class="timeline" *ngIf="orderStatus.length>0">
+    <li  *ngFor="let d of  orderStatus"   [class.even]="timeline-inverted">
+      <div class="timeline-badge"><i class="fa fa-globe" aria-hidden="true"></i>
+      </div>
+      <div class="timeline-panel">       
+        <div class="timeline-body">
+          <p>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</p>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+</ion-content>

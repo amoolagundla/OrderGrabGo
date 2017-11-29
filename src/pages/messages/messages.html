@@ -14,35 +14,21 @@
 
 
 <ion-content padding>
-  <ul class="timeline">
-    <li>
-      <div class="timeline-badge"><i class="fa fa-globe" aria-hidden="true"></i>
-      </div>
-      <div class="timeline-panel">       
-        <div class="timeline-body">
-          <p>Your Order Was Recieved on 11/22/2017 - 8:00PM</p>
-        </div>
-      </div>
-    </li>
-    <li class="timeline-inverted">
-      <div class="timeline-badge warning"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-        
-      </div>
-      <div class="timeline-panel">       
-        <div class="timeline-body">
-          <p>Your Order Was Accepted</p>
-        </div>
-      </div>
-    </li>
-    <li >
-      <div class="timeline-badge success"><i class="fa fa-flag-o" aria-hidden="true"></i>
-        
-      </div>
-      <div class="timeline-panel">       
-        <div class="timeline-body">
-          <p>Your Order Is Ready For Pickup</p>
-        </div>
-      </div>
-    </li>
-  </ul>
+  <ion-grid *ngFor="let d of orders">
+		<ion-row class="" (click)="itemdetails(d.OrderId)">
+			<ion-col col-4>
+			<img src="assets/img/noimage.png"  alt="" />
+			</ion-col>
+			<ion-col col-8>
+			 <h3>{{d.RestaurentName}}</h3>
+					<h4 class="desc">{{d.Status}}</h4>
+					<ion-row class="itemprice">
+					<ion-col col-12>
+						<h4><div text-left><strong>Price: ${{d.OrderTotal}}</strong></div></h4>
+					</ion-col>
+					</ion-row>
+					
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>
