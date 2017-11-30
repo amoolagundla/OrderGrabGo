@@ -47,7 +47,7 @@ export class RestaurentPage extends BasePage {
             }
         });
         this.getlocation().then((resp) => {
-            this.nativeGeocoder.reverseGeocode(41.5572470, -93.7985550)
+            this.nativeGeocoder.reverseGeocode(resp.coords.latitude,resp.coords.longitude)
                 .then((result: NativeGeocoderReverseResult) => {
                     console.log(JSON.stringify(result));
                     this.address = result.locality;
@@ -94,30 +94,30 @@ export class RestaurentPage extends BasePage {
         
     }
     loadData() {
-        // this.getlocation().then((resp) => {
+         this.getlocation().then((resp) => {
 
-        //     this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
+             this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
 
-        //         this.places = data;
-        //         this.showContentView();
-
-
-        //         this.onRefreshComplete();
-
-        //     });
-        // }).catch((error) => {
-        //     this.showEmptyView();
-        // });
-        this.valuesService.GetPlacesWithZomato('41.5572470' , '-93.7985550').subscribe((data:App.GooglePlaces)=>
-        {
-
-          this.places=data;
-          this.showContentView();
+                 this.places = data;
+                 this.showContentView();
 
 
-        this.onRefreshComplete();
+                 this.onRefreshComplete();
 
-        });
+             });
+         }).catch((error) => {
+             this.showEmptyView();
+         });
+        //this.valuesService.GetPlacesWithZomato('41.5572470' , '-93.7985550').subscribe((data:App.GooglePlaces)=>
+        //{
+
+        //  this.places=data;
+        //  this.showContentView();
+
+
+        //this.onRefreshComplete();
+
+        //});
 
 
     }
@@ -125,15 +125,15 @@ export class RestaurentPage extends BasePage {
      let modal = this.modalCtrl.create(LocationsearchPage);
       let me = this;
       modal.onDidDismiss(data => {
-          this.searchlocation = data.location;
-          debugger;
-          this.valuesService.GetPlacesWithZomato(data.lat, data.lng).subscribe((data: App.GooglePlaces) => {
-              debugger;
-              this.places = data;
-              this.showContentView();
-              this.onRefreshComplete();
+          if (data != undefined) {
+              this.searchlocation = data.location;
+              this.valuesService.GetPlacesWithZomato(data.lat, data.lng).subscribe((data: App.GooglePlaces) => {
+                  this.places = data;
+                  this.showContentView();
+                  this.onRefreshComplete();
 
-          });
+              });
+          }
       });
       modal.present();
     }

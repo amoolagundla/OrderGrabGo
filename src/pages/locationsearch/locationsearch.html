@@ -7,7 +7,7 @@
 <ion-header>
     <ion-toolbar color="danger">
         <ion-title>Enter address<span style="float:right" (click)="dismiss()">X</span></ion-title>
-        <ion-searchbar id="sbar" focus="true" [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
+        <ion-searchbar #sbar focus="true" [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
 

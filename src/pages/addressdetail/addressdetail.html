@@ -1,0 +1,85 @@
+<!--
+  Generated template for the AddressdetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>New Address<span style="float:right" (click)="dismiss()">X</span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="container">
+        <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)">
+            <div class="form-group">
+
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-street-view fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="Street" [ngModel]="street" placeholder="Street/Door No"
+                               required #Street="ngModel">
+                    </div>
+                    <small [hidden]="Street.valid || (Street.pristine && !f.submitted)" class="text-danger">
+                        Street or Door No is required .
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-address-book fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="Unit" [ngModel]="unit" placeholder="Ap#/Unit"
+                               required #Unit="ngModel">
+                    </div>
+                    <small [hidden]="Unit.valid || (Unit.pristine && !f.submitted)" class="text-danger">
+                        Ap# or Unit is required .
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker fa-lg"  aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="City" [ngModel]="city" placeholder="City"
+                               required #City="ngModel">
+                    </div>
+                    <small [hidden]="City.valid || (City.pristine && !f.submitted)" class="text-danger">
+                        City is required .
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-pin fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="State" [ngModel]="state" placeholder="State"
+                               required #State="ngModel">
+                    </div>
+                    <small [hidden]="State.valid || (State.pristine && !f.submitted)" class="text-danger">
+                        State is required .
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-signs fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="PostalCode" [ngModel]="postalcode" placeholder="Postal Code"
+                               required #PostalCode="ngModel">
+                    </div>
+                    <small [hidden]="PostalCode.valid || (PostalCode.pristine && !f.submitted)" class="text-danger">
+                        Postal Code is required .
+                    </small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button" style="background:#009e0f !important">Save Address</button>
+        </form>
+    </div>
+</ion-content>

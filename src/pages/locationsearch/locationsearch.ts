@@ -36,7 +36,7 @@ export class LocationsearchPage extends BasePage {
     }
     ionViewDidEnter() {
         setTimeout(() => {
-           // this.searchBar.setFocus();
+            this.searchBar.setFocus();
         }, 150);
     }
     dismiss() {

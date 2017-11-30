@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController,ViewController,Mod
 import { BasePage } from '../base-page/base-page';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
-import { LocationsearchPage } from '../locationsearch/locationsearch';
+import { AddressdetailPage } from '../addressdetail/addressdetail';
+import { Geolocation } from '@ionic-native/geolocation';
 declare var google;
 /**
  * Generated class for the DeliverydetailsPage page.
@@ -29,7 +30,7 @@ public user:any;
     service = new google.maps.places.AutocompleteService();
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder,
-        private modalCtrl: ModalController) {
+        private modalCtrl: ModalController, public geolocation: Geolocation) {
     super(injector);
 
     this._shared.UserInfo.subscribe((data) => {
@@ -38,17 +39,17 @@ public user:any;
         }
 
     });
-    this.nativeGeocoder.reverseGeocode(41.5572470, -93.7985550)
+    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data)=>{
+    this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
         .then((result: NativeGeocoderReverseResult) => {
             console.log(JSON.stringify(result));
-            this.address = result.locality;
+            this.address = result.subLocality+", "+ result.locality + ", " +result.administrativeArea +", " + result.countryName +", "+  result.postalCode;
         })
-        .catch((error: any) => {  console.log(error) });
+        .catch((error: any) => { console.log(error) });
+    })
         console.log(this.address);
         this.autocompleteItems = [];
-        //this.autocomplete = {
-        //    query: ''
-        //};
+        
   }
     enableMenuSwipe() {
         return true;
@@ -57,10 +58,12 @@ public user:any;
     
   }
   showAddressModal() {
-      let modal = this.modalCtrl.create(LocationsearchPage);
+      let modal = this.modalCtrl.create(AddressdetailPage);
       let me = this;
       modal.onDidDismiss(data => {
-          this.address = data.location;
+          if (data != undefined) {
+              this.address = data;
+          }
       });
       modal.present();
   }
