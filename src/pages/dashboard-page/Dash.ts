@@ -4,7 +4,9 @@ import { IonicPage } from 'ionic-angular';
 import { Component, Injector } from '@angular/core';
 import { BasePage } from '../base-page/base-page';
 
+import { ValuesService} from '../../providers/ValuesService';
 
+import { LocalStorage } from '../../providers/local-storage';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import {App} from '../../models/models';
 @IonicPage()
@@ -21,10 +23,16 @@ export class DashPage extends BasePage {
     public firstName: string = 'OrderGrabGo';
     public scannedObject: string = '';
     public scanData: boolean = false;
-    constructor(injector: Injector, private _barcodeScanner: BarcodeScanner
+    constructor(injector: Injector, private _barcodeScanner: BarcodeScanner,private storage: LocalStorage,
+		private valuesService: ValuesService
     ) {
         super(injector);
-        
+         this.storage.oneSingalPushToken.then(data=>{
+            
+           this.valuesService.SaveToken(data).subscribe((res:any)=>{
+       
+         });
+         }).catch(e=>this.setRoot('DashPage')) ;
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
                 this.user = data;

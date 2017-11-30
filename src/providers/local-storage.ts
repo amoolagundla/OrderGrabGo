@@ -56,7 +56,7 @@ export class LocalStorage {
   }
 
   set oneSingalPushToken(val) {
-    this.storage.set('oneSingalPushToken', val);
+    this.storage.set('oneSingalPushToken',  val);
   }
 
   get lang(): Promise<any> {
