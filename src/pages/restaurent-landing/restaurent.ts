@@ -50,7 +50,18 @@ export class RestaurentPage extends BasePage {
             this.nativeGeocoder.reverseGeocode(resp.coords.latitude,resp.coords.longitude)
                 .then((result: NativeGeocoderReverseResult) => {
                     console.log(JSON.stringify(result));
-                    this.address = result.locality;
+                    //let alert = this.atrCtrl.create({
+                    //    title: 'Success',
+                    //    subTitle: JSON.stringify(result),
+                    //});
+                    //alert.addButton({
+                    //    text: 'Ok',
+                    //    handler: data => {
+                    //        this.navigateTo('RestaurentPage');
+                    //    }
+                    //});
+                    //alert.present();
+                    this.address = result.thoroughfare+ " "+result.subLocality +" "+ result.locality + " " +result.subAdministrativeArea + " " + result.administrativeArea + " " + result.countryCode + " " + result.postalCode;
                 })
                 .catch((error: any) => { console.log(error) });
             console.log(this.address);

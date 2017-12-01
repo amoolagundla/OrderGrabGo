@@ -43,7 +43,7 @@ public user:any;
     this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
         .then((result: NativeGeocoderReverseResult) => {
             console.log(JSON.stringify(result));
-            this.address = result.subLocality+", "+ result.locality + ", " +result.administrativeArea +", " + result.countryName +", "+  result.postalCode;
+            this.address =  result.thoroughfare + " " + result.subLocality + " " + result.locality + " " + result.subAdministrativeArea + " " + result.administrativeArea + " " + result.countryCode + " " + result.postalCode;
         })
         .catch((error: any) => { console.log(error) });
     })

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { DashPage } from './Dash';
 import { SharedModule } from '../../shared.module';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
  
 @NgModule({
   declarations: [
@@ -13,6 +14,9 @@ import { SharedModule } from '../../shared.module';
   ],
   exports: [
     DashPage
+  ],
+  providers: [
+      NativeGeocoder
   ]
 })
 export class DashPageModule {}

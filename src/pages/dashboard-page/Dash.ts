@@ -8,7 +8,9 @@ import { ValuesService} from '../../providers/ValuesService';
 
 import { LocalStorage } from '../../providers/local-storage';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
-import {App} from '../../models/models';
+import { App } from '../../models/models';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { Geolocation } from '@ionic-native/geolocation';
 @IonicPage()
 @Component({
     selector: 'Dash',
@@ -24,7 +26,7 @@ export class DashPage extends BasePage {
     public scannedObject: string = '';
     public scanData: boolean = false;
     constructor(injector: Injector, private _barcodeScanner: BarcodeScanner,private storage: LocalStorage,
-		private valuesService: ValuesService
+        private valuesService: ValuesService, private nativeGeocoder: NativeGeocoder, public geolocation: Geolocation
     ) {
         super(injector);
          this.storage.oneSingalPushToken.then(data=>{
@@ -39,7 +41,14 @@ export class DashPage extends BasePage {
                 this.userInfo = this.user;
                 this.firstName = 'Hello '+this.userInfo.FirstName;
             }
-        });
+         });
+        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
+            this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
+                .then((result: NativeGeocoderReverseResult) => {
+                    console.log(JSON.stringify(result));
+                })
+                .catch((error: any) => { console.log(error) });
+        })
     }
 
   enableMenuSwipe() {

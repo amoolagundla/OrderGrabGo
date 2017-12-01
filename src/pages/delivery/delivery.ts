@@ -32,12 +32,38 @@ export class DeliveryPage extends BasePage{
         this.showLoadingView();
         this.name = this.navParams.get('name');
         console.log('ionViewDidLoad TakeoutPage');
-        this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
+        var prodMaster = [{
+            ProductName: 'Pizza',
+            ProductDescription: 'Tasty and Yummy',
+            Price : 5.25
+        },
+            {
+                ProductName: 'Burger',
+                ProductDescription: 'Delicious burger',
+                Price: 3.25
+            },
+            {
+                ProductName: 'Cheese Bread',
+                ProductDescription: 'Cheesy Cheesy',
+                Price: 1.5
+            },
+            {
+                ProductName: 'Hot Tacos',
+                ProductDescription: 'Really Hot',
+                Price:8
+            },
+            {
+                ProductName: 'Chicken Snacker',
+                ProductDescription: 'With some extra puff',
+                Price: 2
+            }];
+        
+       // this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
 
-            this.data = data.ProductMaster;
+            this.data = prodMaster;
             this.showContentView();
             this.onRefreshComplete();
-        });
+       // });
 
 
     }
