@@ -20,7 +20,7 @@ export class ProfilePage extends BasePage {
     favorites: 0
   };
 
-  constructor(injector: Injector, public valuesService :ValuesService,private modalCtrl: ModalController) {
+  constructor(injector: Injector, public valuesService :ValuesService,private modlCtrl: ModalController) {
     super(injector); 
 		 this.sharedData.UserInfo.subscribe((data) => {
 			      console.log(data);
@@ -36,7 +36,7 @@ export class ProfilePage extends BasePage {
   ionViewDidLoad() {}
 
   onPresentEditModal() {
-    let modal = this.modalCtrl.create('EditProfilePage', { user: this.user });
+      let modal = this.modlCtrl.create('EditProfilePage', { user: this.user });
     modal.onDidDismiss(() => {
       this.valuesService.GetUserInfo();
     });

@@ -37,7 +37,7 @@ export class RestaurentPage extends BasePage {
         private events: Events,
         private locationAccuracy: LocationAccuracy,
         private diagnostic: Diagnostic,
-        private valuesService: ValuesService, public geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private modalCtrl:ModalController) {
+        private valuesService: ValuesService, public geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private modlCtrl:ModalController) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -105,10 +105,11 @@ export class RestaurentPage extends BasePage {
         
     }
     loadData() {
+        //this.showLoadingView();
          this.getlocation().then((resp) => {
 
              this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
-
+                 
                  this.places = data;
                  this.showContentView();
 
@@ -133,7 +134,7 @@ export class RestaurentPage extends BasePage {
 
     }
     onSearchAddress() {
-     let modal = this.modalCtrl.create(LocationsearchPage);
+     let modal = this.modlCtrl.create(LocationsearchPage);
       let me = this;
       modal.onDidDismiss(data => {
           if (data != undefined) {
@@ -219,7 +220,8 @@ export class RestaurentPage extends BasePage {
 		this.navigateTo('RestaurantDetailPage',restuarants);
      }
      back() {
-         this.navigateTo('DashPage');
+         this.setRoot('DashPage');
+         //this.navigateTo('DashPage');
      }
      dinein(event) {
          event.target.classList.add('activeli');

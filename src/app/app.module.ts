@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { LocationsearchPage } from '../pages/locationsearch/locationsearch';
 import { AddressdetailPage } from '../pages/addressdetail/addressdetail';
+import { SpinnerPage } from '../pages/spinner/spinner';
 
 import {HttpClient} from '../providers/HttpClient';
 import {ValuesService} from '../providers/ValuesService';
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: Http) {
   declarations: [
     MyApp,
       LocationsearchPage,
-      AddressdetailPage
+      AddressdetailPage,
+      SpinnerPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,8 @@ export function HttpLoaderFactory(http: Http) {
   entryComponents: [
       MyApp,
       LocationsearchPage,
-      AddressdetailPage
+      AddressdetailPage,
+      SpinnerPage
   ],
   providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,SharedDataService, 
     StatusBar, OneSignal,

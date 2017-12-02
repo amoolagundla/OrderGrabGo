@@ -32,38 +32,38 @@ export class DeliveryPage extends BasePage{
         this.showLoadingView();
         this.name = this.navParams.get('name');
         console.log('ionViewDidLoad TakeoutPage');
-        var prodMaster = [{
-            ProductName: 'Pizza',
-            ProductDescription: 'Tasty and Yummy',
-            Price : 5.25
-        },
-            {
-                ProductName: 'Burger',
-                ProductDescription: 'Delicious burger',
-                Price: 3.25
-            },
-            {
-                ProductName: 'Cheese Bread',
-                ProductDescription: 'Cheesy Cheesy',
-                Price: 1.5
-            },
-            {
-                ProductName: 'Hot Tacos',
-                ProductDescription: 'Really Hot',
-                Price:8
-            },
-            {
-                ProductName: 'Chicken Snacker',
-                ProductDescription: 'With some extra puff',
-                Price: 2
-            }];
+        //var prodMaster = [{
+        //    ProductName: 'Pizza',
+        //    ProductDescription: 'Tasty and Yummy',
+        //    Price : 5.25
+        //},
+        //    {
+        //        ProductName: 'Burger',
+        //        ProductDescription: 'Delicious burger',
+        //        Price: 3.25
+        //    },
+        //    {
+        //        ProductName: 'Cheese Bread',
+        //        ProductDescription: 'Cheesy Cheesy',
+        //        Price: 1.5
+        //    },
+        //    {
+        //        ProductName: 'Hot Tacos',
+        //        ProductDescription: 'Really Hot',
+        //        Price:8
+        //    },
+        //    {
+        //        ProductName: 'Chicken Snacker',
+        //        ProductDescription: 'With some extra puff',
+        //        Price: 2
+        //    }];
         
-       // this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
+        this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
 
-            this.data = prodMaster;
+            this.data = data.ProductMaster;
             this.showContentView();
             this.onRefreshComplete();
-       // });
+        });
 
 
     }
@@ -81,7 +81,19 @@ export class DeliveryPage extends BasePage{
             pagename: 'Delivery'
         };
         if (CART.total > 0) {
-            this.navigateTo('CartPage', this.pageDetails);
+            if (CART.total > CART.Minimum || CART.total == CART.Minimum){
+                this.navigateTo('CartPage', this.pageDetails);
+            }
+            else{
+                let alert = this.altController.create({
+                    title: 'Minimum Order Amount',
+                    subTitle: 'Minimum order amount is $' + CART.Minimum,
+                });
+                alert.addButton({
+                    text: 'Ok'
+                });
+                alert.present();
+            }
         }
         else {
             let alert = this.altController.create({

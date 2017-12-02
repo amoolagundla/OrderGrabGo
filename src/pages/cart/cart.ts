@@ -1,6 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
 /**
@@ -16,7 +16,7 @@ import { CART } from '../cart/cartitems';
 })
 export class CartPage extends BasePage {
     public cart: any;
-    constructor(injector: Injector,private decimalPipe: DecimalPipe) {
+    constructor(injector: Injector, private decimalPipe: DecimalPipe, private altController: AlertController) {
         super(injector);       
         this.cart = CART;
   }
@@ -50,11 +50,31 @@ export class CartPage extends BasePage {
 
   // click buy button
   buy() {
-      if (this.navParams.get('pagename') == "Delivery") {
-          this.navigateTo('DeliverydetailsPage', this.navParams.get('restuarant'));
+      if (CART.total > CART.Minimum || CART.total == CART.Minimum) {
+          if (this.navParams.get('pagename') == "Delivery") {
+              var carparams = {
+                  restuarant: this.navParams.get('restuarant'),
+                  pagename : 'Delivery'
+              }
+          this.navigateTo('DeliverydetailsPage', carparams);
+      }
+          else {
+              var carparams = {
+                  restuarant: this.navParams.get('restuarant'),
+                  pagename: 'Delivery'
+              }
+          this.navigateTo('PickupPage', carparams);
+      }
       }
       else {
-          this.navigateTo('PickupPage', this.navParams.get('restuarant'));
+          let alert = this.altController.create({
+              title: 'Minimum Order Amount',
+              subTitle: 'Minimum order amount is $' + CART.Minimum,
+          });
+          alert.addButton({
+              text: 'Ok'
+          });
+          alert.present();
       }
   }
   back() {

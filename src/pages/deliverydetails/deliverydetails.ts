@@ -19,7 +19,7 @@ declare var google;
 })
 export class DeliverydetailsPage extends BasePage {
 public user:any;
-    public address: string = '';
+public address: string = ''; public firstName: string = '';
     autocompleteItems;
     autocomplete;
 
@@ -30,12 +30,16 @@ public user:any;
     service = new google.maps.places.AutocompleteService();
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder,
-        private modalCtrl: ModalController, public geolocation: Geolocation) {
+        private modlCtrl: ModalController, public geolocation: Geolocation) {
     super(injector);
 
     this._shared.UserInfo.subscribe((data) => {
-        if (data.FirstName != undefined) {
+        if (data != undefined && data.FirstName != undefined) {
             this.user = data;
+            this.firstName = data.FirstName;
+        }
+        else {
+            this.firstName = '';
         }
 
     });
@@ -58,7 +62,7 @@ public user:any;
     
   }
   showAddressModal() {
-      let modal = this.modalCtrl.create(AddressdetailPage);
+      let modal = this.modlCtrl.create(AddressdetailPage);
       let me = this;
       modal.onDidDismiss(data => {
           if (data != undefined) {

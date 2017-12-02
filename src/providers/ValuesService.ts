@@ -92,11 +92,12 @@ return resdata;
 
     SaveOrders(Orders: App.Orders) {
         var ds = JSON.stringify(Orders);
+        debugger;
         return this.http.post('api/ProductsApi/PostOrderMaster', JSON.stringify(Orders)).map((response: Response) => response.json());
     }
 
     GetOrders() {
-        return this.http.get('api/ProductsApi/GetOrderHistory/1').map((response: Response) => response.json());
+        return this.http.get('api/ProductsApi/GetOrderHistory/4').map((response: Response) => response.json());
     }
     GetOrderStatusHistory(id:any) {
         return this.http.get('api/ProductsApi/GetOrderStatusHistory/'+id).map((response: Response) => response.json());

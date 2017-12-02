@@ -23,7 +23,7 @@ export class CheckoutPage extends BasePage{
         super(injector);
         this.total = CART.total;
         this.sharedData.UserInfo.subscribe((data) => {
-            if (data.FirstName != undefined) {
+            if (data != undefined && data.FirstName != undefined) {
                 this.user = data;
             }
         });
@@ -35,12 +35,18 @@ export class CheckoutPage extends BasePage{
     console.log('ionViewDidLoad CheckoutPage');
   }
   pay() {
-      var resparams = this.navParams.get('location');
+      debugger;
+      var resparams = this.navParams.get('restuarant').location;
       var orders = new App.Orders;
       orders.OrderId = 0;
       orders.CustomerId = 0;
-      orders.ResturantId = this.navParams.get('id');
+      orders.ResturantId = this.navParams.get('restuarant').id;
       orders.OrderTotal = CART.total;
+      if (this.navParams.get('pagename') != undefined && this.navParams.get('pagename') == 'Delivery') {
+          orders.LookupStatusId = 10;
+      } else {
+          orders.LookupStatusId = 8;
+      }
       orders.Customer = null;
       orders.OrderDetail = new Array<App.OrderDetail>();
       for (var i = 0; i < CART.items.length; i++) {

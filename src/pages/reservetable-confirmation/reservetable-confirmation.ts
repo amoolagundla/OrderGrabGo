@@ -40,4 +40,8 @@ export class ReservetableConfirmationPage extends BasePage{
     back() {
         this.navigateTo('RestaurentPage');
     }
+
+    opentrack() {
+        this.navigateTo('ReservationTrackingPage',this.navParams);
+    }
 }

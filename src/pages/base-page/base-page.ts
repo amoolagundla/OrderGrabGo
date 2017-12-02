@@ -5,8 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalStorage } from '../../providers/local-storage';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { ValuesService } from '../../providers/ValuesService';
-import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController } from 'ionic-angular';
-import {  Storage} from '@ionic/storage';
+import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController, ModalController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { SpinnerPage } from '../spinner/spinner';
 export abstract class BasePage {
 
   public isErrorViewVisible: boolean;
@@ -25,6 +26,7 @@ export abstract class BasePage {
   private alertCtrl: AlertController;
   private localStorage: Storage;
   protected sharedData: SharedDataService;
+  private modalCtrl: ModalController;
   public userInfo: App.UserInfoViewModel;
   private _valuesService: ValuesService;
   constructor(injector: Injector) {
@@ -38,7 +40,7 @@ export abstract class BasePage {
     this.storageProviderClass = injector.get(LocalStorage);
     this.sharedData = injector.get(SharedDataService);
     this._valuesService = injector.get(ValuesService);
-    
+    this.modalCtrl = injector.get(ModalController);
     let menu = injector.get(MenuController);
     menu.swipeEnable(this.enableMenuSwipe());
 
@@ -56,9 +58,11 @@ export abstract class BasePage {
 
     this.translate.get('LOADING').subscribe((loadingText: string) => {
 
-      this.loader = this.loadingCtrl.create({
-        content: `<p class="item">${loadingText}</p>`,
-      });
+        this.loader = this.modalCtrl.create(SpinnerPage);
+//            this.loadingCtrl.create({
+//          content: SpinnerPage,
+////          `<p class="item">${loadingText}</p>`,
+//      });
       this.loader.present();
     });
   }
