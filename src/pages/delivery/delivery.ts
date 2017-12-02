@@ -59,7 +59,6 @@ export class DeliveryPage extends BasePage{
         //    }];
         
         this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
-
             this.data = data.ProductMaster;
             this.showContentView();
             this.onRefreshComplete();

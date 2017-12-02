@@ -17,7 +17,7 @@
 	<ion-grid *ngFor="let d of data">
 		<ion-row class="itemlist" (click)="itemdetails(d)">
 			<ion-col col-4>
-			<img src="assets/img/noimage.png"  alt="" />
+                <img src="{{d.ImagePath}}" alt="" />
 			</ion-col>
 			<ion-col col-8>
 			 <h3>{{d.ProductName}}</h3>
