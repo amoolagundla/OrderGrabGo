@@ -1,0 +1,34 @@
+<!--
+  Generated template for the OrderconfirmationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Order Confirmation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-row class="orderconfirm">Thankyou for your order</ion-row>
+    <ion-row class="orderhead">Your order information</ion-row>
+    <ion-grid class="checkoutitems" >
+        <ion-row class="checkhead">
+            <ion-col col-2>Qty</ion-col>
+            <ion-col col-7>Items</ion-col>
+            <ion-col col-3>Price</ion-col>
+        </ion-row>
+        <div *ngFor="let item of cart.items; let i = index">
+            <ion-row class="checkrow">
+                <ion-col col-2>{{item.quantity}}</ion-col>
+                <ion-col col-7>{{item.name}}</ion-col>
+                <ion-col col-3>${{item.price}}</ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
+    <ion-row class="reserve_confirm" (click)="opentrack()"> Track Your Order</ion-row>
+</ion-content>

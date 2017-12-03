@@ -1,0 +1,16 @@
+page-orderconfirmation {
+    .reserve_confirm { text-align: center; background:#fff; color:red; padding:15px; display: block;text-transform:uppercase;text-decoration:underline}
+    .orderconfirm { text-align: center; background:#fff; color:#000; padding:15px; display: block;font-weight:bold}
+    .orderhead { background:#fff; color:red; padding:15px; display: block;text-decoration:underline}
+    .checkoutitems ion-item { padding-left:0px;}
+ .checkhead { padding:5px 0px;     background: #424343;
+    color: #fff;     border: 1px solid #424343;
+    border-bottom: 0px;}
+ .checkrow { padding:6px 0px;     border: 1px solid #cecece;
+    border-top: 0px;   }
+	.checkouttotal { padding:10px 0px;}
+	ion-label{
+		font-size:100%;
+		text-align:left;
+	}
+}
