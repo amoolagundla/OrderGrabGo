@@ -35,7 +35,6 @@ export class CheckoutPage extends BasePage{
     console.log('ionViewDidLoad CheckoutPage');
   }
   pay() {
-      debugger;
       var resparams = this.navParams.get('restuarant').location;
       var orders = new App.Orders;
       orders.OrderId = 0;
@@ -69,18 +68,19 @@ export class CheckoutPage extends BasePage{
       }
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
-          let orderId=data.OrderId;
-          let alert = this.altcntrl.create({
-              title: 'Success',
-              subTitle: 'You order has been placed successfully!',
-          });
-          alert.addButton({
-              text: 'Ok',
-              handler: data => {
-                this.setRootWithParams('MessageDetailsPage', {id: orderId});
-              }
-          });
-          alert.present();
+          let orderId = data.OrderId;
+          this.navigateTo('OrderconfirmationPage', orderId);
+          //let alert = this.altcntrl.create({
+          //    title: 'Success',
+          //    subTitle: 'You order has been placed successfully!',
+          //});
+          //alert.addButton({
+          //    text: 'Ok',
+          //    handler: data => {
+          //      this.setRootWithParams('MessageDetailsPage', {id: orderId});
+          //    }
+          //});
+          //alert.present();
       });
       
   }

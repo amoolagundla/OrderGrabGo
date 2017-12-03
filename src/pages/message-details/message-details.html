@@ -11,14 +11,14 @@
 		 <button ion-button menuToggle>
 			 <ion-icon name="menu"></ion-icon>
 		 </button>
-		 <ion-title >Order Status</ion-title>
+		 <ion-title >Track Your Order</ion-title>
 		
 	 </ion-navbar> 
 	 
  </ion-header>
 
 
-<ion-content padding>
+<!--<ion-content padding>
   <ul class="timeline" >
     <li  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;" 
     [ngClass]="{ odd: isodd, even: isEven }">
@@ -34,4 +34,54 @@
     </li>
     
   </ul>
+</ion-content>-->
+<ion-content padding>
+    <div class="wrapper">
+        <ul class="ordertimeline">
+            <li class="order-start"  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;" >
+                <ion-row>
+                    <ion-col col-1><ion-icon name="clipboard"></ion-icon></ion-col>
+                    <ion-col col-11>
+                        <h3>{{ d.Status}}</h3>
+                        <small>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</small>
+                    </ion-col>
+                </ion-row>
+                <i></i>
+            </li>
+            <!--<li class="order-finish ">
+                <ion-row>
+                    <ion-col col-1><ion-icon name="thumbs-up"></ion-icon></ion-col>
+                    <ion-col col-11>
+                        <h3>Order Confirmed</h3>
+                        <small>Your Order has been Confirmed</small>
+                    </ion-col>
+                </ion-row>
+                <i></i>
+            </li>
+            <li class="order-process">
+                <ion-row>
+                    <ion-col col-1><ion-icon ios="ios-hand" md="md-hand"></ion-icon></ion-col>
+                    <ion-col col-11>
+                        <h3>Order Processes</h3>
+                        <small>We are Preparing your Order</small>
+                    </ion-col>
+                </ion-row>
+                <i></i>
+            </li>
+            <li class="order-process">
+                <ion-row>
+                    <ion-col col-1><ion-icon name="archive"></ion-icon></ion-col>
+                    <ion-col col-11>
+                        <h3>Ready To Pickup</h3>
+                        <small>Your order is ready to pickup</small>
+                    </ion-col>
+                </ion-row>
+                <i></i>
+            </li>-->
+        </ul>
+        <ion-row padding>
+            Enjoy Your meal we hope to hear from you again soon !
+        </ion-row>
+    </div>
+
 </ion-content>

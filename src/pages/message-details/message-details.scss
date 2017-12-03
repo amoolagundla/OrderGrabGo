@@ -1,5 +1,5 @@
 page-message-details {
-    .timeline {
+    /*.timeline {
         list-style: none;
         padding: 20px 0 20px;
         position: relative;
@@ -145,5 +145,113 @@ page-message-details {
       
       .timeline-body > p + p {
         margin-top: 5px;
-      }
+      }*/
+    .ordertimeline li.order-start i { background:#009e0f;}
+.ordertimeline li.order-start i::after {
+  background-color: #9cd9a2;
+}
+.ordertimeline li.order-start i::before {
+  background-color: #9cd9a2;
+  top: 11px;
+} 
+.ordertimeline {
+  list-style: none;
+  margin: 0;
+  padding: 15px 0;
+}
+.ordertimeline li {
+  margin-bottom: 0px;
+  padding:0px 0px 20px 50px !important;
+  position: relative;
+}
+.ordertimeline li ion-icon { color:#333; margin-right:5px;     font-size: 25px;
+    vertical-align: middle;}
+.ordertimeline li.order-finish i {
+  background-color: #009e0f;
+}
+.ordertimeline li.order-finish i::before {
+  background-color: #9cd9a2;
+}
+.ordertimeline li.order-finish i::after {
+  background-color: #9cd9a2;
+}
+.order-finish .col { flex-grow: unset;}
+
+.ordertimeline li.order-process i {
+  background-color: #9fc5f8;
+}
+.ordertimeline li.order-process i::before {
+  background-color: #dae9fc;
+}
+.ordertimeline li.order-process i::after {
+  background-color: #dae9fc;
+} 
+.ordertimeline li.memo-yep i::before, .module-history li.memo-yep i::after {
+  height: 35px;
+  left: 10px;
+}
+.ordertimeline li.memo-yep i::before {
+  top: -35px;
+}
+.ordertimeline li.memo-yep i::after {
+  bottom: -35px;
+}
+.ordertimeline li:last-child i::before {
+  height: 73px;
+  top: -73px;
+}
+.ordertimeline li:last-child i::after {
+  display: none;
+}
+.ordertimeline h3,
+.ordertimeline time {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ordertimeline h3 {
+  color: #404040;
+  font-size: 1.125em;
+  font-weight: 400;
+  margin: 0;
+}
+.ordertimeline time {
+  color: #a6a6a6;
+  display: block;
+  font-size: 0.625em;
+  text-transform: uppercase;
+}
+.ordertimeline i {
+  background-color: #a6a6a6;
+  border-radius: 50%;
+  color: transparent;
+  display: block;
+  font-size: 0;
+  height: 11px;
+  left: 20px;
+  position: absolute;
+  top: 15px;
+  width: 11px;
+  z-index: 2;
+}
+.ordertimeline i::before, .module-history i::after {
+  content: '';
+  display: block;
+  height:51px;
+  left: 5px;
+  position: absolute;
+  width: 1px;
+  z-index: -1;
+}
+.ordertimeline i::before {
+  top: -51px;
+}
+.ordertimeline i::after {
+  bottom: -51px;
+} 
+.wrapper {
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
 }

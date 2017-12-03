@@ -25,10 +25,9 @@ public orderStatus:any;
     return false;
 }
   ionViewDidLoad() {
-    this.showLoadingView();
+      this.showLoadingView();
     this.valuesService.GetOrderStatusHistory(this.navParams.get('id')).subscribe((data:any) => {
-      
-                  this.orderStatus = data;
+            this.orderStatus = data;
             this.showContentView();
             this.onRefreshComplete();
               });
