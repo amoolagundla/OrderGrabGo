@@ -92,6 +92,7 @@ export class MyApp {
 
       this.pages = [
         { title: values.CATEGORIES, icon: 'pricetag', component: 'DashPage' }, 
+        { title: 'Track Your Orders', icon: 'navigate', component: 'MessagesPage' },
 				
         { title: values.SETTINGS, icon: 'settings', component: 'SettingsPage' }
         

@@ -22,7 +22,7 @@ public orderStatus:any;
        
   }
   enableMenuSwipe() {
-    return true;
+    return false;
 }
   ionViewDidLoad() {
     this.showLoadingView();

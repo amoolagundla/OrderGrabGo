@@ -9,7 +9,7 @@ import { ValuesService} from '../../providers/ValuesService';
 import { LocalStorage } from '../../providers/local-storage';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { App } from '../../models/models';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
 import { Geolocation } from '@ionic-native/geolocation';
 @IonicPage()
 @Component({
@@ -25,30 +25,38 @@ export class DashPage extends BasePage {
     public firstName: string = 'OrderGrabGo';
     public scannedObject: string = '';
     public scanData: boolean = false;
-    constructor(injector: Injector, private _barcodeScanner: BarcodeScanner,private storage: LocalStorage,
-        private valuesService: ValuesService, private nativeGeocoder: NativeGeocoder, public geolocation: Geolocation
-    ) {
+    constructor(injector: Injector,
+         private _barcodeScanner: BarcodeScanner,
+         private storage: LocalStorage,
+        private valuesService: ValuesService,
+         private nativeGeocoder: NativeGeocoder,
+          public geolocation: Geolocation ) {
         super(injector);
+
+
          this.storage.oneSingalPushToken.then(data=>{
             
            this.valuesService.SaveToken(data).subscribe((res:any)=>{
        
-         });
-         }).catch(e=>this.setRoot('DashPage')) ;
+         }, (err) => {
+            console.log(err);
+        });
+         }).catch(e=>{}) ;
+
+
+
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
                 this.user = data;
                 this.userInfo = this.user;
                 this.firstName = 'Hello '+this.userInfo.FirstName;
             }
-         });
-        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
-            this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
-                .then((result: NativeGeocoderReverseResult) => {
-                    console.log(JSON.stringify(result));
-                })
-                .catch((error: any) => { console.log(error) });
-        })
+         }, (err) => {
+            console.log(err);
+        });
+
+
+        
     }
 
   enableMenuSwipe() {
@@ -72,5 +80,7 @@ export class DashPage extends BasePage {
   login() { this.navigateTo('RestaurentPage');
   
 }
-messages(){ this.navigateTo('MessagesPage');}
+messages(){
+    // this.navigateTo('MessagesPage');
+}
 }

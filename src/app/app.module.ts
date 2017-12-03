@@ -97,7 +97,7 @@ export function HttpLoaderFactory(http: Http) {
     AppVersion,
     HeaderColor,
     BrowserTab,
-    File,BarcodeScanner,
+    File,BarcodeScanner,NativeGeocoder,
     Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler },
 	Facebook,
   

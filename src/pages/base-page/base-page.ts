@@ -26,7 +26,7 @@ export abstract class BasePage {
   private alertCtrl: AlertController;
   private localStorage: Storage;
   protected sharedData: SharedDataService;
-  private modalCtrl: ModalController;
+  public modalCtrl: ModalController;
   public userInfo: App.UserInfoViewModel;
   private _valuesService: ValuesService;
   constructor(injector: Injector) {
@@ -205,4 +205,8 @@ export abstract class BasePage {
 setRoot(name:string) {
    this.navCtrl.setRoot(name);
   };
+
+  setRootWithParams(name:string,params:any={}) {
+    this.navCtrl.setRoot(name,params);
+   };
 }

@@ -40,7 +40,7 @@ export class CheckoutPage extends BasePage{
       var orders = new App.Orders;
       orders.OrderId = 0;
       orders.CustomerId = 0;
-      orders.ResturantId = this.navParams.get('restuarant').id;
+      orders.ResturantId = this.navParams.get('restuarant').data.id;
       orders.OrderTotal = CART.total;
       if (this.navParams.get('pagename') != undefined && this.navParams.get('pagename') == 'Delivery') {
           orders.LookupStatusId = 10;
@@ -51,7 +51,7 @@ export class CheckoutPage extends BasePage{
       orders.OrderDetail = new Array<App.OrderDetail>();
       for (var i = 0; i < CART.items.length; i++) {
           var orderdetail = new App.OrderDetail;
-          orderdetail.ProductId = 76;
+          orderdetail.ProductId = CART.items[i].id;
           orderdetail.Price = CART.items[i].price;
           orderdetail.Quantity = CART.items[i].quantity;
           orderdetail.IsActive = false;
@@ -64,9 +64,12 @@ export class CheckoutPage extends BasePage{
           orderdetail.Product = null;
           orderdetail.Order = null;
           orderdetail.OrderDetailId = 0;
+          orders.LookupOrderTypeId =47;
           orders.OrderDetail.push(orderdetail);
       }
       this.service.SaveOrders(orders).subscribe((data: any)=>{
+          console.log(data);
+          let orderId=data.OrderId;
           let alert = this.altcntrl.create({
               title: 'Success',
               subTitle: 'You order has been placed successfully!',
@@ -74,7 +77,7 @@ export class CheckoutPage extends BasePage{
           alert.addButton({
               text: 'Ok',
               handler: data => {
-                  this.navigateTo('RestaurentPage');
+                this.setRootWithParams('MessageDetailsPage', {id: orderId});
               }
           });
           alert.present();

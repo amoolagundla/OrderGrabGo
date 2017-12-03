@@ -1,6 +1,8 @@
 import { Component, Injector } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
+import { NativeGeocoder,NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
+import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the PickupPage page.
  *
@@ -16,12 +18,25 @@ export class PickupPage extends BasePage {
     public location: string = '';
     public user: any;
     pickdate: Date = new Date();
-    constructor(injector: Injector, private altcntrl: AlertController) {
+    constructor(injector: Injector, private altcntrl: AlertController,
+        private nativeGeocoder: NativeGeocoder,
+        public geolocation: Geolocation) 
+        {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             this.user = data;
-            this.location = this.navParams.get('location').locality;
+          //  this.location = this.navParams.get('location').locality;
         });
+
+        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
+            let $this=this;
+            this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
+                .then((result: NativeGeocoderReverseResult) => {
+                    this.location =  result.locality;
+                    console.log(this.location);
+                })
+                .catch((error: any) => { console.log(error) });
+        })
   }
     enableMenuSwipe() {
         return true;

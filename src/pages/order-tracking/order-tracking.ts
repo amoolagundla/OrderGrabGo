@@ -18,7 +18,7 @@ export class OrderTrackingPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderTrackingPage');
+   
   }
 
 }

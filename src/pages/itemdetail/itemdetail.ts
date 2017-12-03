@@ -14,7 +14,7 @@ import { CART } from '../cart/cartitems';
   templateUrl: 'itemdetail.html',
 })
 export class ItemdetailPage extends BasePage{
-    public ProductName: any; public Price: any; public ShoppingCart = [];
+    public ProductName: any; public Price: any; public ShoppingCart = [];public PID:any;
     constructor(injector: Injector) {
         super(injector);
   }
@@ -22,6 +22,7 @@ export class ItemdetailPage extends BasePage{
         return true;
     }
     ionViewDidLoad() {
+        this.PID=this.ProductName = this.navParams.get('product').ProductId
         this.ProductName = this.navParams.get('product').ProductName;
         this.Price = this.navParams.get('product').Price;
         console.log('ionViewDidLoad ItemdetailPage');
@@ -42,7 +43,7 @@ export class ItemdetailPage extends BasePage{
       })
       if (item.length == 0) {
           CART.items.push({
-              id: this.navParams.get('product').Id,
+              id: this.navParams.get('product').ProductId,
               name: this.navParams.get('product').ProductName,
               price: this.navParams.get('product').Price,
               thumb: "assets/img/foodpic.jpg",

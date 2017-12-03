@@ -1,6 +1,6 @@
 import { IonicPage } from 'ionic-angular';
 import { Component, Injector} from '@angular/core';
-import { ModalController, Events } from 'ionic-angular';
+import {  Events } from 'ionic-angular';
 import { Place } from '../../providers/place-service';
 import { Preference } from '../../providers/preference';
 import { LocalStorage } from '../../providers/local-storage';
@@ -26,7 +26,7 @@ export class PlaceDetailPage extends BasePage {
   unit: any;
 
   constructor(injector: Injector,
-    private modalCtrl: ModalController,
+   
     private storage: LocalStorage,
     private preference: Preference,
     private callNumber: CallNumber,

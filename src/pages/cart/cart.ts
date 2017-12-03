@@ -61,7 +61,7 @@ export class CartPage extends BasePage {
           else {
               var carparams = {
                   restuarant: this.navParams.get('restuarant'),
-                  pagename: 'Delivery'
+                  pagename: 'TakeOut'
               }
           this.navigateTo('PickupPage', carparams);
       }
