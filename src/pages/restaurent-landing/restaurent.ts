@@ -20,12 +20,13 @@ import {
     })
 
 export class RestaurentPage extends BasePage {
+    @ViewChild('near') near;
     @ViewChild('sounds') sounds;
     @ViewChild('dine') dine;
     @ViewChild('deliver') deliver;
     @ViewChild('take') take;
     @ViewChild('party') party;
-    @ViewChild('near') near;
+    
     public searchTerm: any = '';
     private categories: Array<Category>;
     public places: any;
@@ -92,7 +93,7 @@ export class RestaurentPage extends BasePage {
 
     ionViewDidLoad() {
         this.showLoadingView();
-        this.gotocat();
+        this.loadData();
     }
 
     goToPlaces() {
@@ -150,8 +151,13 @@ export class RestaurentPage extends BasePage {
         this.refresher = refresher;
         this.loadData();
     }
-    gotocat() {
-      
+    gotocat(event) {
+        event.target.classList.add('activeli');
+        this.sounds.nativeElement.classList.remove("activeli");
+        this.dine.nativeElement.classList.remove("activeli");
+        this.take.nativeElement.classList.remove("activeli");
+        this.deliver.nativeElement.classList.remove("activeli");
+        this.party.nativeElement.classList.remove("activeli");
       this.loadData();
     }
     soundsgood(event) {
@@ -247,7 +253,7 @@ export class RestaurentPage extends BasePage {
          this.party.nativeElement.classList.remove("activeli");
      }
      parties(event) {
-         event.target.classList.add('activeli');
+         this.near.nativeElement.classList.remove("activeli");
          event.target.classList.add('activeli');
          this.near.nativeElement.classList.remove("activeli");
          this.dine.nativeElement.classList.remove("activeli");
