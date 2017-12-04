@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SpinnerPage } from './spinner';
+//import { SpinnerPage } from './spinner';
 
 @NgModule({
   declarations: [
-    SpinnerPage,
+    //SpinnerPage,
   ],
   imports: [
-    IonicPageModule.forChild(SpinnerPage),
+    //IonicPageModule.forChild(SpinnerPage),
   ],
   exports: [
-    SpinnerPage
+   // SpinnerPage
   ]
 })
 export class SpinnerPageModule {}

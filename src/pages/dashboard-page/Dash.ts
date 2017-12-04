@@ -9,7 +9,7 @@ import { ValuesService} from '../../providers/ValuesService';
 import { LocalStorage } from '../../providers/local-storage';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { App } from '../../models/models';
-import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 import { Geolocation } from '@ionic-native/geolocation';
 @IonicPage()
 @Component({
@@ -55,7 +55,14 @@ export class DashPage extends BasePage {
             console.log(err);
         });
 
-
+        this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
+           
+            this.nativeGeocoder.reverseGeocode(resp.coords.latitude, resp.coords.longitude)
+                .then((result: NativeGeocoderReverseResult) => {
+                    console.log(JSON.stringify(result));
+                })
+                .catch((error: any) => { console.log(error) });
+        });
         
     }
 

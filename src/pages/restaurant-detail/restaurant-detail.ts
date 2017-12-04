@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 /**
  * Generated class for the RestaurantDetailPage page.
  *
