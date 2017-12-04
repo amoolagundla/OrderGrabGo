@@ -20,7 +20,7 @@ export class LocalStorage {
   set skipIntroPage(val) {
     this.storage.set('skipIntroPage', val);
   }
-
+  
   get unit(): Promise<any> {
     return this.storage.get('unit');
   }

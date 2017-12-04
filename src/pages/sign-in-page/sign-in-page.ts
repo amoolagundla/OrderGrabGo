@@ -61,6 +61,7 @@ export class SignInPage extends BasePage {
 		this.showContentView();
 	
         this.setName('token',data._body);
+        this.setName('LoggedIn',true);
 		this.setRoot('DashPage'); 
        //this.savePushToken();
 			
@@ -77,12 +78,8 @@ export class SignInPage extends BasePage {
   }
 
   savePushToken()
-  { this.setRoot('DashPage'); 
-    // this.storage.oneSingalPushToken.then(data=>{
-    //   this.valuesService.SaveToken(data).subscribe((res:any)=>{
-       
-    //   });
-    // }).catch(e=>this.setRoot('DashPage')) ;
+  { 
+    this.setRoot('DashPage');    
   }
 
   facebookLogIn() {
@@ -127,10 +124,7 @@ export class SignInPage extends BasePage {
                   .then(function (user) {
                     
                     glog.getUserDetailGoogle(user.idToken);
-      
-                     
-      
-                  }, function (error) {
+                   }, function (error) {
                       let er = error;
                      alert(er);
                       
@@ -144,6 +138,7 @@ export class SignInPage extends BasePage {
     this.showContentView();
     this.sharedData.USerInfoChanged(data);
     this.setName('token',data.token);
+    this.setName('LoggedIn',true);
     this.savePushToken();
   },error => {
     this.showContentView();

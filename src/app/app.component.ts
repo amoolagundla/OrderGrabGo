@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, ModalController, ToastController, Events } from 'ionic-angular';
+import { Nav, Platform, ModalController, ToastController, Events, NavController } from 'ionic-angular';
 
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -147,8 +147,9 @@ export class MyApp {
         this.oneSignal.startInit('38d8ddd8-4e73-4efc-97c3-1e65ade1d26e', '58788612269');
         this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
         this.oneSignal.setSubscription(true);
-        this.oneSignal.handleNotificationReceived().subscribe(() => {
-            // do something when the notification is received.
+        this.oneSignal.handleNotificationReceived().subscribe((data:any) => {
+          let payload = data; // getting id and action in additionalData.
+          this.redirectToPage(payload);
         });
         this.oneSignal.handleNotificationOpened().subscribe(() => {
             // do something when the notification is opened.
@@ -163,6 +164,11 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+  redirectToPage(data) {
+   console.log(data);
+   this.nav.setRoot('MessageDetailsPage',{id:data.payload.additionalData.foo});
+  }
+
 
   registerPushToken() {
     

@@ -87,6 +87,7 @@
     "phonegap-plugin-barcodescanner": "^7.0.0",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
+    "sweetalert2": "^7.0.6",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^3.2.2",
     "zone.js": "0.8.12"
   },

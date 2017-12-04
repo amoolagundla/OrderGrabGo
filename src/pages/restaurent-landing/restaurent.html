@@ -28,7 +28,7 @@
     <div class="container margin_60">        
         <div class="menu-section">
             <ul class="list-inline">
-                <li (click)="gotocat()"><a #near>Near by Restaurents</a></li>
+                <li (click)="gotocat($event)"><a #near ngClass="{'active': activeli}">Near by Restaurents</a></li>
                 <li (click)="soundsgood($event);"><a #sounds>what sounds good?</a></li>
                 <li (click)="dinein($event);"><a #dine>Dine in</a></li>
                 <li (click)="takeout($event);"><a #take>Take Out</a></li>

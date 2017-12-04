@@ -19,16 +19,23 @@
     <ion-grid class="checkoutitems" >
         <ion-row class="checkhead">
             <ion-col col-2>Qty</ion-col>
-            <ion-col col-7>Items</ion-col>
-            <ion-col col-3>Price</ion-col>
+            <ion-col col-5>Items</ion-col>
+            <ion-col col-2>Cost</ion-col>
+            <ion-col col-3>Total Price</ion-col>
         </ion-row>
         <div *ngFor="let item of cart.items; let i = index">
             <ion-row class="checkrow">
                 <ion-col col-2>{{item.quantity}}</ion-col>
-                <ion-col col-7>{{item.name}}</ion-col>
-                <ion-col col-3>${{item.price}}</ion-col>
+                <ion-col col-5>{{item.name}}</ion-col>
+                <ion-col col-2>${{item.price}}</ion-col>
+                <ion-col col-2>${{item.quantity * item.price}}</ion-col>
             </ion-row>
         </div>
+       
     </ion-grid>
+    <div><label style="float:right">Total: {{cart.total}}</label></div>
+       
+        
+    
     <ion-row class="reserve_confirm" (click)="opentrack()"> Track Your Order</ion-row>
 </ion-content>

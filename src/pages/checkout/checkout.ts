@@ -4,6 +4,7 @@ import { CART } from '../cart/cartitems';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
+
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -42,9 +43,9 @@ export class CheckoutPage extends BasePage{
       orders.ResturantId = this.navParams.get('restuarant').data.id;
       orders.OrderTotal = CART.total;
       if (this.navParams.get('pagename') != undefined && this.navParams.get('pagename') == 'Delivery') {
-          orders.LookupStatusId = 10;
+          orders.LookupOrderTypeId = 10;
       } else {
-          orders.LookupStatusId = 8;
+          orders.LookupOrderTypeId = 8;
       }
       orders.Customer = null;
       orders.OrderDetail = new Array<App.OrderDetail>();
@@ -63,24 +64,14 @@ export class CheckoutPage extends BasePage{
           orderdetail.Product = null;
           orderdetail.Order = null;
           orderdetail.OrderDetailId = 0;
-          orders.LookupOrderTypeId =47;
+          orders.LookupStatusId =47;
           orders.OrderDetail.push(orderdetail);
       }
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
           let orderId = data.OrderId;
           this.navigateTo('OrderconfirmationPage', orderId);
-          //let alert = this.altcntrl.create({
-          //    title: 'Success',
-          //    subTitle: 'You order has been placed successfully!',
-          //});
-          //alert.addButton({
-          //    text: 'Ok',
-          //    handler: data => {
-          //      this.setRootWithParams('MessageDetailsPage', {id: orderId});
-          //    }
-          //});
-          //alert.present();
+         
       });
       
   }

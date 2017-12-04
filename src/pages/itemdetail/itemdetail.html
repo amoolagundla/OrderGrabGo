@@ -17,7 +17,7 @@
     <div class="cover">
         <ion-slides pager>
             <ion-slide >
-                <img class="full-image" src="assets/img/foodpic.jpg" alt="" />
+                <img class="full-image" src="{{img}}" alt="" />
             </ion-slide>
         </ion-slides>
         <div class="overlay">
@@ -47,33 +47,7 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-list class="list-full-border" no-margin>
-        <ion-item-divider style="color:#f00">Options</ion-item-divider>
-        <!--*ngFor="let option of item.options"-->
-        <ion-item >
-            <ion-label>Tomatoes</ion-label>
-            <ion-checkbox color="primary"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-            <ion-label>Olives</ion-label>
-            <ion-checkbox color="primary"></ion-checkbox>
-        </ion-item>
-        <ion-item-divider style="color:#f00">Extras</ion-item-divider>
-        <ion-item>
-            <ion-label>Cheese: $1.2</ion-label>
-            <ion-checkbox color="primary"></ion-checkbox>
-        </ion-item>
-        <ion-item>
-            <ion-label>Cheese x2: $1.5</ion-label>
-            <ion-checkbox color="primary"></ion-checkbox>
-        </ion-item>
-    </ion-list>
     
-    <!--<ion-list class="list-full-border" no-margin radio-group>
-        <ion-item-divider>Sizes</ion-item-divider>
-        <ion-item *ngFor="let size of item.sizes">
-            <ion-label>{{ size.name }}: ${{ size.price }}</ion-label>
-            <ion-radio></ion-radio>
-        </ion-item>
-    </ion-list>-->
+    
+    
 </ion-content>

@@ -18,6 +18,7 @@ export class OrderconfirmationPage extends BasePage{
     constructor(injector: Injector) {
     super(injector);       
         this.cart = CART;
+        console.log(this.cart);
   }
         enableMenuSwipe() {
             return true;

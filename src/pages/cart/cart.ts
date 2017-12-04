@@ -3,6 +3,8 @@ import { DecimalPipe } from '@angular/common';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
+// ES6 Modules or TypeScript
+import swal from 'sweetalert2';
 /**
  * Generated class for the CartPage page.
  *
@@ -85,14 +87,9 @@ export class CartPage extends BasePage {
       }
       }
       else {
-          let alert = this.altController.create({
-              title: 'Minimum Order Amount',
-              subTitle: 'Minimum order amount is $' + CART.Minimum,
-          });
-          alert.addButton({
-              text: 'Ok'
-          });
-          alert.present();
+
+        swal('Minimum Order Amount','Minimum order amount is $' + CART.Minimum,'info');   
+         
       }
   }
   back() {

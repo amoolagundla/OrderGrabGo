@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';
+import swal from 'sweetalert2';
 /**
  * Generated class for the RestaurantDetailPage page.
  *
@@ -82,13 +83,6 @@ export class RestaurantDetailPage extends BasePage {
         this.navigateTo('RestaurentPage');
     }
     notavailable() {
-        let alert = this.altcntrl.create({
-            title: 'Not Available',
-            subTitle: 'Sorry! The selected choice was not available in this resturant',
-        });
-        alert.addButton({
-            text: 'Ok',
-        });
-        alert.present();
+        swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
     }
 }

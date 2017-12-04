@@ -2,6 +2,7 @@ import { Component,Injector } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
+
 /**
  * Generated class for the ItemdetailPage page.
  *
@@ -14,7 +15,7 @@ import { CART } from '../cart/cartitems';
   templateUrl: 'itemdetail.html',
 })
 export class ItemdetailPage extends BasePage{
-    public ProductName: any; public Price: any; public ShoppingCart = [];public PID:any;
+    public ProductName: any; public Price: any; public ShoppingCart = [];public PID:any;public img:any;
     constructor(injector: Injector) {
         super(injector);
   }
@@ -22,9 +23,10 @@ export class ItemdetailPage extends BasePage{
         return true;
     }
     ionViewDidLoad() {
-        this.PID=this.ProductName = this.navParams.get('product').ProductId
+        this.PID= this.navParams.get('product').ProductId;
         this.ProductName = this.navParams.get('product').ProductName;
         this.Price = this.navParams.get('product').Price;
+        this.img= this.navParams.get('product').ImagePath;
         console.log('ionViewDidLoad ItemdetailPage');
   }
   deliverydetails() {
@@ -46,7 +48,7 @@ export class ItemdetailPage extends BasePage{
               id: this.navParams.get('product').ProductId,
               name: this.navParams.get('product').ProductName,
               price: this.navParams.get('product').Price,
-              thumb: "assets/img/foodpic.jpg",
+              thumb: this.navParams.get('product').ImagePath,
               quantity: 1
           });
           CART.total = CART.total + this.navParams.get('product').Price;
