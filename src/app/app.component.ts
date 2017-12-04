@@ -43,7 +43,8 @@ export class MyApp {
     private _shared:SharedDataService ) {
 
       this.storage.skipIntroPage.then((skipIntroPage) => {
-        if (skipIntroPage) {
+          if (skipIntroPage) {
+              //this.splashScreen.hide();
             this.storage.token.then((token: string) => {
                 if (token != null && token != "") {
                 
@@ -59,8 +60,8 @@ export class MyApp {
               this.rootPage = 'SignInPage';
             });
         }else
-        {
-       
+          {
+            //this.splashScreen.hide();
           this.rootPage='HomePage';
         }
     }).catch((e) =>
@@ -161,7 +162,7 @@ export class MyApp {
       this.statusBar.styleDefault();
      
 
-      this.splashScreen.hide();
+      
     });
   }
   redirectToPage(data) {

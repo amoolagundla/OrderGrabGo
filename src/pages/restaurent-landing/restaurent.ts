@@ -198,12 +198,6 @@ export class RestaurentPage extends BasePage {
                                 this.places = data;
                                 this.showContentView();
                                 this.onRefreshComplete();
-                                event.target.classList.add('activeli');
-                                this.near.nativeElement.classList.remove("activeli");
-                                this.dine.nativeElement.classList.remove("activeli");
-                                this.take.nativeElement.classList.remove("activeli");
-                                this.deliver.nativeElement.classList.remove("activeli");
-                                this.party.nativeElement.classList.remove("activeli");
                             });
                         }).catch((error) => {
                             this.showContentView();
