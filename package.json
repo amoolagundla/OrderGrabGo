@@ -44,6 +44,7 @@
     "@ionic/storage": "2.0.1",
     "@ngx-translate/core": "6.0.1",
     "@ngx-translate/http-loader": "0.0.3",
+    "android-versions": "^1.2.1",
     "call-number": "^1.0.1",
     "cordova-admob-sdk": "^0.7.0",
     "cordova-android": "6.3.0",
