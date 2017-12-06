@@ -5,7 +5,7 @@
               <ion-icon class="customIcon" name="arrow-back"></ion-icon>
           </button>
       </ion-buttons>
-    <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">Your Location {{address}}</span></ion-title>
+    <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">{{address}}</span></ion-title>
   </ion-navbar> 
 	<ion-toolbar color="danger">
     <ion-searchbar color="dark" debounce="2000" [(ngModel)]="searchlocation"

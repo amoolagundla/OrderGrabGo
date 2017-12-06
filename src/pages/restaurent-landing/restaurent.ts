@@ -57,7 +57,7 @@ export class RestaurentPage extends BasePage {
             this.long=resp.coords.longitude;
               this.valuesService.GetAddress(this.lat,this.long).subscribe((data:any)=>
             { 
-                this.address= data.results[2].formatted_address;
+                this.address= data.results[1].formatted_address;
 
             },error=>console.log(error));
             console.log(this.address);

@@ -119,7 +119,7 @@ export class DeliveryPage extends BasePage{
             alert.addButton({
                 text: 'Yes',
                 handler: data => {
-                    this.navigateTo('RestaurantDetailPage', this.navParams);
+                    this.setRootWithParams('RestaurentPage', this.navParams);
                 }
             });
             alert.present();
