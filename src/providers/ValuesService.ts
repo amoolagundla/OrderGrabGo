@@ -77,6 +77,10 @@ return resdata;
        return this.http.get('api/FacebookApi/Login/'+token ).map((response: Response) => response.json());
    }
 
+   GetAddress(lat:any,long:any){
+       return this.http.get('api/ads/GetAddress/'+lat+'/'+long).map((response:Response)=>response.json());
+   }
+
 		Register(user: any) {
         return this.http.post('api/Account/Registers', user).map((response: Response) => response.json());
     }

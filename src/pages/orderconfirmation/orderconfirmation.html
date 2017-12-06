@@ -6,10 +6,14 @@
 -->
 <ion-header>
 
-  <ion-navbar color="danger">
+  <ion-navbar color="danger" hideBackButton>
     <ion-title>Order Confirmation</ion-title>
+      <ion-buttons right>
+          <button ion-button (click)="home()">
+              <ion-icon class="customIcon" name="home"></ion-icon>
+          </button>
+      </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -35,7 +39,35 @@
     </ion-grid>
     <div><label style="float:right">Total: {{cart.total}}</label></div>
        
-        
+    <ion-row padding *ngIf="pageName=='Pick'" style="width:100% !important;">
+        <ion-grid class="checkoutitems">
+            <ion-row>
+                <ion-col col-3>Date</ion-col>
+                <ion-col col-4>Pickup Time</ion-col>
+                <ion-col col-5>Pickup Location</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>{{model.PickupDate}}</ion-col>
+                <ion-col col-4>{{model.PickupTime}}</ion-col>
+                <ion-col col-5 style="border:2px inset">{{model.Location}}</ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-row>
+
+    <ion-row padding *ngIf="pageName=='Deliver'" style="width:100% !important;">
+        <ion-grid class="checkoutitems">
+            <ion-row>
+                <ion-col col-3>Date</ion-col>
+                <ion-col col-4>Delivery Time</ion-col>
+                <ion-col col-5>Delivery Location</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-3>{{model.DeliveryDate}}</ion-col>
+                <ion-col col-4>{{model.DeliveryTime}}</ion-col>
+                <ion-col col-5 style="border:2px inset">{{model.Address}}</ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-row>
     
     <ion-row class="reserve_confirm" (click)="opentrack()"> Track Your Order</ion-row>
 </ion-content>

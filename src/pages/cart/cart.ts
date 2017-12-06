@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
 // ES6 Modules or TypeScript
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 /**
  * Generated class for the CartPage page.
  *

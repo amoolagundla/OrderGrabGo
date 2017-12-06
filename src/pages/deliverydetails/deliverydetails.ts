@@ -26,7 +26,7 @@ public address: string = ''; public firstName: string = '';
     latitude: number = 0;
     longitude: number = 0;
     geo: any
-
+    deliverydate: Date = new Date();    
     service = new google.maps.places.AutocompleteService();
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder,
@@ -36,6 +36,7 @@ public address: string = ''; public firstName: string = '';
     this._shared.UserInfo.subscribe((data) => {
         if (data != undefined && data.FirstName != undefined) {
             this.user = data;
+            this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
             this.firstName = data.FirstName;
         }
         else {
@@ -77,7 +78,13 @@ public address: string = ''; public firstName: string = '';
 
   save(model: any, isValid: boolean, event: Event) {
       if (isValid) {
-          this.navigateTo('CheckoutPage', this.navParams);
+          var res = {
+              page: 'Deliver',
+              model: model,
+              restuarant: this.navParams.get('restuarant'),
+              params: this.navParams
+          }
+          this.navigateTo('CheckoutPage', res);
       }
       else {
           let alert = this.altcntrl.create({

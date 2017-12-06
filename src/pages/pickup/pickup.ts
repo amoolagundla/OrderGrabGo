@@ -25,6 +25,7 @@ export class PickupPage extends BasePage {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             this.user = data;
+            this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
           //  this.location = this.navParams.get('location').locality;
         });
 
@@ -50,7 +51,13 @@ checkout(){
 }
     save(model: any, isValid: boolean, event: Event) {
         if (isValid) {
-            this.navigateTo('CheckoutPage',this.navParams);
+            var res = {
+                page : 'Pick',
+                model: model,
+                restuarant: this.navParams.get('restuarant'),
+                params : this.navParams
+            }
+            this.navigateTo('CheckoutPage',res);
         }
         else {
             let alert = this.altcntrl.create({

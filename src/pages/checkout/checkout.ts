@@ -20,6 +20,8 @@ import { ValuesService } from '../../providers/ValuesService';
 export class CheckoutPage extends BasePage{
     public total: any;
     public user: any;
+    public model: any;
+    pageName: string = '';
     constructor(injector: Injector, private altcntrl: AlertController, private service: ValuesService) {
         super(injector);
         this.total = CART.total;
@@ -28,6 +30,8 @@ export class CheckoutPage extends BasePage{
                 this.user = data;
             }
         });
+        this.model = this.navParams.get('model');
+        this.pageName = this.navParams.get('page');
   }
     enableMenuSwipe() {
         return true;
@@ -70,9 +74,17 @@ export class CheckoutPage extends BasePage{
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
           let orderId = data.OrderId;
-          this.navigateTo('OrderconfirmationPage', orderId);
+          var dat = {
+              model: this.navParams.get('model'),
+              pageName: this.navParams.get('page'),
+              orderId : orderId
+          }
+          this.navigateTo('OrderconfirmationPage', dat);
          
       });
       
+  }
+  home() {
+      this.setRoot("DashPage");
   }
 }

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 /**
  * Generated class for the RestaurantDetailPage page.
  *
@@ -19,6 +19,7 @@ export class RestaurantDetailPage extends BasePage {
     public user: App.UserInfoViewModel;
     public firstName: string = 'OrderGrabGo';
     public name: string; public location: string; public address: string; public phonenum: string; public hasTablebooking: number = 0;
+    featuredImage: string = '';
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
     constructor(injector: Injector, private altcntrl: AlertController) {
         super(injector);
@@ -32,7 +33,7 @@ export class RestaurantDetailPage extends BasePage {
         this.hasTablebooking = this.navParams.get('has_table_booking');
         this.hastakeout = this.navParams.get('is_delivering_now');
         this.hasdelivery = this.navParams.get('has_online_delivery');
-        
+        this.featuredImage = this.navParams.get('featured_image');
         if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
             this.min_amt = this.navParams.get('delivery_minimum_order');
         }

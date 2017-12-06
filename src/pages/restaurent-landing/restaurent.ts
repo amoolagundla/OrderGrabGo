@@ -29,7 +29,7 @@ export class RestaurentPage extends BasePage {
     
     public searchTerm: any = '';
     private categories: Array<Category>;
-    public places: any;
+    public places: any; public realPlaces: any;
     public cuisines: any;
     public lat:any=null;
     public long:any=null;
@@ -55,13 +55,11 @@ export class RestaurentPage extends BasePage {
         this.getlocation().then((resp) => {
             this.lat=resp.coords.latitude;
             this.long=resp.coords.longitude;
-            this.nativeGeocoder.reverseGeocode(resp.coords.latitude,resp.coords.longitude)
-                .then((result: NativeGeocoderReverseResult) => {
-                    console.log(JSON.stringify(result));
-                   
-                    this.address = result.thoroughfare+ " "+result.subLocality +" "+ result.locality + " " +result.subAdministrativeArea + " " + result.administrativeArea + " " + result.countryCode + " " + result.postalCode;
-                })
-                .catch((error: any) => { console.log(error) });
+              this.valuesService.GetAddress(this.lat,this.long).subscribe((data:any)=>
+            { 
+                this.address= data.results[2].formatted_address;
+
+            },error=>console.log(error));
             console.log(this.address);
         });
     }
@@ -113,6 +111,7 @@ export class RestaurentPage extends BasePage {
 
             this.valuesService.GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude).subscribe((data: App.GooglePlaces) => {
                 this.places = data;
+                this.realPlaces = data;
                 this.showContentView();
                 this.onRefreshComplete();
 
@@ -125,6 +124,7 @@ export class RestaurentPage extends BasePage {
         {
             this.valuesService.GetPlacesWithZomato(this.lat,this.long).subscribe((data: App.GooglePlaces) => {                
                 this.places = data;
+                this.realPlaces = data;
                 this.showContentView();
                 this.onRefreshComplete();
 
@@ -139,6 +139,7 @@ export class RestaurentPage extends BasePage {
               this.searchlocation = data.location;
               this.valuesService.GetPlacesWithZomato(data.lat, data.lng).subscribe((data: App.GooglePlaces) => {
                   this.places = data;
+                  this.realPlaces = data;
                   this.showContentView();
                   this.onRefreshComplete();
 
@@ -152,13 +153,14 @@ export class RestaurentPage extends BasePage {
         this.loadData();
     }
     gotocat(event) {
+        this.showLoadingView();
         event.target.classList.add('activeli');
         this.sounds.nativeElement.classList.remove("activeli");
         this.dine.nativeElement.classList.remove("activeli");
         this.take.nativeElement.classList.remove("activeli");
         this.deliver.nativeElement.classList.remove("activeli");
         this.party.nativeElement.classList.remove("activeli");
-      this.loadData();
+        this.loadData();
     }
     soundsgood(event) {
         event.target.classList.add('activeli');
@@ -218,7 +220,13 @@ export class RestaurentPage extends BasePage {
         });
     }
     filter() {
-        this.places = this.places.filter(res => res.restaurent.name == this.searchTerm);
+        this.showLoadingView();
+        var data = this.realPlaces.restaurants.filter(item => item.restaurant.name.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1);
+        this.places = {
+            restaurants: data
+        }
+        this.showContentView();
+        this.onRefreshComplete();
     }
 	 indRest(restuarants: any) {
 		this.navigateTo('RestaurantDetailPage',restuarants);
@@ -228,30 +236,52 @@ export class RestaurentPage extends BasePage {
          //this.navigateTo('DashPage');
      }
      dinein(event) {
+         this.showLoadingView();
          event.target.classList.add('activeli');
          this.near.nativeElement.classList.remove("activeli");
          this.sounds.nativeElement.classList.remove("activeli");
          this.take.nativeElement.classList.remove("activeli");
          this.deliver.nativeElement.classList.remove("activeli");
          this.party.nativeElement.classList.remove("activeli");
+         var data = this.realPlaces.restaurants.filter(item => item.restaurant.has_table_booking === 1);
+         this.places = {
+             restaurants: data
+         }
+         this.showContentView();
+         this.onRefreshComplete();
      }
      takeout(event) {
+         this.showLoadingView();
          event.target.classList.add('activeli');
          this.near.nativeElement.classList.remove("activeli");
          this.dine.nativeElement.classList.remove("activeli");
          this.sounds.nativeElement.classList.remove("activeli");
          this.deliver.nativeElement.classList.remove("activeli");
          this.party.nativeElement.classList.remove("activeli");
+         var data = this.realPlaces.restaurants.filter(item => item.restaurant.is_delivering_now === 1);
+         this.places = {
+             restaurants: data
+         } 
+         this.showContentView();
+         this.onRefreshComplete();
      }
      delivery(event) {
+         this.showLoadingView();
          event.target.classList.add('activeli');
          this.near.nativeElement.classList.remove("activeli");
          this.dine.nativeElement.classList.remove("activeli");
          this.take.nativeElement.classList.remove("activeli");
          this.sounds.nativeElement.classList.remove("activeli");
          this.party.nativeElement.classList.remove("activeli");
+         var data = this.realPlaces.restaurants.filter(item => item.restaurant.has_online_delivery === 1);
+         this.places = {
+             restaurants: data
+         }
+         this.showContentView();
+         this.onRefreshComplete();
      }
      parties(event) {
+         this.showLoadingView();
          this.near.nativeElement.classList.remove("activeli");
          event.target.classList.add('activeli');
          this.near.nativeElement.classList.remove("activeli");
@@ -259,5 +289,6 @@ export class RestaurentPage extends BasePage {
          this.take.nativeElement.classList.remove("activeli");
          this.deliver.nativeElement.classList.remove("activeli");
          this.sounds.nativeElement.classList.remove("activeli");
+         this.loadData();
      }
 }

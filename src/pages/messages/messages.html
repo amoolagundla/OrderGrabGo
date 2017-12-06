@@ -19,21 +19,17 @@
 
 
 <ion-content style="margin-top:15%">
-  <ion-grid *ngFor="let d of orders">
-		<ion-row class="itemlist" (click)="itemdetails(d.OrderId)">
-			<ion-col col-4>
-			<img src="assets/img/noimage.png"  alt="" />
-			</ion-col>
-			<ion-col col-8>
-			 <h3>{{d.RestaurentName}}</h3>
-					<h4 class="desc">{{d.Status}}</h4>
-					<ion-row class="itemprice">
-					<ion-col col-12>
-						<h4><div text-left><strong>Price: ${{d.OrderTotal}}</strong></div></h4>
-					</ion-col>
-					</ion-row>
-					
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+		<div class="view-rest" >            
+                <div class="row">
+                    <div class="col-xs-6"  *ngFor="let place of orders">
+                        <div class="rest-addr" (click)="itemdetails(place.OrderId)">
+                          <img src="{{place.ImagePath}}"  />
+                            <h5 class="cardText">{{place.OrderType}} Price: ${{place.OrderTotal}}</h5>
+                        </div>
+                    </div>
+                    
+                </div>
+		</div>
+		
+  
 </ion-content>

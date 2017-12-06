@@ -15,10 +15,14 @@ import { CART } from '../cart/cartitems';
 })
 export class OrderconfirmationPage extends BasePage{
     public cart: any;
+    public model: any;
+    pageName: string = '';
     constructor(injector: Injector) {
     super(injector);       
         this.cart = CART;
         console.log(this.cart);
+        this.model = this.navParams.get('model');
+        this.pageName = this.navParams.get('pageName');
   }
         enableMenuSwipe() {
             return true;
@@ -29,7 +33,10 @@ export class OrderconfirmationPage extends BasePage{
   opentrack() {
       debugger;
       this.setRootWithParams('MessageDetailsPage', {
-          id: this.navParams.data
+          id: this.navParams.get('orderId')
       });
+  }
+  home() {
+      this.setRoot("DashPage");
   }
 }

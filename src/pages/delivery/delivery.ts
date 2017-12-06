@@ -21,9 +21,11 @@ export class DeliveryPage extends BasePage{
     public name: string;
     public data: any;
     public pageDetails: any;
+    featuredImage: string = '';
     constructor(injector: Injector, private valuesService: ValuesService,
         private actionSheetCtrl: ActionSheetController, private altController: AlertController) {
         super(injector);
+        this.featuredImage = this.navParams.get('featured_image');
     }
     enableMenuSwipe() {
         return true;

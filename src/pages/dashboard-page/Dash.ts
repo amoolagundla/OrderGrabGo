@@ -17,7 +17,7 @@ import { Geolocation } from '@ionic-native/geolocation';
     templateUrl: 'Dash.html'
 })
 export class DashPage extends BasePage {
-
+address:any;
     qrData = null;
     createdCode = null;
     scannedCode = null;
@@ -56,12 +56,12 @@ export class DashPage extends BasePage {
         });
 
         this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
-           
-            this.nativeGeocoder.reverseGeocode(resp.coords.latitude, resp.coords.longitude)
-                .then((result: NativeGeocoderReverseResult) => {
-                    console.log(JSON.stringify(result));
-                })
-                .catch((error: any) => { console.log(error) });
+            this.valuesService.GetAddress(resp.coords.latitude, resp.coords.longitude).subscribe((data:any)=>
+            { 
+                this.address= data.results[2].formatted_address;
+
+            },error=>console.log(error));
+            
         });
         
     }

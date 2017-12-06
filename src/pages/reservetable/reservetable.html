@@ -38,7 +38,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
-                    <input type="date" class="form-control" name="ReservationDate" [ngModel]="reservationdate" placeholder="Reservation Date"
+                    <input type="date" class="form-control" name="ReservationDate" [ngModel]="reservationdate | date:'yyyy-MM-dd'" placeholder="Reservation Date"
                            required #ReservationDate="ngModel">
                 </div>
                 <small [hidden]="ReservationDate.valid || (ReservationDate.pristine && !f.submitted)" class="text-danger">
@@ -51,7 +51,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="ReservationTime" [ngModel]="reservationtime" placeholder="Reservation Time"
+                    <input type="time" class="form-control" name="ReservationTime" [ngModel]="reservationtime | date:'HH:mm'" placeholder="Reservation Time"
                            required #ReservationTime="ngModel">
                 </div>
                 <small [hidden]="ReservationTime.valid || (ReservationTime.pristine && !f.submitted)" class="text-danger">
@@ -86,64 +86,11 @@
         <div class="form-group">
 
             <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-ticket fa-lg" aria-hidden="true"></i></span>
-                    <select [ngModel]="special" class="form-control" name="Special" #Special="ngModel">
-                        <option value="" disabled selected>Special Request?</option>
-                        <option>None</option>
-                        <option>Special Occasions</option>
-                        <option>Birthday Party</option>
-                        <option>Anniversary</option>
-                        <option>Others</option>
-                    </select>
+                <div class="input-group" style="width:100% !important;">
+                    <textarea [ngModel]="special" placeholder="Instructions" class="form-control" name="Special" #Special="ngModel"></textarea>
                 </div>
             </div>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Reserve Table</button>
     </form>
-    <!--<form>
-        <ion-item>
-            <ion-label>Location</ion-label>
-            <ion-select [(ngModel)]="reserve.Hotal_Location">
-                <ion-option>{{location}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="calendar"></ion-icon> Date</ion-label>
-            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="form.ReservationDate"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-label>  <ion-icon name="time"></ion-icon> Time</ion-label>
-            <ion-datetime displayFormat="h:mm A" [(ngModel)]="reserve.ReservationTime"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-label><ion-icon name="people"></ion-icon> Party Size</ion-label>
-            <ion-select [(ngModel)]="reserve.party_size">
-                <ion-option>1</ion-option>
-                <ion-option>2</ion-option>
-                <ion-option>3</ion-option>
-                <ion-option>4</ion-option>
-                <ion-option>5</ion-option>
-                <ion-option>6</ion-option>
-                <ion-option>7</ion-option>
-                <ion-option>8</ion-option>
-                <ion-option>9</ion-option>
-                <ion-option>10</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label>  <ion-icon name="flower"></ion-icon> Special Request?</ion-label>
-            <ion-select [(ngModel)]="reserve.Special_Request">
-                <ion-option>None</ion-option>
-                <ion-option>Special Occasions</ion-option>
-                <ion-option>Birthday Party</ion-option>
-                <ion-option>Anniversary</ion-option>
-                <ion-option>Others</ion-option>
-            </ion-select>
-        </ion-item>
-        
-        <ion-grid class="btncenter">
-            <button [navPush]="HomePage" ion-button (click)="showAlert()">Reserve Table</button>
-        </ion-grid>
-    </form>-->
 </ion-content>
