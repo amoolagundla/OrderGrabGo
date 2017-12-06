@@ -15,7 +15,8 @@ import { App } from '../../models/models';
 })
 export class ReservetableConfirmationPage extends BasePage{
     public user: App.UserInfoViewModel; public firstName: string = 'OrderGrabGo';
-    public guest: string; date: string = ''; time: string = '';
+    public guest: string; date: string = ''; time: string = ''; location: string = '';
+    orderId: string = '';
     constructor(injector: Injector) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
@@ -28,6 +29,8 @@ export class ReservetableConfirmationPage extends BasePage{
         this.guest = this.navParams.get('model').Guests;
         this.date = this.navParams.get('model').ReservationDate;
         this.time = this.navParams.get('model').ReservationTime;
+        this.location = this.navParams.get('model').Location;
+        this.orderId = this.navParams.get('orderId');
     }
     enableMenuSwipe() {
         return true;
@@ -42,9 +45,12 @@ export class ReservetableConfirmationPage extends BasePage{
     }
 
     opentrack() {
-        this.navigateTo('ReservationTrackingPage', this.navParams.get('orderId'));
+        this.setRootWithParams('ReservationTrackingPage', this.navParams.get('orderId'));
     }
     home() {
         this.setRoot("DashPage");
+    }
+    directions() {
+        this.navigateTo('MapdirectionPage', this.navParams.get('restuarants'));
     }
 }

@@ -4,7 +4,7 @@ import { CART } from '../cart/cartitems';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
-
+import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -22,7 +22,7 @@ export class CheckoutPage extends BasePage{
     public user: any;
     public model: any;
     pageName: string = '';
-    constructor(injector: Injector, private altcntrl: AlertController, private service: ValuesService) {
+    constructor(injector: Injector, private altcntrl: AlertController, private service: ValuesService, public geolocation: Geolocation,) {
         super(injector);
         this.total = CART.total;
         this.sharedData.UserInfo.subscribe((data) => {
@@ -41,6 +41,9 @@ export class CheckoutPage extends BasePage{
   }
   pay() {
       var resparams = this.navParams.get('restuarant').location;
+      var model = this.navParams.get('model');
+      debugger;
+      this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
       var orders = new App.Orders;
       orders.OrderId = 0;
       orders.CustomerId = 0;
@@ -51,7 +54,13 @@ export class CheckoutPage extends BasePage{
       } else {
           orders.LookupOrderTypeId = 8;
       }
-      orders.Customer = null;
+      orders.CustomerMaster = new App.CustomerMaster();
+      orders.CustomerMaster.Address = model.Address;
+      orders.CustomerMaster.FirstName = model.FirstName;
+      orders.CustomerMaster.LastName = model.FirstName;
+      orders.CustomerMaster.MobileNumber = model.PhoneNumber;
+      orders.CustomerMaster.GeoLocation = data.coords.latitude + "," + data.coords.longitude;
+      orders.CustomerMaster.City = "Des Moines";
       orders.OrderDetail = new Array<App.OrderDetail>();
       for (var i = 0; i < CART.items.length; i++) {
           var orderdetail = new App.OrderDetail;
@@ -81,6 +90,7 @@ export class CheckoutPage extends BasePage{
           }
           this.navigateTo('OrderconfirmationPage', dat);
          
+      });
       });
       
   }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,Injector } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { BasePage } from '../base-page/base-page';
 /**
  * Generated class for the OrderTrackingPage page.
  *
@@ -12,13 +12,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-order-tracking',
   templateUrl: 'order-tracking.html',
 })
-export class OrderTrackingPage {
+export class OrderTrackingPage extends BasePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(injector: Injector) {
+        super(injector);   
   }
-
+    enableMenuSwipe() {
+        return true;
+    }
   ionViewDidLoad() {
    
   }
-
+  home() {
+      this.setRoot("DashPage");
+  }
 }

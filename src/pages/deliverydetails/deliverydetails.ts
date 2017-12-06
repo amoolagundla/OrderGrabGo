@@ -2,9 +2,10 @@ import { Component,Injector,NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController,ViewController,ModalController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { SharedDataService } from '../../providers/SharedDataService';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
+
 import { AddressdetailPage } from '../addressdetail/addressdetail';
 import { Geolocation } from '@ionic-native/geolocation';
+import { LocalStorage } from '../../providers/local-storage';
 declare var google;
 /**
  * Generated class for the DeliverydetailsPage page.
@@ -29,28 +30,25 @@ public address: string = ''; public firstName: string = '';
     deliverydate: Date = new Date();    
     service = new google.maps.places.AutocompleteService();
 
-    constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, private nativeGeocoder: NativeGeocoder,
+    constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, 
+        private storage: LocalStorage,
         private modlCtrl: ModalController, public geolocation: Geolocation) {
     super(injector);
 
     this._shared.UserInfo.subscribe((data) => {
         if (data != undefined && data.FirstName != undefined) {
             this.user = data;
-            this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
             this.firstName = data.FirstName;
+            this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
         }
         else {
             this.firstName = '';
         }
 
     });
-    this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data)=>{
-    this.nativeGeocoder.reverseGeocode(data.coords.latitude, data.coords.longitude)
-        .then((result: NativeGeocoderReverseResult) => {
-            console.log(JSON.stringify(result));
-            this.address =  result.thoroughfare + " " + result.subLocality + " " + result.locality + " " + result.subAdministrativeArea + " " + result.administrativeArea + " " + result.countryCode + " " + result.postalCode;
-        })
-        .catch((error: any) => { console.log(error) });
+
+    this.storage.getAddress().then((data) => {
+        this.address = data;
     })
         console.log(this.address);
         this.autocompleteItems = [];

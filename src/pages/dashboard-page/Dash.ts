@@ -9,7 +9,6 @@ import { ValuesService} from '../../providers/ValuesService';
 import { LocalStorage } from '../../providers/local-storage';
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { App } from '../../models/models';
-import { NativeGeocoder, NativeGeocoderReverseResult } from '@ionic-native/native-geocoder';
 import { Geolocation } from '@ionic-native/geolocation';
 @IonicPage()
 @Component({
@@ -29,7 +28,6 @@ address:any;
          private _barcodeScanner: BarcodeScanner,
          private storage: LocalStorage,
         private valuesService: ValuesService,
-         private nativeGeocoder: NativeGeocoder,
           public geolocation: Geolocation ) {
         super(injector);
 
@@ -58,7 +56,8 @@ address:any;
         this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((resp) => {
             this.valuesService.GetAddress(resp.coords.latitude, resp.coords.longitude).subscribe((data:any)=>
             { 
-                this.address= data.results[2].formatted_address;
+                this.address = data.results[1].formatted_address;
+                this.storage.storeAddress(this.address);
 
             },error=>console.log(error));
             

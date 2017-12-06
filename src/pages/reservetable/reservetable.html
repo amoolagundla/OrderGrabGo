@@ -17,7 +17,7 @@
 
 <ion-content class="reserve-cont">
 <ion-card class="headinside">
-    <img src="assets/img/bg.png"/>
+    <img src="{{featuredImage}}"/>
   </ion-card>
     <form #f="ngForm" padding novalidate (ngSubmit)="save(f.value, f.valid,$event)">
         <div class="form-group">

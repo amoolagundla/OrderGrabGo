@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-ang
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
+import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the ReservetablePage page.
  *
@@ -18,11 +19,12 @@ export class ReservetablePage extends BasePage{
     //form: any;
     special: string = '';
     guests: string = '';
-    public name: string; public firstName: string; location: string = '';
+    public name: string; public firstName: string; location: string = ''; featuredImage: string = '';
     reservationdate: Date = new Date();
     
-    constructor(injector: Injector, public atrCtrl: AlertController, private service: ValuesService) {
+    constructor(injector: Injector, public atrCtrl: AlertController, private service: ValuesService, public geolocation: Geolocation) {
         super(injector);
+        this.featuredImage = this.navParams.get('featured_image');
     }
     enableMenuSwipe() {
         return true;
@@ -37,25 +39,34 @@ export class ReservetablePage extends BasePage{
 
     save(model: any, isValid: boolean, event: Event) {
         if (isValid) {
-            var orders = new App.Orders;
-            orders.OrderId = 0;
-            orders.CustomerId = 0;
-            orders.ResturantId = this.navParams.get('id');
-            orders.OrderTotal = 23;
-            orders.LookupOrderTypeId = 69;
-            orders.LookupStatusId = 47;
-            orders.Instructions = model.Special;
-            orders.OrderDetail = [];
-            this.service.SaveOrders(orders).subscribe((data: any) => {
-                console.log(data);
-                let orderId = data.OrderId;
-                var res = {
-                    model: model,
-                    orderId : data.OrderId
-                }
-                this.navigateTo('ReservetableConfirmationPage', res);
+            this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
+                var orders = new App.Orders;
+                orders.OrderId = 0;
+                orders.CustomerId = 0;
+                orders.ResturantId = this.navParams.get('id');
+                orders.OrderTotal = 23;
+                orders.LookupOrderTypeId = 69;
+                orders.LookupStatusId = 47;
+                orders.Instructions = model.Special;
+                orders.CustomerMaster = new App.CustomerMaster();
+                orders.CustomerMaster.Address = model.Location;
+                //orders.CustomerMaster.FirstName = model.FirstName;
+                //orders.CustomerMaster.LastName = model.FirstName;
+                //orders.CustomerMaster.MobileNumber = model.PhoneNumber;
+                orders.CustomerMaster.GeoLocation = data.coords.latitude + "," + data.coords.longitude;
+                orders.CustomerMaster.City = "Des Moines";
+                orders.OrderDetail = [];
+                this.service.SaveOrders(orders).subscribe((data: any) => {
+                    console.log(data);
+                    let orderId = data.OrderId;
+                    var res = {
+                        model: model,
+                        orderId: data.OrderId,
+                        restuarants: this.navParams.data
+                    }
+                    this.navigateTo('ReservetableConfirmationPage', res);
+                });
             });
-            
         }
         else {
             let alert = this.atrCtrl.create({

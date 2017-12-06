@@ -16,6 +16,7 @@ import { CART } from '../cart/cartitems';
 export class OrderconfirmationPage extends BasePage{
     public cart: any;
     public model: any;
+    OrderID: string = '';
     pageName: string = '';
     constructor(injector: Injector) {
     super(injector);       
@@ -23,6 +24,7 @@ export class OrderconfirmationPage extends BasePage{
         console.log(this.cart);
         this.model = this.navParams.get('model');
         this.pageName = this.navParams.get('pageName');
+        this.OrderID = this.navParams.get('orderId');
   }
         enableMenuSwipe() {
             return true;
@@ -31,7 +33,7 @@ export class OrderconfirmationPage extends BasePage{
     console.log('ionViewDidLoad OrderconfirmationPage');
   }
   opentrack() {
-      debugger;
+      
       this.setRootWithParams('MessageDetailsPage', {
           id: this.navParams.get('orderId')
       });

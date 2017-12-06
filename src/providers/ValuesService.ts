@@ -96,7 +96,7 @@ return resdata;
 
     SaveOrders(Orders: App.Orders) {
         var ds = JSON.stringify(Orders);
-        debugger;
+        
         return this.http.post('api/ProductsApi/PostOrderMaster', JSON.stringify(Orders)).map((response: Response) => response.json());
     }
 

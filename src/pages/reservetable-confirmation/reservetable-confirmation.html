@@ -24,7 +24,8 @@
 
 
 <ion-content padding>
-    <ion-row class="success_confirm"> Thank You, Your reservation is confirmed</ion-row>
+    <ion-row class="success_confirm"> Thank You, Your reservation is confirmed
+    <br />Your reservaiton id is {{orderId}}</ion-row>
     <ion-row>
         <ion-col>
             <ion-item>
@@ -41,6 +42,16 @@
                 <ion-label>Time: {{time}}</ion-label>
             </ion-item>
         </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label>Location: {{location}}</ion-label>
+            </ion-item>
+        </ion-col>
     </ion-row>
     <ion-row class="reserve_confirm" (click)="opentrack()" > Track Your Reservation</ion-row>
+    <ion-row padding>
+        <button (click)="directions()">
+            <i class="fa fa-map-marker"></i><span>Restaurent Directions</span>
+        </button>
+    </ion-row>
 </ion-content>

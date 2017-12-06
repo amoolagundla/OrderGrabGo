@@ -77,4 +77,10 @@ export class LocalStorage {
     this.storage.set('lang', val);
   }
 
+  storeAddress(val) {
+      this.storage.set('MobileAddress', val);
+  }
+  getAddress() {
+      return this.storage.get('MobileAddress');
+  }
 }

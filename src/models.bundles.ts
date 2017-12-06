@@ -2240,6 +2240,7 @@ export module App {
         IsDeleted: boolean;
         LastName: string;
         LookupCityId: number;
+        City: string;
         LookupCountryId: number;
         LookupLocalityId: number;
         LookupStateId: number;
@@ -2513,6 +2514,7 @@ export module App {
         OrderTotal: number;
         ResturantId: number;
         Customer: CustomerMaster;
+        CustomerMaster: CustomerMaster;
         LookupStatus: LookupCodeMaster;
         Resturant: RestaurantMaster;
         OrderDetail: OrderDetail[];

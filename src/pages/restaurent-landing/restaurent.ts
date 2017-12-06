@@ -7,9 +7,9 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 import { Category } from '../../providers/categories';
 import { BasePage } from '../base-page/base-page';
 import { Geolocation } from '@ionic-native/geolocation';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
 import { App } from '../../models/models';
 import { LocationsearchPage } from '../locationsearch/locationsearch';
+import { LocalStorage } from '../../providers/local-storage';
 import {
     ValuesService
 } from '../../providers/ValuesService';
@@ -40,8 +40,9 @@ export class RestaurentPage extends BasePage {
     constructor(injector: Injector, public atrCtrl: AlertController,
         private events: Events,
         private locationAccuracy: LocationAccuracy,
+        private storage: LocalStorage,
         private diagnostic: Diagnostic,
-        private valuesService: ValuesService, public geolocation: Geolocation, private nativeGeocoder: NativeGeocoder, private modlCtrl:ModalController) {
+        private valuesService: ValuesService, public geolocation: Geolocation,  private modlCtrl:ModalController) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -50,19 +51,22 @@ export class RestaurentPage extends BasePage {
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
-        if(this.lat== null && this.long== null)
-        {
-        this.getlocation().then((resp) => {
-            this.lat=resp.coords.latitude;
-            this.long=resp.coords.longitude;
-              this.valuesService.GetAddress(this.lat,this.long).subscribe((data:any)=>
-            { 
-                this.address= data.results[1].formatted_address;
+        this.storage.getAddress().then((data)=>{
+            this.address = data;
+        })
+    //    if(this.lat== null && this.long== null)
+    //    {
+    //    this.getlocation().then((resp) => {
+    //        this.lat=resp.coords.latitude;
+    //        this.long=resp.coords.longitude;
+    //          this.valuesService.GetAddress(this.lat,this.long).subscribe((data:any)=>
+    //        { 
+    //            this.address= data.results[1].formatted_address;
 
-            },error=>console.log(error));
-            console.log(this.address);
-        });
-    }
+    //        },error=>console.log(error));
+    //        console.log(this.address);
+    //    });
+    //}
 
         this.locationAccuracy.canRequest().then((canRequest: boolean) => {
 
@@ -102,8 +106,6 @@ export class RestaurentPage extends BasePage {
         
     }
     loadData() {
-    
-        
         //this.showLoadingView();
         if(this.lat==null && this.long==null)
         {

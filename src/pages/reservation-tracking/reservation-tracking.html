@@ -5,8 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar color="danger">
+    <ion-navbar color="danger" hideBackButton>
         <ion-title>Track Your Reservation</ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="home()">
+                <ion-icon class="customIcon" name="home"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 
