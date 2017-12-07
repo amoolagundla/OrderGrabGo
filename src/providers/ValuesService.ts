@@ -77,7 +77,7 @@ return resdata;
        return this.http.get('api/FacebookApi/Login/'+token ).map((response: Response) => response.json());
    }
 
-   GetAddress(lat:any,long:any){
+    GetAddress(lat: any, long: any) {
        return this.http.get('api/ads/GetAddress/'+lat+'/'+long).map((response:Response)=>response.json());
    }
 
@@ -105,5 +105,8 @@ return resdata;
     }
     GetOrderStatusHistory(id:any) {
         return this.http.get('api/ProductsApi/GetOrderStatusHistory/'+id).map((response: Response) => response.json());
+    }
+    GetOrderDetail(id : any) {
+        return this.http.get('api/ProductsApi/GetOrderDetail/'+id).map((response: Response) => response.json());
     }
 }

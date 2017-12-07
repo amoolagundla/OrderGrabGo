@@ -48,13 +48,12 @@ export class ReservetablePage extends BasePage{
                 orders.LookupOrderTypeId = 69;
                 orders.LookupStatusId = 47;
                 orders.Instructions = model.Special;
-                orders.CustomerMaster = new App.CustomerMaster();
-                orders.CustomerMaster.Address = model.Location;
+                orders.OrderAddress = new App.OrderAddress();
+                orders.OrderAddress.address1 = model.Location;
                 //orders.CustomerMaster.FirstName = model.FirstName;
                 //orders.CustomerMaster.LastName = model.FirstName;
                 //orders.CustomerMaster.MobileNumber = model.PhoneNumber;
-                orders.CustomerMaster.GeoLocation = data.coords.latitude + "," + data.coords.longitude;
-                orders.CustomerMaster.City = "Des Moines";
+                orders.OrderAddress.city = "Des Moines";
                 orders.OrderDetail = [];
                 this.service.SaveOrders(orders).subscribe((data: any) => {
                     console.log(data);

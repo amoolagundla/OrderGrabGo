@@ -2261,7 +2261,40 @@ export module App {
     }
 }
 
+export module App {
 
+
+    /**
+     * Base view model for OrderGrabGo.Web.OrderGrabGo_Models.CustomerMaster
+     */
+    export class OrderAddress {
+        public id: number;
+        public orderId: number;
+        public customerId: string;
+        public firstName: string;
+        public lastName: string;
+        public address1: string;
+        public address2: string;
+        public phoneNo: string;
+        public email: string;
+        public city: string;
+        public zipcode: string;
+        public lookUpCountry: number;
+        public createdDate: Date;
+        public createdUserId: string;
+        public modifiedDate: Date;
+        public modifiedUserId: string;
+        public isActive: boolean;
+        public isDeleted: boolean;
+        public customer: AspNetUsers;
+        public idNavigation: Orders;
+        public lookUpCountryNavigation: LookupCodeMaster;
+
+        constructor() {
+            //nothing                   
+        }
+    }
+}
 
 
 //*************************DO NOT MODIFY**************************
@@ -2513,6 +2546,7 @@ export module App {
         ModifiedUserId: string;
         OrderTotal: number;
         ResturantId: number;
+        OrderAddress: OrderAddress;
         Customer: CustomerMaster;
         CustomerMaster: CustomerMaster;
         LookupStatus: LookupCodeMaster;

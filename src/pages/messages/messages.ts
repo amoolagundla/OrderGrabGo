@@ -20,7 +20,6 @@ public orders:any;
     this.showLoadingView();
     this.valuesService.GetOrders().subscribe((res:any)=>
     {
-     
           this.orders=res;
           this.showContentView();
           this.onRefreshComplete();

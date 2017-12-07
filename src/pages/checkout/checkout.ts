@@ -49,18 +49,21 @@ export class CheckoutPage extends BasePage{
       orders.CustomerId = 0;
       orders.ResturantId = this.navParams.get('restuarant').data.id;
       orders.OrderTotal = CART.total;
-      if (this.navParams.get('pagename') != undefined && this.navParams.get('pagename') == 'Delivery') {
+      debugger;
+      orders.OrderAddress = new App.OrderAddress();
+      orders.OrderAddress.address1 = " ";
+      if (this.navParams.get('page') != undefined && this.navParams.get('page') == 'Deliver') {
           orders.LookupOrderTypeId = 10;
+          orders.OrderAddress.address1 = model.Address;
       } else {
           orders.LookupOrderTypeId = 8;
+          orders.OrderAddress.address1 = model.Location;
       }
-      orders.CustomerMaster = new App.CustomerMaster();
-      orders.CustomerMaster.Address = model.Address;
-      orders.CustomerMaster.FirstName = model.FirstName;
-      orders.CustomerMaster.LastName = model.FirstName;
-      orders.CustomerMaster.MobileNumber = model.PhoneNumber;
-      orders.CustomerMaster.GeoLocation = data.coords.latitude + "," + data.coords.longitude;
-      orders.CustomerMaster.City = "Des Moines";
+      
+      orders.OrderAddress.firstName = model.FirstName;
+      orders.OrderAddress.lastName = model.FirstName;
+      orders.OrderAddress.phoneNo = model.PhoneNumber;
+      orders.OrderAddress.city = "Des Moines";
       orders.OrderDetail = new Array<App.OrderDetail>();
       for (var i = 0; i < CART.items.length; i++) {
           var orderdetail = new App.OrderDetail;

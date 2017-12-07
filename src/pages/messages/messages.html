@@ -24,7 +24,7 @@
                     <div class="col-xs-6"  *ngFor="let place of orders">
                         <div class="rest-addr" (click)="itemdetails(place.OrderId)">
                           <img src="{{place.ImagePath}}"  />
-                            <h5 class="cardText">{{place.OrderType}} Price: ${{place.OrderTotal}}</h5>
+                            <h5 class="cardText">{{place.OrderType}} <span *ngIf="place.OrderType!='Table Reservation'">Price: ${{place.OrderTotal}}</span></h5>
                         </div>
                     </div>
                     

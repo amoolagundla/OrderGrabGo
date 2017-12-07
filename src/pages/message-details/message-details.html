@@ -7,53 +7,102 @@
 
 
 <ion-header>
-	<ion-navbar color="danger">
-		 <button ion-button menuToggle>
-			 <ion-icon name="menu"></ion-icon>
-		 </button>
-		 <ion-title >Track Your Order</ion-title>
-		
-	 </ion-navbar> 
-	 
- </ion-header>
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Track Your Order</ion-title>
+
+    </ion-navbar>
+
+</ion-header>
 
 
 <!--<ion-content padding>
   <ul class="timeline" >
-    <li  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;" 
+    <li  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;"
     [ngClass]="{ odd: isodd, even: isEven }">
-    
+
       <div class="timeline-badge"><i class="fa fa-globe" aria-hidden="true"></i>
       </div>
-      <div class="timeline-panel">       
+      <div class="timeline-panel">
         <div class="timeline-body">
           <p>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</p>
         </div>
-      
+
       </div>
     </li>
-    
+
   </ul>
 </ion-content>-->
-<ion-content padding>
-    
-    <div class="wrapper">
-        <ul class="ordertimeline">
-            <li class="order-start"  *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;" >
-                <ion-row>
-                    <ion-col col-1><ion-icon name="clipboard"></ion-icon></ion-col>
-                    <ion-col col-11>
-                        <h3>{{ d.Status}}</h3>
-                        <small>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</small>
-                    </ion-col>
-                </ion-row>
-                <i></i>
-            </li>
-          
-        </ul>
-        <ion-row padding>
-            Enjoy Your meal we hope to hear from you again soon !
-        </ion-row>
-    </div>
 
+    <ion-content padding>
+        <div *ngIf="isContentViewVisible">
+            <ion-row class="orderconfirm" *ngIf="isReservation==false">
+                Your Order Id is {{OrderID}}
+            </ion-row>
+            <ion-row class="orderconfirm" *ngIf="isReservation==true">
+                Your Reservation Id is {{OrderID}}
+            </ion-row>
+            <div class="wrapper">
+                <ul class="ordertimeline">
+                    <li class="order-start" *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;">
+                        <ion-row>
+                            <ion-col col-1><ion-icon name="clipboard"></ion-icon></ion-col>
+                            <ion-col col-11>
+                                <h3>{{ d.Status}}</h3>
+                                <small>Your Order Was {{ d.Status}} on {{d.OrderedDate}}</small>
+                            </ion-col>
+                        </ion-row>
+                        <i></i>
+                    </li>
+
+                </ul>
+               
+            </div>
+
+            <div padding *ngIf="isReservation==false">
+                <ion-row class="orderhead">Your order information</ion-row>
+                <ion-grid class="checkoutitems">
+                    <ion-row class="checkhead">
+                        <ion-col col-2>Qty</ion-col>
+                        <ion-col col-5>Items</ion-col>
+                        <ion-col col-2>Cost</ion-col>
+                        <ion-col col-3>Total Price</ion-col>
+                    </ion-row>
+                    <div *ngFor="let item of orderdetails; let i = index">
+                        <ion-row class="checkrow">
+                            <ion-col col-2>{{item.Quantity}}</ion-col>
+                            <ion-col col-5>{{item.Product.ProductName}}</ion-col>
+                            <ion-col col-2>${{item.Price}}</ion-col>
+                            <ion-col col-2>${{item.Quantity * item.Price}}</ion-col>
+                        </ion-row>
+                    </div>
+
+                </ion-grid>
+
+                <div><label style="float:right">Total: {{total}}</label></div>
+                <ion-row padding style="text-align:center;" *ngIf="isTakout==true">
+                    <button (click)="directions()" style="background:green;color:#fff">
+                        <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
+                    </button>
+                </ion-row>
+                <ion-row padding style="width:100%;text-align:center">
+                    Enjoy Your meal we hope to hear from you again soon !
+                </ion-row>
+            </div>
+
+            <div padding *ngIf="isReservation==true">
+                <ion-row class="orderhead">Your restaurant details</ion-row>
+                <div class="address-section text-center">
+                    <h1>{{name}}</h1>
+                    <address>{{ address }}</address>
+                </div>
+                <ion-row padding style="text-align:center;">
+                    <button (click)="directions()" style="background:green;color:#fff">
+                        <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
+                    </button>
+                </ion-row>
+            </div>
+        </div>
 </ion-content>

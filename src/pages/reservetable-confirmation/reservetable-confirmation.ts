@@ -27,13 +27,13 @@ export class ReservetableConfirmationPage extends BasePage{
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
-      
+        
         this.guest = this.navParams.get('model').Guests;
         this.date = this.navParams.get('model').ReservationDate;
         this.time = this.navParams.get('model').ReservationTime;
         this.location = this.navParams.get('model').Location;
         this.restLocation = this.navParams.get('location');
-       
+        
         this.orderId = this.navParams.get('orderId');
     }
     enableMenuSwipe() {
@@ -46,7 +46,10 @@ export class ReservetableConfirmationPage extends BasePage{
     }
 
     opentrack() {
-        this.setRootWithParams('ReservationTrackingPage', this.navParams.get('orderId'));
+        this.setRootWithParams('MessageDetailsPage', {
+            id: this.navParams.get('orderId')
+        });
+       // this.setRootWithParams('ReservationTrackingPage', this.navParams.get('orderId'));
     }
     home() {
         this.setRoot("DashPage");

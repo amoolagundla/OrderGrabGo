@@ -166,11 +166,9 @@ export class RestaurentPage extends BasePage {
       this.valuesService
         .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
         .subscribe((data: any) => {
-                
         
           if (data.restaurants!=undefined && data.restaurants.length>0) {
               this.sharedData.RestuarentsChanged(data.restaurants);
-             
           }
           this.showContentView();
         this.onRefreshComplete();
@@ -190,6 +188,8 @@ export class RestaurentPage extends BasePage {
     this.deliver.nativeElement.classList.remove("activeli");
     this.party.nativeElement.classList.remove("activeli");
     this.loadData();
+    this.showContentView();
+    this.onRefreshComplete();
   }
   soundsgood(event) {
     event.target.classList.add("activeli");
@@ -232,8 +232,8 @@ export class RestaurentPage extends BasePage {
                           resp.coords.longitude,
                           data
                         )
-                        .subscribe((data: App.GooglePlaces) => {
-                          this.places = data;
+                          .subscribe((data: any) => {
+                              this.places = data.restaurants;
                           this.showContentView();
                           this.onRefreshComplete();
                         });
@@ -269,15 +269,13 @@ export class RestaurentPage extends BasePage {
   }
   filter() {
     this.showLoadingView();
-    var data = this.realPlaces.restaurants.filter(
+    var data = this.realPlaces.filter(
       item =>
         item.restaurant.name
           .toLowerCase()
           .indexOf(this.searchTerm.toLowerCase()) > -1
     );
-    this.places = {
-      restaurants: data
-    };
+    this.places = data;
     this.showContentView();
     this.onRefreshComplete();
   }
@@ -296,12 +294,11 @@ export class RestaurentPage extends BasePage {
     this.take.nativeElement.classList.remove("activeli");
     this.deliver.nativeElement.classList.remove("activeli");
     this.party.nativeElement.classList.remove("activeli");
-    var data = this.realPlaces.restaurants.filter(
+    var data = this.realPlaces.filter(
       item => item.restaurant.has_table_booking === 1
     );
-    this.places = {
-      restaurants: data
-    };
+    this.places = data;
+    
     this.showContentView();
     this.onRefreshComplete();
   }
@@ -313,12 +310,10 @@ export class RestaurentPage extends BasePage {
     this.sounds.nativeElement.classList.remove("activeli");
     this.deliver.nativeElement.classList.remove("activeli");
     this.party.nativeElement.classList.remove("activeli");
-    var data = this.realPlaces.restaurants.filter(
+    var data = this.realPlaces.filter(
       item => item.restaurant.is_delivering_now === 1
     );
-    this.places = {
-      restaurants: data
-    };
+    this.places = data;
     this.showContentView();
     this.onRefreshComplete();
   }
@@ -330,12 +325,10 @@ export class RestaurentPage extends BasePage {
     this.take.nativeElement.classList.remove("activeli");
     this.sounds.nativeElement.classList.remove("activeli");
     this.party.nativeElement.classList.remove("activeli");
-    var data = this.realPlaces.restaurants.filter(
+    var data = this.realPlaces.filter(
       item => item.restaurant.has_online_delivery === 1
     );
-    this.places = {
-      restaurants: data
-    };
+    this.places = data;
     this.showContentView();
     this.onRefreshComplete();
   }
