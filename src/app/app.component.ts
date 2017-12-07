@@ -42,23 +42,10 @@ export class MyApp {
     private oneSignal: OneSignal,
     private _shared:SharedDataService ) {
 
-      this.storage.skipIntroPage.then((skipIntroPage) => {
-          if (skipIntroPage) {
-              //this.splashScreen.hide();
-            this.storage.token.then((token: string) => {
-                if (token != null && token != "") {
-                
-                    this.shared.GetUserInfo();
-                    this.rootPage = 'DashPage';
-                }
-                else {
-                 
-                    this.rootPage='SignInPage';
-                }
-            }).catch((e)=> {
-             
-              this.rootPage = 'SignInPage';
-            });
+      this.storage.LoggedIn.then((loggedIn) => {
+          if (loggedIn) {
+            this.shared.GetUserInfo();
+            this.rootPage = 'DashPage';
         }else
           {
             //this.splashScreen.hide();

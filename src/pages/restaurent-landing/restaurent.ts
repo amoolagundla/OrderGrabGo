@@ -131,7 +131,7 @@ export class RestaurentPage extends BasePage {
                
             }
             
-          
+          this.onRefreshComplete();
             
           });
       })
@@ -160,7 +160,26 @@ export class RestaurentPage extends BasePage {
   }
   onReload(refresher) {
     this.refresher = refresher;
-    this.loadData();
+    this.showLoadingView();
+    this.getlocation()
+    .then(resp => {
+      this.valuesService
+        .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+        .subscribe((data: any) => {
+                
+        
+          if (data.restaurants!=undefined && data.restaurants.length>0) {
+              this.sharedData.RestuarentsChanged(data.restaurants);
+             
+          }
+          this.showContentView();
+        this.onRefreshComplete();
+          
+        });
+    })
+    .catch(error => {
+      this.showEmptyView();
+    });
   }
   gotocat(event) {
     this.showLoadingView();

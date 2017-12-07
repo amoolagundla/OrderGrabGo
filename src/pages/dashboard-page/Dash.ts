@@ -32,14 +32,7 @@ address:any;
         super(injector);
 
 
-         this.storage.oneSingalPushToken.then(data=>{
-            
-           this.valuesService.SaveToken(data).subscribe((res:any)=>{
-       
-         }, (err) => {
-            console.log(err);
-        });
-         }).catch(e=>{}) ;
+        
 
 
 
@@ -48,6 +41,15 @@ address:any;
                 this.user = data;
                 this.userInfo = this.user;
                 this.firstName = 'Hello '+this.userInfo.FirstName;
+                this.storage.oneSingalPushToken.then(data=>{
+                    
+                   this.valuesService.SaveToken(data).subscribe((res:any)=>{
+               
+                 }, (err) => {
+                    console.log(err);
+                });
+                 }).catch(e=>{}) ;
+                 
             }
          }, (err) => {
             console.log(err);
