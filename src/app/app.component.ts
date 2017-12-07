@@ -166,7 +166,7 @@ export class MyApp {
     });
   }
   redirectToPage(data) {
-   console.log(data);
+   
    this.nav.setRoot('MessageDetailsPage',{id:data.payload.additionalData.foo});
   }
 

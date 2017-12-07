@@ -83,4 +83,11 @@ export class LocalStorage {
   getAddress() {
       return this.storage.get('MobileAddress');
   }
+  get restaurents() {
+    return this.storage.get('restaurents');
+  }
+
+  set restaurents(val) {
+    this.storage.set('restaurents', val);
+  }
 }

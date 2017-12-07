@@ -18,7 +18,7 @@ export abstract class BasePage {
   protected infiniteScroll: any;
   protected navParams: NavParams;
   protected translate: TranslateService;
-  private storageProviderClass: LocalStorage;
+  public storageProviderClass: LocalStorage;
   private loader: any;
   private navCtrl: NavController;
   private toastCtrl: ToastController;

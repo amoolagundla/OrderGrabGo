@@ -42,7 +42,7 @@ export class CheckoutPage extends BasePage{
   pay() {
       var resparams = this.navParams.get('restuarant').location;
       var model = this.navParams.get('model');
-      debugger;
+      
       this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
       var orders = new App.Orders;
       orders.OrderId = 0;
@@ -80,6 +80,7 @@ export class CheckoutPage extends BasePage{
           orders.LookupStatusId =47;
           orders.OrderDetail.push(orderdetail);
       }
+      this.showLoadingView();
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
           let orderId = data.OrderId;
@@ -88,6 +89,7 @@ export class CheckoutPage extends BasePage{
               pageName: this.navParams.get('page'),
               orderId : orderId
           }
+          this.showContentView();
           this.navigateTo('OrderconfirmationPage', dat);
          
       });

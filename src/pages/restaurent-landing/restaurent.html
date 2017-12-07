@@ -42,9 +42,9 @@
             </div>
         </div>   
         
-        <div class="view-rest" *ngIf="isContentViewVisible">            
+        <div class="view-rest" >            
                 <div class="row">
-                    <div class="col-xs-6"  *ngFor="let place of places.restaurants">
+                    <div class="col-xs-6"  *ngFor="let place of places">
                         <div class="rest-addr" (click)="indRest(place.restaurant)">
                           <img src="{{place.restaurant.featured_image}}"  />
                             <h5 class="cardText">{{place.restaurant.name}}</h5>

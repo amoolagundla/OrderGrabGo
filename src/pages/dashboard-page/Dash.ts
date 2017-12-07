@@ -57,7 +57,7 @@ address:any;
             this.valuesService.GetAddress(resp.coords.latitude, resp.coords.longitude).subscribe((data:any)=>
             { 
                 this.address = data.results[1].formatted_address;
-                this.storage.storeAddress(this.address);
+                this.storage.storeAddress(data.results[0].formatted_address);
 
             },error=>console.log(error));
             
