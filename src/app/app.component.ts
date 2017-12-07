@@ -44,8 +44,21 @@ export class MyApp {
 
       this.storage.LoggedIn.then((loggedIn) => {
           if (loggedIn) {
-            this.shared.GetUserInfo();
-            this.rootPage = 'DashPage';
+              //this.splashScreen.hide();
+            this.storage.token.then((token: string) => {
+                if (token != null && token != "") {
+                
+                    this.shared.GetUserInfo();
+                    this.rootPage = 'DashPage';
+                }
+                else {
+                 
+                    this.rootPage='SignInPage';
+                }
+            }).catch((e)=> {
+             
+              this.rootPage = 'SignInPage';
+            });
         }else
           {
             //this.splashScreen.hide();

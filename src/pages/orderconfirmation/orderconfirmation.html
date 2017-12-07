@@ -53,6 +53,11 @@
                 <ion-col col-5 style="border:2px inset">{{model.Location}}</ion-col>
             </ion-row>
         </ion-grid>
+        <ion-row padding>
+                <button (click)="directions()">
+                    <i class="fa fa-map-marker"></i><span>Restaurent Directions</span>
+                </button>
+            </ion-row>
     </ion-row>
 
     <ion-row padding *ngIf="pageName=='Deliver'" style="width:100% !important;">
@@ -68,6 +73,7 @@
                 <ion-col col-5 style="border:2px inset">{{model.Address}}</ion-col>
             </ion-row>
         </ion-grid>
+       
     </ion-row>
     
     <ion-row class="reserve_confirm" (click)="opentrack()"> Track Your Order</ion-row>

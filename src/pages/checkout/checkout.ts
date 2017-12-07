@@ -87,7 +87,8 @@ export class CheckoutPage extends BasePage{
           var dat = {
               model: this.navParams.get('model'),
               pageName: this.navParams.get('page'),
-              orderId : orderId
+              orderId : orderId,
+              location: this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode
           }
           this.showContentView();
           this.navigateTo('OrderconfirmationPage', dat);

@@ -79,11 +79,11 @@ export class CartPage extends BasePage {
           this.navigateTo('DeliverydetailsPage', carparams);
       }
           else {
-              var carparams = {
+              var carparam = {
                   restuarant: this.navParams.get('restuarant'),
                   pagename: 'TakeOut'
               }
-          this.navigateTo('PickupPage', carparams);
+          this.navigateTo('PickupPage', carparam);
       }
       }
       else {

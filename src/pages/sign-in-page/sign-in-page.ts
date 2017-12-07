@@ -30,6 +30,8 @@ export class SignInPage extends BasePage {
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
+
+    this.storage.clearAll();
        //this.getUserDetailGoogle('ji');
     let trans = ['LOGGED_IN_AS', 'INVALID_CREDENTIALS', 'ERROR_UNKNOWN'];
 
@@ -37,9 +39,7 @@ export class SignInPage extends BasePage {
       this.trans = values;
     });
 
-    this.events.subscribe('user:login', (userEventData) => {
-      this.onCancel();
-    });
+   
   }
 
   enableMenuSwipe() {
@@ -79,7 +79,17 @@ export class SignInPage extends BasePage {
 
   savePushToken()
   { 
-    this.setRoot('DashPage');    
+    this.storage.oneSingalPushToken.then(data=>{
+      
+     this.valuesService.SaveToken(data).subscribe((res:any)=>{
+      this.setRoot('DashPage');   
+   }, (err) => {
+    this.setRoot('DashPage');   
+  });
+
+
+   }).catch(e=>{}) ;
+     
   }
 
   facebookLogIn() {

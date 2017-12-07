@@ -32,8 +32,8 @@ export class ReservetablePage extends BasePage{
     ionViewDidLoad() {
         this.name = this.navParams.get('name');
         this.firstName = "OrderGrabGo";
-		this.location = this.navParams.get('location').locality_verbose;
-        console.log('ionViewDidLoad ReservetablePage');
+		this.location = this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode;
+
     }
    
 
@@ -62,7 +62,8 @@ export class ReservetablePage extends BasePage{
                     var res = {
                         model: model,
                         orderId: data.OrderId,
-                        restuarants: this.navParams.data
+                        restuarants: this.navParams.data,
+                        location:this.location
                     }
                     this.navigateTo('ReservetableConfirmationPage', res);
                 });

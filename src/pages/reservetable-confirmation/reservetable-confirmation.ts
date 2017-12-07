@@ -2,6 +2,7 @@ import { Component,Injector } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 /**
  * Generated class for the ReservetableConfirmationPage page.
  *
@@ -16,8 +17,8 @@ import { App } from '../../models/models';
 export class ReservetableConfirmationPage extends BasePage{
     public user: App.UserInfoViewModel; public firstName: string = 'OrderGrabGo';
     public guest: string; date: string = ''; time: string = ''; location: string = '';
-    orderId: string = '';
-    constructor(injector: Injector) {
+    orderId: string = '';restLocation:string='';
+    constructor(injector: Injector,private launchNavigator: LaunchNavigator) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -26,20 +27,20 @@ export class ReservetableConfirmationPage extends BasePage{
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
+      
         this.guest = this.navParams.get('model').Guests;
         this.date = this.navParams.get('model').ReservationDate;
         this.time = this.navParams.get('model').ReservationTime;
         this.location = this.navParams.get('model').Location;
+        this.restLocation = this.navParams.get('location');
+       
         this.orderId = this.navParams.get('orderId');
     }
     enableMenuSwipe() {
         return true;
     }
 
-    ionViewDidLoad() {
-
-    console.log('ionViewDidLoad ReservetableConfirmationPage');
-  }
+    ionViewDidLoad() { }
     back() {
         this.navigateTo('RestaurentPage');
     }
@@ -51,6 +52,10 @@ export class ReservetableConfirmationPage extends BasePage{
         this.setRoot("DashPage");
     }
     directions() {
-        this.navigateTo('MapdirectionPage', this.navParams.get('restuarants'));
+        this.launchNavigator.navigate(this.restLocation,null)
+            .then(
+              success => console.log('Launched navigator'),
+              error => console.log('Error launching navigator', error)
+            );
     }
 }

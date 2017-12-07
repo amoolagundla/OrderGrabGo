@@ -90,4 +90,11 @@ export class LocalStorage {
   set restaurents(val) {
     this.storage.set('restaurents', val);
   }
+
+  clearAll()
+  {
+    this.storage.remove('token');
+    this.storage.remove('oneSingalPushToken');
+    this.storage.set('LoggedIn',false);
+  }
 }

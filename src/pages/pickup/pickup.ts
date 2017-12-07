@@ -48,7 +48,8 @@ checkout(){
                 page : 'Pick',
                 model: model,
                 restuarant: this.navParams.get('restuarant'),
-                params : this.navParams
+                params : this.navParams,
+                location:this.navParams.get('restuarant').data.location
             }
             this.navigateTo('CheckoutPage',res);
         }

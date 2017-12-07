@@ -239,7 +239,7 @@ export class RestaurentPage extends BasePage {
                         });
                     })
                     .catch(error => {
-                      this.showContentView();
+                     
                       swal(
                         "Not Available",
                         "Sorry! The selected choice was not available in this resturant",
