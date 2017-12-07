@@ -178,6 +178,8 @@ export class MyApp {
                 this.storage.oneSingalPushToken=mapStyle;
                 
             });
+
+            
     
         }
 

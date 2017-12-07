@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Storage } from '@ionic/storage';
 import swal from 'sweetalert';
 /**
  * Generated class for the RestaurantDetailPage page.
@@ -19,9 +21,9 @@ export class RestaurantDetailPage extends BasePage {
     public user: App.UserInfoViewModel;
     public firstName: string = 'OrderGrabGo';
     public name: string; public location: string; public address: string; public phonenum: string; public hasTablebooking: number = 0;
-    featuredImage: string = '';
+    featuredImage: string = '';restlocation:string='';
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
-    constructor(injector: Injector, private altcntrl: AlertController) {
+    constructor(injector: Injector, private altcntrl: AlertController,private launchNavigator: LaunchNavigator,public storage: Storage) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -46,16 +48,26 @@ export class RestaurantDetailPage extends BasePage {
         this.name = this.navParams.get('name');
         this.location = this.navParams.get('location').locality + " " + this.navParams.get('location').city;
         this.address = this.navParams.get('location').address;
-
-        console.log('ionViewDidLoad RestaurantDetailPage');
+        this.restlocation= this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode
 
     }
     reservetable() {
         this.navigateTo('ReservetablePage', this.navParams);
     }
     directions() {
-        this.navigateTo('MapdirectionPage', this.navParams);
-    }
+        this.storage.get('MobileAddress').then((data)=> {
+            let options: LaunchNavigatorOptions = {
+                start: data
+              };
+          
+              this.launchNavigator.navigate(this.restlocation, options)
+                  .then(
+                      success => {},
+                      error => alert('Error launching navigator: ' + error)
+              );
+            
+        });
+    }    
     takout() {
         CART.total = 0;
         CART.shipping = 0;

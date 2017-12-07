@@ -7,6 +7,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { LocalStorage } from '../../providers/local-storage';
 import { ValuesService} from '../../providers/ValuesService';
+import { OneSignal } from '@ionic-native/onesignal';
 @IonicPage()
 @Component({
   selector: 'page-sign-in-page',
@@ -21,7 +22,7 @@ export class SignInPage extends BasePage {
 
   constructor(injector: Injector,
     private formBuilder: FormBuilder,
-    private events: Events,
+    private events: Events, private oneSignal: OneSignal,
     private viewCtrl: ViewController,private valuesService: ValuesService, private fb: Facebook, private googlePlus: GooglePlus, private storage: LocalStorage) {
 
     super(injector);
@@ -79,16 +80,20 @@ export class SignInPage extends BasePage {
 
   savePushToken()
   { 
-    this.storage.oneSingalPushToken.then(data=>{
-      
-     this.valuesService.SaveToken(data).subscribe((res:any)=>{
-      this.setRoot('DashPage');   
-   }, (err) => {
-    this.setRoot('DashPage');   
-  });
-
-
-   }).catch(e=>{}) ;
+    this.oneSignal.getIds().then(data => {
+      let mapStyle :any = data.userId || {};
+        this.storage.oneSingalPushToken=mapStyle;     
+          
+         this.valuesService.SaveToken(mapStyle).subscribe((res:any)=>{
+          this.setRoot('DashPage');   
+       }, (err) => {
+        this.setRoot('DashPage');   
+      });
+    
+    
+       
+    }).catch(e=>{this.setRoot('DashPage'); }) ;
+   
      
   }
 
