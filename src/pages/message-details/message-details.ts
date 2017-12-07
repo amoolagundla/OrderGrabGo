@@ -20,7 +20,7 @@ export class MessageDetailsPage extends BasePage {
     public orderdetails: any;
     public orders: any; public total: string = '';
     public OrderID: string = '';
-    isReservation: boolean = false; name: string = ''; address: string = ''; isTakout: boolean = false;
+    isReservation: boolean = false; name: string = ''; address: string = ''; isTakout: boolean = false; estimatedTime: string = '';
     constructor(injector: Injector, private valuesService: ValuesService, private launchNavigator: LaunchNavigator) {
         super(injector);
        
@@ -42,7 +42,9 @@ export class MessageDetailsPage extends BasePage {
         if (data.order.LookupOrderTypeId == 8) {
             this.isTakout = true;
         }
+        
         this.address = data.order.Resturant.Address1;
+        this.estimatedTime = data.order.Resturant.EstDeliveryTime + " Minutes";
         this.orderdetails = data.orderDetail;
         this.total = data.order.OrderTotal;
         this.OrderID = data.order.OrderId;
