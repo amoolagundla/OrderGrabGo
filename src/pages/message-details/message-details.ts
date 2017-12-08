@@ -3,6 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import {  ValuesService} from '../../providers/ValuesService';
 import { BasePage } from '../base-page/base-page';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the MessageDetailsPage page.
@@ -21,7 +22,7 @@ export class MessageDetailsPage extends BasePage {
     public orders: any; public total: string = '';
     public OrderID: string = '';
     isReservation: boolean = false; name: string = ''; address: string = ''; isTakout: boolean = false; estimatedTime: string = '';
-    constructor(injector: Injector, private valuesService: ValuesService, private launchNavigator: LaunchNavigator) {
+    constructor(injector: Injector, private valuesService: ValuesService, private launchNavigator: LaunchNavigator,public storage: Storage) {
         super(injector);
        
   }
@@ -54,11 +55,19 @@ export class MessageDetailsPage extends BasePage {
   }
 
   directions() {
-      this.launchNavigator.navigate(this.address, null)
-          .then(
-          success => console.log('Launched navigator'),
-          error => console.log('Error launching navigator', error)
+    this.storage.get('MobileAddress').then((data)=> {
+        let options: LaunchNavigatorOptions = {
+            start: data
+          };
+      
+          this.launchNavigator.navigate(this.address, options)
+              .then(
+                  success => alert('Launched navigator'),
+                  error => alert('Error launching navigator: ' + error)
           );
+    });
+
+    
   }
 
 }

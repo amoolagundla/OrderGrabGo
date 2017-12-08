@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the ReservetableConfirmationPage page.
  *
@@ -18,7 +19,7 @@ export class ReservetableConfirmationPage extends BasePage{
     public user: App.UserInfoViewModel; public firstName: string = 'OrderGrabGo';
     public guest: string; date: string = ''; time: string = ''; location: string = '';
     orderId: string = '';restLocation:string='';
-    constructor(injector: Injector,private launchNavigator: LaunchNavigator) {
+    constructor(injector: Injector,private launchNavigator: LaunchNavigator,public storage: Storage) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -55,10 +56,16 @@ export class ReservetableConfirmationPage extends BasePage{
         this.setRoot("DashPage");
     }
     directions() {
-        this.launchNavigator.navigate(this.restLocation,null)
-            .then(
-              success => console.log('Launched navigator'),
-              error => console.log('Error launching navigator', error)
-            );
+        this.storage.get('MobileAddress').then((data)=> {
+            let options: LaunchNavigatorOptions = {
+                start: data
+              };
+          
+              this.launchNavigator.navigate(this.restLocation, options)
+                  .then(
+                      success => alert('Launched navigator'),
+                      error => alert('Error launching navigator: ' + error)
+              );
+        });
     }
 }

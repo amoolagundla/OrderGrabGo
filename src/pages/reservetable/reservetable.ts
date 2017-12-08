@@ -55,6 +55,7 @@ export class ReservetablePage extends BasePage{
                 //orders.CustomerMaster.MobileNumber = model.PhoneNumber;
                 orders.OrderAddress.city = "Des Moines";
                 orders.OrderDetail = [];
+                this.showLoadingView();
                 this.service.SaveOrders(orders).subscribe((data: any) => {
                     console.log(data);
                     let orderId = data.OrderId;
@@ -64,8 +65,9 @@ export class ReservetablePage extends BasePage{
                         restuarants: this.navParams.data,
                         location:this.location
                     }
+                    this.showContentView();
                     this.navigateTo('ReservetableConfirmationPage', res);
-                });
+                },error=>{  this.showContentView();});
             });
         }
         else {

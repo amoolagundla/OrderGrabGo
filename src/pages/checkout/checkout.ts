@@ -49,7 +49,6 @@ export class CheckoutPage extends BasePage{
       orders.CustomerId = 0;
       orders.ResturantId = this.navParams.get('restuarant').data.id;
       orders.OrderTotal = CART.total;
-      debugger;
       orders.OrderAddress = new App.OrderAddress();
       orders.OrderAddress.address1 = " ";
       if (this.navParams.get('page') != undefined && this.navParams.get('page') == 'Deliver') {

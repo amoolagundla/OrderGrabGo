@@ -16,7 +16,7 @@ import { CART } from '../cart/cartitems';
   templateUrl: 'delivery.html',
 })
 export class DeliveryPage extends BasePage{
-
+   
     public firstName: string = 'OrderGrabGo';
     public name: string;
     public data: any;

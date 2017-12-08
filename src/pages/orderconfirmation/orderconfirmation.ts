@@ -56,7 +56,6 @@ export class OrderconfirmationPage extends BasePage{
                   success => alert('Launched navigator'),
                   error => alert('Error launching navigator: ' + error)
           );
-        
     });
 
 

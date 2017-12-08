@@ -1,4 +1,4 @@
-import { Component,Injector,NgZone } from '@angular/core';
+import { Component,Injector,NgZone,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController,ViewController,ModalController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { SharedDataService } from '../../providers/SharedDataService';
@@ -19,6 +19,8 @@ declare var google;
   templateUrl: 'deliverydetails.html',
 })
 export class DeliverydetailsPage extends BasePage {
+
+    @ViewChild('f') form;
 public user:any;
 public address: string = ''; public firstName: string = '';
     autocompleteItems;
@@ -28,12 +30,14 @@ public address: string = ''; public firstName: string = '';
     longitude: number = 0;
     geo: any
     deliverydate: Date = new Date();    
+    deliveryTime: any= this.deliverydate.getMinutes();
     service = new google.maps.places.AutocompleteService();
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, 
         private storage: LocalStorage,
         private modlCtrl: ModalController, public geolocation: Geolocation) {
     super(injector);
+//this.form.deliveryTime= this.deliverydate.getTime() +this.navParams.get('restuarant').data.delivery_estimate_time;
 
     this._shared.UserInfo.subscribe((data) => {
         if (data != undefined && data.FirstName != undefined) {
@@ -60,6 +64,7 @@ public address: string = ''; public firstName: string = '';
   ionViewDidLoad() {
     
   }
+  
   showAddressModal() {
       let modal = this.modlCtrl.create(AddressdetailPage);
       let me = this;

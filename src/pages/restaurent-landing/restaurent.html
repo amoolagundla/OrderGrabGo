@@ -5,11 +5,11 @@
               <ion-icon class="customIcon" name="arrow-back"></ion-icon>
           </button>
       </ion-buttons>
-    <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">{{address}}</span></ion-title>
+    <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
   </ion-navbar> 
 	<ion-toolbar color="danger">
     <ion-searchbar color="dark" debounce="2000" [(ngModel)]="searchlocation"
-      placeholder="{{ 'Your location in' | translate }}"
+      placeholder="{{ address }}"
       (click)="onSearchAddress()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
