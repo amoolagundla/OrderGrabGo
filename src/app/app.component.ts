@@ -205,8 +205,8 @@ export class MyApp {
   }
   RestaurantPage(data) {
       console.log(data);
-      if (data.notificaition.payload.additionalData.orderId != undefined && data.notificaition.payload.additionalData.orderId != null ) {
-          this.shared.DeactivateOrder(data.notificaition.payload.additionalData.orderId).subscribe((data: any)=>{
+      if (data.notification.payload.additionalData.orderId != undefined && data.notification.payload.additionalData.orderId != null ) {
+          this.shared.DeactivateOrder(data.notification.payload.additionalData.orderId).subscribe((data: any)=>{
 
           }, error => { console.log("error while deactivating old order"); })
       }
