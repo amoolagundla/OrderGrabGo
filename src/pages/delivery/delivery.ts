@@ -1,5 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController,AlertController } from 'ionic-angular';
+import { IonicPage,  ActionSheetController,AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';

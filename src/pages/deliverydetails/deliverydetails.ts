@@ -1,10 +1,9 @@
 import { Component,Injector,NgZone,ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController,ViewController,ModalController } from 'ionic-angular';
+import { IonicPage,  AlertController,ViewController,ModalController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { SharedDataService } from '../../providers/SharedDataService';
 
 import { AddressdetailPage } from '../addressdetail/addressdetail';
-import { Geolocation } from '@ionic-native/geolocation';
 import { LocalStorage } from '../../providers/local-storage';
 declare var google;
 /**
@@ -35,7 +34,7 @@ public address: string = ''; public firstName: string = '';
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, 
         private storage: LocalStorage,
-        private modlCtrl: ModalController, public geolocation: Geolocation) {
+        private modlCtrl: ModalController) {
     super(injector);
 //this.form.deliveryTime= this.deliverydate.getTime() +this.navParams.get('restuarant').data.delivery_estimate_time;
 

@@ -1,5 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
+import { IonicPage,    AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
@@ -20,7 +20,7 @@ export class TakeoutPage extends BasePage {
     public name: string;
     public data: any; public pageDetails: any; featuredImage: string = '';
     constructor(injector: Injector, private valuesService: ValuesService,
-        private actionSheetCtrl: ActionSheetController, private altController: AlertController) {
+        private altController: AlertController) {
         super(injector);
         this.featuredImage = this.navParams.get('featured_image');
     }
@@ -31,32 +31,7 @@ export class TakeoutPage extends BasePage {
 		this.showLoadingView();
         this.name = this.navParams.get('name');
         console.log('ionViewDidLoad TakeoutPage');
-        //var prodMaster = [{
-        //    ProductName: 'Pizza',
-        //    ProductDescription: 'Tasty and Yummy',
-        //    Price: 5.25
-        //},
-        //{
-        //    ProductName: 'Burger',
-        //    ProductDescription: 'Delicious burger',
-        //    Price: 3.25
-        //},
-        //{
-        //    ProductName: 'Cheese Bread',
-        //    ProductDescription: 'Cheesy Cheesy',
-        //    Price: 1.5
-        //},
-        //{
-        //    ProductName: 'Hot Tacos',
-        //    ProductDescription: 'Really Hot',
-        //    Price: 8
-        //},
-        //{
-        //    ProductName: 'Chicken Snacker',
-        //    ProductDescription: 'With some extra puff',
-        //    Price: 2
-        //}];
-
+       
          this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
 
         this.data = data.ProductMaster;

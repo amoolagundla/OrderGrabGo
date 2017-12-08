@@ -53,6 +53,13 @@
                     
                 </div>
         </div>
+    <ion-row class="view-rest" *ngIf="places.length==0">
+        <div class="row" style="width:100%;">
+            <div class="col-xs-12" style="text-align:center;color:red;font-weight:bold">
+                No Restaurant is available for this filter or cuisine
+            </div>
+        </div>
+    </ion-row>
         
         
         </div><!-- End container -->

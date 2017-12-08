@@ -5,8 +5,9 @@ import {Observable} from 'rxjs';
 
 @Injectable()
 export class HttpClient {
-  //public baseurl: any ='http://localhost:58048/';
+// public baseurl: any ='http://localhost:58048/';
  public baseurl:any ='https://ordergrabgoepathusa.azurewebsites.net/';
+
   constructor(private http: Http, public storage: Storage) {   }
 enableMenuSwipe() {
     return false;

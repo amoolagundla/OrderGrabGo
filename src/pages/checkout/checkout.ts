@@ -40,6 +40,7 @@ export class CheckoutPage extends BasePage{
     console.log('ionViewDidLoad CheckoutPage');
   }
   pay() {
+      this.showLoadingView();
       var resparams = this.navParams.get('restuarant').location;
       var model = this.navParams.get('model');
       
@@ -82,7 +83,7 @@ export class CheckoutPage extends BasePage{
           orders.LookupStatusId =47;
           orders.OrderDetail.push(orderdetail);
       }
-      this.showLoadingView();
+      //this.showLoadingView();
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
           let orderId = data.OrderId;

@@ -1,5 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage,   AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';

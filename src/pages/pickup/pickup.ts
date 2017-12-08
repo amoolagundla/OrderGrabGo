@@ -1,8 +1,7 @@
 import { Component, Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage,   AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { LocalStorage } from '../../providers/local-storage';
-import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the PickupPage page.
  *
@@ -19,8 +18,7 @@ export class PickupPage extends BasePage {
     public user: any;
     pickdate: Date = new Date();
     constructor(injector: Injector, private altcntrl: AlertController,
-        private storage: LocalStorage,
-        public geolocation: Geolocation) 
+        private storage: LocalStorage) 
         {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {

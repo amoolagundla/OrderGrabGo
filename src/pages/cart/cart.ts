@@ -1,6 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
 // ES6 Modules or TypeScript
@@ -94,7 +94,12 @@ export class CartPage extends BasePage {
   }
   GoToProducts()
   {
-      
+      if (this.navParams.get('pagename') == "Delivery") {
+          this.navigateTo('DeliveryPage', this.navParams.get('restuarant'));
+      }
+      else {
+          this.navigateTo('TakeoutPage', this.navParams.get('restuarant'));
+      }
   }
   back() {
       if (this.navParams.get('pagename') == "Delivery") {

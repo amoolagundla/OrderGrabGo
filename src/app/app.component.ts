@@ -21,6 +21,7 @@ import { User } from "../providers/user-service";
 import { LocalStorage } from "../providers/local-storage";
 import { Preference } from "../providers/preference";
 import { SharedDataService } from "../providers/SharedDataService";
+import { Geolocation } from "@ionic-native/geolocation";
 
 @Component({
   templateUrl: "app.html"
@@ -47,6 +48,7 @@ export class MyApp {
     private headerColor: HeaderColor,
     private modalCtrl: ModalController,
     private shared: ValuesService,
+    private geolocation: Geolocation,
     private oneSignal: OneSignal,
     private _shared: SharedDataService
   ) {
@@ -154,7 +156,7 @@ export class MyApp {
         this.googleAnalytics.debugMode();
         this.googleAnalytics.enableUncaughtExceptionReporting(true);
       }
-
+      this.geolocation.getCurrentPosition().then((position) => { console.log(position.coords.latitude) }).catch((err) => { console.log('Error getting location', err); });
       if (AppConfig.HEADER_COLOR && this.platform.is("android")) {
         this.headerColor.tint(AppConfig.HEADER_COLOR);
       }
@@ -176,7 +178,7 @@ export class MyApp {
                     // We might send a lot of different notifications; the notification we just sent came with additional data that describes the kind of notification that was sent. We sent "notificationType" with our additional data field (notificationType is not built in).
                     
                     if (event.notification.payload.additionalData.notificationType=="grabit") {
-                      console.log(event.action);
+                        console.log(event.action);
                       // What action button did they click?
                       if (event.action.actionID == "accept") {
                         this.RestaurantPage(event);
@@ -202,15 +204,15 @@ export class MyApp {
     });
   }
   RestaurantPage(data) {
-    console.log(data);
+      console.log(data);
+      if (data.notificaition.payload.additionalData.orderId != undefined && data.notificaition.payload.additionalData.orderId != null ) {
+          this.shared.DeactivateOrder(data.notificaition.payload.additionalData.orderId).subscribe((data: any)=>{
+
+          }, error => { console.log("error while deactivating old order"); })
+      }
     this.shared.findRest(data.notification.payload.additionalData.foo).subscribe((data:any)=>{
-      
-                 
       this.nav.setRoot("RestaurantDetailPage", data);
               },error=>{this.nav.setRoot("DashPage");});
-
-
-   
   }
 
   registerPushToken() {

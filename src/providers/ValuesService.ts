@@ -116,4 +116,19 @@ return resdata;
     GetOrderDetail(id : any) {
         return this.http.get('api/ProductsApi/GetOrderDetail/'+id).map((response: Response) => response.json());
     }
+
+    GetCusines() {
+        return this.http.get('api/ProductsApi/GetCusines/').map((response: Response) => response.json());
+    }
+
+    GetCusinesRestaurant(id: any) {
+        var data = {
+            "cuisineIdList": id
+        };
+        return this.http.post('api/ProductsApi/GetCusinesRestaurant', data).map((response: Response) => response.json());
+    }
+
+    DeactivateOrder(id: any) {
+        return this.http.get('api/ProductsApi/DeactivateOrder/'+id).map((response: Response) => response.json());
+    }
 }
