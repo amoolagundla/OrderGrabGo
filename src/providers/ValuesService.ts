@@ -55,6 +55,13 @@ return resdata;
             .get('api/ProductsApi/GetMenu/' + id).map((response: Response) => response.json());
 
     }
+
+    findRest(id: any) {
+        
+                return this.http
+                    .get('api/ProductsApi/GetRestaurant/' + id).map((response: Response) => response.json());
+        
+            }
      GetUserInfo() {
 
           this.http

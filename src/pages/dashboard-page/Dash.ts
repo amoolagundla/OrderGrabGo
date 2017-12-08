@@ -30,12 +30,6 @@ address:any;
         private valuesService: ValuesService,
           public geolocation: Geolocation ) {
         super(injector);
-
-
-        
-
-
-
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
                 this.user = data;
@@ -70,6 +64,12 @@ address:any;
   qrCodeScan() {
     this._barcodeScanner.scan().then((barcodeData) => {
         this.scannedObject = barcodeData.text;
+        this.showLoadingView();
+        this.valuesService.findRest(this.scannedObject).subscribe((data:any)=>{
+
+            this.showContentView();
+            this.navigateTo("RestaurantDetailPage", data);
+        },error=>{this.showContentView();});
     }, (err) => {
         console.log(err);
     });

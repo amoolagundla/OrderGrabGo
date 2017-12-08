@@ -92,6 +92,10 @@ export class CartPage extends BasePage {
          
       }
   }
+  GoToProducts()
+  {
+      
+  }
   back() {
       if (this.navParams.get('pagename') == "Delivery") {
           this.navigateTo('DeliveryPage', this.navParams.get('restuarant'));
