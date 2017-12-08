@@ -11,6 +11,7 @@ import { LocationsearchPage } from "../locationsearch/locationsearch";
 import { LocalStorage } from "../../providers/local-storage";
 import swal from "sweetalert";
 import { ValuesService } from "../../providers/ValuesService";
+import {Platform} from "ionic-angular";
 @IonicPage()
 @Component({
     selector: "page-categories",
@@ -38,6 +39,7 @@ export class RestaurentPage extends BasePage {
     public firstName: string = "OrderGrabGo";
     constructor(
         injector: Injector,
+        public platform: Platform,
         public atrCtrl: AlertController,
         private events: Events,
         private locationAccuracy: LocationAccuracy,
@@ -118,7 +120,7 @@ export class RestaurentPage extends BasePage {
     }
     loadData() {
         //this.showLoadingView();
-
+        this.platform.ready().then(() => {
         this.getlocation()
             .then(resp => {
                 this.valuesService
@@ -133,6 +135,7 @@ export class RestaurentPage extends BasePage {
             .catch(error => {
                 this.showEmptyView();
             });
+          });
 
     }
     onSearchAddress() {
