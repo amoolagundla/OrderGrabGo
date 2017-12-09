@@ -55,11 +55,11 @@ export class CheckoutPage extends BasePage{
       if (this.navParams.get('page') != undefined && this.navParams.get('page') == 'Deliver') {
           orders.LookupOrderTypeId = 10;
           orders.OrderAddress.address1 = model.Address;
-          time='Your Delivery time ' + model.deliveryTime;
+          time = 'Your Delivery time ' + model.DeliveryTime;
       } else {
           orders.LookupOrderTypeId = 8;
           orders.OrderAddress.address1 = model.Location;
-          time='Your Pickup Time time ' +model.piskupTime;
+          time = 'Your Pickup time ' + model.PickupTime;
       }
       orders.Instructions = model.Special;
       orders.OrderAddress.firstName = model.FirstName;

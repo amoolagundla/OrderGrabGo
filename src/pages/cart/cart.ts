@@ -71,11 +71,13 @@ export class CartPage extends BasePage {
   // click buy button
   buy() {
       if (CART.total > CART.Minimum || CART.total == CART.Minimum) {
+          this.showLoadingView();
           if (this.navParams.get('pagename') == "Delivery") {
               var carparams = {
                   restuarant: this.navParams.get('restuarant'),
                   pagename : 'Delivery'
               }
+              this.showContentView();
           this.navigateTo('DeliverydetailsPage', carparams);
       }
           else {
@@ -83,6 +85,7 @@ export class CartPage extends BasePage {
                   restuarant: this.navParams.get('restuarant'),
                   pagename: 'TakeOut'
               }
+              this.showContentView();
           this.navigateTo('PickupPage', carparam);
       }
       }

@@ -17,7 +17,13 @@
 
 <ion-content >
 <ion-card class="headinside">
-    <img src="{{featuredImage}}"/>
+    <img *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}"/>
+   <!-- <img *ngIf="restaurantImages && restaurantImages.length > 0" src="data:image/png;base64,{{restaurantImages[0].Image}}" />-->
+    <ion-slides *ngIf="restaurantImages && restaurantImages.length > 0" >
+        <ion-slide *ngFor="let slide of restaurantImages">
+            <img style="width:100%;" src="data:image/png;base64,{{slide.Image}}">
+        </ion-slide>
+    </ion-slides>
     <!-- <div class="card-title">{{firstName}}</div> -->
     <!-- <div class="card-subtitle">{{name}}</div> -->
   </ion-card>
@@ -27,8 +33,14 @@
                 </div>
  <div class="address-section text-center">
                     <h1>{{name}}</h1>
-                    <address>{{ address }}<span>Open Now-11AM to 10PM</span></address>
-                    <address>Min order amount : ${{min_amt}}</address>
+                    <address>{{ address }}
+                    </address>
+     <span *ngIf="timeTable"><b><u>Opening hours</u></b></span>
+     <div *ngIf="timeTable==null || timeTable.length==0">Open Now-11AM to 10PM</div>
+     <div *ngFor="let tt of timeTable">
+         <span *ngIf="tt.Day.toLowerCase()==today.toLowerCase()">{{tt.Day}} : {{tt.Start}} - {{tt.End}}</span>
+     </div>
+                    <address><b>Min order amount : ${{min_amt}}</b></address>
                 </div>
                 <div class="booking-process">
                     <ul class="list-inline text-center">
@@ -47,7 +59,7 @@
                     <ul class="list-inline text-center">
                         <li><i class="fa fa-heart"></i><span>Favorites</span></li>
                         <li (click)="directions()"><i class="fa fa-map-marker"></i><span>Restaurent Directions</span></li>
-                        <li><i class="fa fa-file-video-o"></i><span>Video</span></li>
+                        <li (click)="openvideo()"><i class="fa fa-file-video-o"></i><span>Video</span></li>
                     </ul>
                 </div>
 </ion-content>

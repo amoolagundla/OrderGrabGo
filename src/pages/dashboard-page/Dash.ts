@@ -45,7 +45,26 @@ export class DashPage extends BasePage {
         console.log(err);
       }
     );
-
+    this.sharedData.Restuarents.subscribe((data: any) => {
+        if (data != undefined && data.length > 0) {
+            
+        }
+        else {
+            this.geolocation.getCurrentPosition()
+                .then(resp => {
+                    this.valuesService
+                        .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+                        .subscribe((data: any) => {
+                            if (data.restaurants != undefined && data.restaurants.length > 0) {
+                                this.sharedData.RestuarentsChanged(data.restaurants);
+                            }
+                        });
+                })
+                .catch(error => {
+                    // this.showEmptyView();
+                });
+        }
+    });
     /* Ensure the platform is ready */
     this.platform.ready().then(() => {
         this.geolocation.getCurrentPosition().then(resp => {

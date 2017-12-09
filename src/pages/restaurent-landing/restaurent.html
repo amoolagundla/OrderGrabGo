@@ -28,7 +28,7 @@
     <div class="container margin_60">        
         <div class="menu-section">
             <ul class="list-inline">
-                <li (click)="gotocat($event)"><a class="activeli" #near>Near by Restaurents</a></li>
+                <li (click)="gotocat($event)"><a class="activeli" #near>Near by Restaurants</a></li>
                 <li (click)="soundsgood($event);"><a #sounds>what sounds good?</a></li>
                 <li (click)="dinein($event);"><a #dine>Dine in</a></li>
                 <li (click)="takeout($event);"><a #take>Take Out</a></li>
@@ -37,7 +37,7 @@
             </ul>
             <div class="search">
                 <ion-searchbar color="dark" debounce="500"
-                placeholder="{{ 'Filter Restaurents' | translate }}" [(ngModel)]="searchTerm" (ionInput)="filter()"
+                placeholder="{{ 'Filter Restaurants' | translate }}" [(ngModel)]="searchTerm" (ionInput)="filter()"
                ></ion-searchbar>
             </div>
         </div>   
@@ -46,7 +46,8 @@
                 <div class="row">
                     <div class="col-xs-6"  *ngFor="let place of places">
                         <div class="rest-addr" (click)="indRest(place.restaurant)">
-                          <img src="{{place.restaurant.featured_image}}"  />
+                          <img *ngIf="!place.restaurant.logo" src="{{place.restaurant.featured_image}}"  />
+                            <img *ngIf="place.restaurant.logo" src="data:image/png;base64,{{place.restaurant.logo}}" />
                             <h5 class="cardText">{{place.restaurant.name}}</h5>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ import { LocalStorage } from '../../providers/local-storage';
 export class PickupPage extends BasePage {
     public location: string = '';
     public user: any;
-    pickdate: Date = new Date();
+    pickdate: Date = new Date(); special: string = '';
     pickupTime: any= this.pickdate.getHours();
     constructor(injector: Injector, private altcntrl: AlertController,
         private storage: LocalStorage) 

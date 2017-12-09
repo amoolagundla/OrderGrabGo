@@ -61,7 +61,24 @@ export class RestaurentPage extends BasePage {
             if (data != undefined && data.length > 0) {
                 this.places = data;
                 this.realPlaces = data;
-
+            }
+            else {
+                this.showLoadingView();
+                this.getlocation()
+                    .then(resp => {
+                        this.valuesService
+                            .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+                            .subscribe((data: any) => {
+                                if (data.restaurants != undefined && data.restaurants.length > 0) {
+                                    this.sharedData.RestuarentsChanged(data.restaurants);
+                                }
+                                this.showContentView();
+                                this.onRefreshComplete();
+                            });
+                    })
+                    .catch(error => {
+                        // this.showEmptyView();
+                    });
             }
         });
         this.storage.getAddress().then(data => {
@@ -73,7 +90,6 @@ export class RestaurentPage extends BasePage {
             .then((canRequest: boolean) => {
                 if (canRequest) {
                     let priority = this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY;
-
                     this.locationAccuracy
                         .request(priority)
                         .then((data: any) => {
@@ -186,21 +202,32 @@ export class RestaurentPage extends BasePage {
         this.take.nativeElement.classList.remove("activeli");
         this.deliver.nativeElement.classList.remove("activeli");
         this.party.nativeElement.classList.remove("activeli");
-        this.getlocation()
-            .then(resp => {
-                this.valuesService
-                    .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
-                    .subscribe((data: any) => {
-                        if (data.restaurants != undefined && data.restaurants.length > 0) {
-                            this.sharedData.RestuarentsChanged(data.restaurants);
-                        }
-                        this.showContentView();
-                        this.onRefreshComplete();
+        this.sharedData.Restuarents.subscribe((data: any) => {
+            if (data != undefined && data.length > 0) {
+                this.places = data;
+                this.realPlaces = data;
+                this.showContentView();
+                this.onRefreshComplete();
+            }
+            else {
+                this.showLoadingView();
+                this.getlocation()
+                    .then(resp => {
+                        this.valuesService
+                            .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+                            .subscribe((data: any) => {
+                                if (data.restaurants != undefined && data.restaurants.length > 0) {
+                                    this.sharedData.RestuarentsChanged(data.restaurants);
+                                }
+                                this.showContentView();
+                                this.onRefreshComplete();
+                            });
+                    })
+                    .catch(error => {
+                        // this.showEmptyView();
                     });
-            })
-            .catch(error => {
-                this.showEmptyView();
-            });
+            }
+        });
 
     }
     soundsgood(event) {
@@ -269,11 +296,12 @@ export class RestaurentPage extends BasePage {
     }
     filter() {
         this.showLoadingView();
+        
         var data = this.realPlaces.filter(
             item =>
-                item.restaurant.name
+                (item.restaurant.name
                     .toLowerCase()
-                    .indexOf(this.searchTerm.toLowerCase()) > -1
+                    .indexOf(this.searchTerm.toLowerCase()) > -1) || (item.restaurant.cuisines.toLowerCase().indexOf(this.searchTerm.toLowerCase())>-1)
         );
         this.places = data;
         this.showContentView();
@@ -341,20 +369,31 @@ export class RestaurentPage extends BasePage {
         this.take.nativeElement.classList.remove("activeli");
         this.deliver.nativeElement.classList.remove("activeli");
         this.sounds.nativeElement.classList.remove("activeli");
-        this.getlocation()
-            .then(resp => {
-                this.valuesService
-                    .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
-                    .subscribe((data: any) => {
-                        if (data.restaurants != undefined && data.restaurants.length > 0) {
-                            this.sharedData.RestuarentsChanged(data.restaurants);
-                        }
-                        this.showContentView();
-                        this.onRefreshComplete();
+        this.sharedData.Restuarents.subscribe((data: any) => {
+            if (data != undefined && data.length > 0) {
+                this.places = data;
+                this.realPlaces = data;
+                this.showContentView();
+                this.onRefreshComplete();
+            }
+            else {
+                this.showLoadingView();
+                this.getlocation()
+                    .then(resp => {
+                        this.valuesService
+                            .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+                            .subscribe((data: any) => {
+                                if (data.restaurants != undefined && data.restaurants.length > 0) {
+                                    this.sharedData.RestuarentsChanged(data.restaurants);
+                                }
+                                this.showContentView();
+                                this.onRefreshComplete();
+                            });
+                    })
+                    .catch(error => {
+                        // this.showEmptyView();
                     });
-            })
-            .catch(error => {
-                this.showEmptyView();
-            });
+            }
+        });
     }
 }

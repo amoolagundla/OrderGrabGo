@@ -21,7 +21,11 @@ export class RestaurantDetailPage extends BasePage {
     public user: App.UserInfoViewModel;
     public firstName: string = 'OrderGrabGo';
     public name: string; public location: string; public address: string; public phonenum: string; public hasTablebooking: number = 0;
-    featuredImage: string = '';restlocation:string='';
+    today: string = ''; restaurantImages: any;
+    featuredImage: string = ''; restlocation: string = ''; timeTable: any;
+    mySlideOptions = {
+        pager: true
+    };
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
     constructor(injector: Injector, private altcntrl: AlertController,private launchNavigator: LaunchNavigator,public storage: Storage) {
         super(injector);
@@ -36,9 +40,15 @@ export class RestaurantDetailPage extends BasePage {
         this.hastakeout = this.navParams.get('is_delivering_now');
         this.hasdelivery = this.navParams.get('has_online_delivery');
         this.featuredImage = this.navParams.get('featured_image');
+        this.restaurantImages = this.navParams.get('RestaurantImages');
         if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
             this.min_amt = this.navParams.get('delivery_minimum_order');
         }
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var tdate = new Date();
+        this.today = days[tdate.getDay()];
+        this.timeTable = this.navParams.get('time_table');
+        
     }
     enableMenuSwipe() {
         return true;
@@ -59,13 +69,11 @@ export class RestaurantDetailPage extends BasePage {
             let options: LaunchNavigatorOptions = {
                 start: data
               };
-          
               this.launchNavigator.navigate(this.restlocation, options)
                   .then(
                       success => {},
                       error => alert('Error launching navigator: ' + error)
               );
-            
         });
     }    
     takout() {
@@ -97,5 +105,14 @@ export class RestaurantDetailPage extends BasePage {
     }
     notavailable() {
         swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
+    }
+    openvideo() {
+        var url = this.navParams.get('Video_url');
+        if (url == null || url.indexOf('http') == -1) {
+            swal('Not Available', 'Video was not available for this resturant', 'error');       
+        }
+        else {
+
+        }
     }
 }
