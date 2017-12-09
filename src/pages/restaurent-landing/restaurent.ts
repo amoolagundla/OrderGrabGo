@@ -64,9 +64,6 @@ export class RestaurentPage extends BasePage {
 
             }
         });
-        this.loadData();
-
-
         this.storage.getAddress().then(data => {
             this.address = data;
         });
@@ -79,7 +76,10 @@ export class RestaurentPage extends BasePage {
 
                     this.locationAccuracy
                         .request(priority)
-                        .then((data: any) => console.log(data))
+                        .then((data: any) => {
+                          this.loadData();
+                          console.log(data);
+                        })
                         .catch(error => {
                             if (
                                 error &&
@@ -119,7 +119,7 @@ export class RestaurentPage extends BasePage {
         });
     }
     loadData() {
-        //this.showLoadingView();
+       // this.showLoadingView();
         this.platform.ready().then(() => {
         this.getlocation()
             .then(resp => {
@@ -129,11 +129,12 @@ export class RestaurentPage extends BasePage {
                         if (data.restaurants != undefined && data.restaurants.length > 0) {
                             this.sharedData.RestuarentsChanged(data.restaurants);
                         }
+
                         this.onRefreshComplete();
                     });
             })
             .catch(error => {
-                this.showEmptyView();
+               // this.showEmptyView();
             });
           });
 
@@ -240,7 +241,7 @@ export class RestaurentPage extends BasePage {
                             data
                             )
                             .subscribe((data: any) => {
-                                debugger;
+                               
                                 this.places = data.restaurants;
                                 this.showContentView();
                                 this.onRefreshComplete();

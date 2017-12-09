@@ -40,10 +40,10 @@ export class CheckoutPage extends BasePage{
     console.log('ionViewDidLoad CheckoutPage');
   }
   pay() {
-      this.showLoadingView();
+    
       var resparams = this.navParams.get('restuarant').location;
       var model = this.navParams.get('model');
-      
+      let time:any;
       this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
       var orders = new App.Orders;
       orders.OrderId = 0;
@@ -55,11 +55,13 @@ export class CheckoutPage extends BasePage{
       if (this.navParams.get('page') != undefined && this.navParams.get('page') == 'Deliver') {
           orders.LookupOrderTypeId = 10;
           orders.OrderAddress.address1 = model.Address;
+          time='Your Delivery time ' + model.deliveryTime;
       } else {
           orders.LookupOrderTypeId = 8;
           orders.OrderAddress.address1 = model.Location;
+          time='Your Pickup Time time ' +model.piskupTime;
       }
-      
+      orders.Instructions = model.Special;
       orders.OrderAddress.firstName = model.FirstName;
       orders.OrderAddress.lastName = model.FirstName;
       orders.OrderAddress.phoneNo = model.PhoneNumber;
@@ -83,7 +85,7 @@ export class CheckoutPage extends BasePage{
           orders.LookupStatusId =47;
           orders.OrderDetail.push(orderdetail);
       }
-      //this.showLoadingView();
+      this.showLoadingView();
       this.service.SaveOrders(orders).subscribe((data: any)=>{
           console.log(data);
           let orderId = data.OrderId;
@@ -91,11 +93,14 @@ export class CheckoutPage extends BasePage{
               model: this.navParams.get('model'),
               pageName: this.navParams.get('page'),
               orderId : orderId,
+              reservedTime:time,
               location: this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode
           }
           this.showContentView();
           this.navigateTo('OrderconfirmationPage', dat);
          
+      },error=>{
+        this.showContentView();
       });
       });
       

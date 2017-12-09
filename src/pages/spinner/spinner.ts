@@ -18,7 +18,7 @@ export class SpinnerPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SpinnerPage');
+  
   }
 
 }

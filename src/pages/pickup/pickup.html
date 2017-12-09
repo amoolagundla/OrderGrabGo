@@ -36,7 +36,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="PickupTime" [ngModel]="pickupTime" placeholder="Pickup Time"
+                    <input type="time" class="form-control" name="PickupTime"  min="0800" max="2200" [ngModel]="pickupTime| date: 'H:mm'" placeholder="Pickup Time"
                            required #PickupTime="ngModel">
                 </div>
                 <small [hidden]="PickupTime.valid || (PickupTime.pristine && !f.submitted)" class="text-danger">
@@ -95,6 +95,14 @@
                 </small>
             </div>
         </div>
+        <div class="form-group">
+                
+                            <div class="cols-sm-10">
+                                <div class="input-group" style="width:100% !important;">
+                                    <textarea [ngModel]="special" placeholder="Instructions" class="form-control" name="Special" #Special="ngModel"></textarea>
+                                </div>
+                            </div>
+                        </div>
        
         <button type="submit" class="btn btn-primary btn-lg btn-block login-button" style="background:#009e0f !important">CheckOut</button>
         </form>

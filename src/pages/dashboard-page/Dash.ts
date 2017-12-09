@@ -46,14 +46,13 @@ export class DashPage extends BasePage {
       }
     );
 
-    this.geolocation
-      .getCurrentPosition({
-        maximumAge: 3000,
-        timeout: 5000,
-        enableHighAccuracy: true
-      })
-      .then(resp => {
-       
+    /* Ensure the platform is ready */
+    this.platform.ready().then(() => {
+        this.geolocation.getCurrentPosition().then(resp => {
+            this.GetLocation(resp);
+          }).catch(err => {
+           alert("Error getting location"+ JSON.stringify(err));
+          });
       });
   }
 
@@ -61,14 +60,7 @@ export class DashPage extends BasePage {
     return true;
   }
   ionViewDidLoad() {
-    /* Ensure the platform is ready */
-    this.platform.ready().then(() => {
-      this.geolocation.getCurrentPosition().then(resp => {
-          this.GetLocation(resp);
-        }).catch(err => {
-          console.log("Error getting location", err);
-        });
-    });
+    
   }
 
   GetLocation(resp)

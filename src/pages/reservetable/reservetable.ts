@@ -21,9 +21,10 @@ export class ReservetablePage extends BasePage{
     guests: string = '';
     public name: string; public firstName: string; location: string = ''; featuredImage: string = '';
     reservationdate: Date = new Date();
-    
+    reservationtime: any= this.reservationdate.getHours();
     constructor(injector: Injector, public atrCtrl: AlertController, private service: ValuesService, public geolocation: Geolocation) {
         super(injector);
+        this.reservationtime= this.reservationdate.getTime() ;
         this.featuredImage = this.navParams.get('featured_image');
     }
     enableMenuSwipe() {

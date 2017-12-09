@@ -69,7 +69,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                                <input type="time" class="form-control" name="DeliveryTime" [ngModel]="deliveryTime" placeholder="Devliery Time"
+                                <input type="time" class="form-control" name="DeliveryTime" min="0800" max="2200"  [ngModel]="deliveryTime | date: 'H:mm'" placeholder="Devliery Time"
                                        required #DeliveryTime="ngModel">
                             </div>
                             <small [hidden]="DeliveryTime.valid || (DeliveryTime.pristine && !f.submitted)" class="text-danger">
@@ -91,6 +91,14 @@
                                     </small>
                                 </div>
                             </div> 
+                            <div class="form-group">
+                                    
+                                                <div class="cols-sm-10">
+                                                    <div class="input-group" style="width:100% !important;">
+                                                        <textarea [ngModel]="special" placeholder="Instructions" class="form-control" name="Special" #Special="ngModel"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block login-button" style="background:#009e0f !important" >CheckOut</button>
                 </form>
 </div>

@@ -29,15 +29,15 @@ public address: string = ''; public firstName: string = '';
     longitude: number = 0;
     geo: any
     deliverydate: Date = new Date();    
-    deliveryTime: any= this.deliverydate.getMinutes();
+    deliveryTime: any= this.deliverydate.getHours();
     service = new google.maps.places.AutocompleteService();
 
     constructor(injector: Injector, private _shared: SharedDataService, private altcntrl: AlertController, 
         private storage: LocalStorage,
         private modlCtrl: ModalController) {
     super(injector);
-//this.form.deliveryTime= this.deliverydate.getTime() +this.navParams.get('restuarant').data.delivery_estimate_time;
-
+     this.deliveryTime= this.deliverydate.getTime() +this.navParams.get('restuarant').data.delivery_estimate_time;
+         //   console.log(this.deliveryTime);
     this._shared.UserInfo.subscribe((data) => {
         if (data != undefined && data.FirstName != undefined) {
             this.user = data;
@@ -79,7 +79,8 @@ public address: string = ''; public firstName: string = '';
   }
 
   save(model: any, isValid: boolean, event: Event) {
-      if (isValid) {
+     
+      if (isValid ) {
           var res = {
               page: 'Deliver',
               model: model,

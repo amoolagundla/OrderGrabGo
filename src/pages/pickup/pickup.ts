@@ -17,10 +17,14 @@ export class PickupPage extends BasePage {
     public location: string = '';
     public user: any;
     pickdate: Date = new Date();
+    pickupTime: any= this.pickdate.getHours();
     constructor(injector: Injector, private altcntrl: AlertController,
         private storage: LocalStorage) 
         {
         super(injector);
+        this.pickdate=new Date(this.pickdate.getTime() + this.navParams.get('restuarant').data.takeout_estimate_time*60000);
+        this.pickupTime= this.pickdate.getTime();
+        console.log(this.pickupTime);
         this.sharedData.UserInfo.subscribe((data) => {
             this.user = data;
             this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
@@ -41,7 +45,7 @@ checkout(){
 	this.navigateTo('CheckoutPage');
 }
     save(model: any, isValid: boolean, event: Event) {
-        if (isValid) {
+        if (isValid ) {
             var res = {
                 page : 'Pick',
                 model: model,

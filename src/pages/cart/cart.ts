@@ -33,7 +33,7 @@ export class CartPage extends BasePage {
   plusQty(item) {
       item.quantity++;
       CART.total = CART.total + item.price;
-      CART.total = Number(this.decimalPipe.transform(CART.total, '1.2-2'));
+      CART.total = parseFloat("" + Number(this.decimalPipe.transform(CART.total, '1.2-2')).toFixed(2));
   }
 
   // minus quantity
@@ -41,7 +41,7 @@ export class CartPage extends BasePage {
       if (item.quantity > 1) {
           item.quantity--;
           CART.total = CART.total - item.price;
-          CART.total = Number(this.decimalPipe.transform(CART.total, '1.2-2'));
+          CART.total = parseFloat("" + Number(this.decimalPipe.transform(CART.total, '1.2-2')).toFixed(2));
       }
       else {
           let alert = this.altController.create({
@@ -52,7 +52,7 @@ export class CartPage extends BasePage {
               text: 'Yes',
               handler: data => {
                   CART.total = CART.total - item.price;
-                  CART.total = Number(this.decimalPipe.transform(CART.total, '1.2-2'));
+                  CART.total = parseFloat("" + Number(this.decimalPipe.transform(CART.total, '1.2-2')).toFixed(2));
                   CART.items.splice(no,1);
               }
           });

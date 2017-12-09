@@ -93,6 +93,8 @@ export class LocalStorage {
 
   clearAll()
   {
+    this.storage.remove('restaurents');
+    this.storage.remove('MobileAddress');
     this.storage.remove('token');
     this.storage.remove('oneSingalPushToken');
     this.storage.set('LoggedIn',false);
