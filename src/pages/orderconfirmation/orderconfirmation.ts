@@ -21,6 +21,7 @@ export class OrderconfirmationPage extends BasePage{
     OrderID: string = '';
     pageName: string = '';restLocation:string='';
     time:any;
+    estimateTime:any;
     constructor(injector: Injector,private launchNavigator: LaunchNavigator,public storage: Storage) {
     super(injector);       
         this.cart = CART;
@@ -30,6 +31,7 @@ export class OrderconfirmationPage extends BasePage{
         this.OrderID = this.navParams.get('orderId');
         this.restLocation = this.navParams.get('location');
         this.time=this.navParams.get('reservedTime');
+        
   }
         enableMenuSwipe() {
             return true;

@@ -198,13 +198,13 @@ export class MyApp {
     });
   }
   redirectToPage(data) {
-    console.log(data);
+    
     this.nav.setRoot("MessageDetailsPage", {
       id: data.notification.payload.additionalData.foo
     });
   }
   RestaurantPage(data) {
-      console.log(data);
+      
       if (data.notification.payload.additionalData.orderId != undefined && data.notification.payload.additionalData.orderId != null ) {
           this.shared.DeactivateOrder(data.notification.payload.additionalData.orderId).subscribe((data: any)=>{
 

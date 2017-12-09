@@ -22,7 +22,7 @@ export class PickupPage extends BasePage {
         private storage: LocalStorage) 
         {
         super(injector);
-        this.pickdate=new Date(this.pickdate.getTime() + this.navParams.get('restuarant').data.takeout_estimate_time*60000);
+        this.pickdate=new Date(this.pickdate.getTime() + parseInt(this.navParams.get('restuarant').data.takeout_estimate_time)*60000);
         this.pickupTime= this.pickdate.getTime();
         console.log(this.pickupTime);
         this.sharedData.UserInfo.subscribe((data) => {

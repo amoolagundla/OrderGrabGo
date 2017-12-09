@@ -24,6 +24,7 @@ export class DashPage extends BasePage {
   public firstName: string = "OrderGrabGo";
   public scannedObject: string = "";
   public scanData: boolean = false;
+  public restaurants:any;
   constructor(
     injector: Injector,
     private _barcodeScanner: BarcodeScanner,
@@ -57,6 +58,7 @@ export class DashPage extends BasePage {
                         .subscribe((data: any) => {
                             if (data.restaurants != undefined && data.restaurants.length > 0) {
                                 this.sharedData.RestuarentsChanged(data.restaurants);
+                                this.restaurants=data.restaurants;
                             }
                         });
                 })
@@ -122,7 +124,25 @@ export class DashPage extends BasePage {
   }
 
   login() {
-    this.navigateTo("RestaurentPage");
+    //this.navigateTo("RestaurentPage");
+      this.showLoadingView();
+    this.geolocation.getCurrentPosition()
+    .then(resp => {
+        this.valuesService
+            .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+            .subscribe((data: any) => {
+                this.showEmptyView();
+                if (data.restaurants != undefined && data.restaurants.length > 0) {
+                    this.sharedData.RestuarentsChanged(data.restaurants);
+                    this.restaurants=data.restaurants;
+                    this.navigateTo("RestaurentPage");
+                }
+            },err=> this.showEmptyView());
+    })
+    .catch(error => {
+         this.showEmptyView();
+    });
+   
   }
   messages() {
     // this.navigateTo('MessagesPage');

@@ -18,7 +18,7 @@ import { Storage } from '@ionic/storage';
 export class ReservetableConfirmationPage extends BasePage{
     public user: App.UserInfoViewModel; public firstName: string = 'OrderGrabGo';
     public guest: string; date: string = ''; time: string = ''; location: string = '';
-    orderId: string = '';restLocation:string='';
+    orderId: string = '';restLocation:string='';estimatedTime:any;
     constructor(injector: Injector,private launchNavigator: LaunchNavigator,public storage: Storage) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
@@ -34,7 +34,7 @@ export class ReservetableConfirmationPage extends BasePage{
         this.time = this.navParams.get('model').ReservationTime;
         this.location = this.navParams.get('model').Location;
         this.restLocation = this.navParams.get('location');
-        
+        this.estimatedTime=this.navParams.get('reservedTime');
         this.orderId = this.navParams.get('orderId');
     }
     enableMenuSwipe() {

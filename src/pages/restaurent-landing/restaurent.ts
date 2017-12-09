@@ -12,6 +12,7 @@ import { LocalStorage } from "../../providers/local-storage";
 import swal from "sweetalert";
 import { ValuesService } from "../../providers/ValuesService";
 import {Platform} from "ionic-angular";
+import Parse from 'parse';
 @IonicPage()
 @Component({
     selector: "page-categories",
@@ -57,7 +58,8 @@ export class RestaurentPage extends BasePage {
                 this.firstName = "Hello " + this.user.FirstName;
             }
         });
-        this.sharedData.Restuarents.subscribe((data: any) => {
+        this.storage.restaurents.then((res: any) => {
+          let data = JSON.parse(res);
             if (data != undefined && data.length > 0) {
                 this.places = data;
                 this.realPlaces = data;
@@ -120,7 +122,7 @@ export class RestaurentPage extends BasePage {
     }
 
     ionViewDidLoad() {
-
+          //  this.loadData();
 
     }
 
@@ -184,6 +186,8 @@ export class RestaurentPage extends BasePage {
 
                         if (data.restaurants != undefined && data.restaurants.length > 0) {
                             this.sharedData.RestuarentsChanged(data.restaurants);
+                            this.places=data.restaurants;
+                            this.realPlaces=data.restaurants;
                         }
                         this.showContentView();
                         this.onRefreshComplete();

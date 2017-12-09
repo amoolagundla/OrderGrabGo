@@ -1,9 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import {App} from '../models/models';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import {
-    Storage
-} from '@ionic/storage';
+import {    Storage} from '@ionic/storage';
 
 @Injectable()
 export class SharedDataService {

@@ -1,63 +1,62 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
+import { NgModule, ErrorHandler } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
+import { MyApp } from "./app.component";
 
-import { LocationsearchPage } from '../pages/locationsearch/locationsearch';
-import { AddressdetailPage } from '../pages/addressdetail/addressdetail';
-import { SpinnerPage } from '../pages/spinner/spinner';
+import { LocationsearchPage } from "../pages/locationsearch/locationsearch";
+import { AddressdetailPage } from "../pages/addressdetail/addressdetail";
+import { SpinnerPage } from "../pages/spinner/spinner";
 
-import {HttpClient} from '../providers/HttpClient';
-import {ValuesService} from '../providers/ValuesService';
-import { Category } from '../providers/categories';
-import { Place } from '../providers/place-service';
-import { Review } from '../providers/review-service';
-import { ParseFile } from '../providers/parse-file-service';
-import { User } from '../providers/user-service';
-import { LocalStorage } from '../providers/local-storage';
-import { Preference } from '../providers/preference';
-import { MapStyle } from '../providers/map-style';
-import { SharedDataService } from '../providers/SharedDataService';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { Camera } from '@ionic-native/camera';
-import { Geolocation } from '@ionic-native/geolocation';
-import { Diagnostic } from '@ionic-native/diagnostic';
-import { LocationAccuracy } from '@ionic-native/location-accuracy';
-import { File } from '@ionic-native/file';
-import { LaunchNavigator } from '@ionic-native/launch-navigator';
-import { CallNumber } from '@ionic-native/call-number';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { SocialSharing } from '@ionic-native/social-sharing';
-import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult } from '@ionic-native/native-geocoder';
-import { AppVersion } from '@ionic-native/app-version';
-import { HeaderColor } from '@ionic-native/header-color';
-import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { HttpClient } from "../providers/HttpClient";
+import { ValuesService } from "../providers/ValuesService";
+import { Category } from "../providers/categories";
+import { Place } from "../providers/place-service";
+import { Review } from "../providers/review-service";
+import { ParseFile } from "../providers/parse-file-service";
+import { User } from "../providers/user-service";
+import { LocalStorage } from "../providers/local-storage";
+import { Preference } from "../providers/preference";
+import { MapStyle } from "../providers/map-style";
+import { SharedDataService } from "../providers/SharedDataService";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
+import { Camera } from "@ionic-native/camera";
+import { Geolocation } from "@ionic-native/geolocation";
+import { Diagnostic } from "@ionic-native/diagnostic";
+import { LocationAccuracy } from "@ionic-native/location-accuracy";
+import { File } from "@ionic-native/file";
+import { LaunchNavigator } from "@ionic-native/launch-navigator";
+import { CallNumber } from "@ionic-native/call-number";
+import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { SocialSharing } from "@ionic-native/social-sharing";
+import {
+  NativeGeocoder,
+  NativeGeocoderReverseResult,
+  NativeGeocoderForwardResult
+} from "@ionic-native/native-geocoder";
+import { AppVersion } from "@ionic-native/app-version";
+import { HeaderColor } from "@ionic-native/header-color";
+import { GoogleAnalytics } from "@ionic-native/google-analytics";
 
-import { BrowserTab } from '@ionic-native/browser-tab';
-import { IonicStorageModule } from '@ionic/storage';
-import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
-import { Ionic2RatingModule } from 'ionic2-rating';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpModule, Http } from '@angular/http';
+import { BrowserTab } from "@ionic-native/browser-tab";
+import { IonicStorageModule } from "@ionic/storage";
+import { Ng2ImgFallbackModule } from "ng2-img-fallback";
+import { LazyLoadImageModule } from "ng-lazyload-image";
+import { Ionic2RatingModule } from "ionic2-rating";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpModule, Http } from "@angular/http";
 
-import { Facebook } from '@ionic-native/facebook';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-import { Toast } from '@ionic-native/toast';
-import { OneSignal } from '@ionic-native/onesignal';
+import { Facebook } from "@ionic-native/facebook";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { Toast } from "@ionic-native/toast";
+import { OneSignal } from "@ionic-native/onesignal";
 export function HttpLoaderFactory(http: Http) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
-  declarations: [
-    MyApp,
-      LocationsearchPage,
-      AddressdetailPage,
-      SpinnerPage
-  ],
+  declarations: [MyApp, LocationsearchPage, AddressdetailPage, SpinnerPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
@@ -65,7 +64,7 @@ export function HttpLoaderFactory(http: Http) {
     Ng2ImgFallbackModule,
     LazyLoadImageModule,
     Ionic2RatingModule,
-    HttpModule,    
+    HttpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -75,14 +74,19 @@ export function HttpLoaderFactory(http: Http) {
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-      MyApp,
-      LocationsearchPage,
-      AddressdetailPage,
-      SpinnerPage
-  ],
-  providers: [Category, Place, ParseFile, Review, LocalStorage, User,HttpClient,ValuesService,SharedDataService, 
-    StatusBar, OneSignal,
+  entryComponents: [MyApp, LocationsearchPage, AddressdetailPage, SpinnerPage],
+  providers: [
+    Category,
+    Place,
+    ParseFile,
+    Review,
+    LocalStorage,
+    User,
+    HttpClient,
+    ValuesService,
+    SharedDataService,
+    StatusBar,
+    OneSignal,
     SplashScreen,
     Diagnostic,
     LocationAccuracy,
@@ -93,14 +97,18 @@ export function HttpLoaderFactory(http: Http) {
     SocialSharing,
     Camera,
     GoogleAnalytics,
-   
     AppVersion,
     HeaderColor,
     BrowserTab,
-    File,BarcodeScanner,NativeGeocoder,
-    Preference, MapStyle, { provide: ErrorHandler, useClass: IonicErrorHandler },
-	Facebook,
-  
-    Toast]
+    File,
+    BarcodeScanner,
+    NativeGeocoder,
+    Preference,
+    MapStyle,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Facebook,
+
+    Toast
+  ]
 })
 export class AppModule {}
