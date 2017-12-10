@@ -6,11 +6,11 @@ export class LocalStorage {
 
   constructor(private storage: Storage) {
   }
-  get LoggedIn(): Promise<any> {
+   GetLoggedIn(): Promise<any> {
     return this.storage.get('LoggedIn');
   }
 
-  set LoggedIn(val) {
+   LoggedIn(val) {
     this.storage.set('LoggedIn', val);
   }
   get skipIntroPage(): Promise<any> {
@@ -36,13 +36,13 @@ export class LocalStorage {
   set mapStyle(val) {
     this.storage.set('mapStyle', val);
   }
-  set pushToken(val)
+   pushToken(val)
   {
-     this.storage.set('pushToken',val);
+     this.storage.set('PushToken',val);
   }
-  get pushToken():Promise<any>
+   GetpushToken():Promise<any>
   {
-   return this.storage.get('pushToken');
+   return this.storage.get('PushToken');
   }
   get distance(): Promise<any> {
     return this.storage.get('distance');
@@ -63,14 +63,14 @@ export class LocalStorage {
     return this.storage.get('lang');
   }
 
-  get token(): Promise<any> {
+   gettoken(): Promise<any> {
       return this.storage.get('token');
   }
 
   RemoveToken() {
        return this.storage.remove('token');
   }
-  set token(val) {
+ token(val) {
       this.storage.set('token', val);
   }
   set lang(val) {

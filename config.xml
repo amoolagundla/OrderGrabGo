@@ -75,7 +75,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreenBackgroundColor" value="0xFFFFFFFF" />
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="SplashScreenDelay" value="3000" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -117,4 +117,5 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
     <plugin name="onesignal-cordova-plugin" spec="^2.2.2" />
     <plugin name="cordova-plugin-nativegeocoder" spec="^2.0.4" />
+    <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
 </widget>

@@ -48,7 +48,8 @@
                         <div class="rest-addr" (click)="indRest(place.restaurant)">
                           <img *ngIf="!place.restaurant.logo" src="{{place.restaurant.featured_image}}" height="150" width="340" />
                             <img *ngIf="place.restaurant.logo" src="data:image/png;base64,{{place.restaurant.logo}}"  height="200" width="340"/>
-                            <h5 class="cardText">{{place.restaurant.name}}</h5>
+                            <h6 class="cardText">{{place.restaurant.name}}</h6>
+                            
                         </div>
                     </div>
                     

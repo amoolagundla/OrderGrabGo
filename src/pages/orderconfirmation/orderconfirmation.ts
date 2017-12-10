@@ -57,8 +57,8 @@ export class OrderconfirmationPage extends BasePage{
       
           this.launchNavigator.navigate(this.restLocation, options)
               .then(
-                  success => alert('Launched navigator'),
-                  error => alert('Error launching navigator: ' + error)
+                  success => {},
+                  error => {}
           );
     });
 

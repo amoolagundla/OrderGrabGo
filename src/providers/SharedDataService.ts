@@ -2,12 +2,14 @@
 import {App} from '../models/models';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import {    Storage} from '@ionic/storage';
+import { ValuesService } from './ValuesService';
 
 @Injectable()
 export class SharedDataService {
+    private _valuesService: ValuesService;
     constructor(public storage: Storage) {
         this.getUserInfo();
-
+       
     }
 
     public getUserInfo() {
@@ -21,7 +23,8 @@ export class SharedDataService {
         });
 
     }
-
+  
+    public pushtoken= new BehaviorSubject<string>(null); 
 
     public UserInfo = new BehaviorSubject<any>(new App.UserInfoViewModel());
     public Restuarents = new BehaviorSubject<any[]>(Array<App.GooglePlaces>());
@@ -30,6 +33,11 @@ export class SharedDataService {
         
     } 
     
+    public pushtokenChanged(newData: any) {
+        this.pushtoken.next(newData);    
+     
+} 
+
     public RestuarentsChanged(newData: any) {
                 this.Restuarents.next(newData);    
                 this.storage.set('restaurents',JSON.stringify(newData));

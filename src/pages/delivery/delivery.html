@@ -20,7 +20,7 @@
                 <ion-col col-4>
                     <img src="{{d.ImagePath}}" alt="" />
                 </ion-col>
-                <ion-col col-8>
+                <ion-col  style="margin-left: 18%;" col-4>
                     <h3>{{d.ProductName}}</h3>
                     <h4 class="desc">{{d.ProductDescription}}</h4>
                     <ion-row class="itemprice">
@@ -37,6 +37,7 @@
    
 
 </ion-content>
+
 <ion-footer>
     <button ion-button block class="pickupbtn" (click)="deliverydetails()" style="background:#009e0f !important">
         Continue

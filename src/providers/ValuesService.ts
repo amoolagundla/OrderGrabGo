@@ -11,7 +11,9 @@ export class ValuesService {
     public UserInfo: any;
     public Categories: any;
     constructor(private http: HttpClient, private shared: SharedDataService
-    ) { }
+    ) {
+      
+     }
 
     login(userName: string, Password: string) {
 			
@@ -70,6 +72,7 @@ return resdata;
                  this.shared.USerInfoChanged(data);
                 
              }, error => {
+                 
              });    ;
 
      }
@@ -131,4 +134,6 @@ return resdata;
     DeactivateOrder(id: any) {
         return this.http.get('api/ProductsApi/DeactivateOrder/'+id).map((response: Response) => response.json());
     }
+
+    
 }

@@ -2,13 +2,13 @@ import { Injectable,Injector } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import {Observable} from 'rxjs';
-
+import{LocalStorage} from './local-storage';
 @Injectable()
 export class HttpClient {
 //public baseurl: any ='http://localhost:58048/';
  public baseurl:any ='https://ordergrabgoepathusa.azurewebsites.net/';
 
-  constructor(private http: Http, public storage: Storage) {   }
+  constructor(private http: Http, public storage: Storage,public localStorage:LocalStorage) {   }
 enableMenuSwipe() {
     return false;
   }
@@ -28,9 +28,23 @@ getApiToken(): Observable<Headers> {
      let headers: Headers = new Headers();
     return Observable.fromPromise(this.storage.get('token').then((token:string) => {
 				headers.append('Access-Control-Allow-Origin','*');
-		 headers.append('Content-Type', 'application/json');
-		 headers.append('Authorization', 'Bearer ' +token);
+     headers.append('Content-Type', 'application/json');
+     
+     if(token==null)
+     {
+       this.localStorage.gettoken().then(tokenData=>
+      {
+        headers.append('Authorization', 'Bearer ' +tokenData);
+        return headers;
+      })
+     }
+     else
+     {
+      headers.append('Authorization', 'Bearer ' +token);
       return headers;
+     }
+		
+     
 			},error=>
 					{
 					 return headers;	

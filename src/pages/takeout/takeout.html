@@ -15,19 +15,21 @@
   </ion-card>
 	<ion-list padding>
 	<ion-grid *ngFor="let d of data">
-		<ion-row class="itemlist" (click)="itemdetails(d)">
-			<ion-col col-4>
-                <img src="{{d.ImagePath}}"  />
-			</ion-col>
-			<ion-col col-8>
-			       <h5>{{d.ProductName}}</h5>
-					<h6 class="desc">{{d.ProductDescription}}</h6>
-					
-						<h6><div text-left><strong>${{d.Price}}</strong></div></h6>
-				
-					
-			</ion-col>
-		</ion-row>
+        <ion-row class="itemlist" (click)="itemdetails(d)">
+            <ion-col col-4>
+                <img src="{{d.ImagePath}}" alt="" />
+            </ion-col>
+            <ion-col  style="margin-left: 18%;" col-4>
+                <h3>{{d.ProductName}}</h3>
+                <h4 class="desc">{{d.ProductDescription}}</h4>
+                <ion-row class="itemprice">
+                    <ion-col col-12>
+                        <h4><div text-left><strong>Price: ${{d.Price}}</strong></div></h4>
+                    </ion-col>
+                </ion-row>
+
+            </ion-col>
+        </ion-row>
 	</ion-grid>
 	
 	</ion-list>

@@ -62,8 +62,8 @@ export class MessageDetailsPage extends BasePage {
       
           this.launchNavigator.navigate(this.address, options)
               .then(
-                  success => alert('Launched navigator'),
-                  error => alert('Error launching navigator: ' + error)
+                  success => {},
+                  error => {}
           );
     });
 

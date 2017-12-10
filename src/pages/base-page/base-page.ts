@@ -69,17 +69,8 @@ export abstract class BasePage {
 
 	//This returns a promise but we can get away without handling it in this case.
   setName(name:string,value:any) {
-      this.localStorage.set(name, value).then(() => {
-          this.storageProviderClass.token.then((token: string) => {
-              if (token != null) {
-                  this._valuesService.GetUserInfo(); 
-              }
-              else {
-
-                  this.setRoot('SignInPage');
-              }
-          }, error => { this.setRoot('SignInPage'); });
-      });
+      this.localStorage.set(name, value);
+      
   };
 
   
@@ -87,7 +78,7 @@ export abstract class BasePage {
       this.storageProviderClass.skipIntroPage.then((skipIntroPage) => {
 	  
           if (skipIntroPage) {
-              this.storageProviderClass.token.then((token: string) => {
+              this.storageProviderClass.gettoken().then((token: string) => {
                   if (token != null) {
                       
                   }

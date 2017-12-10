@@ -46,7 +46,7 @@ import { Ionic2RatingModule } from "ionic2-rating";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpModule, Http } from "@angular/http";
-
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { Facebook } from "@ionic-native/facebook";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { Toast } from "@ionic-native/toast";
@@ -104,7 +104,7 @@ export function HttpLoaderFactory(http: Http) {
     BarcodeScanner,
     NativeGeocoder,
     Preference,
-    MapStyle,
+    MapStyle,YoutubeVideoPlayer,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Facebook,
 

@@ -7,7 +7,7 @@ import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { LocalStorage } from '../../providers/local-storage';
 import { ValuesService} from '../../providers/ValuesService';
-import { OneSignal } from '@ionic-native/onesignal';
+
 @IonicPage()
 @Component({
   selector: 'page-sign-in-page',
@@ -22,7 +22,7 @@ export class SignInPage extends BasePage {
 
   constructor(injector: Injector,
     private formBuilder: FormBuilder,
-    private events: Events, private oneSignal: OneSignal,
+    private events: Events, 
     private viewCtrl: ViewController,private valuesService: ValuesService, private fb: Facebook, private googlePlus: GooglePlus, private storage: LocalStorage) {
 
     super(injector);
@@ -60,11 +60,9 @@ export class SignInPage extends BasePage {
     this.valuesService.login(this.email,this.password).subscribe((data:any)=>
     {
 		this.showContentView();
-	
-        this.setName('token',data._body);
-        this.setName('LoggedIn',true);
-		this.setRoot('DashPage'); 
-       //this.savePushToken();
+	      this.storage.token(data._body);
+        this.storage.LoggedIn(true);
+        this.setRoot('DashPage');    
 			
 		
      
@@ -80,19 +78,10 @@ export class SignInPage extends BasePage {
 
   savePushToken()
   { 
-    this.oneSignal.getIds().then(data => {
-      let mapStyle :any = data.userId || {};
-        this.storage.oneSingalPushToken=mapStyle;     
-          
-         this.valuesService.SaveToken(mapStyle).subscribe((res:any)=>{
-          this.setRoot('DashPage');   
-       }, (err) => {
-        this.setRoot('DashPage');   
-      });
-    
-    
-       
-    }).catch(e=>{this.setRoot('DashPage'); }) ;
+   
+   
+
+   
    
      
   }
@@ -112,11 +101,13 @@ export class SignInPage extends BasePage {
     this.showLoadingView();
     this.valuesService.FacebookLogin(userid).subscribe((data:any)=>
   {
-    this.showContentView();
-    this.sharedData.USerInfoChanged(data);
+    this.showContentView();  
 
-    this.setName('token',data.token);
-    this.setName('LoggedIn',true);
+    this.storage.token(data.token);
+    this.storage.LoggedIn(true);
+    this.sharedData.USerInfoChanged(data);
+    this.setRoot('DashPage');    
+  
      this.savePushToken();
   },error => {
     this.showContentView();
@@ -150,11 +141,11 @@ export class SignInPage extends BasePage {
     this.showLoadingView();
     this.valuesService.googlelogin(userid).subscribe((data:any)=>
   {
-    this.showContentView();
+    this.showContentView();   
+    this.storage.token(data.token);
+    this.storage.LoggedIn(true);
     this.sharedData.USerInfoChanged(data);
-    this.setName('token',data.token);
-    this.setName('LoggedIn',true);
-    this.savePushToken();
+    this.setRoot('DashPage');    
   },error => {
     this.showContentView();
 		if (error.status === 401) {

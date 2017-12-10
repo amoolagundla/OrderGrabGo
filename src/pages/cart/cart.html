@@ -11,7 +11,11 @@
                 <ion-icon class="customIcon" name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-       
+        <ion-buttons end>
+            <button class="btn-sm-4" ion-button (click)="GoToProducts()" st>
+           <h6 style="color:white">   <ion-icon name="md-cart">Add More</ion-icon></h6>
+            </button>
+          </ion-buttons>
         <ion-title>Cart</ion-title>
     </ion-navbar>
 </ion-header>
@@ -43,12 +47,7 @@
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
-    <ion-fab bottom left class="floating-action" (click)="GoToProducts()" color="danger">
-            <button ion-fab style="width:100%">
-         <span >Add More</span>
-        </button>
-        
-        </ion-fab>
+   
 </ion-content>
 <!--Footer button-->
 <ion-footer class="cart-footer">

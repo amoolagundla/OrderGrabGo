@@ -6,6 +6,7 @@ import { CART } from '../cart/cartitems';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
 import swal from 'sweetalert';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 /**
  * Generated class for the RestaurantDetailPage page.
  *
@@ -27,7 +28,12 @@ export class RestaurantDetailPage extends BasePage {
         pager: true
     };
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
-    constructor(injector: Injector, private altcntrl: AlertController,private launchNavigator: LaunchNavigator,public storage: Storage) {
+    constructor(
+        injector: Injector,
+         private altcntrl: AlertController,
+         private launchNavigator: LaunchNavigator,
+        public storage: Storage,
+        public youtube:YoutubeVideoPlayer) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -72,7 +78,7 @@ export class RestaurantDetailPage extends BasePage {
               this.launchNavigator.navigate(this.restlocation, options)
                   .then(
                       success => {},
-                      error => alert('Error launching navigator: ' + error)
+                      error => {}
               );
         });
     }    
@@ -107,12 +113,14 @@ export class RestaurantDetailPage extends BasePage {
         swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
     }
     openvideo() {
-        var url = this.navParams.get('Video_url');
-        if (url == null || url.indexOf('http') == -1) {
+
+        var url = this.navParams.get('Video_Link');
+        console.log(url);
+        if (url == null ) {
             swal('Not Available', 'Video was not available for this resturant', 'error');       
         }
         else {
-
+            this.youtube.openVideo(url);
         }
     }
 }
