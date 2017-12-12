@@ -96,9 +96,11 @@ export class ParkingPage extends BasePage {
   ionViewDidLoad() {
     this.loadMap();
     this.storage.getParkingAddress().then(data => {
+        if(data!=null){
         this.address=data;
           this.Message='Your Parking Location is Saved';
           this.ShowMarkCar=!this.ShowMarkCar;
+        }
     },err=>{ 
         this.ShowMarkCar=!this.ShowMarkCar;
     });
@@ -106,9 +108,10 @@ export class ParkingPage extends BasePage {
 
   clearParking()
   {
-      this.storage.removeParkingAddress();
+     
       this.ShowMarkCar=true;
       this.address='';
+      this.storage.storeParkingAddress(null);
   }
   GetLocation() {
     
