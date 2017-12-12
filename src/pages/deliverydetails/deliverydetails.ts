@@ -10,6 +10,7 @@ import { SharedDataService } from "../../providers/SharedDataService";
 
 import { AddressdetailPage } from "../addressdetail/addressdetail";
 import { LocalStorage } from "../../providers/local-storage";
+import { CART } from '../cart/cartitems';
 declare var google;
 /**
  * Generated class for the DeliverydetailsPage page.
@@ -52,6 +53,7 @@ export class DeliverydetailsPage extends BasePage {
     );
     console.log(this.deliveryTime);
     this._shared.UserInfo.subscribe(data => {
+        
       if (data != undefined && data.FirstName != undefined) {
         this.user = data;
         this.firstName = data.FirstName;
@@ -106,5 +108,26 @@ export class DeliverydetailsPage extends BasePage {
       });
       alert.present();
     }
+  }
+  home() {
+      if (CART.total > 0) {
+          let alert = this.altcntrl.create({
+              title: 'Clear Cart',
+              subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+          });
+          alert.addButton({
+              text: 'Cancel'
+          });
+          alert.addButton({
+              text: 'Yes',
+              handler: data => {
+                  this.setRoot("DashPage");
+              }
+          });
+          alert.present();
+      }
+      else {
+          this.setRoot("DashPage");
+      }
   }
 }

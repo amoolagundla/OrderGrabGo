@@ -128,4 +128,25 @@ export class DeliveryPage extends BasePage{
             this.navigateTo('RestaurantDetailPage', this.navParams);
         }
     }
+    home() {
+        if (CART.total > 0) {
+            let alert = this.altController.create({
+                title: 'Clear Cart',
+                subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+            });
+            alert.addButton({
+                text: 'Cancel'
+            });
+            alert.addButton({
+                text: 'Yes',
+                handler: data => {
+                    this.setRoot("DashPage");
+                }
+            });
+            alert.present();
+        }
+        else {
+            this.setRoot("DashPage");
+        }
+    }
 }

@@ -2,6 +2,7 @@ import { Component, Injector } from '@angular/core';
 import { IonicPage,   AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { LocalStorage } from '../../providers/local-storage';
+import { CART } from '../cart/cartitems';
 /**
  * Generated class for the PickupPage page.
  *
@@ -66,5 +67,26 @@ checkout(){
             });
             alert.present();
         }
-}
+    }
+    home() {
+        if (CART.total > 0) {
+            let alert = this.altcntrl.create({
+                title: 'Clear Cart',
+                subTitle: 'Are you sure you would like to go back to home? The cart will be cleared.',
+            });
+            alert.addButton({
+                text: 'Cancel'
+            });
+            alert.addButton({
+                text: 'Yes',
+                handler: data => {
+                    this.setRoot("DashPage");
+                }
+            });
+            alert.present();
+        }
+        else {
+            this.setRoot("DashPage");
+        }
+    }
 }

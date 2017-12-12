@@ -106,6 +106,24 @@ export class CheckoutPage extends BasePage{
       
   }
   home() {
-      this.setRoot("DashPage");
+      if (CART.total > 0) {
+          let alert = this.altcntrl.create({
+              title: 'Clear Cart',
+              subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+          });
+          alert.addButton({
+              text: 'Cancel'
+          });
+          alert.addButton({
+              text: 'Yes',
+              handler: data => {
+                  this.setRoot("DashPage");
+              }
+          });
+          alert.present();
+      }
+      else {
+          this.setRoot("DashPage");
+      }
   }
 }

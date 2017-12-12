@@ -28,12 +28,14 @@ export class RestaurantDetailPage extends BasePage {
         pager: true
     };
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
+    //public youtube: YoutubeVideoPlayer
     constructor(
         injector: Injector,
          private altcntrl: AlertController,
          private launchNavigator: LaunchNavigator,
+         public youtube: YoutubeVideoPlayer,
         public storage: Storage,
-        public youtube:YoutubeVideoPlayer) {
+        ) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
             if (data.FirstName != undefined) {
@@ -109,6 +111,9 @@ export class RestaurantDetailPage extends BasePage {
     back() {
         this.navigateTo('RestaurentPage');
     }
+    home() {
+        this.setRoot("DashPage");
+    }
     notavailable() {
         swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
     }
@@ -123,4 +128,5 @@ export class RestaurantDetailPage extends BasePage {
             this.youtube.openVideo(url);
         }
     }
+    
 }
