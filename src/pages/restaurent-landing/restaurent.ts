@@ -9,7 +9,7 @@ import { Geolocation } from "@ionic-native/geolocation";
 import { App } from "../../models/models";
 import { LocationsearchPage } from "../locationsearch/locationsearch";
 import { LocalStorage } from "../../providers/local-storage";
-import swal from "sweetalert";
+import swal from "sweetalert2";
 import { ValuesService } from "../../providers/ValuesService";
 import {Platform} from "ionic-angular";
 import Parse from 'parse';
@@ -52,12 +52,14 @@ export class RestaurentPage extends BasePage {
     ) {
         super(injector);
         this.sharedData.UserInfo.subscribe(data => {
+            console.log("restaurant landing page "+data);
             if (data.FirstName != undefined) {
                 this.user = data;
                 this.userInfo = this.user;
                 this.firstName = "Hello " + this.user.FirstName;
             }
         });
+        
         this.storage.restaurents.then((res: any) => {
           let data = JSON.parse(res);
             if (data != undefined && data.length > 0) {
@@ -85,6 +87,7 @@ export class RestaurentPage extends BasePage {
         });
         this.storage.getAddress().then(data => {
             this.address = data;
+            this.searchlocation=this.address;
         });
 
         this.locationAccuracy
@@ -293,10 +296,7 @@ export class RestaurentPage extends BasePage {
                 );
             }
             );
-        //})
-        //.catch(error => {
-        //  this.showEmptyView();
-        //});
+        
     }
     filter() {
         this.showLoadingView();

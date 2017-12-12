@@ -2,7 +2,7 @@ export class AppConfig {
 
   /* Parse Server URL */
    public static get SERVER_URL(): string {
-     return 'http://nearme.quanlabs.com/parse/';
+     return '';
    }
 
    /* Parse App ID  */

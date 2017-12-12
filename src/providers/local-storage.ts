@@ -77,6 +77,15 @@ export class LocalStorage {
     this.storage.set('lang', val);
   }
 
+  storeParkingAddress(val) {
+    this.storage.set('ParkingAddress', val);
+}
+getParkingAddress() {
+    return this.storage.get('ParkingAddress');
+}
+removeParkingAddress() {
+   this.storage.remove('ParkingAddress');
+}
   storeAddress(val) {
       this.storage.set('MobileAddress', val);
   }

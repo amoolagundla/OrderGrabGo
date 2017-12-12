@@ -25,6 +25,7 @@ export class DashPage extends BasePage {
   public scannedObject: string = "";
   public scanData: boolean = false;
   public restaurants: any;
+  public currentOrderHistory:any;
   constructor(
     injector: Injector,private oneSignal: OneSignal,
     private _barcodeScanner: BarcodeScanner,
@@ -34,40 +35,46 @@ export class DashPage extends BasePage {
     public geolocation: Geolocation
   ) {
     super(injector);
+   
 
-
-
-    this.oneSignal.getIds().then(data => {
-      let mapStyle :any = data.userId || {};
-        this.storage.oneSingalPushToken=mapStyle;     
-         this.storage.pushToken(mapStyle);
-          this.valuesService.SaveToken(mapStyle).subscribe(()=>
-          {
-           
-          });  
-         
-       
-    }) ;
+    
     this.sharedData.UserInfo.subscribe(
       data => {
+       
         if (data.FirstName != undefined) {
           this.user = data;
           this.userInfo = this.user;
           this.firstName = "Hello " + this.userInfo.FirstName;
         }
-      },
-      err => {
+      }, err => {
         console.log(err);
-      }
-    );
+      });
 
-
+    // this.oneSignal.getIds().then(data => {
+    //   let mapStyle :any = data.userId || {};
+    //     this.storage.oneSingalPushToken=mapStyle;     
+    //      this.storage.pushToken(mapStyle);
+    //       this.valuesService.SaveToken(mapStyle).subscribe(()=>
+    //       {
+           
+    //       });  
+         
+       
+    // }) ;
   }
 
   enableMenuSwipe() {
     return true;
   }
   ionViewCanEnter() {
+
+    this.valuesService.GetCurrentOrderHistory().subscribe((data:any[])=>
+  {
+   if(data!=null && data.length>0)
+   {
+     this.currentOrderHistory = 'Your Current Order Staus :'+ data[data.length-1].Status;
+   }
+  })
     /* Ensure the platform is ready */
     this.platform.ready().then(() => {
       this.geolocation

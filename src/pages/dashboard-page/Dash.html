@@ -1,69 +1,67 @@
-
-
 <ion-header>
- <ion-navbar color="danger">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title >{{firstName}}</ion-title>
-		 <ion-buttons end>
-           <button ion-button (click)="qrCodeScan()"><i class="fa fa-qrcode   qr-code fa-4x" aria-hidden="true"></i></button>
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{firstName}}</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="qrCodeScan()">
+                <i class="fa fa-qrcode   qr-code fa-4x" aria-hidden="true"></i>
+            </button> 
         </ion-buttons>
-  </ion-navbar> 
-	
+    </ion-navbar>
+
 </ion-header>
 
 <ion-content padding #container style="background-size: cover;background-position: center center;">
-    
-    <div class="order-page">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="media">
-                    <div class="media-left">
-                        <i class="fa fa-cutlery"></i>
+       
+<p class="text-center" color="danger">{{currentOrderHistory}}</p>
+               <div class="order-page">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-cutlery"></i>
+                                </div>
+                                <div class="media-body">
+                                    <a  class="btn"  (click)="login()">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="media-body">
+                                    <a (click)="messages()" class="btn">Messages</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="media">
+                                <div class="media-left">
+                                    <i class="fa fa-car"></i>
+                                </div>
+                                <div class="media-body">
+                                    <a class="btn"  (click)="parkings()">Parking</a>
+                                </div>
+                            </div>
+                        </div>
+                       
                     </div>
-                    <div class="media-body">
-                        <a  class="btn"  (click)="login()">Order Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="media">
-                    <div class="media-left">
-                        <i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="media-body">
-                        <a (click)="messages()" class="btn">Messages</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="media">
-                    <div class="media-left">
-                        <i class="fa fa-car"></i>
-                    </div>
-                    <div class="media-body">
-                        <a class="btn"  (click)="parkings()">Parking</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="media">
-                    <div class="media-left">
-                        <i class="fa fa-heart"></i>
-                    </div>
-                    <div class="media-body">
-                        <a href="" class="btn">Donate</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
-    
+                </div>  
+                
+            
+                
+            
+            
+ 
+            
 
-	
+
+
 
 
 
 </ion-content>
-

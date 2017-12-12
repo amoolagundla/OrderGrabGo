@@ -3,30 +3,35 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title> <p class="nav-title">{{firstName}}</p><span class="loc">Your Location WEST DES MOINES</span></ion-title>
+      <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
     </ion-navbar>
      
   </ion-header>
 
 <ion-content padding>
-  <div #map id="map"></div> <label class="parkingLabel"    color="danger"><p>Your Parking Location is Saved</p></label>
+  <div #map id="map"></div> <h6  color="danger">{{Message}}</h6>
     <!-- </div> -->
     <div class="parkingAddress">
-    <div class="row " color="danger">
+        
+    <div class="row " color="danger" *ngIf="address">
+            <h6>Your Last Parking Location is</h6>
         <div class="col-sm-2">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-        </div>
-        <div class="col-sm-2">
-           <label>120 s Jordan Creek Pkwy,WDM,IA,50266</label>
-        </div>
-    </div>
-    <div class="row" color="danger">
-        <div class="col-sm-2">
-            <i class="fa fa-map-marker" aria-hidden="true"></i>
-        </div>
-        <div class="col-sm-2">
-           <label class="getDirections">Get Directions</label>
+           <h5>{{address}}</h5>
         </div>
     </div>
+    <div class="row" color="danger"  *ngIf="address">
+       
+        <div class="col-sm-2">
+           <label class="getDirections" style="margin-left: 100%;margin-top: 45%;margin-bottom: 44%;" (click)="directions()">find My Car</label>
+        </div>
+    </div>
+    
+        <div class="col-xs-4">
+            <i class="fa fa-directions" aria-hidden="true"></i> <button  id="singlebutton" name="singlebutton" (click)="GetLocation()" class="btn btn-primary center-block">Mark My Car</button>
+        </div>
+        <div class="col-xs-4">
+            <i class="fa fa-directions" aria-hidden="true"></i> <button  id="singlebutton" name="singlebutton" (click)="clearParking()" class="btn btn-primary center-block">Clea Marking</button>
+        </div>
+
 </div>
 </ion-content>

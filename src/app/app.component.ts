@@ -52,33 +52,7 @@ export class MyApp {
     private oneSignal: OneSignal,
     private _shared: SharedDataService
   ) {
-    this.storage.skipIntroPage.then((skipIntroPage) => {
-      if (skipIntroPage) {
-          //this.splashScreen.hide();
-        this.storage.gettoken().then((token: string) => {
-            if (token != null && token != "") {
-            
-                this.shared.GetUserInfo();
-                this.rootPage = 'DashPage';
-            }
-            else {
-             
-                this.rootPage='SignInPage';
-            }
-        }).catch((e)=> {
-         
-          this.rootPage = 'SignInPage';
-        });
-    }else
-      {
-        //this.splashScreen.hide();
-      this.rootPage='HomePage';
-    }
-}).catch((e) =>
-{
-
- this.rootPage = 'SignInPage';
-});
+   
 
     this.initializeApp();
    
@@ -151,17 +125,37 @@ export class MyApp {
       })
       .catch(e => console.log(e));
 
-    Parse.serverURL = AppConfig.SERVER_URL;
-    Parse.initialize(AppConfig.APP_ID);
+    
 
     this.platform.ready().then(() => {
-      if (AppConfig.TRACKING_ID) {
-        this.googleAnalytics.startTrackerWithId(AppConfig.TRACKING_ID);
-        this.googleAnalytics.trackEvent("", "App opened");
-        this.googleAnalytics.debugMode();
-        this.googleAnalytics.enableUncaughtExceptionReporting(true);
+      this.storage.skipIntroPage.then((skipIntroPage) => {
+        if (skipIntroPage) {
+            //this.splashScreen.hide();
+          this.storage.gettoken().then((token: string) => {
+              if (token != null && token != "") {
+              
+                  this.shared.GetUserInfo();
+                  this.rootPage = 'DashPage';
+              }
+              else {
+               
+                  this.rootPage='SignInPage';
+              }
+          }).catch((e)=> {
+           
+            this.rootPage = 'SignInPage';
+          });
+      }else
+        {
+          //this.splashScreen.hide();
+        this.rootPage='HomePage';
       }
-      this.geolocation.getCurrentPosition().then((position) => { console.log(position.coords.latitude) }).catch((err) => { console.log('Error getting location', err); });
+  }).catch((e) =>
+  {
+  
+   this.rootPage = 'SignInPage';
+  });
+      this.geolocation.getCurrentPosition().then((position) => {  }).catch((err) => {  });
       if (AppConfig.HEADER_COLOR && this.platform.is("android")) {
         this.headerColor.tint(AppConfig.HEADER_COLOR);
       }

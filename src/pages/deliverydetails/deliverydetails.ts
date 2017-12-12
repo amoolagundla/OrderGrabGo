@@ -47,7 +47,7 @@ export class DeliverydetailsPage extends BasePage {
     super(injector);
     this.deliveryTime = new Date(
       this.deliverydate.getTime() +
-        parseInt(this.navParams.get("restuarant").data.delivery_estimate_time) *
+        parseInt(this.navParams.get("restuarant").data.delivery_estimate_time == null ? 0:this.navParams.get("restuarant").data.delivery_estimate_time) *
           60000
     );
     console.log(this.deliveryTime);
