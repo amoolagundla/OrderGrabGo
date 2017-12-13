@@ -83,7 +83,5 @@ export class ReservetablePage extends BasePage{
         }
     }
 
-    home() {
-        this.setRoot("DashPage");
-    }
+
 }

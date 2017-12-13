@@ -275,10 +275,10 @@ export class RestaurentPage extends BasePage {
                             data
                             )
                             .subscribe((data: any) => {
-                               
-                                this.places = data.restaurants;
+                                //this.places = data.restaurants;
                                 this.showContentView();
                                 this.onRefreshComplete();
+                                this.navigateTo('RestaurantsbycusinePage', data.restaurants)
                             });
                     }
                 });

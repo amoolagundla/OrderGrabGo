@@ -24,6 +24,7 @@ export class RestaurantDetailPage extends BasePage {
     public name: string; public location: string; public address: string; public phonenum: string; public hasTablebooking: number = 0;
     today: string = ''; restaurantImages: any;
     featuredImage: string = ''; restlocation: string = ''; timeTable: any;
+    timing: string = ''; isOpen: boolean= true;
     mySlideOptions = {
         pager: true
     };
@@ -56,13 +57,15 @@ export class RestaurantDetailPage extends BasePage {
         var tdate = new Date();
         this.today = days[tdate.getDay()];
         this.timeTable = this.navParams.get('time_table');
+        if (this.timeTable == null || this.timeTable.length == 0) {
+            this.isOpen = false;
+        }
         
     }
     enableMenuSwipe() {
         return true;
     }
     ionViewDidLoad() {
-        
         this.name = this.navParams.get('name');
         this.location = this.navParams.get('location').locality + " " + this.navParams.get('location').city;
         this.address = this.navParams.get('location').address;
@@ -70,7 +73,12 @@ export class RestaurantDetailPage extends BasePage {
 
     }
     reservetable() {
-        this.navigateTo('ReservetablePage', this.navParams);
+        if (this.isOpen) {
+            this.navigateTo('ReservetablePage', this.navParams);
+        }
+        else {
+            swal('Closed', 'Sorry! This restaurant is closed now', 'error');
+        }
     }
     directions() {
         this.storage.get('MobileAddress').then((data)=> {
@@ -85,28 +93,38 @@ export class RestaurantDetailPage extends BasePage {
         });
     }    
     takout() {
-        CART.total = 0;
-        CART.shipping = 0;
-        CART.items = [];
-        if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
-            CART.Minimum = this.navParams.get('delivery_minimum_order');
+        if (this.isOpen) {
+            CART.total = 0;
+            CART.shipping = 0;
+            CART.items = [];
+            if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
+                CART.Minimum = this.navParams.get('delivery_minimum_order');
+            }
+            if (this.navParams.get('delivery_fee') != undefined || this.navParams.get('delivery_fee') != null) {
+                CART.shipping = this.navParams.get('delivery_fee');
+            }
+            this.navigateTo('TakeoutPage', this.navParams);
         }
-        if (this.navParams.get('delivery_fee') != undefined || this.navParams.get('delivery_fee') != null) {
-            CART.shipping = this.navParams.get('delivery_fee');
+        else {
+            swal('Closed', 'Sorry! This restaurant is closed now', 'error');       
         }
-        this.navigateTo('TakeoutPage', this.navParams);
     }
     delivery() {
-        CART.total = 0;
-        CART.shipping = 0;
-        if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
-            CART.Minimum = this.navParams.get('delivery_minimum_order');
+        if (this.isOpen) {
+            CART.total = 0;
+            CART.shipping = 0;
+            if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
+                CART.Minimum = this.navParams.get('delivery_minimum_order');
+            }
+            if (this.navParams.get('delivery_fee') != undefined || this.navParams.get('delivery_fee') != null) {
+                CART.shipping = this.navParams.get('delivery_fee');
+            }
+            CART.items = [];
+            this.navigateTo('DeliveryPage', this.navParams);
         }
-        if (this.navParams.get('delivery_fee') != undefined || this.navParams.get('delivery_fee') != null) {
-            CART.shipping = this.navParams.get('delivery_fee');
+        else {
+            swal('Closed', 'Sorry! This restaurant is closed now', 'error');
         }
-        CART.items = [];
-        this.navigateTo('DeliveryPage', this.navParams);
     }
     back() {
         this.navigateTo('RestaurentPage');

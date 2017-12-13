@@ -41,7 +41,7 @@
                     <address>{{ address }}
                     </address>
      <span *ngIf="timeTable"><b><u>Opening hours</u></b></span>
-     <div *ngIf="timeTable==null || timeTable.length==0">Open Now-11AM to 10PM</div>
+     <div *ngIf="timeTable==null || timeTable.length==0">Closed Now</div>
      <div *ngFor="let tt of timeTable">
          <span *ngIf="tt.Day.toLowerCase()==today.toLowerCase()">{{tt.Day}} : {{tt.Start}} - {{tt.End}}</span>
      </div>
