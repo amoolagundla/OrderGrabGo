@@ -1,5 +1,8 @@
 page-checkout {
  .checkoutitems ion-item { padding-left:0px;}
+ .reserve_confirm { text-align: center; background:#fff; color:red; padding:15px; display: block;text-transform:uppercase;text-decoration:underline}
+    .orderconfirm { text-align: center; background:#fff; color:#000; padding:15px; display: block;font-weight:bold}
+    .orderhead { background:#b92356; color:#fff; padding:10px; display: block;}
  .checkhead { padding:5px 0px;     background: #424343;
     color: #fff;     border: 1px solid #424343;
     border-bottom: 0px;}
@@ -10,5 +13,16 @@ page-checkout {
 		font-size:100%;
 		text-align:left;
 	}
-	 
+	 .label{
+         /*font-size:100% !important;*/
+		text-align:left !important;
+        color:#45818e;
+	 }
+     .total{
+             background: #009e0f;
+    padding: 12px;
+    text-align: center;
+    color: #fff;
+    margin:0 -15px;
+     }
 }

@@ -60,7 +60,31 @@ export class RestaurantDetailPage extends BasePage {
         if (this.timeTable == null || this.timeTable.length == 0) {
             this.isOpen = false;
         }
-        
+        else {
+            for (let item of this.navParams.get('time_table')) {
+                if (item.Day.toLowerCase() == this.today.toLowerCase()) {
+                    if (item.isClosed) {
+                        this.isOpen = false;
+                    }
+                    else {
+                        var currhours = new Date().getHours();
+                        var currMinutes = new Date().getMinutes();
+                        if (currhours < item.startTimeHours) {
+                            this.isOpen = false;
+                        }
+                        else if (currhours == item.startTimeHours && currMinutes < item.startTimeMins) {
+                            this.isOpen = false;
+                        }
+                        else if (currhours > item.endTimeHours) {
+                            this.isOpen = false;
+                        }
+                        else if (currhours == item.endTimeHours && currMinutes > item.endTimeMins) {
+                            this.isOpen = false;
+                        }
+                    }
+                }
+            }
+        }
     }
     enableMenuSwipe() {
         return true;

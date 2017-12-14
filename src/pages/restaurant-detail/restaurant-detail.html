@@ -43,7 +43,14 @@
      <span *ngIf="timeTable"><b><u>Opening hours</u></b></span>
      <div *ngIf="timeTable==null || timeTable.length==0">Closed Now</div>
      <div *ngFor="let tt of timeTable">
-         <span *ngIf="tt.Day.toLowerCase()==today.toLowerCase()">{{tt.Day}} : {{tt.Start}} - {{tt.End}}</span>
+         <div *ngIf="tt.Day.toLowerCase()==today.toLowerCase()">
+             <div *ngIf="!tt.isClosed">
+                 {{tt.Day}} : {{tt.Start}} - {{tt.End}}
+             </div>
+             <div *ngIf="tt.isClosed">
+                 Closed Now
+             </div>
+         </div>
      </div>
                     <address><b>Min order amount : ${{min_amt}}</b></address>
                 </div>

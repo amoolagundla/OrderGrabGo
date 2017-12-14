@@ -69,5 +69,8 @@ export class MessageDetailsPage extends BasePage {
 
     
   }
-
+  home() {
+      
+      this.setRoot("DashPage");
+  }
 }

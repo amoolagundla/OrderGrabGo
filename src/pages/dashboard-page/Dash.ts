@@ -44,6 +44,7 @@ export class DashPage extends BasePage {
         if (data.FirstName != undefined) {
           this.user = data;
           this.userInfo = this.user;
+          
           this.firstName = "Hello " + this.userInfo.FirstName;
         }
       }, err => {

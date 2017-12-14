@@ -35,4 +35,7 @@ public orders:any;
   {
     this.navigateTo('MessageDetailsPage', {id: id});
   }
+  home() {
+      this.setRoot("DashPage");
+  }
 }

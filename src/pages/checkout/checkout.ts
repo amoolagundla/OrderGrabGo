@@ -26,7 +26,10 @@ export class CheckoutPage extends BasePage {
   public total: any;
   public user: any;
   public model: any;
+  public cart: any;
   pageName: string = "";
+  timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
+  
   code:any;
   constructor(
     injector: Injector,
@@ -34,8 +37,10 @@ export class CheckoutPage extends BasePage {
     private service: ValuesService,
     public geolocation: Geolocation
   ) {
-    super(injector);
-    this.total = CART.total;
+      super(injector);
+      this.cart = CART;
+      this.total = CART.total;
+    
     this.sharedData.UserInfo.subscribe(data => {
       if (data != undefined && data.FirstName != undefined) {
         this.user = data;
@@ -78,10 +83,14 @@ export class CheckoutPage extends BasePage {
         ) {
           orders.LookupOrderTypeId = 10;
           orders.OrderAddress.address1 = model.Address;
+          orders.DeliveryTime = new Date(model.DeliveryDate + " " + model.DeliveryTime)
+          orders.Time = model.DeliveryTime;
           time = "Your Delivery time " + model.DeliveryTime;
         } else {
           orders.LookupOrderTypeId = 8;
           orders.OrderAddress.address1 = model.Location;
+          orders.PickupTime = new Date(model.PickupDate + " " + model.PickupTime)
+          orders.Time = model.PickupTime;
           time = "Your Pickup time " + model.PickupTime;
         }
         orders.Instructions = model.Special;

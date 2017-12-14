@@ -2535,6 +2535,10 @@ export module App {
         OrderId: number;
         CompletionDate: Date;
         CreatedDate: Date;
+        ReservationTime: Date;
+        PickupTime: Date;
+        DeliveryTime: Date;
+        ReservationPeopleCount: number;
         CreatedUserId: string;
         CustomerId: number;
         Instructions: string;
@@ -2546,6 +2550,7 @@ export module App {
         ModifiedUserId: string;
         OrderTotal: number;
         ResturantId: number;
+        Time: string;
         OrderAddress: OrderAddress;
         Customer: CustomerMaster;
         CustomerMaster: CustomerMaster;
