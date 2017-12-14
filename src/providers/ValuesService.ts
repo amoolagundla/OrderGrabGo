@@ -151,4 +151,8 @@ export class ValuesService {
       .get("api/ProductsApi/GetCurrentOrderHistory/" )
       .map((response: Response) => response.json());
   }
+  getCode()
+  {
+    return this.http.get('api/FacebookApi/GetCode') .map((response: Response) => response.json());
+  }
 }

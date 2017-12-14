@@ -37,7 +37,6 @@ import {
 import { AppVersion } from "@ionic-native/app-version";
 import { HeaderColor } from "@ionic-native/header-color";
 import { GoogleAnalytics } from "@ionic-native/google-analytics";
-
 import { BrowserTab } from "@ionic-native/browser-tab";
 import { IonicStorageModule } from "@ionic/storage";
 import { Ng2ImgFallbackModule } from "ng2-img-fallback";

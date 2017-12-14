@@ -112,6 +112,12 @@ export class MyApp {
       }
     });
 
+    this.googleAnalytics.startTrackerWithId('UA-111274719-1');
+    this.googleAnalytics.trackEvent('', 'App opened');
+    this.googleAnalytics.debugMode();
+    this.googleAnalytics.enableUncaughtExceptionReporting(true);
+
+
     this.translate.setDefaultLang(AppConfig.DEFAULT_LANG);
 
     this.storage.lang
