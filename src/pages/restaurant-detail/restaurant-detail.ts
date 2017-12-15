@@ -46,8 +46,8 @@ export class RestaurantDetailPage extends BasePage {
             }
         });
         this.hasTablebooking = this.navParams.get('has_table_booking');
-        this.hastakeout = this.navParams.get('is_delivering_now');
-        this.hasdelivery = this.navParams.get('has_online_delivery');
+        this.hastakeout = this.navParams.get('has_online_delivery');
+        this.hasdelivery = this.navParams.get('is_delivering_now');
         this.featuredImage = this.navParams.get('featured_image');
         this.restaurantImages = this.navParams.get('RestaurantImages');
         if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
@@ -62,6 +62,7 @@ export class RestaurantDetailPage extends BasePage {
         }
         else {
             for (let item of this.navParams.get('time_table')) {
+                
                 if (item.Day.toLowerCase() == this.today.toLowerCase()) {
                     if (item.isClosed) {
                         this.isOpen = false;
