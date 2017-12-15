@@ -21,7 +21,9 @@ export class OrderconfirmationPage extends BasePage{
     OrderID: string = '';
     pageName: string = '';restLocation:string='';
     time:any;
-    estimateTime:any;
+    estimateTime: any;
+    picktime: string = '';
+    deliverytime: string = '';
     constructor(injector: Injector,private launchNavigator: LaunchNavigator,public storage: Storage) {
     super(injector);       
         this.cart = CART;
@@ -31,7 +33,30 @@ export class OrderconfirmationPage extends BasePage{
         this.OrderID = this.navParams.get('orderId');
         this.restLocation = this.navParams.get('location');
         this.time=this.navParams.get('reservedTime');
-        
+        if (this.pageName == 'Pick') {
+            var ptimeHour = Number(this.model.PickupTime.split(':')[0]);
+            var ptimeMin = Number(this.model.PickupTime.split(':')[1]);
+            var pmin = ptimeMin.toString();
+            if (ptimeMin < 10) {
+                pmin = "0" + ptimeMin.toString();
+            }
+            if (ptimeHour > 12) {
+                ptimeHour = ptimeHour - 12;
+                this.picktime += ptimeHour.toString() + ":" +pmin.toString() +" PM";
+            }
+        }
+        if (this.pageName == 'Deliver') {
+            var dtimeHour = Number(this.model.DeliveryTime.split(':')[0]);
+            var dtimeMin = Number(this.model.DeliveryTime.split(':')[1]);
+            var dmin = dtimeMin.toString();
+            if (ptimeMin < 10) {
+                dmin = "0" + dtimeMin.toString();
+            }
+            if (dtimeHour > 12) {
+                dtimeHour = dtimeHour - 12;
+                this.deliverytime += dtimeHour.toString() + ":" + dmin.toString() + " PM";
+            }
+        }
   }
         enableMenuSwipe() {
             return true;

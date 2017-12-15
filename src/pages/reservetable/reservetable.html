@@ -22,11 +22,19 @@
 
 <ion-content class="reserve-cont">
 <ion-card class="headinside">
-    <img src="{{featuredImage}}"/>
+    <!--<img src="{{featuredImage}}"/>-->
+    <img *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}" />
+    <ion-slides *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
+        <ion-slide *ngFor="let slide of restaurantImages">
+            <img style="width:100%;" src="data:image/png;base64,{{slide.Image}}">
+        </ion-slide>
+    </ion-slides>
   </ion-card>
     <form #f="ngForm" padding novalidate (ngSubmit)="save(f.value, f.valid,$event)">
         <div class="form-group">
-
+            <div class="cols-sm-10" *ngIf="Cancellationfee !=''" style="text-align:center;color:red;font-weight:bold">
+                Cancellation Fee: ${{Cancellationfee}}
+            </div>
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
@@ -36,6 +44,18 @@
                 <!--<small [hidden]="Location.valid || (Location.pristine && !f.submitted)" class="text-danger">
                 Location is required .
             </small>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="cols-sm-10">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
+                    <input type="tel" class="form-control" name="PhoneNumber" [ngModel]="user.PhoneNumber" placeholder="Phone Number"
+                           required #PhoneNumber="ngModel">
+                </div>
+                <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">
+                    PhoneNumber is required .
+                </small>
             </div>
         </div>
         <div class="form-group">
@@ -68,8 +88,13 @@
 
             <div class="cols-sm-10">
                 <div class="input-group">
+                    <!--<ion-item>
+                        <ion-label >Number</ion-label>
+                        <ion-input type="number" #Numb="ngModel" (ngModel)="number" required="true" clearInput=true min="{{minGuest}}" max="5"></ion-input>
+                    </ion-item>-->
                     <span class="input-group-addon"><i class="fa fa-users fa-lg" aria-hidden="true"></i></span>
-                    <select [ngModel]="guests" class="form-control" name="Guests" required #Guests="ngModel">
+                    <input  type="number"  [ngModel]="guests" class="form-control" placeholder="No of Guests" min="{{minGuest}}" name="Guests" required #Guests="ngModel" />
+                    <!--<select [ngModel]="guests" class="form-control" name="Guests" required #Guests="ngModel">
                         <option value="" disabled selected>No of Guests</option>
                         <option>1</option>
                         <option>2</option>
@@ -81,11 +106,12 @@
                         <option>8</option>
                         <option>9</option>
                         <option>10</option>
-                    </select>
+                    </select>-->
                 </div>
                 <small [hidden]="Guests.valid || (Guests.pristine && !f.submitted)" class="text-danger">
                     No of guests is required .
                 </small>
+                
             </div>
         </div>
         <div class="form-group">

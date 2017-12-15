@@ -1,15 +1,20 @@
 page-reservetable {
-
 .toolbar-background-md{ background:rgba(0, 0, 0, 0.41) !important; border:0px;}
 .toolbar-ios-danger .toolbar-background-ios{ background:rgba(0, 0, 0, 0.41) !important; border:0px;}
 .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before { display:none;}
 .scroll-content { margin:0px !important;}
-.headinside { margin:0px !important; width:100% !important;}
+.headinside {height: 249px; margin:0px !important; width:100% !important;}
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default { color:#fff !important;}
 .headinside img { width:100%;}
 .reserve-cont ion-label{
 	text-align:left !important;
 	font-size:100% !important;
+}
+ .fa-lg{
+        width:18px !important;
+    }
+ion-label{
+color:#000 !important;
 }
 .btncenter{
   display: -webkit-box;

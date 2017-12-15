@@ -1,6 +1,8 @@
-import { Component, Injector } from '@angular/core';
+import { Component, Injector, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
+import { ValuesService } from '../../providers/ValuesService';
+import swal from 'sweetalert';
 /**
  * Generated class for the ForgotpasswordPage page.
  *
@@ -13,8 +15,10 @@ import { BasePage } from '../base-page/base-page';
   templateUrl: 'forgotpassword.html',
 })
 export class ForgotpasswordPage extends BasePage  {
-
-    constructor(injector: Injector) {
+    @ViewChild("f") form;
+    email: string = '';
+    emailverified: boolean = false;
+    constructor(injector: Injector, private valuesService: ValuesService,) {
         super(injector);
   }
     enableMenuSwipe() {
@@ -23,7 +27,20 @@ export class ForgotpasswordPage extends BasePage  {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotpasswordPage');
   }
-  onSubmit() {
-
+  onSubmit(model: any, isValid: boolean, event: Event) {
+      if (isValid) {
+          this.showLoadingView();
+          this.valuesService.forgotpassword(model.Email).subscribe((data: any) => {
+              this.emailverified = true;
+              this.showContentView();
+              this.onRefreshComplete();
+          });
+      }
+      else {
+          swal('Required', 'Email is required!', 'error');
+      }
+  }
+  login() {
+      this.setRoot('SignInPage');
   }
 }

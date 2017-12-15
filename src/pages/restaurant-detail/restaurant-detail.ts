@@ -45,6 +45,7 @@ export class RestaurantDetailPage extends BasePage {
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
+        
         this.hasTablebooking = this.navParams.get('has_table_booking');
         this.hastakeout = this.navParams.get('has_online_delivery');
         this.hasdelivery = this.navParams.get('is_delivering_now');

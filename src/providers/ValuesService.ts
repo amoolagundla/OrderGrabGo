@@ -100,7 +100,11 @@ export class ValuesService {
       .post("api/PushTokenApi/SaveToken", JSON.stringify(tokens))
       .map((response: Response) => response.json());
   }
-
+  forgotpassword(email: any) {
+      return this.http
+          .get("api/ProductsApi/ForgotPassword/" + email)
+          .map((response: Response) => response.json());
+  }
   SaveOrders(Orders: App.Orders) {
     var ds = JSON.stringify(Orders);
 
