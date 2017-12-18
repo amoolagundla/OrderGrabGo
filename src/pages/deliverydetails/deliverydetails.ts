@@ -36,6 +36,7 @@ export class DeliverydetailsPage extends BasePage {
   latitude: number = 0;
   longitude: number = 0;
   geo: any;
+  public minDate:any;
   deliverydate: Date = new Date();
   deliveryTime: any = this.deliverydate.getHours();
   service = new google.maps.places.AutocompleteService();
@@ -54,6 +55,7 @@ export class DeliverydetailsPage extends BasePage {
           60000
     );
     console.log(this.deliveryTime);
+    this.minDate=new Date().toJSON().split('T')[0];
     this._shared.UserInfo.subscribe(data => {
         
       if (data != undefined && data.FirstName != undefined) {

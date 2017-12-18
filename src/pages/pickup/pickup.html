@@ -31,7 +31,7 @@
                     <ion-datetime displayFormat="MM/DD/YYYY" min="{{mindate}}" name="PickupDate" max="{{maxdate}}" [ngModel]="pickdate" #PickupDate="ngModel"></ion-datetime>-->
                     <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
                     
-                        <input type="date" class="form-control" name="PickupDate" [ngModel]="pickdate | date:'yyyy-MM-dd'" placeholder="Pickup Date"
+                        <input type="date" class="form-control" name="PickupDate" [ngModel]="pickdate | date:'yyyy-MM-dd'" [min]="minPickupDate" placeholder="Pickup Date"
                                required #PickupDate="ngModel">
 </div>
                 <small [hidden]="PickupDate.valid || (PickupDate.pristine && !f.submitted)" class="text-danger">

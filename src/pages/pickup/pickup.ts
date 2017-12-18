@@ -18,6 +18,7 @@ import swal from 'sweetalert';
 export class PickupPage extends BasePage {
     public location: string = '';
     public user: any;
+    public minPickupDate:any;
     pickdate: Date = new Date(); special: string = '';
     pickupTime: any = this.pickdate.getHours();
     timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
@@ -39,6 +40,7 @@ export class PickupPage extends BasePage {
         this.storage.getAddress().then((data) => {
             this.location = data;
         })
+        this.minPickupDate=new Date().toJSON().split('T')[0];;
         this.timeTable = this.navParams.get("restuarant").data.time_table;
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var tdate = new Date();
@@ -87,6 +89,10 @@ checkout(){
             
             var selectedTimeHour = model.PickupTime.split(':')[0];
             var selectedTimeMin = model.PickupTime.split(':')[1];
+            if(Number(selectedTimeHour) >12)
+            {
+                selectedTimeHour= Number(selectedTimeHour)-12;
+            }
             var isopened = true;
             if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
                 if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {

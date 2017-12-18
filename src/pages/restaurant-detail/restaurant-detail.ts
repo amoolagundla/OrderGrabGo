@@ -75,6 +75,10 @@ export class RestaurantDetailPage extends BasePage {
                     else {
                         var currhours = new Date().getHours();
                         var currMinutes = new Date().getMinutes();
+                    if(currhours>12)
+                    {
+                        currhours=currhours-12;
+                    }
                         if (currhours < item.startTimeHours) {
                             this.isOpen = false;
                         }
