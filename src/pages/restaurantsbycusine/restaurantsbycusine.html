@@ -17,6 +17,11 @@
 
 <ion-content padding>
     <div #map id="map"></div>
+    <button style="width:100%;background:green;color:#fff" class="btn btn-lg" (click)="watsoundsgood();">what sounds good?</button>
+    <div class="search">
+        <ion-searchbar color="dark" debounce="500"
+                       placeholder="zipcode search" [(ngModel)]="searchlocation" (click)="filter()"></ion-searchbar>
+    </div>
     <ion-card *ngFor="let place of places">
         <ion-item>
             <ion-row style="margin:0px;">

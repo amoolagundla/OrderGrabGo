@@ -1,10 +1,12 @@
 import { Component, Injector,ViewChild,ElementRef } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, AlertController, ModalController } from 'ionic-angular';
 import { BasePage } from "../base-page/base-page";
 import { Geolocation } from "@ionic-native/geolocation";
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
 import swal from 'sweetalert';
+import { ValuesService } from "../../providers/ValuesService";
+import { LocationsearchPage } from "../locationsearch/locationsearch";
 import {
     GoogleMap,
     GoogleMapsEvent,
@@ -32,9 +34,13 @@ export class RestaurantsbycusinePage extends BasePage{
     @ViewChild("map") mapElement: ElementRef;
     map: any;
     private marker: Marker;
-    constructor(injector: Injector, public geolocation: Geolocation, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
+    realPlaces: any;
+    public searchlocation: any = "";
+    public cuisines: any;
+    constructor(injector: Injector, public geolocation: Geolocation, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
         super(injector);
         this.places = this.navParams.data;
+        this.realPlaces = this.navParams.data;
   }
     enableMenuSwipe() {
         return true;
@@ -120,4 +126,79 @@ export class RestaurantsbycusinePage extends BasePage{
               );
       });
   } 
+
+  watsoundsgood() {
+      this.showLoadingView();
+      this.valuesService
+          .GetCusines()
+          .subscribe(
+          (data: any) => {
+              this.cuisines = data;
+              let alert = this.atrCtrl.create();
+              alert.setTitle("What sounds good?");
+              for (var i = 0; i < this.cuisines.length; i++) {
+                  alert.addInput({
+                      type: "checkbox",
+                      label: this.cuisines[i].LookupCodeName,
+                      name: "input-italian",
+                      id: "input-italian",
+                      value: this.cuisines[i].LookupCodeId
+                  });
+              }
+              this.showContentView();
+              this.onRefreshComplete();
+              alert.addButton("Cancel");
+              alert.addButton({
+                  text: "Apply",
+                  handler: data => {
+                      this.showLoadingView();
+                      this.valuesService
+                          .GetCusinesRestaurant(
+                          data
+                          )
+                          .subscribe((data: any) => {
+                              this.places = data.restaurants;
+                              this.realPlaces = data.restaurants;
+                              this.loadMap();
+                              this.showContentView();
+                              this.onRefreshComplete();
+                          });
+                  }
+              });
+
+              alert.present();
+
+              this.onRefreshComplete();
+          },
+          error => {
+              this.showContentView();
+              swal(
+                  "Not Available",
+                  "Sorry! The selected choice was not available in this resturant",
+                  "error"
+              );
+          }
+          );
+  }
+
+  filter() {
+      let modal = this.modlCtrl.create(LocationsearchPage);
+      let me = this;
+      modal.onDidDismiss(data => {
+          if (data != undefined) {
+              this.showLoadingView();
+              this.searchlocation = data.location;
+              this.valuesService
+                  .GetPlacesWithZomato(data.lat, data.lng)
+                  .subscribe((data: any) => {
+                      this.places = data.restaurants;
+                      this.realPlaces = data.restaurants;
+                      this.loadMap();
+                      this.showContentView();
+                      this.onRefreshComplete();
+                  });
+          }
+      });
+      modal.present();
+  }
 }

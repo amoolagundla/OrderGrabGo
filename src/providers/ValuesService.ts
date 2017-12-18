@@ -102,7 +102,7 @@ export class ValuesService {
   }
   forgotpassword(email: any) {
       return this.http
-          .get("api/ProductsApi/ForgotPassword/" + email)
+          .get("http://boundsfree.com/api/RestPasswordAPI?email=" + email)
           .map((response: Response) => response.json());
   }
   SaveOrders(Orders: App.Orders) {

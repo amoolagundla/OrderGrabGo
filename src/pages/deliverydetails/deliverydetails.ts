@@ -36,7 +36,7 @@ export class DeliverydetailsPage extends BasePage {
   latitude: number = 0;
   longitude: number = 0;
   geo: any;
-  public minDate:any;
+  //public minDate:any;
   deliverydate: Date = new Date();
   deliveryTime: any = this.deliverydate.getHours();
   service = new google.maps.places.AutocompleteService();

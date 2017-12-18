@@ -57,12 +57,21 @@ getHeaders(): Headers {
 }
 
 
-get(url: string): Observable<any> {   
-    return this.getApiToken().flatMap(head => {         
-       return this.http.get(this.baseurl+url , {
-      headers: head
-    });
-    });
+    get(url: string): Observable<any> {   
+        if (url.indexOf('RestPasswordAPI') > -1) {
+            return this.getApiToken().flatMap(head => {
+                return this.http.get(url, {
+                    headers: head
+                });
+            });
+        }
+        else {
+            return this.getApiToken().flatMap(head => {
+                return this.http.get(this.baseurl + url, {
+                    headers: head
+                });
+            });
+        }
 }
 
   delete(url:any) {
