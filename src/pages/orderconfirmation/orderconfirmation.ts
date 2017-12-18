@@ -62,7 +62,7 @@ export class OrderconfirmationPage extends BasePage{
             return true;
         }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OrderconfirmationPage');
+    
   }
   opentrack() {
       

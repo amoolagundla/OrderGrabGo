@@ -29,9 +29,10 @@ export class DeliverydetailsPage extends BasePage {
   public user: any;
   public address: string = "";
   public firstName: string = "";
+ 
   autocompleteItems;
   autocomplete;
-
+  minDate:any;
   latitude: number = 0;
   longitude: number = 0;
   geo: any;
@@ -67,7 +68,7 @@ export class DeliverydetailsPage extends BasePage {
     this.storage.getAddress().then(data => {
       this.address = data;
     });
-    console.log(this.address);
+   
     this.autocompleteItems = [];
     this.timeTable = this.navParams.get("restuarant").data.time_table;
     var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -100,12 +101,28 @@ export class DeliverydetailsPage extends BasePage {
                 this.max = endhour + ":" + endmin;
             }
         }
+        
+     this.minDate = new Date();
+        var dd =  this.minDate .getDate();
+        var mm =  this.minDate .getMonth()+1; //January is 0!
+        var yyyy =  this.minDate .getFullYear();
+         if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+        
+            this.minDate  = yyyy+'-'+mm+'-'+dd;
+       
     }
   }
   enableMenuSwipe() {
     return true;
   }
-  ionViewDidLoad() {}
+  ionViewDidLoad() {
+   
+  }
 
   showAddressModal() {
     let modal = this.modlCtrl.create(AddressdetailPage);

@@ -17,6 +17,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'message-details.html',
 })
 export class MessageDetailsPage extends BasePage {
+    public time:any;
     public orderStatus: any;
     public orderdetails: any;
     public orders: any; public total: string = '';
@@ -36,6 +37,7 @@ export class MessageDetailsPage extends BasePage {
            
     }, error => this.showContentView());
     this.valuesService.GetOrderDetail(this.navParams.get('id')).subscribe((data: any) => {
+        this.time=data.OrderTime;
         if (data.order.LookupOrderTypeId == 69) {
             this.isReservation = true;
             this.name = data.order.Resturant.RestaurantName;

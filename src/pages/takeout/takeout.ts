@@ -32,7 +32,7 @@ export class TakeoutPage extends BasePage {
         this.name = this.navParams.get('name');
         console.log('ionViewDidLoad TakeoutPage');
        
-         this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
+         this.valuesService.FindCuisineMenu(this.navParams.get('id'),true,false).subscribe((data: App.ProductMenu) => {
 
         this.data = data.ProductMaster;
         this.showContentView();

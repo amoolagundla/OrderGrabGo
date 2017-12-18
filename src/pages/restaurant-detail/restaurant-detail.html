@@ -21,10 +21,10 @@
 </ion-header>
 
 <ion-content >
-<ion-card class="headinside">
-    <img *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}"/>
+<ion-card  class="headinside">
+    <img  *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}"/>
    <!-- <img *ngIf="restaurantImages && restaurantImages.length > 0" src="data:image/png;base64,{{restaurantImages[0].Image}}" />-->
-    <ion-slides *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
+    <ion-slides   *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
         <ion-slide *ngFor="let slide of restaurantImages">
             <img style="width:100%;" src="data:image/png;base64,{{slide.Image}}">
         </ion-slide>
@@ -33,9 +33,10 @@
     <!-- <div class="card-subtitle">{{name}}</div> -->
   </ion-card>
 
- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                   
+ <div  id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    
                 </div>
+    <!-- <div > <iframe [src]='video' frameborder="0" gesture="media" ></iframe>      </div>             -->
  <div class="address-section text-center">
                     <h1>{{name}}</h1>
                     <address>{{ address }}

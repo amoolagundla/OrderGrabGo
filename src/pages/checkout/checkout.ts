@@ -57,7 +57,7 @@ export class CheckoutPage extends BasePage {
     return true;
   }
   ionViewDidLoad() {
-    console.log("ionViewDidLoad CheckoutPage");
+    
   }
   pay() {
     var resparams = this.navParams.get("restuarant").location;
@@ -121,6 +121,19 @@ export class CheckoutPage extends BasePage {
         this.service.SaveOrders(orders).subscribe(
           (data: any) => {
             console.log(data);
+
+
+            if (
+              this.navParams.get("page") != undefined &&
+              this.navParams.get("page") == "Deliver"
+            ) {
+            
+              time = "Your Delivery time " + data.Time;
+            } else {            
+              time = "Your Pickup time " + data.Time;
+            }
+
+
             let orderId = data.OrderId;
             var dat = {
               model: this.navParams.get("model"),

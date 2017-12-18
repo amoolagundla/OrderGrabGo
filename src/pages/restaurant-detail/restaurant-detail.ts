@@ -6,6 +6,7 @@ import { CART } from '../cart/cartitems';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
 import swal from 'sweetalert';
+import {DomSanitizer } from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 /**
  * Generated class for the RestaurantDetailPage page.
@@ -29,6 +30,8 @@ export class RestaurantDetailPage extends BasePage {
         pager: true
     };
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
+    public video:any;
+    public ShowVideo:boolean=false;
     //public youtube: YoutubeVideoPlayer
     constructor(
         injector: Injector,
@@ -36,6 +39,7 @@ export class RestaurantDetailPage extends BasePage {
          private launchNavigator: LaunchNavigator,
          public youtube: YoutubeVideoPlayer,
         public storage: Storage,
+        public sanitizer : DomSanitizer
         ) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
@@ -45,7 +49,7 @@ export class RestaurantDetailPage extends BasePage {
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
-        
+        this.video=  this.sanitizer.bypassSecurityTrustResourceUrl(this.navParams.get('Video_Link'));
         this.hasTablebooking = this.navParams.get('has_table_booking');
         this.hastakeout = this.navParams.get('has_online_delivery');
         this.hasdelivery = this.navParams.get('is_delivering_now');
@@ -163,14 +167,9 @@ export class RestaurantDetailPage extends BasePage {
     }
     openvideo() {
 
-        var url = this.navParams.get('Video_Link');
-        console.log(url);
-        if (url == null ) {
-            swal('Not Available', 'Video was not available for this resturant', 'error');       
-        }
-        else {
-            this.youtube.openVideo(url);
-        }
+        this.ShowVideo=true;
     }
-    
+    VideoURL() {
+        return this.sanitizer.bypassSecurityTrustUrl(this.video);
+      }
 }

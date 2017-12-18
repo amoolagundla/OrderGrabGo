@@ -62,7 +62,7 @@ export class DeliveryPage extends BasePage{
         //        Price: 2
         //    }];
         
-        this.valuesService.FindCuisineMenu(this.navParams.get('id')).subscribe((data: App.ProductMenu) => {
+        this.valuesService.FindCuisineMenu(this.navParams.get('id'),false,true).subscribe((data: App.ProductMenu) => {
             this.data = data.ProductMaster;
             this.showContentView();
             this.onRefreshComplete();

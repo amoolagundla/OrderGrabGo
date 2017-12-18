@@ -43,9 +43,9 @@ export class ValuesService {
       .map((response: Response) => response.json());
     return resdata;
   }
-  FindCuisineMenu(id: any) {
+  FindCuisineMenu(id: any,isTakeout:any,isDelivery:any) {
     return this.http
-      .get("api/ProductsApi/GetMenu/" + id)
+      .get("api/ProductsApi/GetMenu/" + id +"/"+isTakeout+"/"+isDelivery)
       .map((response: Response) => response.json());
   }
 
