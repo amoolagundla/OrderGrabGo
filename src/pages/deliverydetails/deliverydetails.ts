@@ -144,6 +144,10 @@ export class DeliverydetailsPage extends BasePage {
       if (isValid) {
           var selectedTimeHour = model.DeliveryTime.split(':')[0];
           var selectedTimeMin = model.DeliveryTime.split(':')[1];
+          if(Number(selectedTimeHour) >12)
+          {
+              selectedTimeHour= Number(selectedTimeHour)-12;
+          }
           var isopened = true;
           if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
               if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
