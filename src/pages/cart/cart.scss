@@ -10,7 +10,11 @@ page-cart {
       }
     }
   }
-
+    ion-label{
+        color:#000 !important;
+        font-size:100%;
+        text-align:left !important;
+    }
   .price {
     line-height: 3em;
   }

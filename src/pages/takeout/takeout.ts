@@ -18,11 +18,12 @@ import { CART } from '../cart/cartitems';
 export class TakeoutPage extends BasePage {
     public firstName: string = 'OrderGrabGo';
     public name: string;
-    public data: any; public pageDetails: any; featuredImage: string = '';
+    public data: any; public pageDetails: any; featuredImage: string = ''; restaurantImages: any;
     constructor(injector: Injector, private valuesService: ValuesService,
         private altController: AlertController) {
         super(injector);
         this.featuredImage = this.navParams.get('featured_image');
+        this.restaurantImages = this.navParams.get('RestaurantImages');
     }
     enableMenuSwipe() {
         return true;

@@ -63,7 +63,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
-                    <input type="date" class="form-control" name="ReservationDate" [ngModel]="reservationdate | date:'yyyy-MM-dd'" placeholder="Reservation Date"
+                    <input type="date" class="form-control" name="ReservationDate" [ngModel]="reservationdate | date:'yyyy-MM-dd'" [min]="minPickupDate" placeholder="Reservation Date"
                            required #ReservationDate="ngModel">
                 </div>
                 <small [hidden]="ReservationDate.valid || (ReservationDate.pristine && !f.submitted)" class="text-danger">

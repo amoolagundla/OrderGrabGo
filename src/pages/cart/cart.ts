@@ -17,7 +17,7 @@ import swal from 'sweetalert';
   templateUrl: 'cart.html',
 })
 export class CartPage extends BasePage {
-    public cart: any;
+    public cart: any; taxAmt: any = 0.00;
     constructor(injector: Injector, private decimalPipe: DecimalPipe, private altController: AlertController) {
         super(injector);       
         this.cart = CART;

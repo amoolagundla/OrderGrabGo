@@ -79,10 +79,10 @@ export class DeliverydetailsPage extends BasePage {
     if (this.navParams.get("restuarant").data.time_table != undefined && this.navParams.get("restuarant").data.time_table != null) {
         for (let item of this.navParams.get("restuarant").data.time_table) {
             if (item.Day.toLowerCase() == this.today.toLowerCase()) {
-                this.shours = item.startTimeHours;
-                this.smins = item.startTimeMins;
-                this.ehours = item.endTimeHours;
-                this.emins = item.endTimeMins;
+                this.shours = Number(item.startTime.split(':')[0]);
+                this.smins = Number(item.startTime.split(':')[1]);
+                this.ehours = Number(item.endTime.split(':')[0]);
+                this.emins = Number(item.endTime.split(':')[1]);
                 var starthour = item.startTimeHours.toString();
                 var startmin = item.startTimeMins.toString();
                 if (item.startTimeHours < 10) {
@@ -144,10 +144,10 @@ export class DeliverydetailsPage extends BasePage {
       if (isValid) {
           var selectedTimeHour = model.DeliveryTime.split(':')[0];
           var selectedTimeMin = model.DeliveryTime.split(':')[1];
-          if(Number(selectedTimeHour) >12)
-          {
-              selectedTimeHour= Number(selectedTimeHour)-12;
-          }
+          //if(Number(selectedTimeHour) >12)
+          //{
+          //    selectedTimeHour= Number(selectedTimeHour)-12;
+          //}
           var isopened = true;
           if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
               if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {

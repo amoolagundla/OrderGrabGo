@@ -22,6 +22,7 @@ export class ReservetablePage extends BasePage{
     public user: any;
     special: string = '';
     guests: string = '';
+    public minPickupDate: any;
     public name: string; public firstName: string; location: string = ''; featuredImage: string = ''; minGuest: number = 0;
     Cancellationfee: string = '';
     restaurantImages: any;
@@ -46,6 +47,7 @@ export class ReservetablePage extends BasePage{
                 timeHours = timeHours + 1;
             }
         }
+        this.minPickupDate = new Date().toJSON().split('T')[0];
         this.reservationtime = timeHours.toString() + ":" + timeMin.toString();
         if (this.navParams.get('ReservationCancellationFee') != undefined && this.navParams.get('ReservationCancellationFee') != null)
             this.Cancellationfee = this.navParams.get('ReservationCancellationFee');
@@ -61,10 +63,10 @@ export class ReservetablePage extends BasePage{
         this.today = days[tdate.getDay()];
         for (let item of this.navParams.get('time_table')) {
             if (item.Day.toLowerCase() == this.today.toLowerCase()) {
-                this.shours = item.startTimeHours;
-                this.smins = item.startTimeMins;
-                this.ehours = item.endTimeHours;
-                this.emins = item.endTimeMins;
+                this.shours = Number(item.startTime.split(':')[0]);
+                this.smins = Number(item.startTime.split(':')[1]);
+                this.ehours = Number(item.endTime.split(':')[0]);
+                this.emins = Number(item.endTime.split(':')[1]);
                 var starthour = item.startTimeHours.toString();
                 var startmin = item.startTimeMins.toString();
                 if (item.startTimeHours < 10) {
@@ -103,10 +105,10 @@ export class ReservetablePage extends BasePage{
                 var selectedTimeHour = model.ReservationTime.split(':')[0];
                 var selectedTimeMin = model.ReservationTime.split(':')[1];
                 var isopened = true;
-                if(Number(selectedTimeHour)>12)
-                {
-                    selectedTimeHour=Number(selectedTimeHour)-12;
-                }
+                //if(Number(selectedTimeHour)>12)
+                //{
+                //    selectedTimeHour=Number(selectedTimeHour)-12;
+                //}
                 
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
                     if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {

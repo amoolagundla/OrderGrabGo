@@ -50,7 +50,14 @@ export class RestaurantDetailPage extends BasePage {
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
-        this.video=  this.sanitizer.bypassSecurityTrustResourceUrl(this.navParams.get('Video_Link'));
+        if (this.navParams.get('Video_Link') != null && this.navParams.get('Video_Link') !="")
+        {
+            this.video = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.navParams.get('Video_Link'));
+        }
+        else {
+            this.video = "";
+        }
+       //this.video=  this.sanitizer.bypassSecurityTrustResourceUrl(this.navParams.get('Video_Link'));
         this.hasTablebooking = this.navParams.get('has_table_booking');
         this.hastakeout = this.navParams.get('has_online_delivery');
         this.hasdelivery = this.navParams.get('is_delivering_now');
@@ -146,8 +153,13 @@ export class RestaurantDetailPage extends BasePage {
        
     }
     openvideo() {
-
-        this.ShowVideo=true;
+        debugger;
+        if (this.video == null || this.video == "" || this.video.changingThisBreaksApplicationSecurity==null) {
+            swal('Not Available', 'Sorry! Video is not available for this restaurant', 'error');
+        }
+        else {
+            this.ShowVideo = true;
+        }
     }
     VideoURL() {
         return this.sanitizer.bypassSecurityTrustUrl(this.video);

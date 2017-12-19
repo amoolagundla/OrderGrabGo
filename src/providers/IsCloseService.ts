@@ -24,6 +24,18 @@ export class IsClose {
                     else {
                         var currhours = new Date().getHours();
                         var currMinutes = new Date().getMinutes();
+                        if (currhours < item.startTimeHours) {
+                            returValue = false;
+                        }
+                        else if (currhours == item.startTimeHours && currMinutes < item.startTimeMins) {
+                            returValue = false;
+                        }
+                        else if (currhours > item.endTimeHours) {
+                            returValue = false;
+                        }
+                        else if (currhours == item.endTimeHours && currMinutes > item.endTimeMins) {
+                            returValue = false;
+                        }
                         if(currhours>12)
                         {
                            currhours=currhours-12;
@@ -38,18 +50,7 @@ export class IsClose {
                         }
                         
                         
-                        if (currhours < item.startTimeHours) {
-                            returValue = false;
-                        }
-                        else if (currhours == item.startTimeHours && currMinutes < item.startTimeMins) {
-                            returValue = false;
-                        }
-                        else if (currhours > item.endTimeHours) {
-                            returValue = false;
-                        }
-                        else if (currhours == item.endTimeHours && currMinutes > item.endTimeMins) {
-                            returValue = false;
-                        }
+                       
                     }
                 }
             }
