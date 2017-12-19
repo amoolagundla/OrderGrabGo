@@ -103,6 +103,11 @@ export class ReservetablePage extends BasePage{
                 var selectedTimeHour = model.ReservationTime.split(':')[0];
                 var selectedTimeMin = model.ReservationTime.split(':')[1];
                 var isopened = true;
+                if(Number(selectedTimeHour)>12)
+                {
+                    selectedTimeHour=Number(selectedTimeHour)-12;
+                }
+                
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
                     if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
                         isopened = false;

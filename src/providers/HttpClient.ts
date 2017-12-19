@@ -5,8 +5,8 @@ import {Observable} from 'rxjs';
 import{LocalStorage} from './local-storage';
 @Injectable()
 export class HttpClient {
-public baseurl: any ='http://localhost:58048/';
-// public baseurl:any ='https://ordergrabgoepathusa.azurewebsites.net/';
+//public baseurl: any ='http://localhost:58048/';
+ public baseurl:any ='https://ordergrabgoepathusa.azurewebsites.net/';
 
   constructor(private http: Http, public storage: Storage,public localStorage:LocalStorage) {   }
 enableMenuSwipe() {

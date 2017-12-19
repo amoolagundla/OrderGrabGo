@@ -6,7 +6,7 @@ import { MyApp } from "./app.component";
 import { LocationsearchPage } from "../pages/locationsearch/locationsearch";
 import { AddressdetailPage } from "../pages/addressdetail/addressdetail";
 import { SpinnerPage } from "../pages/spinner/spinner";
-
+import { IsClose } from '../providers/IsCloseService';
 import { HttpClient } from "../providers/HttpClient";
 import { ValuesService } from "../providers/ValuesService";
 import { Category } from "../providers/categories";
@@ -81,7 +81,7 @@ export function HttpLoaderFactory(http: Http) {
     Review,
     LocalStorage,
     User,
-    HttpClient,
+    HttpClient,IsClose,
     ValuesService,
     SharedDataService,
     StatusBar,

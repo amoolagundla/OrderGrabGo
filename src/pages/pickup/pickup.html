@@ -44,7 +44,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="PickupTime"  min="0800" max="2200" [ngModel]="pickupTime| date: 'H:mm'" placeholder="Pickup Time"
+                    <input type="time" class="form-control" name="PickupTime" min="{{min}}" max="{{max}}" [ngModel]="pickupTime| date: 'H:mm'" placeholder="Pickup Time"
                            required #PickupTime="ngModel">
                 </div>
                 <small [hidden]="PickupTime.valid || (PickupTime.pristine && !f.submitted)" class="text-danger">

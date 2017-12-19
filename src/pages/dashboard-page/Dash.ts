@@ -86,29 +86,29 @@ export class DashPage extends BasePage {
         .catch(err => {
         });
    
-    this.sharedData.Restuarents.subscribe((data: any) => {
-      if (data != undefined && data.length > 0) {
-      } else {
-        this.geolocation
-          .getCurrentPosition()
-          .then(resp => {
-            this.valuesService
-              .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
-              .subscribe((data: any) => {
-                if (
-                  data.restaurants != undefined &&
-                  data.restaurants.length > 0
-                ) {
-                  this.sharedData.RestuarentsChanged(data.restaurants);
-                  this.restaurants = data.restaurants;
-                }
-              });
-          })
-          .catch(error => {
-            // this.showEmptyView();
-          });
-      }
-    });
+    // this.sharedData.Restuarents.subscribe((data: any) => {
+    //   if (data != undefined && data.length > 0) {
+    //   } else {
+    //     this.geolocation
+    //       .getCurrentPosition()
+    //       .then(resp => {
+    //         this.valuesService
+    //           .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude)
+    //           .subscribe((data: any) => {
+    //             if (
+    //               data.restaurants != undefined &&
+    //               data.restaurants.length > 0
+    //             ) {
+    //               this.sharedData.RestuarentsChanged(data.restaurants);
+    //               this.restaurants = data.restaurants;
+    //             }
+    //           });
+    //       })
+    //       .catch(error => {
+    //         // this.showEmptyView();
+    //       });
+    //   }
+    // });
   });
   }
   ionViewDidLoad() {

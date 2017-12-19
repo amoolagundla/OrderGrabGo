@@ -58,7 +58,7 @@
                 <div class="booking-process">
                     <ul class="list-inline text-center">
 
-                        <li *ngIf="hasTablebooking==1" (click)= "reservetable()"><a >Book Table</a></li>
+                        <li *ngIf="hasTablebooking==1 " (click)= "reservetable()"><a >Book Table</a></li>
                         <li *ngIf="hasTablebooking==0" (click)="notavailable()"><a>Book Table</a></li>
                         <li *ngIf="hastakeout==1" (click)="takout()"><a>Take Out</a></li>
                         <li *ngIf="hastakeout==0" (click)="notavailable()"><a>Take Out</a></li>

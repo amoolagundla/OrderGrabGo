@@ -5,9 +5,10 @@ import { App } from '../../models/models';
 import { CART } from '../cart/cartitems';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import {DomSanitizer } from '@angular/platform-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+import { IsClose } from '../../providers/IsCloseService';
 /**
  * Generated class for the RestaurantDetailPage page.
  *
@@ -20,7 +21,7 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     templateUrl: 'restaurant-detail.html',
 })
 export class RestaurantDetailPage extends BasePage {
-    public user: App.UserInfoViewModel;
+    public user: any;
     public firstName: string = 'OrderGrabGo';
     public name: string; public location: string; public address: string; public phonenum: string; public hasTablebooking: number = 0;
     today: string = ''; restaurantImages: any;
@@ -39,7 +40,7 @@ export class RestaurantDetailPage extends BasePage {
          private launchNavigator: LaunchNavigator,
          public youtube: YoutubeVideoPlayer,
         public storage: Storage,
-        public sanitizer : DomSanitizer
+        public sanitizer : DomSanitizer,public isClose:IsClose
         ) {
         super(injector);
         this.sharedData.UserInfo.subscribe((data) => {
@@ -57,45 +58,14 @@ export class RestaurantDetailPage extends BasePage {
         this.restaurantImages = this.navParams.get('RestaurantImages');
         if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
             this.min_amt = this.navParams.get('delivery_minimum_order');
-        }
+        } 
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var tdate = new Date();
-        this.today = days[tdate.getDay()];
-        this.timeTable = this.navParams.get('time_table');
-        if (this.timeTable == null || this.timeTable.length == 0) {
-            this.isOpen = false;
-        }
-        else {
-            for (let item of this.navParams.get('time_table')) {
-                
-                if (item.Day.toLowerCase() == this.today.toLowerCase()) {
-                    if (item.isClosed) {
-                        this.isOpen = false;
-                    }
-                    else {
-                        var currhours = new Date().getHours();
-                        var currMinutes = new Date().getMinutes();
-                    if(currhours>12)
-                    {
-                        currhours=currhours-12;
-                    }
-                        if (currhours < item.startTimeHours) {
-                            this.isOpen = false;
-                        }
-                        else if (currhours == item.startTimeHours && currMinutes < item.startTimeMins) {
-                            this.isOpen = false;
-                        }
-                        else if (currhours > item.endTimeHours) {
-                            this.isOpen = false;
-                        }
-                        else if (currhours == item.endTimeHours && currMinutes > item.endTimeMins) {
-                            this.isOpen = false;
-                        }
-                    }
-                }
-            }
-        }
+        this.today = days[tdate.getDay()];      
+        this.timeTable=this.navParams.get('time_table');
+         this.isOpen= this.isClose.IsRestauratnOpen(this.navParams.get('time_table'));
     }
+
     enableMenuSwipe() {
         return true;
     }
@@ -167,7 +137,13 @@ export class RestaurantDetailPage extends BasePage {
         this.setRoot("DashPage");
     }
     notavailable() {
-        swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
+        if(this.isOpen)
+        {
+            swal('Not Available', 'Sorry! The selected choice was not available in this resturant', 'error');       
+        }else {
+            swal('Closed', 'Sorry! This restaurant is closed now', 'error');
+        }
+       
     }
     openvideo() {
 
