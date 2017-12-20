@@ -10,6 +10,8 @@ import { BasePage } from "../base-page/base-page";
 import { App } from "../../models.bundles";
 import { ValuesService } from "../../providers/ValuesService";
 import { Geolocation } from "@ionic-native/geolocation";
+
+import { Stripe } from '@ionic-native/stripe';
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -28,6 +30,13 @@ export class CheckoutPage extends BasePage {
   public model: any;
   public cart: any;
   pageName: string = "";
+  public cardinfo: any = {
+    number: '',
+    expMonth: '',
+    expYear: '',
+    cvc: '',
+    postal_code:''
+  };
   timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
   
   code:any;
@@ -35,7 +44,7 @@ export class CheckoutPage extends BasePage {
     injector: Injector,
     private altcntrl: AlertController,
     private service: ValuesService,
-    public geolocation: Geolocation
+    public geolocation: Geolocation,public stripe:Stripe
   ) {
       super(injector);
       this.cart = CART;
@@ -156,6 +165,16 @@ export class CheckoutPage extends BasePage {
         );
       });
   }
+   creditCard()
+   {
+     this.pay();
+    // this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+    // this.stripe.createCardToken(this.cardinfo).then((token) => {
+    //   alert(token);   
+    //   this.pay();   
+    // })
+   }
+
   home() {
     if (CART.total > 0) {
       let alert = this.altcntrl.create({
@@ -168,7 +187,7 @@ export class CheckoutPage extends BasePage {
       });
       alert.addButton({
         text: "Yes",
-        handler: data => {
+        handler: data => { 
           this.setRoot("DashPage");
         }
       });

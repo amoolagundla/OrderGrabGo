@@ -143,6 +143,7 @@ export class ReservetablePage extends BasePage{
                         this.service.SaveOrders(orders).subscribe((data: any) => {
                             console.log(data);
                             let orderId = data.OrderId;
+                            model.ReservationTime=data.Time;
                             var res = {
                                 model: model,
                                 orderId: data.OrderId,

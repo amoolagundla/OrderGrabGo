@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { MyApp } from "./app.component";
-
+import { Stripe } from '@ionic-native/stripe';
 import { LocationsearchPage } from "../pages/locationsearch/locationsearch";
 import { AddressdetailPage } from "../pages/addressdetail/addressdetail";
 import { SpinnerPage } from "../pages/spinner/spinner";
@@ -99,7 +99,7 @@ export function HttpLoaderFactory(http: Http) {
     AppVersion,
     HeaderColor,
     BrowserTab,
-    File,
+    File,Stripe,
     BarcodeScanner,
     NativeGeocoder,
     Preference,

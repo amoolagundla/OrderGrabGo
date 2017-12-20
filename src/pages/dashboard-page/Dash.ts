@@ -51,17 +51,17 @@ export class DashPage extends BasePage {
         console.log(err);
       });
 
-    // this.oneSignal.getIds().then(data => {
-    //   let mapStyle :any = data.userId || {};
-    //     this.storage.oneSingalPushToken=mapStyle;     
-    //      this.storage.pushToken(mapStyle);
-    //       this.valuesService.SaveToken(mapStyle).subscribe(()=>
-    //       {
+    this.oneSignal.getIds().then(data => {
+      let mapStyle :any = data.userId || {};
+        this.storage.oneSingalPushToken=mapStyle;     
+         this.storage.pushToken(mapStyle);
+          this.valuesService.SaveToken(mapStyle).subscribe(()=>
+          {
            
-    //       });  
+          });  
          
        
-    // }) ;
+    }) ;
   }
 
   enableMenuSwipe() {

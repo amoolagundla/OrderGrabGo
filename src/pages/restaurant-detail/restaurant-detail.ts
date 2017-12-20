@@ -153,7 +153,6 @@ export class RestaurantDetailPage extends BasePage {
        
     }
     openvideo() {
-        debugger;
         if (this.video == null || this.video == "" || this.video.changingThisBreaksApplicationSecurity==null) {
             swal('Not Available', 'Sorry! Video is not available for this restaurant', 'error');
         }

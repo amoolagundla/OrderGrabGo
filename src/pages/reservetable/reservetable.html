@@ -76,7 +76,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="ReservationTime" min="{{min}}" max="{{max}}" [ngModel]="reservationtime" placeholder="Reservation Time"
+                    <input type="time" class="form-control" name="ReservationTime"  [ngModel]="reservationtime" placeholder="Reservation Time"
                            required #ReservationTime="ngModel">
                 </div>
                 <small [hidden]="ReservationTime.valid || (ReservationTime.pristine && !f.submitted)" class="text-danger">

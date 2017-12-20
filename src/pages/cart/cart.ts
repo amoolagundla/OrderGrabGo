@@ -4,7 +4,7 @@ import { IonicPage, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { CART } from '../cart/cartitems';
 // ES6 Modules or TypeScript
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 /**
  * Generated class for the CartPage page.
  *
@@ -17,6 +17,7 @@ import swal from 'sweetalert';
   templateUrl: 'cart.html',
 })
 export class CartPage extends BasePage {
+    public relationship:string;
     public cart: any; taxAmt: any = 0.00;
     constructor(injector: Injector, private decimalPipe: DecimalPipe, private altController: AlertController) {
         super(injector);       
@@ -70,7 +71,8 @@ export class CartPage extends BasePage {
 
   // click buy button
   buy() {
-      if (CART.total > CART.Minimum || CART.total == CART.Minimum) {
+      if ((CART.total > CART.Minimum || CART.total == CART.Minimum)){
+        if(this.relationship!=undefined){
           this.showLoadingView();
           if (this.navParams.get('pagename') == "Delivery") {
               var carparams = {
@@ -88,7 +90,10 @@ export class CartPage extends BasePage {
               this.showContentView();
           this.navigateTo('PickupPage', carparam);
       }
+      }else{
+        swal('Please Select Payment Type','info');   
       }
+    }
       else {
 
         swal('Minimum Order Amount','Minimum order amount is $' + CART.Minimum,'info');   
