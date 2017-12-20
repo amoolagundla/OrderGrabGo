@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import swal from 'sweetalert';
 import { ValuesService } from "../../providers/ValuesService";
 import { LocationsearchPage } from "../locationsearch/locationsearch";
+import { DomSanitizer } from '@angular/platform-browser';
 import {
     GoogleMap,
     GoogleMapsEvent,
@@ -36,8 +37,8 @@ export class RestaurantsbycusinePage extends BasePage{
     private marker: Marker;
     realPlaces: any;
     public searchlocation: any = "";
-    public cuisines: any;
-    constructor(injector: Injector, public geolocation: Geolocation, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
+    public cuisines: any; ShowVideo: any = false; video: any = '';
+    constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
         super(injector);
         this.places = this.navParams.data;
         this.realPlaces = this.navParams.data;
@@ -105,11 +106,12 @@ export class RestaurantsbycusinePage extends BasePage{
 
       var url = res.Video_Link;
       console.log(url);
-      if (url == null) {
+      if (url == null || url  == "") {
           swal('Not Available', 'Video was not available for this resturant', 'error');
       }
       else {
-          this.youtube.openVideo(url);
+          this.video = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + url);
+          this.ShowVideo = true;
       }
   }
 
@@ -160,6 +162,7 @@ export class RestaurantsbycusinePage extends BasePage{
                               this.places = data.restaurants;
                               this.realPlaces = data.restaurants;
                               this.loadMap();
+                              this.ShowVideo = false;
                               this.showContentView();
                               this.onRefreshComplete();
                           });
@@ -200,5 +203,8 @@ export class RestaurantsbycusinePage extends BasePage{
           }
       });
       modal.present();
+  }
+  back() {
+       this.setRootWithParams('RestaurentPage', this.navParams);
   }
 }

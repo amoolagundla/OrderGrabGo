@@ -1,13 +1,17 @@
 page-restaurantsbycusine {
     .toolbar-background-md {
-        background: rgba(0, 0, 0, 0.41) !important;
+        background: rgba(0, 0, 0, 0) !important;
         border: 0px;
     }
     .toolbar-ios-danger .toolbar-background-ios {
-        background: rgba(0, 0, 0, 0.41) !important;
+        background: rgba(0, 0, 0, 0) !important;
         border: 0px;
     }
-    .header-md::after,
+    [dir="ltr"] .toolbar-md, [dir="rtl"] .toolbar-md{
+        padding:0px !important;
+    }
+    
+    /*.header-md::after,
     .tabs-md[tabsPlacement="top"] > .tabbar::after,
     .footer-md::before,
     .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
@@ -20,11 +24,11 @@ page-restaurantsbycusine {
         height: 249px;
         margin: 0px !important;
         width: 100% !important;
-    }
+    }*/
     .bar-button-default-md,
     .bar-button-clear-md-default,
     .bar-button-md-default {
-        color: #fff !important;
+        color: #f53d3d !important;
     }
     .headinside img {
         width: 100%;
