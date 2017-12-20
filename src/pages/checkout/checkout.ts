@@ -10,8 +10,10 @@ import { BasePage } from "../base-page/base-page";
 import { App } from "../../models.bundles";
 import { ValuesService } from "../../providers/ValuesService";
 import { Geolocation } from "@ionic-native/geolocation";
-
+import swal from 'sweetalert2';
 import { Stripe } from '@ionic-native/stripe';
+import { Card } from "ionic-angular/components/card/card";
+import { error } from "util";
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -34,8 +36,7 @@ export class CheckoutPage extends BasePage {
     number: '',
     expMonth: '',
     expYear: '',
-    cvc: '',
-    postal_code:''
+    cvc: ''
   };
   timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
   
@@ -167,12 +168,24 @@ export class CheckoutPage extends BasePage {
   }
    creditCard()
    {
-     this.pay();
-    // this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
-    // this.stripe.createCardToken(this.cardinfo).then((token) => {
-    //   alert(token);   
-    //   this.pay();   
-    // })
+    
+    this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+    this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
+      this.showLoadingView();
+        this.stripe.createCardToken(this.cardinfo).then(token => {
+          //alert(token);
+          this.showContentView();
+          this.pay();
+        },error=>
+      {
+        this.showContentView();
+        swal("Card Info is  wrong", "Info");
+      });
+      }, error => {
+        this.showContentView();
+        swal("Card Number wrong", "Info");
+      });
+    
    }
 
   home() {

@@ -82,13 +82,13 @@
 	 <ion-col>
 		<ion-item>
 		<ion-label floating>Expiry Date</ion-label>
-		<ion-datetime displayFormat="MMM" [(ngModel)]="cardinfo.expMonth"></ion-datetime>
+		<ion-input  type="number"  [(ngModel)]="cardinfo.expMonth"></ion-input>
 		</ion-item> 
 	 </ion-col>
 	 <ion-col>
 		<ion-item>
 		<ion-label floating>Expiry Year</ion-label>
-		<ion-datetime displayFormat="YYYY" [(ngModel)]="cardinfo.expYear"></ion-datetime>
+		<ion-input   type="number"  [(ngModel)]="cardinfo.expYear"></ion-input>
 		</ion-item> 
 	 </ion-col> 
 	</ion-row>
@@ -99,12 +99,7 @@
 		<ion-input type="number" [(ngModel)]="cardinfo.cvc"></ion-input>
 		</ion-item> 
 	 </ion-col>
-	 <ion-col>
-		<ion-item>
-		<ion-label floating>Zip Code</ion-label>
-		<ion-input type="number" [(ngModel)]="cardinfo.postal_code"></ion-input>
-		</ion-item> 
-	 </ion-col><br />
+	 <br />
 	
 	</ion-row>
 	 <button ion-button block style="background:#009e0f" (click)="creditCard()">
