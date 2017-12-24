@@ -1,21 +1,32 @@
 import { Injectable,Injector } from '@angular/core';
 import { App } from '../Models/models';
+import {SharedDataService } from './SharedDataService'; 
 @Injectable()
 
 export class IsClose {
-
-    public IsRestauratnOpen (timeTable: Array<any>):boolean
+    public timetable:any[];
+    constructor(private shared: SharedDataService) {
+        this.shared.timeTable.subscribe(
+            data => {
+             
+              this.timetable=data;
+             
+            }, err => {
+              console.log(err);
+            });
+    }
+    public IsRestauratnOpen (time: Array<any>):boolean
     {
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var tdate = new Date();
          let today = days[tdate.getDay()];
 
         var returValue=true;
-        if (timeTable == null || timeTable.length == 0) {
+        if (this.timetable == null || this.timetable.length == 0) {
             returValue = false;
         }
         else {
-            for (let item of timeTable) {
+            for (let item of this.timetable) {
                 
                 if (item.Day.toLowerCase() == today.toLowerCase()) {
                     if (item.isClosed) {
@@ -24,43 +35,22 @@ export class IsClose {
                     else {
                         var currhours = new Date().getHours();
                         var currMinutes = new Date().getMinutes();
-                        if(currhours>12)
-                        {
-                            currhours= currhours-12;
-                         }
-                         if(item.startTimeHours>12)
-                         {
-                            item.startTimeHours= item.startTimeHours-12;
-                         }
-                         if(item.endTimeHours>12)
-                         {
-                            item.endTimeHours= item.endTimeHours-12;
-                         }
-
-                        if (currhours < item.startTimeHours) {
+                                             
+                        var endTime = Number(item.endTime.split(":")[0]);
+                      var startTime =Number(item.startTime.split(":")[0]);
+                        if (currhours < startTime) {
                             returValue = false;
                         }
-                        else if (currhours == item.startTimeHours && currMinutes < item.startTimeMins) {
+                        else if (currhours == startTime && currMinutes < item.startTimeMins) {
                             returValue = false;
                         }
-                        else if (currhours > item.endTimeHours) {
+                        else if (currhours > endTime) {
                             returValue = false;
                         }
-                        else if (currhours == item.endTimeHours && currMinutes > item.endTimeMins) {
+                        else if (currhours == endTime && currMinutes > item.endTimeMins) {
                             returValue = false;
                         }
-                        if(currhours>12)
-                        {
-                           currhours=currhours-12;
-                        }
-                        if(item.startTimeHours>12)
-                        {
-                            item.startTimeHours =item.startTimeHours-12;
-                        }
-                        if(item.endTimeHours>12) 
-                        {
-                            item.endTimeHours =item.endTimeHours-12;
-                        }
+                       
                         
                         
                        

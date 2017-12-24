@@ -101,7 +101,7 @@ export class DeliveryPage extends BasePage{
             alert.present();
         }
         else {
-            this.navigateTo('RestaurantDetailPage', this.navParams);
+            this.popPage();
         }
     }
     home() {

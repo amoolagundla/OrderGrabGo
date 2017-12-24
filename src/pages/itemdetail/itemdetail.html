@@ -17,7 +17,9 @@
     <div class="cover">
         <ion-slides pager>
             <ion-slide >
-                <img class="full-image" src="{{img}}" alt=""  style="width:-webkit-fill-available"/>
+    
+                    
+                <img class="full-image" src="{{img== null ? 'http://www.boundsfree.com/Files/RestaurantImages/13/RestaurantLogo/Logo.jpg':img}}" alt=""  style="width:-webkit-fill-available"/>
             </ion-slide>
         </ion-slides>
         <div class="overlay">

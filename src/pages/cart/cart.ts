@@ -76,17 +76,22 @@ export class CartPage extends BasePage {
           this.showLoadingView();
           if (this.navParams.get('pagename') == "Delivery") {
               var carparams = {
+                  IsBank:this.relationship=='checking'?true:false,
                   restuarant: this.navParams.get('restuarant'),
                   pagename : 'Delivery'
               }
+
+              console.log(carparams.IsBank);
               this.showContentView();
           this.navigateTo('DeliverydetailsPage', carparams);
       }
           else {
               var carparam = {
+                IsBank:this.relationship=='checking'?true:false,
                   restuarant: this.navParams.get('restuarant'),
                   pagename: 'TakeOut'
               }
+              
               this.showContentView();
           this.navigateTo('PickupPage', carparam);
       }

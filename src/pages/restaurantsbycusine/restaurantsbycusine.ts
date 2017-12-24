@@ -35,51 +35,69 @@ export class RestaurantsbycusinePage extends BasePage{
     @ViewChild("map") mapElement: ElementRef;
     map: any;
     private marker: Marker;
-    realPlaces: any;
+    public latLong:any;
+    realPlaces: any;zip:any;
     public searchlocation: any = "";
     public cuisines: any; ShowVideo: any = false; video: any = '';
     constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
         super(injector);
         this.places = this.navParams.data;
         this.realPlaces = this.navParams.data;
+
+        this.sharedData.latLong.subscribe(data=>    {      this.latLong=data;      });
+
+        this.sharedData.Zip.subscribe( data => {this.zip=data;}, err => {console.log(err); });
+
+
   }
     enableMenuSwipe() {
         return true;
     }
     ionViewDidLoad() {
         this.loadMap();
-      console.log('ionViewDidLoad RestaurantsbycusinePage');
-
-    }
+     }
     home() {
         this.setRoot("DashPage");
     }
   loadMap() {
+
+    if(this.latLong!=null || this.latLong!=undefined)
+    {
+        this.Map(this.latLong);
+    }
+    else
+    {
       this.geolocation.getCurrentPosition().then(
           position => {
-              let latLng = new google.maps.LatLng(
-                  //position.coords.latitude,
-                  //position.coords.longitude
-                  41.632254, -93.84352899999999
-              );
-
-              let mapOptions = {
-                  center: latLng,
-                  disableDefaultUI: true,
-                  zoom: 6,
-                  mapTypeId: google.maps.MapTypeId.ROADMAP
-              };
-
-              this.map = new google.maps.Map(
-                  this.mapElement.nativeElement,
-                  mapOptions
-              );
-              this.addMarker();
+              this.Map(position);
           },
           err => {
               console.log(err);
           }
       );
+    }
+  }
+
+  Map(position:any)
+  {
+    let latLng = new google.maps.LatLng(
+        position.coords.latitude,
+        position.coords.longitude
+       // 41.632254, -93.84352899999999
+    );
+
+    let mapOptions = {
+        center: latLng,
+        disableDefaultUI: true,
+        zoom: 6,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    this.map = new google.maps.Map(
+        this.mapElement.nativeElement,
+        mapOptions
+    );
+    this.addMarker();
   }
   addMarker() {
       for (let place of this.places) {
@@ -93,9 +111,11 @@ export class RestaurantsbycusinePage extends BasePage{
       }
   }
   menu(res: any) {
+      this.sharedData.timeTableChanged(res.time_table);
       this.navigateTo('RestaurantDetailPage', res);
   }
   reservetable(res: any) {
+    this.sharedData.timeTableChanged(res.time_table);
       this.navigateTo('ReservetablePage', res);
   }
 
@@ -192,7 +212,7 @@ export class RestaurantsbycusinePage extends BasePage{
               this.showLoadingView();
               this.searchlocation = data.location;
               this.valuesService
-                  .GetPlacesWithZomato(data.lat, data.lng)
+                  .GetPlacesWithZomato(data.lat, data.lng,this.zip)
                   .subscribe((data: any) => {
                       this.places = data.restaurants;
                       this.realPlaces = data.restaurants;
@@ -205,6 +225,6 @@ export class RestaurantsbycusinePage extends BasePage{
       modal.present();
   }
   back() {
-       this.setRootWithParams('RestaurentPage', this.navParams);
+       this.popPage();
   }
 }

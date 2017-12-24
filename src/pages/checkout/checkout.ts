@@ -32,11 +32,21 @@ export class CheckoutPage extends BasePage {
   public model: any;
   public cart: any;
   pageName: string = "";
+  paid:boolean=false;
+  public IsBank:boolean=false;
   public cardinfo: any = {
     number: '',
     expMonth: '',
     expYear: '',
     cvc: ''
+  };
+  public  bankAccount = {
+    routing_number: '',
+    account_number: '',
+    account_holder_name: '', // optional
+    account_holder_type: '', // optional
+    currency: 'USD',
+    country: 'USA'
   };
   timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
   
@@ -58,7 +68,8 @@ export class CheckoutPage extends BasePage {
     });
     this.model = this.navParams.get("model");
     this.pageName = this.navParams.get("page");
-
+    this.IsBank= this.navParams.get("IsBank");
+    console.log(this.IsBank);
     this.service.getCode().subscribe((res: any) => {
         this.code=res;
     }, err => {});
@@ -70,6 +81,9 @@ export class CheckoutPage extends BasePage {
     
   }
   pay() {
+    if(true)
+    { 
+      this.paid=true;
     var resparams = this.navParams.get("restuarant").location;
     var model = this.navParams.get("model");
     let time: any;
@@ -165,29 +179,61 @@ export class CheckoutPage extends BasePage {
           }
         );
       });
+    }
   }
    creditCard()
-   {
+   { 
     
     this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+    if(this.cardinfo.number!='' && this.cardinfo.expMonth!='' && this.cardinfo.expYear!='' && this.cardinfo.cvc!='')
+    {
+
+      //this.pay();
     this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
       this.showLoadingView();
         this.stripe.createCardToken(this.cardinfo).then(token => {
           //alert(token);
+         
           this.showContentView();
           this.pay();
         },error=>
       {
         this.showContentView();
-        swal("Card Info is  wrong", "Info");
+        swal('Oops',"Please Enter Correct Card Information", 'error');
       });
       }, error => {
-        this.showContentView();
-        swal("Card Number wrong", "Info");
-      });
-    
-   }
 
+        swal('Oops',"Please Enter Correct Card Information", 'error');
+      });
+    }
+    else
+    {
+      swal('Oops',"Please Enter All the ields", 'error');
+    }
+   }
+   PayBank()
+   {
+    this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+    if(this.bankAccount.routing_number!='' && this.bankAccount.account_number!='' && this.bankAccount.currency!='' && this.bankAccount.country!='')
+    {
+      this.pay();
+      // this.showLoadingView();
+      //   this.stripe.createBankAccountToken(this.bankAccount).then(token => {
+      //     //alert(token);         
+      //     this.showContentView();
+      //     this.pay();
+      //   },error=>
+      // {
+      //   this.showContentView();
+      //   swal('Oops',"Please Enter Correct Card Information", 'error');
+      // });
+     
+    }
+    else
+    {
+      swal('Oops',"Please Enter All the fields", 'error');
+    }
+   }
   home() {
     if (CART.total > 0) {
       let alert = this.altcntrl.create({

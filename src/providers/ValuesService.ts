@@ -5,6 +5,7 @@ import { HttpClient } from "./HttpClient";
 import { SharedDataService } from "./SharedDataService";
 import { App } from "../models.bundles";
 import "rxjs/add/operator/mergeMap";
+import {Observable} from 'rxjs';
 import { Storage } from "@ionic/storage";
 @Injectable()
 export class ValuesService {
@@ -22,9 +23,9 @@ export class ValuesService {
       .map((response: Response) => response.json());
   }
 
-  GetPlacesWithZomato(start: any, end: any) {
+  GetPlacesWithZomato(start: any, end: any,zip:any) {
     return this.http
-      .get("api/ads/GetPlaceswithzomato/" + start + "/" + end)
+      .get("api/ads/GetPlaceswithzomato/" + start + "/" + end+"/"+zip)
       .map((response: Response) => response.json());
   }
   FindCuisineWithZomato(start: any, end: any) {
@@ -61,9 +62,13 @@ export class ValuesService {
       .subscribe(
         (data: any) => {
           this.shared.USerInfoChanged(data);
-        },
-        error => {}
-      );
+        },e => {
+        if (e.status === 401) {
+         // this.events.('onMenuOpened');
+            return Observable.throw('Unauthorized');
+        }
+        // do any other checking for statuses here
+    });
   }
   googlelogin(user: any) {
     var token = {
@@ -82,7 +87,12 @@ export class ValuesService {
   GetAddress(lat: any, long: any) {
     return this.http
       .get("api/ads/GetAddress/" + lat + "/" + long)
-      .map((response: Response) => response.json());
+      .map((response: Response) => response.json()).catch(e => {
+        if (e.status === 401) {
+            return Observable.throw('Unauthorized');
+        }
+        // do any other checking for statuses here
+    });
   }
 
   Register(user: any) {

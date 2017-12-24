@@ -89,3 +89,210 @@
 .htimeline .step.blue::before {border-color: #49a09d;}
 
 .htimeline .step::after { content: attr(data-date); position: absolute; bottom: 0px; left: 17px; font-size: 11px; font-style: italic; color: #888}
+
+
+
+
+.activeli{
+    background-color : #fff !important;
+    /*border: 1px solid #009e0f !important;*/
+    color: #000 !important;
+}
+.loc {
+  float: left;
+  max-width: 120px;
+  display: inline-block;
+  font-size: 13px;
+  color: #fff;
+  line-height: 15px;
+  font-weight: 600;
+  margin-top: 7px;
+  position: relative;
+}
+.restaurent{
+margin-top: -15%;
+}
+.cardText
+{
+  
+  font-size: 12px;
+  margin-left: 15%;
+}
+.nav-title{
+  
+    
+  font-size: 16px;
+  margin-left: -8%;
+  color: #ffffff;
+  text-align: center;
+  margin: 1px 0px;
+  padding: 2px 0px 0px 0px;
+  font-weight: 600;
+  margin-right: 20%;
+
+}
+.menu-section {
+  width: 100%;
+}
+
+.menu-section ul {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.menu-section ul li {
+  width: 50%;
+  float: left;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.menu-section ul li a {
+  background-color: #009e0f;
+  padding: 8px 12px;
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.menu-section ul li a:hover,
+.menu-section ul li a:focus,
+.menu-section ul li a:active {
+  background-color: #03860f;
+  text-decoration: none;
+}
+
+.view-rest {
+  padding-top: 10px;
+}
+
+.view-rest .row {
+  margin: 0;
+}
+
+.view-rest [class^="col-"] {
+  padding: 5px;
+}
+
+.view-rest h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 0;
+  padding: 0 5px;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.view-rest p {
+  max-height: 35px;
+  overflow: hidden;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+.view-rest span {
+  font-size: 10px;
+  color: #ab8d3e;
+  font-weight: 500;
+  padding: 0 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.view-rest [class^="col-"] img {
+  max-width: 100%;
+}
+.rest-addr {
+  box-shadow: 0 0 3px #ccc;
+  background-color: #ffffff;
+}
+
+
+.more-item {
+  background-color: #ffffff;
+  border-top: 1px solid #eee;
+  padding: 5px 10px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.more-item a {
+  color: #777777;
+}
+  .customIcon {
+
+    font-size: 1.7em;
+}
+.rest-addr > img{
+  
+  height: 120px!important;
+  width: -webkit-fill-available;
+}
+
+/**** MODULE ****/
+.bgc-fff {
+  background-color: #fff!important;
+}
+.box-shad {
+  -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+  box-shadow: 1px 1px 0 rgba(0,0,0,.2);
+}
+.brdr {
+  border: 1px solid #ededed;
+}
+
+/* Font changes */
+.fnt-smaller {
+  font-size: .9em;
+}
+.fnt-lighter {
+  color: #bbb;
+}
+
+/* Padding - Margins */
+.pad-10 {
+  padding: 10px!important;
+}
+.mrg-0 {
+  margin: 0!important;
+}
+.btm-mrg-10 {
+  margin-bottom: 10px!important;
+}
+.btm-mrg-20 {
+  margin-bottom: 20px!important;
+}
+
+/* Color  */
+.clr-535353 {
+  color: #535353;
+}
+
+
+
+
+/**** MEDIA QUERIES ****/
+@media only screen and (max-width: 991px) {
+  #property-listings .property-listing {
+      padding: 5px!important;
+  }
+  #property-listings .property-listing a {
+      margin: 0;
+  }
+  #property-listings .property-listing .media-body {
+      padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #property-listings .property-listing img {
+      max-width: 180px;
+  }
+}

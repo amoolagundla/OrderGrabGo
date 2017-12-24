@@ -6,16 +6,19 @@
 -->
 <ion-header>
     <ion-navbar color="danger" hideBackButton>
-        <ion-buttons left>
-            <button ion-button (click)="back()">
-                <ion-icon class="customIcon" name="arrow-back"></ion-icon>
-            </button>
-        </ion-buttons>
-        <ion-buttons end>
-            <button class="btn-sm-4" ion-button (click)="GoToProducts()" st>
-                <h6 style="color:white">   <ion-icon name="md-cart">Add More</ion-icon></h6>
-            </button>
-        </ion-buttons>
+        
+            <ion-buttons left>
+                    <button ion-button (click)="back()">
+                        <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+                    </button>
+                </ion-buttons>
+                <ion-buttons right>
+                        <button class="btn-sm-4" ion-button (click)="GoToProducts()" st>
+                                <h6 style="color:white">   <ion-icon name="md-cart">Add More</ion-icon></h6>
+                            </button>
+            </ion-buttons>
+        
+        
         <ion-title>Cart</ion-title>
     </ion-navbar>
 </ion-header>
@@ -24,7 +27,7 @@
         <ion-item-sliding class="card" *ngFor="let item of cart.items; let i = index" margin-top>
             <ion-item>
                 <ion-thumbnail item-left>
-                    <img src="{{ item.thumb }}" alt="" />
+                    <img src="{{ item.thumb ==null? 'http://www.boundsfree.com/Files/RestaurantImages/13/RestaurantLogo/Logo.jpg':item.thumb }}" alt="" />
                 </ion-thumbnail>
                 <h2>{{ item.name }}</h2>
                 <div>
@@ -52,37 +55,37 @@
 </ion-content>
 <!--Footer button-->
 <ion-footer class="cart-footer">
-    <ion-row>
-        <ion-col col-6>
-
-        </ion-col>
-        <ion-col col-6>
-            <ion-row>
+        <ion-row>
                 <ion-col col-6>
-                    Subtotal:
+        
                 </ion-col>
                 <ion-col col-6>
-                    ${{cart.total}}
+                    <ion-row>
+                        <ion-col col-6>
+                            Subtotal:
+                        </ion-col>
+                        <ion-col col-6>
+                            ${{cart.total}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-6>
+                            Tax & Fees:
+                        </ion-col>
+                        <ion-col col-6>
+                            ${{taxAmt}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-6>
+                            Total:
+                        </ion-col>
+                        <ion-col col-6>
+                            ${{cart.total}}
+                        </ion-col>
+                    </ion-row>
                 </ion-col>
             </ion-row>
-            <ion-row>
-                <ion-col col-6>
-                    Tax & Fees:
-                </ion-col>
-                <ion-col col-6>
-                    ${{taxAmt}}
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col col-6>
-                    Total:
-                </ion-col>
-                <ion-col col-6>
-                    ${{cart.total}}
-                </ion-col>
-            </ion-row>
-        </ion-col>
-    </ion-row>
     <ion-row padding style="padding-top:0px;padding-bottom:0px;background:#fff">
         <span style="font-size:18px">PAYMENT METHOD</span>
         <ion-row>

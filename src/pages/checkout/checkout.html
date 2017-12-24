@@ -6,105 +6,124 @@
 -->
 <ion-header>
 
-  <ion-navbar color="danger">
-      <ion-buttons right>
-          <button ion-button (click)="home()">
-              <ion-icon class="customIcon" name="home"></ion-icon>
-          </button>
-      </ion-buttons>
-    <ion-title><p class="nav-title">Checkout<p></ion-title>
-  </ion-navbar>
+	<ion-navbar color="danger">
+		<ion-buttons right>
+			<button ion-button (click)="home()">
+				<ion-icon class="customIcon" name="home"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title>
+			<p class="nav-title">Checkout
+				<p>
+		</ion-title>
+	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-row class="orderhead">Your order summary</ion-row>
-    <!--<ion-row class="orderconfirm">{{time}}</ion-row>-->
-    <ion-grid class="checkoutitems">
-        <ion-row class="checkhead">
-            <ion-col col-2>Qty</ion-col>
-            <ion-col col-5>Items</ion-col>
-            <ion-col col-2>Cost</ion-col>
-            <ion-col col-3>Total Price</ion-col>
-        </ion-row>
-        <div *ngFor="let item of cart.items; let i = index">
-            <ion-row class="checkrow">
-                <ion-col col-2>{{item.quantity}}</ion-col>
-                <ion-col col-5>{{item.name}}</ion-col>
-                <ion-col col-2>${{item.price}}</ion-col>
-                <ion-col col-2>${{item.quantity * item.price}}</ion-col>
-            </ion-row>
-        </div>
 
-    </ion-grid>
-    <div class="total">
-        Total Price : ${{total}}
-    </div>
-<ion-grid class="checkoutitems">
 
-	<!--<ion-row class="checkhead">
-		<ion-col col-2>Qty</ion-col>
-		<ion-col col-7>Items</ion-col>
-		<ion-col col-3>Price</ion-col>
-	</ion-row>
-	<ion-row class="checkrow">
-		<ion-col col-2>1</ion-col>
-		<ion-col col-7>Vegitarian Lettuce Wraps</ion-col>
-		<ion-col col-3>$9.50</ion-col>
-	</ion-row>
-	<ion-row class="checkrow">
-		<ion-col col-2>1</ion-col>
-		<ion-col col-7>Crispy Green Beans</ion-col>
-		<ion-col col-3>$7.95</ion-col>
-	</ion-row>
+
+		<div class="total"> <h3>${{total}}</h3></div>
+	<div class="panel panel-default credit-card-box" style="margin-top: 3%;" [hidden]="this.IsBank">
+			
+		<div class="panel-heading display-table">
+			<div class="row display-tr">
+				<h3 class="panel-title display-td">Payment Details</h3>
+				<div class="display-td">
+					<img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+				</div>
+			</div>
+		</div>
+		<div class="panel-body">
+				
+			<form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<label for="cardNumber">CARD NUMBER</label>
+							<div class="input-group">
+								<input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required
+								 autofocus [(ngModel)]="cardinfo.number" />
+								<span class="input-group-addon">
+									<i class="fa fa-credit-card"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-7 col-md-7">
+						<div class="form-group">
+							<label for="cardExpiry">
+								<span class="hidden-xs">EXPIRATION</span>
+								<span class="visible-xs-inline">EXP</span> Month</label>
+							<input type="tel" class="form-control" name="cardExpiry" placeholder=" YY" autocomplete="cc-exp" required [(ngModel)]="cardinfo.expMonth"
+							/>
+						</div>
+					</div>
+					<div class="col-xs-5 col-md-5 pull-right">
+						<div class="form-group">
+							<label for="cardCVC">Exp Year</label>
+							<input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required [(ngModel)]="cardinfo.expYear"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+
+							<div class="">
+								<div class="form-group">
+									<label for="cardCVC">CV CODE</label>
+									<input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required [(ngModel)]="cardinfo.cvc"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<button class="subscribe btn btn-success btn-lg btn-block" type="button" (click)="creditCard()">Place Order</button>
+					</div>
+				</div>
+				<div class="row" style="display:none;">
+					<div class="col-xs-12">
+						<p class="payment-errors"></p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div  [hidden]="!this.IsBank">
+		
 	
-	<ion-row class="checkouttotal">
-		<ion-col col-9>Sub Total (Tax may Apply)</ion-col>
-		<ion-col>$17.45</ion-col>
-	</ion-row>
-	<ion-row ion-button color="secondary">Total $17:45 </ion-row>-->
-	
-	
-	<ion-row>
-		<ion-item>
-		<ion-label floating>Name of Card</ion-label>
-		<ion-input type="text" ></ion-input>
-		</ion-item> 
-	</ion-row>
-	<ion-row>
-		<ion-item>
-		<ion-label floating>Card Number</ion-label>
-		<ion-input type="number" [(ngModel)]="cardinfo.number"></ion-input>
-		</ion-item> 
-	</ion-row>
-	<ion-row>
-	 <ion-col>
-		<ion-item>
-		<ion-label floating>Expiry Date</ion-label>
-		<ion-input  type="number"  [(ngModel)]="cardinfo.expMonth"></ion-input>
-		</ion-item> 
-	 </ion-col>
-	 <ion-col>
-		<ion-item>
-		<ion-label floating>Expiry Year</ion-label>
-		<ion-input   type="number"  [(ngModel)]="cardinfo.expYear"></ion-input>
-		</ion-item> 
-	 </ion-col> 
-	</ion-row>
-	<ion-row>
-	 <ion-col>
-		<ion-item>
-		<ion-label floating>Security Code</ion-label>
-		<ion-input type="number" [(ngModel)]="cardinfo.cvc"></ion-input>
-		</ion-item> 
-	 </ion-col>
-	 <br />
-	
-	</ion-row>
-	 <button ion-button block style="background:#009e0f" (click)="creditCard()">
-		Pay ${{total}}
-	 </button>
-	 
-</ion-grid>
+	<div class="form">
+				<div class="form-group">
+						<label for="exampleInputEmail1">Full Name</label>
+						<input class="form-control input-lg " id="routing_number" type="text" [(ngModel)]="bankAccount.account_holder_name" data-stripe="routing_number" placeholder="John Doe"
+						 autocomplete="off">
+					</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Routing Number </label>
+				<input class="form-control input-lg bank_account" id="routing_number" type="tel" max="12" [(ngModel)]="bankAccount.routing_number"  data-stripe="routing_number" placeholder="Routing Number"
+				 autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Account Number</label>
+				<input class="form-control input-lg bank_account" id="account_number" type="tel" max="20" [(ngModel)]="bankAccount.account_number"  data-stripe="account_number" placeholder="Account Number"
+				 autocomplete="off">
+			</div>
+
+			<button class="btn btn-lg btn-block btn-success submit" (click)="PayBank()">Place Order</button>
+		</div>
+
+			
+		
+	</div>
+
+
 </ion-content>

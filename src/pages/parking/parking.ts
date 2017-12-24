@@ -46,6 +46,7 @@ export class ParkingPage extends BasePage {
   public address: any;
   public Message:any;public firstName:any;
   public ShowMarkCar:boolean=false;
+  public latLong:any='https://maps.googleapis.com/maps/api/staticmap?center=47.5952,-122.3316&zoom=20&scale=2&size=600x300&maptype=roadmap&key=AIzaSyDpSuWDPh-32TBJQ2p_fdulykweF7x9iPo&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C41.557247,-93.798555';
   constructor(
     injector: Injector,
     private platform: Platform,
@@ -60,7 +61,12 @@ export class ParkingPage extends BasePage {
   ) {
     super(injector);
     
-    
+    this.sharedData.latLong.subscribe((resp:any)=>    {  
+      if(resp!=null)
+      {
+           this.latLong=  "https://maps.googleapis.com/maps/api/staticmap?center="+resp.coords.latitude +","+ resp.coords.longitude+"&zoom=17&scale=2&size=600x300&maptype=roadmap&key=AIzaSyDpSuWDPh-32TBJQ2p_fdulykweF7x9iPo&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7C"+resp.coords.latitude +","+ resp.coords.longitude ; 
+         }
+             });
     this.sharedData.UserInfo.subscribe(
         data => {
          
@@ -114,20 +120,18 @@ export class ParkingPage extends BasePage {
       this.storage.storeParkingAddress(null);
   }
   GetLocation() {
-    
+    this.showLoadingView();
     this.geolocation
       .getCurrentPosition()
       .then(resp => {
-          this.showLoadingView();
-        this.valuesService
-          .GetAddress(resp.coords.latitude, resp.coords.longitude)
-          .subscribe(
-            (data: any) => {
-                this.showContentView();
+        
+        this.sharedData.latLongChanged(resp);
+          
+        this.valuesService.GetAddress(resp.coords.latitude, resp.coords.longitude).subscribe((data: any) => {
+          
+          this.showContentView();
               this.address = data.results[0].formatted_address;
-              this.storage.storeParkingAddress(
-                data.results[0].formatted_address
-              );
+              this.storage.storeParkingAddress(data.results[0].formatted_address);
               this.ShowMarkCar=!this.ShowMarkCar;
               swal(
                 "Success",
@@ -148,7 +152,7 @@ export class ParkingPage extends BasePage {
             }
           );
       })
-      .catch(err => {});
+      .catch(err => {this.showContentView();});
   }
 
   addMarker() {

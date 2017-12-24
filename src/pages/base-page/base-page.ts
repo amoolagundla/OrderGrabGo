@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LocalStorage } from '../../providers/local-storage';
 import { SharedDataService } from '../../providers/SharedDataService';
 import { ValuesService } from '../../providers/ValuesService';
-import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController, ModalController } from 'ionic-angular';
+import { NavController, LoadingController, ToastController, NavParams, AlertController, MenuController, ModalController,Events } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { SpinnerPage } from '../spinner/spinner';
 export abstract class BasePage {
@@ -28,6 +28,7 @@ export abstract class BasePage {
   protected sharedData: SharedDataService;
   public modalCtrl: ModalController;
   public userInfo: App.UserInfoViewModel;
+  public _events:Events;
   private _valuesService: ValuesService;
   constructor(injector: Injector) {
     this.loadingCtrl = injector.get(LoadingController);
@@ -41,9 +42,12 @@ export abstract class BasePage {
     this.sharedData = injector.get(SharedDataService);
     this._valuesService = injector.get(ValuesService);
     this.modalCtrl = injector.get(ModalController);
+    this._events=injector.get(Events);
     let menu = injector.get(MenuController);
     menu.swipeEnable(this.enableMenuSwipe());
-
+    this._events.subscribe('user:Logout', (userEventData) => {
+      this.navigateTo('SignInPage')
+});
     
   }
 
@@ -189,7 +193,9 @@ export abstract class BasePage {
       });
     });
   }
-
+  popPage() {
+    this.navCtrl.pop();
+  }
   navigateTo(page: any, params: any = {}) {
     this.navCtrl.push(page, params);
   }

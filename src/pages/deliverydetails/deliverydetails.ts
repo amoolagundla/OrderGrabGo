@@ -125,7 +125,9 @@ export class DeliverydetailsPage extends BasePage {
   ionViewDidLoad() {
    
   }
-
+  back() {
+    this.popPage();
+}
   showAddressModal() {
     let modal = this.modlCtrl.create(AddressdetailPage);
     let me = this;
@@ -162,6 +164,7 @@ export class DeliverydetailsPage extends BasePage {
           }
           if (isopened) {
               var res = {
+                IsBank:this.navParams.get("IsBank"),
                   page: "Deliver",
                   model: model,
                   restuarant: this.navParams.get("restuarant"),

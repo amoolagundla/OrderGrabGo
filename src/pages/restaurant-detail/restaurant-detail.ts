@@ -32,6 +32,7 @@ export class RestaurantDetailPage extends BasePage {
     };
     public hastakeout: number = 0; public hasdelivery: number = 0; public min_amt: number = 0;
     public video:any;
+    public zip:any;
     public ShowVideo:boolean=false;
     //public youtube: YoutubeVideoPlayer
     constructor(
@@ -50,6 +51,16 @@ export class RestaurantDetailPage extends BasePage {
                 this.firstName = 'Hello ' + this.user.FirstName;
             }
         });
+
+        this.sharedData.Zip.subscribe(
+            data => {
+             this.zip=data;
+             
+            }, err => {
+              console.log(err);
+            });
+
+
         if (this.navParams.get('Video_Link') != null && this.navParams.get('Video_Link') !="")
         {
             this.video = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.navParams.get('Video_Link'));
@@ -70,7 +81,7 @@ export class RestaurantDetailPage extends BasePage {
         var tdate = new Date();
         this.today = days[tdate.getDay()];      
         this.timeTable=this.navParams.get('time_table');
-         this.isOpen= this.isClose.IsRestauratnOpen(this.navParams.get('time_table'));
+         
     }
 
     enableMenuSwipe() {
@@ -81,7 +92,14 @@ export class RestaurantDetailPage extends BasePage {
         this.location = this.navParams.get('location').locality + " " + this.navParams.get('location').city;
         this.address = this.navParams.get('location').address;
         this.restlocation= this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode
-
+        if(this.navParams.get('time_table'))
+        {
+        this.isOpen= this.isClose.IsRestauratnOpen(this.navParams.get('time_table'));
+        }
+        else
+        {
+            this.isOpen= this.isClose.IsRestauratnOpen(this.timeTable);
+        }
     }
     reservetable() {
         if (this.isOpen) {
@@ -104,7 +122,7 @@ export class RestaurantDetailPage extends BasePage {
         });
     }    
     takout() {
-        if (this.isOpen) {
+        if (this.isClose.IsRestauratnOpen(this.navParams.get('time_table'))) {
             CART.total = 0;
             CART.shipping = 0;
             CART.items = [];
@@ -121,7 +139,7 @@ export class RestaurantDetailPage extends BasePage {
         }
     }
     delivery() {
-        if (this.isOpen) {
+        if (this.isClose.IsRestauratnOpen(this.navParams.get('time_table'))) {
             CART.total = 0;
             CART.shipping = 0;
             if (this.navParams.get('delivery_minimum_order') != undefined || this.navParams.get('delivery_minimum_order') != null) {
@@ -138,7 +156,7 @@ export class RestaurantDetailPage extends BasePage {
         }
     }
     back() {
-        this.navigateTo('RestaurentPage');
+        this.popPage();
     }
     home() {
         this.setRoot("DashPage");

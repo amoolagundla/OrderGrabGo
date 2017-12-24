@@ -9,8 +9,11 @@
   </ion-header>
 
 <ion-content padding>
-  <div #map id="map"></div> <h6  color="danger">{{Message}}</h6>
-    <!-- </div> -->
+  <div #map id="map" style="height:1px!important"></div> 
+    
+  <img  src="{{latLong}}">
+  <h6  color="danger">{{Message}}</h6>
+
     <div class="parkingAddress">
         
     <div class="row " color="danger" *ngIf="address">

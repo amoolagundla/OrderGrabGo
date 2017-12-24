@@ -106,6 +106,7 @@ checkout(){
             }
             if (isopened) {
                 var res = {
+                    IsBank:this.navParams.get("IsBank"),
                     page: 'Pick',
                     model: model,
                     restuarant: this.navParams.get('restuarant'),

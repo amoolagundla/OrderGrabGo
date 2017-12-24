@@ -25,4 +25,32 @@ page-checkout {
     color: #fff;
     margin:0 -15px;
      }
+
+     .form
+     {
+        margin-top: 3%;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 8%;
+     }
+
+     .form input
+     {
+        border-radius: 6px;
+     }
+
+    .total{    margin-top: -5%;
+        height: 94px;
+        text-align: -webkit-center;
+        background-color: #999696;
+        color: white;
+    }
+
+    .total H3{
+        font-size:34px;
+        margin-top:2%;
+        padding-top: 9%;
+        color: white;
+
+    }
 }

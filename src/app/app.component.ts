@@ -55,7 +55,10 @@ export class MyApp {
    
 
     this.initializeApp();
-   
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data) => {
+           this._shared.latLongChanged(data);
+    });
   }
 
   onMenuOpened() {
@@ -112,6 +115,10 @@ export class MyApp {
       }
     });
 
+
+  
+
+
     this.googleAnalytics.startTrackerWithId('UA-111274719-1');
     this.googleAnalytics.trackEvent('', 'App opened');
     this.googleAnalytics.debugMode();
@@ -161,7 +168,11 @@ export class MyApp {
   
    this.rootPage = 'SignInPage';
   });
-      this.geolocation.getCurrentPosition().then((position) => {  }).catch((err) => {  });
+      this.geolocation.getCurrentPosition().then((position) => { 
+        this._shared.latLongChanged(position);
+       }).catch((err) => {  
+
+       });
       if (AppConfig.HEADER_COLOR && this.platform.is("android")) {
         this.headerColor.tint(AppConfig.HEADER_COLOR);
       }
@@ -216,6 +227,7 @@ export class MyApp {
           }, error => { console.log("error while deactivating old order"); })
       }
     this.shared.findRest(data.notification.payload.additionalData.foo).subscribe((data:any)=>{
+      this._shared.timeTableChanged(data.time_table);
       this.nav.setRoot("RestaurantDetailPage", data);
               },error=>{this.nav.setRoot("DashPage");});
   }
