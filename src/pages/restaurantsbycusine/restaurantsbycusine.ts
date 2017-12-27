@@ -38,6 +38,7 @@ export class RestaurantsbycusinePage extends BasePage{
     public latLong:any;
     realPlaces: any;zip:any;
     public searchlocation: any = "";
+    public searchCuisine: any;
     public cuisines: any; ShowVideo: any = false; video: any = '';
     constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
         super(injector);
@@ -159,13 +160,36 @@ export class RestaurantsbycusinePage extends BasePage{
               let alert = this.atrCtrl.create();
               alert.setTitle("What sounds good?");
               for (var i = 0; i < this.cuisines.length; i++) {
-                  alert.addInput({
-                      type: "checkbox",
-                      label: this.cuisines[i].LookupCodeName,
-                      name: "input-italian",
-                      id: "input-italian",
-                      value: this.cuisines[i].LookupCodeId
-                  });
+                  if (this.searchCuisine != undefined && this.searchCuisine != null) {
+                      if (this.searchCuisine.indexOf(this.cuisines[i].LookupCodeId) > -1) {
+                          alert.addInput({
+                              type: "checkbox",
+                              label: this.cuisines[i].LookupCodeName,
+                              name: "input-italian",
+                              id: "input-italian",
+                              value: this.cuisines[i].LookupCodeId,
+                              checked : true
+                          });
+                      }
+                      else {
+                          alert.addInput({
+                              type: "checkbox",
+                              label: this.cuisines[i].LookupCodeName,
+                              name: "input-italian",
+                              id: "input-italian",
+                              value: this.cuisines[i].LookupCodeId
+                          });
+                      }
+                  }
+                  else {
+                      alert.addInput({
+                          type: "checkbox",
+                          label: this.cuisines[i].LookupCodeName,
+                          name: "input-italian",
+                          id: "input-italian",
+                          value: this.cuisines[i].LookupCodeId
+                      });
+                  }
               }
               this.showContentView();
               this.onRefreshComplete();
@@ -174,18 +198,29 @@ export class RestaurantsbycusinePage extends BasePage{
                   text: "Apply",
                   handler: data => {
                       this.showLoadingView();
-                      this.valuesService
-                          .GetCusinesRestaurant(
-                          data
-                          )
-                          .subscribe((data: any) => {
-                              this.places = data.restaurants;
-                              this.realPlaces = data.restaurants;
-                              this.loadMap();
-                              this.ShowVideo = false;
-                              this.showContentView();
-                              this.onRefreshComplete();
-                          });
+                      this.searchCuisine = data;
+                      if (data == undefined || data.length == 0) {
+                          this.places = this.navParams.data;
+                          this.realPlaces = this.navParams.data;
+                          this.loadMap();
+                          this.ShowVideo = false;
+                          this.showContentView();
+                          this.onRefreshComplete();
+                      }
+                      else {
+                          this.valuesService
+                              .GetCusinesRestaurant(
+                              data
+                              )
+                              .subscribe((data: any) => {
+                                  this.places = data.restaurants;
+                                  this.realPlaces = data.restaurants;
+                                  this.loadMap();
+                                  this.ShowVideo = false;
+                                  this.showContentView();
+                                  this.onRefreshComplete();
+                              });
+                      }
                   }
               });
 
