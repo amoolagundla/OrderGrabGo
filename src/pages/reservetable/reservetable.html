@@ -6,30 +6,30 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    
-    <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
-	<ion-title> <p class="nav-title">{{name}}</p></ion-title>
-      <ion-buttons right>
-          <button ion-button (click)="home()">
-              <ion-icon class="customIcon" name="home"></ion-icon>
-          </button>
-      </ion-buttons>
-  </ion-navbar>
+    <ion-navbar>
+
+        <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
+        <ion-title> <p class="nav-title">{{name}}</p></ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="home()">
+                <ion-icon class="customIcon" name="home"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content class="reserve-cont">
-<ion-card class="headinside">
-    <!--<img src="{{featuredImage}}"/>-->
-    <img *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}" />
-    <ion-slides *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
-        <ion-slide *ngFor="let slide of restaurantImages">
-            <img style="width:100%;" src="data:image/png;base64,{{slide.Image}}">
-        </ion-slide>
-    </ion-slides>
-  </ion-card>
+    <ion-card class="headinside">
+        <!--<img src="{{featuredImage}}"/>-->
+        <img *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}" />
+        <ion-slides *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
+            <ion-slide *ngFor="let slide of restaurantImages">
+                <img style="width:100%;" src="data:image/png;base64,{{slide.Image}}">
+            </ion-slide>
+        </ion-slides>
+    </ion-card>
     <form #f="ngForm" padding novalidate (ngSubmit)="save(f.value, f.valid,$event)">
         <div class="form-group">
             <div class="cols-sm-10" *ngIf="Cancellationfee !=''" style="text-align:center;color:red;font-weight:bold">
@@ -39,11 +39,11 @@
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" name="Location" [ngModel]="location" placeholder="Location"
-                           #Location="ngModel" >
+                           #Location="ngModel" disabled>
                 </div>
                 <!--<small [hidden]="Location.valid || (Location.pristine && !f.submitted)" class="text-danger">
-                Location is required .
-            </small>-->
+                    Location is required .
+                </small>-->
             </div>
         </div>
         <div class="form-group">
@@ -76,7 +76,7 @@
             <div class="cols-sm-10">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="ReservationTime"  [ngModel]="reservationtime" placeholder="Reservation Time"
+                    <input type="time" class="form-control" name="ReservationTime" [ngModel]="reservationtime" placeholder="Reservation Time"
                            required #ReservationTime="ngModel">
                 </div>
                 <small [hidden]="ReservationTime.valid || (ReservationTime.pristine && !f.submitted)" class="text-danger">
@@ -93,7 +93,7 @@
                         <ion-input type="number" #Numb="ngModel" (ngModel)="number" required="true" clearInput=true min="{{minGuest}}" max="5"></ion-input>
                     </ion-item>-->
                     <span class="input-group-addon"><i class="fa fa-users fa-lg" aria-hidden="true"></i></span>
-                    <input  type="number"  [ngModel]="guests" class="form-control" placeholder="No of Guests" min="{{minGuest}}" name="Guests" required #Guests="ngModel" />
+                    <input type="number" [ngModel]="guests" class="form-control" placeholder="No of Guests" min="{{minGuest}}" name="Guests" required #Guests="ngModel" />
                     <!--<select [ngModel]="guests" class="form-control" name="Guests" required #Guests="ngModel">
                         <option value="" disabled selected>No of Guests</option>
                         <option>1</option>
@@ -111,7 +111,7 @@
                 <small [hidden]="Guests.valid || (Guests.pristine && !f.submitted)" class="text-danger">
                     No of guests is required .
                 </small>
-                
+
             </div>
         </div>
         <div class="form-group">

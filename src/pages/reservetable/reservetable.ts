@@ -1,5 +1,5 @@
-import { Component,Injector } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController  } from 'ionic-angular';
+import { Component, Injector } from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
@@ -17,7 +17,7 @@ import swal from 'sweetalert';
     selector: 'page-reservetable',
     templateUrl: 'reservetable.html',
 })
-export class ReservetablePage extends BasePage{
+export class ReservetablePage extends BasePage {
     //form: any;
     public user: any;
     special: string = '';
@@ -28,7 +28,7 @@ export class ReservetablePage extends BasePage{
     restaurantImages: any;
     reservationdate: Date = new Date();
     reservationtime: any; timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
-    constructor(injector: Injector, public atrCtrl: AlertController, private service: ValuesService, public geolocation: Geolocation, private _shared: SharedDataService,) {
+    constructor(injector: Injector, public atrCtrl: AlertController, private service: ValuesService, public geolocation: Geolocation, private _shared: SharedDataService, ) {
         super(injector);
         var timeHours = new Date().getHours();
         var timeMin = new Date().getMinutes()
@@ -57,7 +57,7 @@ export class ReservetablePage extends BasePage{
         if (this.navParams.get('MinReservation') != undefined && this.navParams.get('MinReservation') != null) {
             this.minGuest = Number(this.navParams.get('MinReservation'));
         }
-        
+
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         var tdate = new Date();
         this.today = days[tdate.getDay()];
@@ -94,10 +94,10 @@ export class ReservetablePage extends BasePage{
     ionViewDidLoad() {
         this.name = this.navParams.get('name');
         this.firstName = "OrderGrabGo";
-		this.location = this.navParams.get('location').address +","+ this.navParams.get('location').city +","+this.navParams.get('location').zipcode;
+        this.location = this.navParams.get('location').address + "," + this.navParams.get('location').city + "," + this.navParams.get('location').zipcode;
 
     }
-   
+
 
     save(model: any, isValid: boolean, event: Event) {
         if (isValid) {
@@ -105,21 +105,32 @@ export class ReservetablePage extends BasePage{
                 var selectedTimeHour = model.ReservationTime.split(':')[0];
                 var selectedTimeMin = model.ReservationTime.split(':')[1];
                 var isopened = true;
+                var selecteddaTe = new Date(model.ReservationDate);
+                var sdate = selecteddaTe.getDate();
+                if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
+                    if (Number(selectedTimeHour) < new Date().getHours()) {
+                        isopened = false;
+                    }
+                    else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
+                        isopened = false;
+                    }
+                }
                 //if(Number(selectedTimeHour)>12)
                 //{
                 //    selectedTimeHour=Number(selectedTimeHour)-12;
                 //}
-                
-                if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
-                    if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
+                if (isopened) {
+                    if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
+                        if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
+                            isopened = false;
+                        }
+                        if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
+                            isopened = false;
+                        }
+                    }
+                    else {
                         isopened = false;
                     }
-                    if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
-                        isopened = false;
-                    }
-                }
-                else {
-                    isopened = false;
                 }
                 if (isopened) {
                     this.geolocation.getCurrentPosition({ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true }).then((data) => {
@@ -132,7 +143,7 @@ export class ReservetablePage extends BasePage{
                         orders.LookupStatusId = 47;
                         orders.Instructions = model.Special;
                         orders.OrderAddress = new App.OrderAddress();
-                        orders.OrderAddress.address1 = model.Location;
+                        orders.OrderAddress.address1 = this.navParams.get('location').address + "," + this.navParams.get('location').city + "," + this.navParams.get('location').zipcode;
                         orders.OrderAddress.phoneNo = model.PhoneNumber;
                         orders.ReservationPeopleCount = model.Guests;
                         orders.ReservationTime = new Date(model.ReservationDate + " " + model.ReservationTime);
@@ -143,7 +154,8 @@ export class ReservetablePage extends BasePage{
                         this.service.SaveOrders(orders).subscribe((data: any) => {
                             console.log(data);
                             let orderId = data.OrderId;
-                            model.ReservationTime=data.Time;
+                            model.ReservationTime = data.Time;
+                            model.Location = this.navParams.get('location').address + "," + this.navParams.get('location').city + "," + this.navParams.get('location').zipcode;
                             var res = {
                                 model: model,
                                 orderId: data.OrderId,
@@ -160,15 +172,15 @@ export class ReservetablePage extends BasePage{
                 }
             }
             else {
-                swal('Minimum', 'Minimum number of guest should be '+this.minGuest, 'error');
+                swal('Minimum', 'Minimum number of guest should be ' + this.minGuest, 'error');
             }
         }
         else {
             swal('Required', 'All fields are required!', 'error');
         }
-        
+
     }
-    
+
 
 
 }

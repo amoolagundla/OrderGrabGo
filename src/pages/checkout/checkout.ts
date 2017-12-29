@@ -1,9 +1,9 @@
 import { Component, Injector } from "@angular/core";
 import {
-  IonicPage,
-  NavController,
-  NavParams,
-  AlertController
+    IonicPage,
+    NavController,
+    NavParams,
+    AlertController
 } from "ionic-angular";
 import { CART } from "../cart/cartitems";
 import { BasePage } from "../base-page/base-page";
@@ -23,236 +23,228 @@ import { error } from "util";
 
 @IonicPage()
 @Component({
-  selector: "page-checkout",
-  templateUrl: "checkout.html"
+    selector: "page-checkout",
+    templateUrl: "checkout.html"
 })
 export class CheckoutPage extends BasePage {
-  public total: any;
-  public user: any;
-  public model: any;
-  public cart: any;
-  pageName: string = "";
-  paid:boolean=false;
-  public IsBank:boolean=false;
-  public cardinfo: any = {
-    number: '',
-    expMonth: '',
-    expYear: '',
-    cvc: ''
-  };
-  public  bankAccount = {
-    routing_number: '',
-    account_number: '',
-    account_holder_name: '', // optional
-    account_holder_type: '', // optional
-    currency: 'USD',
-    country: 'USA'
-  };
-  timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
-  
-  code:any;
-  constructor(
-    injector: Injector,
-    private altcntrl: AlertController,
-    private service: ValuesService,
-    public geolocation: Geolocation,public stripe:Stripe
-  ) {
-      super(injector);
-      this.cart = CART;
-      this.total = CART.total;
-    
-    this.sharedData.UserInfo.subscribe(data => {
-      if (data != undefined && data.FirstName != undefined) {
-        this.user = data;
-      }
-    });
-    this.model = this.navParams.get("model");
-    this.pageName = this.navParams.get("page");
-    this.IsBank= this.navParams.get("IsBank");
-    console.log(this.IsBank);
-    this.service.getCode().subscribe((res: any) => {
-        this.code=res;
-    }, err => {});
-  }
-  enableMenuSwipe() {
-    return true;
-  }
-  ionViewDidLoad() {
-    
-  }
-  pay() {
-    if(true)
-    { 
-      this.paid=true;
-    var resparams = this.navParams.get("restuarant").location;
-    var model = this.navParams.get("model");
-    let time: any;
-    this.geolocation
-      .getCurrentPosition({
-        maximumAge: 3000,
-        timeout: 5000,
-        enableHighAccuracy: true
-      })
-      .then(data => {
-        var orders = new App.Orders();
-        orders.OrderId = 0;
-        orders.CustomerId = 0;
-        orders.ResturantId = this.navParams.get("restuarant").data.id;
-        orders.OrderTotal = CART.total;
-        orders.OrderAddress = new App.OrderAddress();
-        orders.OrderAddress.address1 = " ";
-        if (
-          this.navParams.get("page") != undefined &&
-          this.navParams.get("page") == "Deliver"
-        ) {
-          orders.LookupOrderTypeId = 10;
-          orders.OrderAddress.address1 = model.Address;
-          orders.DeliveryTime = new Date(model.DeliveryDate + " " + model.DeliveryTime)
-          orders.Time = model.DeliveryTime;
-          time = "Your Delivery time " + model.DeliveryTime;
-        } else {
-          orders.LookupOrderTypeId = 8;
-          orders.OrderAddress.address1 = model.Location;
-          orders.PickupTime = new Date(model.PickupDate + " " + model.PickupTime)
-          orders.Time = model.PickupTime;
-          time = "Your Pickup time " + model.PickupTime;
-        }
-        orders.Instructions = model.Special;
-        orders.OrderAddress.firstName = model.FirstName;
-        orders.OrderAddress.lastName = model.FirstName;
-        orders.OrderAddress.phoneNo = model.PhoneNumber;
-        orders.OrderAddress.city = "Des Moines";
-        orders.OrderDetail = new Array<App.OrderDetail>();
-        for (var i = 0; i < CART.items.length; i++) {
-          var orderdetail = new App.OrderDetail();
-          orderdetail.ProductId = CART.items[i].id;
-          orderdetail.Price = CART.items[i].price;
-          orderdetail.Quantity = CART.items[i].quantity;
-          orderdetail.IsActive = false;
-          orderdetail.IsDeleted = false;
-          orderdetail.OrderId = 0;
-          orderdetail.CreatedDate = new Date();
-          orderdetail.ModifiedDate = new Date();
-          orderdetail.CreatedUserId = null;
-          orderdetail.ModifiedUserId = null;
-          orderdetail.Product = null;
-          orderdetail.Order = null;
-          orderdetail.OrderDetailId = 0;
-          orders.LookupStatusId = 47;
-          orders.OrderDetail.push(orderdetail);
-        }
-        this.showLoadingView();
-        this.service.SaveOrders(orders).subscribe(
-          (data: any) => {
-            console.log(data);
+    public total: any;
+    public user: any;
+    public model: any;
+    public cart: any;
+    pageName: string = "";
+    paid: boolean = false;
+    public IsBank: boolean = false;
+    public cardinfo: any = {
+        number: '',
+        expMonth: '',
+        expYear: '',
+        cvc: ''
+    };
+    public bankAccount = {
+        routing_number: '',
+        account_number: '',
+        account_holder_name: '', // optional
+        account_holder_type: '', // optional
+        currency: 'USD',
+        country: 'USA'
+    };
+    timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
 
+    code: any;
+    constructor(
+        injector: Injector,
+        private altcntrl: AlertController,
+        private service: ValuesService,
+        public geolocation: Geolocation, public stripe: Stripe
+    ) {
+        super(injector);
+        this.cart = CART;
+        this.total = CART.total;
 
-            if (
-              this.navParams.get("page") != undefined &&
-              this.navParams.get("page") == "Deliver"
-            ) {
-            
-              time = "Your Delivery time " + data.Time;
-            } else {            
-              time = "Your Pickup time " + data.Time;
+        this.sharedData.UserInfo.subscribe(data => {
+            if (data != undefined && data.FirstName != undefined) {
+                this.user = data;
             }
+        });
+        this.model = this.navParams.get("model");
+        this.pageName = this.navParams.get("page");
+        this.IsBank = this.navParams.get("IsBank");
+        console.log(this.IsBank);
+        this.service.getCode().subscribe((res: any) => {
+            this.code = res;
+        }, err => { });
+    }
+    enableMenuSwipe() {
+        return true;
+    }
+    ionViewDidLoad() {
+
+    }
+    pay() {
+        if (true) {
+            this.paid = true;
+            var resparams = this.navParams.get("restuarant").location;
+            var model = this.navParams.get("model");
+            let time: any;
+            this.geolocation
+                .getCurrentPosition({
+                    maximumAge: 3000,
+                    timeout: 5000,
+                    enableHighAccuracy: true
+                })
+                .then(data => {
+                    var orders = new App.Orders();
+                    orders.OrderId = 0;
+                    orders.CustomerId = 0;
+                    orders.ResturantId = this.navParams.get("restuarant").data.id;
+                    orders.OrderTotal = CART.total;
+                    orders.OrderAddress = new App.OrderAddress();
+                    orders.OrderAddress.address1 = " ";
+                    if (
+                        this.navParams.get("page") != undefined &&
+                        this.navParams.get("page") == "Deliver"
+                    ) {
+                        orders.LookupOrderTypeId = 10;
+                        orders.OrderAddress.address1 = model.Address;
+                        orders.DeliveryTime = new Date(model.DeliveryDate + " " + model.DeliveryTime)
+                        orders.Time = model.DeliveryTime;
+                        time = "Your Delivery time " + model.DeliveryTime;
+                    } else {
+                        orders.LookupOrderTypeId = 8;
+                        orders.OrderAddress.address1 = model.Location;
+                        orders.PickupTime = new Date(model.PickupDate + " " + model.PickupTime)
+                        orders.Time = model.PickupTime;
+                        time = "Your Pickup time " + model.PickupTime;
+                    }
+                    orders.Instructions = model.Special;
+                    orders.OrderAddress.firstName = model.FirstName;
+                    orders.OrderAddress.lastName = model.LastName;
+                    orders.OrderAddress.phoneNo = model.PhoneNumber;
+                    orders.OrderAddress.city = "Des Moines";
+                    orders.OrderDetail = new Array<App.OrderDetail>();
+                    for (var i = 0; i < CART.items.length; i++) {
+                        var orderdetail = new App.OrderDetail();
+                        orderdetail.ProductId = CART.items[i].id;
+                        orderdetail.Price = CART.items[i].price;
+                        orderdetail.Quantity = CART.items[i].quantity;
+                        orderdetail.IsActive = false;
+                        orderdetail.IsDeleted = false;
+                        orderdetail.OrderId = 0;
+                        orderdetail.CreatedDate = new Date();
+                        orderdetail.ModifiedDate = new Date();
+                        orderdetail.CreatedUserId = null;
+                        orderdetail.ModifiedUserId = null;
+                        orderdetail.Product = null;
+                        orderdetail.Order = null;
+                        orderdetail.OrderDetailId = 0;
+                        orders.LookupStatusId = 47;
+                        orders.OrderDetail.push(orderdetail);
+                    }
+                    this.showLoadingView();
+                    this.service.SaveOrders(orders).subscribe(
+                        (data: any) => {
+                            console.log(data);
 
 
-            let orderId = data.OrderId;
-            var dat = {
-              model: this.navParams.get("model"),
-              pageName: this.navParams.get("page"),
-              orderId: orderId,
-              reservedTime: time,
-              location:
-                this.navParams.get("location").address +
-                "," +
-                this.navParams.get("location").city +
-                "," +
-                this.navParams.get("location").zipcode
-            };
-            this.showContentView();
-            this.navigateTo("OrderconfirmationPage", dat);
-          },
-          error => {
-            this.showContentView();
-          }
-        );
-      });
-    }
-  }
-   creditCard()
-   { 
-    
-    this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
-    if(this.cardinfo.number!='' && this.cardinfo.expMonth!='' && this.cardinfo.expYear!='' && this.cardinfo.cvc!='')
-    {
+                            if (
+                                this.navParams.get("page") != undefined &&
+                                this.navParams.get("page") == "Deliver"
+                            ) {
 
-      //this.pay();
-    this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
-      this.showLoadingView();
-        this.stripe.createCardToken(this.cardinfo).then(token => {
-          //alert(token);
-         
-          this.showContentView();
-          this.pay();
-        },error=>
-      {
-        this.showContentView();
-        swal('Oops',"Please Enter Correct Card Information", 'error');
-      });
-      }, error => {
+                                time = "Your Delivery time " + data.Time;
+                            } else {
+                                time = "Your Pickup time " + data.Time;
+                            }
 
-        swal('Oops',"Please Enter Correct Card Information", 'error');
-      });
-    }
-    else
-    {
-      swal('Oops',"Please Enter All the ields", 'error');
-    }
-   }
-   PayBank()
-   {
-    this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
-    if(this.bankAccount.routing_number!='' && this.bankAccount.account_number!='' && this.bankAccount.currency!='' && this.bankAccount.country!='')
-    {
-      this.pay();
-      // this.showLoadingView();
-      //   this.stripe.createBankAccountToken(this.bankAccount).then(token => {
-      //     //alert(token);         
-      //     this.showContentView();
-      //     this.pay();
-      //   },error=>
-      // {
-      //   this.showContentView();
-      //   swal('Oops',"Please Enter Correct Card Information", 'error');
-      // });
-     
-    }
-    else
-    {
-      swal('Oops',"Please Enter All the fields", 'error');
-    }
-   }
-  home() {
-    if (CART.total > 0) {
-      let alert = this.altcntrl.create({
-        title: "Clear Cart",
-        subTitle:
-          "Are you sure you would like to go back? The cart will be cleared."
-      });
-      alert.addButton({
-        text: "Cancel"
-      });
-      alert.addButton({
-        text: "Yes",
-        handler: data => { 
-          this.setRoot("DashPage");
+
+                            let orderId = data.OrderId;
+                            var dat = {
+                                model: this.navParams.get("model"),
+                                pageName: this.navParams.get("page"),
+                                orderId: orderId,
+                                reservedTime: time,
+                                location:
+                                this.navParams.get("location").address +
+                                "," +
+                                this.navParams.get("location").city +
+                                "," +
+                                this.navParams.get("location").zipcode
+                            };
+                            this.showContentView();
+                            this.navigateTo("OrderconfirmationPage", dat);
+                        },
+                        error => {
+                            this.showContentView();
+                        }
+                    );
+                });
         }
-      });
-      alert.present();
-    } else {
-      this.setRoot("DashPage");
     }
-  }
+    creditCard() {
+
+        this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+        if (this.cardinfo.number != '' && this.cardinfo.expMonth != '' && this.cardinfo.expYear != '' && this.cardinfo.cvc != '') {
+
+            //this.pay();
+            this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
+                this.showLoadingView();
+                this.stripe.createCardToken(this.cardinfo).then(token => {
+                    //alert(token);
+
+                    this.showContentView();
+                    this.pay();
+                }, error => {
+                        this.showContentView();
+                        swal('Oops', "Please Enter Correct Card Information", 'error');
+                    });
+            }, error => {
+
+                swal('Oops', "Please Enter Correct Card Information", 'error');
+            });
+        }
+        else {
+            swal('Oops', "Please Enter All the ields", 'error');
+        }
+    }
+    PayBank() {
+        this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
+        if (this.bankAccount.routing_number != '' && this.bankAccount.account_number != '' && this.bankAccount.currency != '' && this.bankAccount.country != '') {
+            this.pay();
+            // this.showLoadingView();
+            //   this.stripe.createBankAccountToken(this.bankAccount).then(token => {
+            //     //alert(token);         
+            //     this.showContentView();
+            //     this.pay();
+            //   },error=>
+            // {
+            //   this.showContentView();
+            //   swal('Oops',"Please Enter Correct Card Information", 'error');
+            // });
+
+        }
+        else {
+            swal('Oops', "Please Enter All the fields", 'error');
+        }
+    }
+    home() {
+        if (CART.total > 0) {
+            let alert = this.altcntrl.create({
+                title: "Clear Cart",
+                subTitle:
+                "Are you sure you would like to go back? The cart will be cleared."
+            });
+            alert.addButton({
+                text: "Cancel"
+            });
+            alert.addButton({
+                text: "Yes",
+                handler: data => {
+                    this.setRoot("DashPage");
+                }
+            });
+            alert.present();
+        } else {
+            this.setRoot("DashPage");
+        }
+    }
 }

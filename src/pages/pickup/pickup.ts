@@ -34,8 +34,13 @@ export class PickupPage extends BasePage {
         this.pickupTime= this.pickdate.getTime();
         console.log(this.pickupTime);
         this.sharedData.UserInfo.subscribe((data) => {
-            this.user = data;
-            this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
+            if (data != undefined && data.FirstName != undefined) {
+                this.user = data;
+                //this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
+            } else {
+                this.user.FirstName = "";
+                this.user.LastName = "";
+            }
         });
         this.storage.getAddress().then((data) => {
             this.location = data;
@@ -93,16 +98,28 @@ checkout(){
             //    selectedTimeHour= Number(selectedTimeHour)-12;
             //}
             var isopened = true;
-            if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
-                if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
+            var selecteddaTe = new Date(model.PickupDate);
+            var sdate = selecteddaTe.getDate();
+            if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
+                if (Number(selectedTimeHour) < new Date().getHours()) {
                     isopened = false;
                 }
-                if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
+                else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                     isopened = false;
                 }
             }
-            else {
-                isopened = false;
+            if (isopened) {
+                if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
+                    if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
+                        isopened = false;
+                    }
+                    if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
+                        isopened = false;
+                    }
+                }
+                else {
+                    isopened = false;
+                }
             }
             if (isopened) {
                 var res = {

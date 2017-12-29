@@ -1,9 +1,9 @@
 import { Component, Injector, NgZone, ViewChild } from "@angular/core";
 import {
-  IonicPage,
-  AlertController,
-  ViewController,
-  ModalController
+    IonicPage,
+    AlertController,
+    ViewController,
+    ModalController
 } from "ionic-angular";
 import { BasePage } from "../base-page/base-page";
 import { SharedDataService } from "../../providers/SharedDataService";
@@ -21,184 +21,199 @@ declare var google;
  */
 @IonicPage()
 @Component({
-  selector: "page-deliverydetails",
-  templateUrl: "deliverydetails.html"
+    selector: "page-deliverydetails",
+    templateUrl: "deliverydetails.html"
 })
 export class DeliverydetailsPage extends BasePage {
-  @ViewChild("f") form;
-  public user: any;
-  public address: string = "";
-  public firstName: string = "";
- 
-  autocompleteItems;
-  autocomplete;
-  minDate:any;
-  latitude: number = 0;
-  longitude: number = 0;
-  geo: any;
-  //public minDate:any;
-  deliverydate: Date = new Date();
-  deliveryTime: any = this.deliverydate.getHours();
-  service = new google.maps.places.AutocompleteService();
-  timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
-  constructor(
-    injector: Injector,
-    private _shared: SharedDataService,
-    private altcntrl: AlertController,
-    private storage: LocalStorage,
-    private modlCtrl: ModalController
-  ) {
-    super(injector);
-    this.deliveryTime = new Date(
-      this.deliverydate.getTime() +
-        parseInt(this.navParams.get("restuarant").data.delivery_estimate_time == null ? 0:this.navParams.get("restuarant").data.delivery_estimate_time) *
-          60000
-    );
-    console.log(this.deliveryTime);
-    this.minDate=new Date().toJSON().split('T')[0];
-    this._shared.UserInfo.subscribe(data => {
-        
-      if (data != undefined && data.FirstName != undefined) {
-        this.user = data;
-        this.firstName = data.FirstName;
-        this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
-      } else {
-        this.firstName = "";
-      }
-    });
+    @ViewChild("f") form;
+    public user: any;
+    public address: string = "";
+    public firstName: string = "";
 
-    this.storage.getAddress().then(data => {
-      this.address = data;
-    });
-   
-    this.autocompleteItems = [];
-    this.timeTable = this.navParams.get("restuarant").data.time_table;
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var tdate = new Date();
-    this.today = days[tdate.getDay()];
-    if (this.navParams.get("restuarant").data.time_table != undefined && this.navParams.get("restuarant").data.time_table != null) {
-        for (let item of this.navParams.get("restuarant").data.time_table) {
-            if (item.Day.toLowerCase() == this.today.toLowerCase()) {
-                this.shours = Number(item.startTime.split(':')[0]);
-                this.smins = Number(item.startTime.split(':')[1]);
-                this.ehours = Number(item.endTime.split(':')[0]);
-                this.emins = Number(item.endTime.split(':')[1]);
-                var starthour = item.startTimeHours.toString();
-                var startmin = item.startTimeMins.toString();
-                if (item.startTimeHours < 10) {
-                    starthour = "0" + item.startTimeHours.toString();
-                }
-                if (item.startTimeMins < 10) {
-                    startmin = "0" + item.startTimeMins;
-                }
-                this.min = starthour + ":" + startmin;
-                var endhour = item.endTimeHours.toString();
-                var endmin = item.endTimeMins.toString();
-                if (item.endTimeHours < 10) {
-                    endhour = "0" + item.endTimeHours.toString();
-                }
-                if (item.endTimeMins < 10) {
-                    endmin = "0" + item.endTimeMins;
-                }
-                this.max = endhour + ":" + endmin;
+    autocompleteItems;
+    autocomplete;
+    minDate: any;
+    latitude: number = 0;
+    longitude: number = 0;
+    geo: any;
+    //public minDate:any;
+    deliverydate: Date = new Date();
+    deliveryTime: any = this.deliverydate.getHours();
+    service = new google.maps.places.AutocompleteService();
+    timeTable: any; today: any; min: string = ''; max: string = ''; shours: number; smins: number; ehours: number; emins: number;
+    constructor(
+        injector: Injector,
+        private _shared: SharedDataService,
+        private altcntrl: AlertController,
+        private storage: LocalStorage,
+        private modlCtrl: ModalController
+    ) {
+        super(injector);
+        this.deliveryTime = new Date(
+            this.deliverydate.getTime() +
+            parseInt(this.navParams.get("restuarant").data.delivery_estimate_time == null ? 0 : this.navParams.get("restuarant").data.delivery_estimate_time) *
+            60000
+        );
+        console.log(this.deliveryTime);
+        this.minDate = new Date().toJSON().split('T')[0];
+        this._shared.UserInfo.subscribe(data => {
+
+            if (data != undefined && data.FirstName != undefined) {
+                this.user = data;
+                this.firstName = data.FirstName;
+                //this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
+            } else {
+                this.firstName = "";
+                this.user.FirstName = "";
+                this.user.LastName = "";
             }
-        }
-        
-     this.minDate = new Date();
-        var dd =  this.minDate .getDate();
-        var mm =  this.minDate .getMonth()+1; //January is 0!
-        var yyyy =  this.minDate .getFullYear();
-         if(dd<10){
-                dd='0'+dd
-            } 
-            if(mm<10){
-                mm='0'+mm
-            } 
-        
-            this.minDate  = yyyy+'-'+mm+'-'+dd;
-       
-    }
-  }
-  enableMenuSwipe() {
-    return true;
-  }
-  ionViewDidLoad() {
-   
-  }
-  back() {
-    this.popPage();
-}
-  showAddressModal() {
-    let modal = this.modlCtrl.create(AddressdetailPage);
-    let me = this;
-    modal.onDidDismiss(data => {
-      if (data != undefined) {
-        this.address = data;
-      }
-    });
-    modal.present();
-  }
-  onSubmit() {
-    this.navigateTo("CheckoutPage");
-  }
+        });
 
-  save(model: any, isValid: boolean, event: Event) {
-      if (isValid) {
-          var selectedTimeHour = model.DeliveryTime.split(':')[0];
-          var selectedTimeMin = model.DeliveryTime.split(':')[1];
-        //   if(Number(selectedTimeHour) >12)
-        //   {
-        //      selectedTimeHour= Number(selectedTimeHour)-12;
-        //   }
-          var isopened = true;
-          if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
-              if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
-                  isopened = false;
-              }
-              if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
-                  isopened = false;
-              }
-          }
-          else {
-              isopened = false;
-          }
-          if (isopened) {
-              var res = {
-                IsBank:this.navParams.get("IsBank"),
-                  page: "Deliver",
-                  model: model,
-                  restuarant: this.navParams.get("restuarant"),
-                  params: this.navParams,
-                  location: this.navParams.get("restuarant").data.location
-              };
-              this.navigateTo("CheckoutPage", res);
-          }
-          else {
-              swal('Closed', 'Restaurant is closed on the selected date and time! Kindly delivery time in open hours', 'error');
-          }
-      } else {
-          swal('Required', 'All fields are required!', 'error');
-      }
-  }
-  home() {
-      if (CART.total > 0) {
-          let alert = this.altcntrl.create({
-              title: 'Clear Cart',
-              subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
-          });
-          alert.addButton({
-              text: 'Cancel'
-          });
-          alert.addButton({
-              text: 'Yes',
-              handler: data => {
-                  this.setRoot("DashPage");
-              }
-          });
-          alert.present();
-      }
-      else {
-          this.setRoot("DashPage");
-      }
-  }
+        this.storage.getAddress().then(data => {
+            this.address = data;
+        });
+
+        this.autocompleteItems = [];
+        this.timeTable = this.navParams.get("restuarant").data.time_table;
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var tdate = new Date();
+        this.today = days[tdate.getDay()];
+        if (this.navParams.get("restuarant").data.time_table != undefined && this.navParams.get("restuarant").data.time_table != null) {
+            for (let item of this.navParams.get("restuarant").data.time_table) {
+                if (item.Day.toLowerCase() == this.today.toLowerCase()) {
+                    this.shours = Number(item.startTime.split(':')[0]);
+                    this.smins = Number(item.startTime.split(':')[1]);
+                    this.ehours = Number(item.endTime.split(':')[0]);
+                    this.emins = Number(item.endTime.split(':')[1]);
+                    var starthour = item.startTimeHours.toString();
+                    var startmin = item.startTimeMins.toString();
+                    if (item.startTimeHours < 10) {
+                        starthour = "0" + item.startTimeHours.toString();
+                    }
+                    if (item.startTimeMins < 10) {
+                        startmin = "0" + item.startTimeMins;
+                    }
+                    this.min = starthour + ":" + startmin;
+                    var endhour = item.endTimeHours.toString();
+                    var endmin = item.endTimeMins.toString();
+                    if (item.endTimeHours < 10) {
+                        endhour = "0" + item.endTimeHours.toString();
+                    }
+                    if (item.endTimeMins < 10) {
+                        endmin = "0" + item.endTimeMins;
+                    }
+                    this.max = endhour + ":" + endmin;
+                }
+            }
+
+            this.minDate = new Date();
+            var dd = this.minDate.getDate();
+            var mm = this.minDate.getMonth() + 1; //January is 0!
+            var yyyy = this.minDate.getFullYear();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+
+            this.minDate = yyyy + '-' + mm + '-' + dd;
+
+        }
+    }
+    enableMenuSwipe() {
+        return true;
+    }
+    ionViewDidLoad() {
+
+    }
+    back() {
+        this.popPage();
+    }
+    showAddressModal() {
+        let modal = this.modlCtrl.create(AddressdetailPage);
+        let me = this;
+        modal.onDidDismiss(data => {
+            if (data != undefined) {
+                this.address = data;
+            }
+        });
+        modal.present();
+    }
+    onSubmit() {
+        this.navigateTo("CheckoutPage");
+    }
+
+    save(model: any, isValid: boolean, event: Event) {
+        if (isValid) {
+            var selectedTimeHour = model.DeliveryTime.split(':')[0];
+            var selectedTimeMin = model.DeliveryTime.split(':')[1];
+            //   if(Number(selectedTimeHour) >12)
+            //   {
+            //      selectedTimeHour= Number(selectedTimeHour)-12;
+            //   }
+            var isopened = true;
+            var selecteddaTe = new Date(model.DeliveryDate);
+            debugger;
+            var sdate = selecteddaTe.getDate();
+            if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
+                if (Number(selectedTimeHour) < new Date().getHours()) {
+                    isopened = false;
+                }
+                else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
+                    isopened = false;
+                }
+            }
+            if (isopened) {
+                if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
+                    if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
+                        isopened = false;
+                    }
+                    if (Number(selectedTimeHour) == this.ehours && Number(selectedTimeMin) > this.emins) {
+                        isopened = false;
+                    }
+                }
+                else {
+                    isopened = false;
+                }
+            }
+            if (isopened) {
+                var res = {
+                    IsBank: this.navParams.get("IsBank"),
+                    page: "Deliver",
+                    model: model,
+                    restuarant: this.navParams.get("restuarant"),
+                    params: this.navParams,
+                    location: this.navParams.get("restuarant").data.location
+                };
+                this.navigateTo("CheckoutPage", res);
+            }
+            else {
+                swal('Closed', 'Restaurant is closed on the selected date and time! Kindly delivery time in open hours', 'error');
+            }
+        } else {
+            swal('Required', 'All fields are required!', 'error');
+        }
+    }
+    home() {
+        if (CART.total > 0) {
+            let alert = this.altcntrl.create({
+                title: 'Clear Cart',
+                subTitle: 'Are you sure you would like to go back? The cart will be cleared.',
+            });
+            alert.addButton({
+                text: 'Cancel'
+            });
+            alert.addButton({
+                text: 'Yes',
+                handler: data => {
+                    this.setRoot("DashPage");
+                }
+            });
+            alert.present();
+        }
+        else {
+            this.setRoot("DashPage");
+        }
+    }
 }

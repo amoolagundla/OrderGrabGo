@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 import { ValuesService } from "../../providers/ValuesService";
 import { LocationsearchPage } from "../locationsearch/locationsearch";
 import { DomSanitizer } from '@angular/platform-browser';
+import { IsClose } from '../../providers/IsCloseService';
 import {
     GoogleMap,
     GoogleMapsEvent,
@@ -40,7 +41,8 @@ export class RestaurantsbycusinePage extends BasePage{
     public searchlocation: any = "";
     public searchCuisine: any;
     public cuisines: any; ShowVideo: any = false; video: any = '';
-    constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator) {
+    constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator,
+        public isClose: IsClose) {
         super(injector);
         this.places = this.navParams.data;
         this.realPlaces = this.navParams.data;
@@ -116,8 +118,21 @@ export class RestaurantsbycusinePage extends BasePage{
       this.navigateTo('RestaurantDetailPage', res);
   }
   reservetable(res: any) {
-    this.sharedData.timeTableChanged(res.time_table);
-      this.navigateTo('ReservetablePage', res);
+      this.showLoadingView();
+      var isOpen = true;
+      this.sharedData.timeTableChanged(res.time_table);
+      if (res.time_table) {
+          isOpen = this.isClose.IsRestauratnOpen(res.time_table);
+      }
+      if (isOpen) {
+          
+          this.showContentView();
+          this.navigateTo('ReservetablePage', res);
+      }
+      else {
+          this.showContentView();
+          swal('Closed', 'Sorry! The restaurant was closed', 'error');
+      }
   }
 
   notavailable() {

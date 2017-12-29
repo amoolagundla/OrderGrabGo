@@ -11,18 +11,18 @@
                 <ion-icon class="customIcon" style="color:#f53d3d" name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-buttons right  style="position:fixed;top:10px;right:10px">
+        <ion-buttons right style="position:fixed;top:10px;right:10px">
             <button ion-button (click)="home()">
                 <ion-icon class="customIcon" style="position:fixed;color:#f53d3d !important;top:10px;right:10px" name="home"></ion-icon>
             </button>
         </ion-buttons>
         <div *ngIf="ShowVideo==false" #map id="map"></div>
-        <div *ngIf="ShowVideo"> <iframe [src]='video' frameborder="0" style="height:185px" gesture="media"></iframe>      </div>    
+        <div *ngIf="ShowVideo"> <iframe [src]='video' frameborder="0" style="height:185px" gesture="media"></iframe>      </div>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    
+
     <button style="width:100%;background:green;color:#fff" class="btn btn-lg" (click)="watsoundsgood();">what sounds good?</button>
     <div class="search">
         <ion-searchbar color="dark" debounce="500"
@@ -41,18 +41,18 @@
 
                 </ion-col>
                 <ion-col col-4>
-                    <img style="width:100%;" *ngIf="place.restaurant.Logo == null || place.restaurant.Logo ==''" src="{{place.restaurant.featured_image}}">
-                    <img style="width:100%;" *ngIf="place.restaurant.Logo != null " src="data:image/png;base64,{{place.restaurant.Logo}}">
+                    <img style="width:100%;" src="{{place.restaurant.featured_image}}">
+                    <!--<img style="width:100%;" *ngIf="place.restaurant.Logo != null " src="data:image/png;base64,{{place.restaurant.Logo}}">-->
                 </ion-col>
             </ion-row>
             <ul class="list-inline text-center">
                 <li (click)="menu(place.restaurant)"><a><i class="fa fa-glass"></i>&nbsp; Menu</a></li>
                 <li (click)="openvideo(place.restaurant)"><a><i class="fa fa-youtube-play"></i>&nbsp; Video</a></li>
-                <li *ngIf="place.restaurant.has_table_booking==1" (click)= "reservetable(place.restaurant)" ><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
+                <li *ngIf="place.restaurant.has_table_booking==1" (click)="reservetable(place.restaurant)"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
                 <li *ngIf="place.restaurant.has_table_booking==0" (click)="notavailable()"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
             </ul>
             <ul class="list-inline text-center">
-                <li (click)="directions(place.restaurant)"><a><i class="fa fa-map-marker"></i>&nbsp; Restaurent Directions</a></li>
+                <li (click)="directions(place.restaurant)"><a><i class="fa fa-map-marker"></i>&nbsp; Restaurant Directions</a></li>
                 <!--<li><a href="tel:{{place.restaurant.MobileNumber}}"><i class="fa fa-phone-square"></i>&nbsp; Call</a></li>-->
             </ul>
         </ion-item>

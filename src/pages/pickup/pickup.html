@@ -6,113 +6,113 @@
 -->
 <ion-header>
 
-  <ion-navbar color="danger">
-	<ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
-	<ion-title> <p class="nav-title">Take Out</p></ion-title>
-      <ion-buttons right>
-          <button ion-button (click)="home()">
-              <ion-icon class="customIcon" name="home"></ion-icon>
-          </button>
-      </ion-buttons>
-  </ion-navbar>
+    <ion-navbar color="danger">
+        <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>
+        <ion-title> <p class="nav-title">Take Out</p></ion-title>
+        <ion-buttons right>
+            <button ion-button (click)="home()">
+                <ion-icon class="customIcon" name="home"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<ion-list>
-<h4 text-left>Pick Up Time and Location</h4>
-    <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)">
-        <div class="form-group">
+    <ion-list>
+        <h4 text-left>Pick Up Time and Location</h4>
+        <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid,$event)">
+            <div class="form-group">
 
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <!--<ion-label style="color:#000">Pickup Date</ion-label>
-                    <ion-datetime displayFormat="MM/DD/YYYY" min="{{mindate}}" name="PickupDate" max="{{maxdate}}" [ngModel]="pickdate" #PickupDate="ngModel"></ion-datetime>-->
-                    <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
-                    
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <!--<ion-label style="color:#000">Pickup Date</ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" min="{{mindate}}" name="PickupDate" max="{{maxdate}}" [ngModel]="pickdate" #PickupDate="ngModel"></ion-datetime>-->
+                        <span class="input-group-addon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></span>
+
                         <input type="date" class="form-control" name="PickupDate" [ngModel]="pickdate | date:'yyyy-MM-dd'" [min]="minPickupDate" placeholder="Pickup Date"
                                required #PickupDate="ngModel">
-</div>
-                <small [hidden]="PickupDate.valid || (PickupDate.pristine && !f.submitted)" class="text-danger">
-                    Pickup Date is required .
-                </small>
+                    </div>
+                    <small [hidden]="PickupDate.valid || (PickupDate.pristine && !f.submitted)" class="text-danger">
+                        Pickup Date is required .
+                    </small>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
+            <div class="form-group">
 
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
-                    <input type="time" class="form-control" name="PickupTime" min="{{min}}" max="{{max}}" [ngModel]="pickupTime| date: 'H:mm'" placeholder="Pickup Time"
-                           required #PickupTime="ngModel">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-clock-o fa-lg" aria-hidden="true"></i></span>
+                        <input type="time" class="form-control" name="PickupTime" min="{{min}}" max="{{max}}" [ngModel]="pickupTime| date: 'H:mm'" placeholder="Pickup Time"
+                               required #PickupTime="ngModel">
+                    </div>
+                    <small [hidden]="PickupTime.valid || (PickupTime.pristine && !f.submitted)" class="text-danger">
+                        Pickup Time is required .
+                    </small>
                 </div>
-                <small [hidden]="PickupTime.valid || (PickupTime.pristine && !f.submitted)" class="text-danger">
-                    Pickup Time is required .
-                </small>
             </div>
-        </div>
-        <div class="form-group">
+            <div class="form-group">
 
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="Location" [ngModel]="location" placeholder="Location"
-                            #Location="ngModel" >
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-compass fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="Location" [ngModel]="location" placeholder="Location"
+                               #Location="ngModel">
+                    </div>
+                    <!--<small [hidden]="Location.valid || (Location.pristine && !f.submitted)" class="text-danger">
+                        Location is required .
+                    </small>-->
                 </div>
-                <!--<small [hidden]="Location.valid || (Location.pristine && !f.submitted)" class="text-danger">
-                    Location is required .
-                </small>-->
             </div>
-        </div>
-        <h4 text-left>Contact Details</h4>
-        <div class="form-group">
+            <h4 text-left>Contact Details</h4>
+            <div class="form-group">
 
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName" placeholder="Name"
-                           required #FirstName="ngModel">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="FirstName" [ngModel]="user.FirstName" placeholder="Name"
+                               required #FirstName="ngModel">
+                    </div>
+                    <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">
+                        Name is required .
+                    </small>
                 </div>
-                <small [hidden]="FirstName.valid || (FirstName.pristine && !f.submitted)" class="text-danger">
-                    Name is required .
-                </small>
             </div>
-        </div>
-        <!--<div class="form-group">
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName" placeholder="Last Name"
-                           required #LastName="ngModel">
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="LastName" [ngModel]="user.LastName" placeholder="Last Name"
+                               required #LastName="ngModel">
+                    </div>
+                    <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">
+                        Last Name is required .
+                    </small>
                 </div>
-                <small [hidden]="LastName.valid || (LastName.pristine && !f.submitted)" class="text-danger">
-                    Last Name is required .
-                </small>
             </div>
-        </div>-->
-        <div class="form-group">
-            <div class="cols-sm-10">
-                <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
-                    <input type="tel" class="form-control" name="PhoneNumber" [ngModel]="user.PhoneNumber" placeholder="Phone Number"
-                           required #PhoneNumber="ngModel">
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
+                        <input type="tel" class="form-control" name="PhoneNumber" [ngModel]="user.PhoneNumber" placeholder="Phone Number"
+                               required #PhoneNumber="ngModel">
+                    </div>
+                    <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">
+                        PhoneNumber is required .
+                    </small>
                 </div>
-                <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">
-                    PhoneNumber is required .
-                </small>
             </div>
-        </div>
-        <div class="form-group">
-                
-                            <div class="cols-sm-10">
-                                <div class="input-group" style="width:100% !important;">
-                                    <textarea [ngModel]="special" placeholder="Instructions" class="form-control" name="Special" #Special="ngModel"></textarea>
-                                </div>
-                            </div>
-                        </div>
-       
-        <button type="submit" class="btn btn-primary btn-lg btn-block login-button" style="background:#009e0f !important">CheckOut</button>
+            <div class="form-group">
+
+                <div class="cols-sm-10">
+                    <div class="input-group" style="width:100% !important;">
+                        <textarea [ngModel]="special" placeholder="Instructions" class="form-control" name="Special" #Special="ngModel"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button" style="background:#009e0f !important">CheckOut</button>
         </form>
-</ion-list>
+    </ion-list>
 </ion-content>
