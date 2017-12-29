@@ -6,9 +6,19 @@
 -->
 <ion-header>
   <ion-navbar color="danger" hideBackButton>
-      <ion-buttons left>
+      <!--<ion-buttons left>
           <button ion-button (click)="back()">
               <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>-->
+      <ion-buttons *ngIf="ShowVideo==false" left>
+          <button ion-button (click)="back()">
+              <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons *ngIf="ShowVideo" left >
+          <button ion-button (click)="closevideo()">
+              <ion-icon class="customIcon" name="close-circle"></ion-icon>
           </button>
       </ion-buttons>
     <ion-title> <p class="nav-title">{{firstName}}</p></ion-title>

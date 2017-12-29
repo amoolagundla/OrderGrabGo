@@ -180,5 +180,8 @@ export class RestaurantDetailPage extends BasePage {
     }
     VideoURL() {
         return this.sanitizer.bypassSecurityTrustUrl(this.video);
-      }
+    }
+    closevideo() {
+        this.ShowVideo = false;
+    }
 }

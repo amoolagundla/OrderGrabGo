@@ -95,7 +95,7 @@ export class RestaurantsbycusinePage extends BasePage{
         zoom: 6,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
+    debugger;
     this.map = new google.maps.Map(
         this.mapElement.nativeElement,
         mapOptions
@@ -230,8 +230,8 @@ export class RestaurantsbycusinePage extends BasePage{
                               .subscribe((data: any) => {
                                   this.places = data.restaurants;
                                   this.realPlaces = data.restaurants;
-                                  this.loadMap();
                                   this.ShowVideo = false;
+                                  //this.loadMap();
                                   this.showContentView();
                                   this.onRefreshComplete();
                               });
@@ -276,5 +276,8 @@ export class RestaurantsbycusinePage extends BasePage{
   }
   back() {
        this.popPage();
+  }
+  closevideo() {
+      this.ShowVideo = false;
   }
 }

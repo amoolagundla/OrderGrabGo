@@ -6,9 +6,14 @@
 -->
 <ion-header>
     <ion-navbar color="danger" hideBackButton>
-        <ion-buttons left style="position:fixed;top:10px;left:10px">
+        <ion-buttons *ngIf="ShowVideo==false" left style="position:fixed;top:10px;left:10px">
             <button ion-button (click)="back()">
                 <ion-icon class="customIcon" style="color:#f53d3d" name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons *ngIf="ShowVideo" left style="position:fixed;top:10px;left:10px">
+            <button ion-button (click)="closevideo()">
+                <ion-icon class="customIcon" style="color:#f53d3d" name="close-circle"></ion-icon>
             </button>
         </ion-buttons>
         <ion-buttons right style="position:fixed;top:10px;right:10px">
@@ -16,7 +21,7 @@
                 <ion-icon class="customIcon" style="position:fixed;color:#f53d3d !important;top:10px;right:10px" name="home"></ion-icon>
             </button>
         </ion-buttons>
-        <div *ngIf="ShowVideo==false" #map id="map"></div>
+        <div [ngClass]="(ShowVideo==false) ? '' : 'hide'" #map id="map"></div>
         <div *ngIf="ShowVideo"> <iframe [src]='video' frameborder="0" style="height:185px" gesture="media"></iframe>      </div>
     </ion-navbar>
 </ion-header>
