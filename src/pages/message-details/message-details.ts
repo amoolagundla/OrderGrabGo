@@ -4,7 +4,7 @@ import {  ValuesService} from '../../providers/ValuesService';
 import { BasePage } from '../base-page/base-page';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
-
+import * as moment from 'moment';
 /**
  * Generated class for the MessageDetailsPage page.
  *
@@ -37,7 +37,7 @@ export class MessageDetailsPage extends BasePage {
            
     }, error => this.showContentView());
     this.valuesService.GetOrderDetail(this.navParams.get('id')).subscribe((data: any) => {
-        this.time=data.OrderTime;
+        this.time=moment(data.order.CreatedDate).format('MM/DD/YYYY, h:mm:ss a');  
         if (data.order.LookupOrderTypeId == 69) {
             this.isReservation = true;
             this.name = data.order.Resturant.RestaurantName;

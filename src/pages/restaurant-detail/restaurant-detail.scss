@@ -166,4 +166,19 @@ page-restaurant-detail {
     .booking-form form label.control-label {
         padding-top: 7px;
     }
+    ::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .center, #wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+      }
+      
+     
+      
+     
 }

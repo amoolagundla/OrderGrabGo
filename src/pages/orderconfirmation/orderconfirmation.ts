@@ -32,7 +32,7 @@ export class OrderconfirmationPage extends BasePage{
         this.pageName = this.navParams.get('pageName');
         this.OrderID = this.navParams.get('orderId');
         this.restLocation = this.navParams.get('location');
-        this.time=this.navParams.get('reservedTime');
+        this.time= this.navParams.get('reservedTime');
         if (this.pageName == 'Pick') {
             var ptimeHour = Number(this.model.PickupTime.split(':')[0]);
             var ptimeMin = Number(this.model.PickupTime.split(':')[1]);

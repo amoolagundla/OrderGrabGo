@@ -42,7 +42,7 @@
 
 <ion-content padding>
     <div *ngIf="isContentViewVisible">
-        <ion-row class="orderconfirm" *ngIf="isReservation==false">
+        <!-- <ion-row class="orderconfirm" *ngIf="isReservation==false">
             Your Order Id is {{OrderID}}
             <br />
         </ion-row>
@@ -52,8 +52,36 @@
         </ion-row>
         <ion-row class="orderconfirm" *ngIf="isReservation==true">
             Your Reservation Id is {{OrderID}}
-        </ion-row>
-        <div class="wrapper">
+        </ion-row> -->
+        <div class="header">
+                <div class="color-overlay">
+                        <div class="month">Order Number</div>
+                  <div class="day-number" *ngIf="isReservation==false">{{OrderID}}</div>
+                  <div class="date-right">
+                    <div class="day-name">Estimated Time</div>
+                    <div class="month">{{estimatedTime}}</div>
+                  </div>
+                </div>
+               
+              </div>
+
+        <div class="timeline">
+                <ul *ngFor="let d of  orderStatus;">
+                  <li>
+                    <div class="bullet pink"></div>
+                    <div class="time"></div>
+                    <div class="desc">                      
+                      <h4>Your Order has been {{ d.Status}} on {{time}}</h4>
+                    </div>
+                  </li>
+                 
+                </ul>
+              </div>  
+            
+
+
+
+        <!-- <div class="wrapper">
             <ul class="ordertimeline">
                 <li class="order-start" *ngFor="let d of  orderStatus; let index =index;let isOdd=odd;let isEven=timelineinverted;">
                     <ion-row>
@@ -68,7 +96,7 @@
 
             </ul>
 
-        </div>
+        </div> -->
 
         <div padding *ngIf="isReservation==false">
             <ion-row class="orderhead">Your order information</ion-row>
@@ -92,9 +120,14 @@
 
             <div><label style="float:right">Total: {{total}}</label></div>
             <ion-row padding style="text-align:center;" *ngIf="isTakout==true">
-                <button (click)="directions()" style="background:green;color:#fff">
-                    <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
-                </button>
+                    <div class="row">
+                            <div class="col-md- col-xs-6 col1 center-block"> 
+                                    <button (click)="directions()" class="btn btn-info btn-raised center-block">
+                                            <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
+                                        </button>
+                             
+                            </div>
+                        </div>
             </ion-row>
             <ion-row padding style="width:100%;text-align:center">
                 Enjoy Your meal we hope to hear from you again soon !
@@ -102,15 +135,21 @@
         </div>
 
         <div padding *ngIf="isReservation==true">
-            <ion-row class="orderhead">Your restaurant details</ion-row>
+            <!-- <ion-row class="orderhead">Your restaurant details</ion-row> -->
             <div class="address-section text-center">
                 <h1>{{name}}</h1>
                 <address>{{ address }}</address>
             </div>
             <ion-row padding style="text-align:center;">
-                <button (click)="directions()" style="background:green;color:#fff">
-                    <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
-                </button>
+                    <div class="row">
+                            <div class="col-md- col-xs-6 col1 center-block"> 
+                                    <button (click)="directions()" class="btn btn-info btn-raised center-block">
+                                            <i class="fa fa-map-marker"></i><span> &nbsp;&nbsp;Restaurent Directions</span>
+                                        </button>
+                             
+                            </div>
+                        </div>
+               
             </ion-row>
         </div>
     </div>

@@ -31,6 +31,8 @@
 </ion-header>
 
 <ion-content >
+
+        
 <ion-card *ngIf="ShowVideo==false"  class="headinside">
     <img  *ngIf="restaurantImages == null || restaurantImages.length==0" src="{{featuredImage}}"/>
     <ion-slides   *ngIf="restaurantImages && restaurantImages.length > 0" autoplay="1000" loop="true" speed="1500">
@@ -39,10 +41,10 @@
         </ion-slide>
     </ion-slides>
   </ion-card>
-     <div *ngIf="ShowVideo" class="headinside"> <iframe [src]='video' frameborder="0" gesture="media" ></iframe>      </div>             
+ <div *ngIf="ShowVideo" class="headinside"> <iframe [src]='video' frameborder="0" gesture="media" ></iframe>      </div>             
  <div  id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     
-                </div>
+ </div>
     <!-- <div > <iframe [src]='video' frameborder="0" gesture="media" ></iframe>      </div>             -->
  <div class="address-section text-center">
                     <h1>{{name}}</h1>
@@ -81,4 +83,8 @@
                         <li (click)="openvideo()"><i class="fa fa-file-video-o"></i><span>Video</span></li>
                     </ul>
                 </div>
+
+
+
+                
 </ion-content>
