@@ -38,11 +38,14 @@ export class CheckoutPage extends BasePage {
         number: '',
         expMonth: '',
         expYear: '',
-        cvc: ''
+        cvc: '',
+        name: '',
+        zipcode:''
     };
     public bankAccount = {
         routing_number: '',
         account_number: '',
+        bank_name:'',
         account_holder_name: '', // optional
         account_holder_type: '', // optional
         currency: 'USD',
@@ -183,27 +186,68 @@ export class CheckoutPage extends BasePage {
     creditCard() {
 
         this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
-        if (this.cardinfo.number != '' && this.cardinfo.expMonth != '' && this.cardinfo.expYear != '' && this.cardinfo.cvc != '') {
-
-            //this.pay();
-            this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
+        if (this.cardinfo.number != '' && this.cardinfo.expMonth != '' && this.cardinfo.expYear != '' && this.cardinfo.cvc != '' && this.cardinfo.zipcode) {
+            if ((Number(this.cardinfo.expMonth) > 0 && Number(this.cardinfo.expMonth) < 13) && (Number(this.cardinfo.expYear) >= new Date().getFullYear())) {
+                //this.stripe.validateCardNumber(this.cardinfo.number).then(() => {
                 this.showLoadingView();
-                this.stripe.createCardToken(this.cardinfo).then(token => {
+                var model = this.navParams.get("model");
+                var cardMonth = this.cardinfo.expMonth.toString();
+                if (Number(this.cardinfo.expMonth) < 10) {
+                    cardMonth = "0" + this.cardinfo.expMonth.toString();
+                }
+                var cardDetails = {
+                    cardNumber: this.cardinfo.number,
+                    expirationDate: cardMonth + this.cardinfo.expYear.toString().substring(2),
+                    cardCode: this.cardinfo.cvc
+                }
+                var billing = {
+                    firstName: model.FirstName,
+                    lastName: model.LastName,
+                    address: model.address1,
+                    city: "Des Moines",
+                    zip: "50266"
+                };
+                var cartItems = [];
+                for (var i = 0; i < CART.items.length; i++) {
+                    var item = {
+                        itemId: CART.items[i].id,
+                        name: CART.items[i].name,
+                        quantity: CART.items[i].quantity,
+                        unitPrice: CART.items[i].price
+                    }
+                    cartItems.push(item);
+                }
+                var data = {
+                    creditcardDetails: cardDetails,
+                    billingAddress: billing,
+                    items: cartItems,
+                    Amount: CART.total
+                };
+                //this.stripe.createCardToken(this.cardinfo).then(token => {
+                this.service.CreditCardPay(data).subscribe(res => {
                     //alert(token);
-
                     this.showContentView();
-                    this.pay();
+                    if (res != null && res.transactionResponse.responseCode == 1) {
+                        this.pay();
+                    }
+                    else {
+                        swal('Oops', "Invalid credentials or no balance in this card. Try again!", 'error');
+                    }
                 }, error => {
-                        this.showContentView();
-                        swal('Oops', "Please Enter Correct Card Information", 'error');
-                    });
-            }, error => {
+                    this.showContentView();
+                    swal('Oops', "Please Enter Correct Card Information", 'error');
+                });
+            }
+            else {
+                swal('Oops', "Invalid Month or Year", 'error');
+            }
+            //}, error => {
 
-                swal('Oops', "Please Enter Correct Card Information", 'error');
-            });
+            //    swal('Oops', "Please Enter Correct Card Information", 'error');
+            //});
         }
         else {
-            swal('Oops', "Please Enter All the ields", 'error');
+            swal('Oops', "Please Enter All the fields", 'error');
         }
     }
     PayBank() {

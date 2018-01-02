@@ -50,7 +50,16 @@ export class SharedDataService {
     this.Restuarents.next(newData);
     this.storage.set("restaurents", JSON.stringify(newData));
   }
-
+  getRestaurants() {
+      this.storage.get("restaurents").then(
+          data => {
+              if (data != "null") {
+                  return this.RestuarentsChanged(JSON.parse(data));
+              }
+          },
+          error => { return null }
+      );
+  }
   public latLongChanged(newData: any) {
     this.latLong.next(newData);
   }

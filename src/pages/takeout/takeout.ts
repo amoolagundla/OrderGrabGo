@@ -4,6 +4,7 @@ import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
 import { CART } from '../cart/cartitems';
+import { Storage } from "@ionic/storage";
 /**
  * Generated class for the TakeoutPage page.
  *
@@ -20,7 +21,7 @@ export class TakeoutPage extends BasePage {
     public name: string;
     public data: any; public pageDetails: any; featuredImage: string = ''; restaurantImages: any;
     constructor(injector: Injector, private valuesService: ValuesService,
-        private altController: AlertController) {
+        private altController: AlertController, public storage: Storage) {
         super(injector);
         this.featuredImage = this.navParams.get('featured_image');
         this.restaurantImages = this.navParams.get('RestaurantImages');
@@ -106,7 +107,14 @@ export class TakeoutPage extends BasePage {
             alert.addButton({
                 text: 'Yes',
                 handler: data => {
-                    this.setRootWithParams('RestaurentPage', this.navParams);
+                    this.storage.get("restaurents").then(
+                        data => {
+                            if (data != "null") {
+                                this.navigateTo("RestaurantsbycusinePage", JSON.parse(data));
+                            }
+                        },
+                        error => { }
+                    );
                 }
             });
             alert.present();

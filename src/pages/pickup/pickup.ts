@@ -99,6 +99,7 @@ checkout(){
             //}
             var isopened = true;
             var selecteddaTe = new Date(model.PickupDate);
+            selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
             var sdate = selecteddaTe.getDate();
             if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                 if (Number(selectedTimeHour) < new Date().getHours()) {
@@ -107,6 +108,9 @@ checkout(){
                 else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                     isopened = false;
                 }
+            }
+            else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
+                isopened = false;
             }
             if (isopened) {
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {

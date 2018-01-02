@@ -81,7 +81,7 @@ export class DashPage extends BasePage {
       this.geolocation
         .getCurrentPosition()
         .then(resp => {
-          this.sharedData.latLongChanged(resp);
+            this.sharedData.latLongChanged(resp);
           this.GetLocation(resp);
         })
         .catch(err => {
@@ -99,7 +99,7 @@ export class DashPage extends BasePage {
       .GetAddress(resp.coords.latitude, resp.coords.longitude)
       .subscribe(
         (data: any) => {
-          
+            
         this.sharedData.AddressChanged(data.results[0].formatted_address);
           this.sharedData.ZipChanged(data.results[0].formatted_address.split(",")[2].split(" ")[2]);         
           this.storage.storeAddress(data.results[0].formatted_address);
@@ -162,9 +162,9 @@ export class DashPage extends BasePage {
   GOTODASH(resp:any)
   {
     this.GetLocation(resp);
-    
+    //41.553269, -93.759758, 50266
             this.valuesService
-              .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude,this.zip)
+                .GetPlacesWithZomato(resp.coords.latitude, resp.coords.longitude, this.zip)
               .subscribe(
                 (data: any) => {
                   this.showEmptyView();

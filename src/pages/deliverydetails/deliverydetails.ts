@@ -64,8 +64,8 @@ export class DeliverydetailsPage extends BasePage {
                 //this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
             } else {
                 this.firstName = "";
-                this.user.FirstName = "";
-                this.user.LastName = "";
+                //this.user.FirstName = "";
+                //this.user.LastName = "";
             }
         });
 
@@ -154,7 +154,7 @@ export class DeliverydetailsPage extends BasePage {
             //   }
             var isopened = true;
             var selecteddaTe = new Date(model.DeliveryDate);
-            debugger;
+            selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
             var sdate = selecteddaTe.getDate();
             if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                 if (Number(selectedTimeHour) < new Date().getHours()) {
@@ -163,6 +163,9 @@ export class DeliverydetailsPage extends BasePage {
                 else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                     isopened = false;
                 }
+            }
+            else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
+                isopened = false;
             }
             if (isopened) {
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {

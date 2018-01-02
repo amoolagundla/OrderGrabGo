@@ -169,4 +169,7 @@ export class ValuesService {
   {
     return this.http.get('api/FacebookApi/GetCode') .map((response: Response) => response.json());
   }
+  CreditCardPay(data: any) {
+      return this.http.post("api/ProductsApi/CreditCardPay", data).map((response: Response) => response.json());
+  }
 }

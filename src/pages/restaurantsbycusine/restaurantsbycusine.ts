@@ -95,7 +95,6 @@ export class RestaurantsbycusinePage extends BasePage{
         zoom: 6,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    debugger;
     this.map = new google.maps.Map(
         this.mapElement.nativeElement,
         mapOptions

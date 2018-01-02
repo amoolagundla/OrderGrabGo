@@ -4,6 +4,7 @@ import { BasePage } from '../base-page/base-page';
 import { App } from '../../models.bundles';
 import { ValuesService } from '../../providers/ValuesService';
 import { CART } from '../cart/cartitems';
+import { Storage } from "@ionic/storage";
 /**
  * Generated class for the DeliveryPage page.
  *
@@ -24,7 +25,7 @@ export class DeliveryPage extends BasePage{
     restaurantImages: any;
     featuredImage: string = '';
     constructor(injector: Injector, private valuesService: ValuesService,
-        private actionSheetCtrl: ActionSheetController, private altController: AlertController) {
+        private actionSheetCtrl: ActionSheetController, private altController: AlertController, public storage: Storage) {
         super(injector);
         this.featuredImage = this.navParams.get('featured_image');
         this.restaurantImages = this.navParams.get('RestaurantImages');
@@ -95,7 +96,14 @@ export class DeliveryPage extends BasePage{
             alert.addButton({
                 text: 'Yes',
                 handler: data => {
-                    this.setRootWithParams('RestaurentPage', this.navParams);
+                    this.storage.get("restaurents").then(
+                        data => {
+                            if (data != "null") {
+                                this.navigateTo("RestaurantsbycusinePage",JSON.parse(data));
+                            }
+                        },
+                        error => { }
+                    );
                 }
             });
             alert.present();

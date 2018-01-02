@@ -106,7 +106,9 @@ export class ReservetablePage extends BasePage {
                 var selectedTimeMin = model.ReservationTime.split(':')[1];
                 var isopened = true;
                 var selecteddaTe = new Date(model.ReservationDate);
+                selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
                 var sdate = selecteddaTe.getDate();
+                var ndate = new Date();
                 if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                     if (Number(selectedTimeHour) < new Date().getHours()) {
                         isopened = false;
@@ -115,10 +117,10 @@ export class ReservetablePage extends BasePage {
                         isopened = false;
                     }
                 }
-                //if(Number(selectedTimeHour)>12)
-                //{
-                //    selectedTimeHour=Number(selectedTimeHour)-12;
-                //}
+                else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
+                    isopened = false;
+                }
+               
                 if (isopened) {
                     if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
                         if (Number(selectedTimeHour) == this.shours && Number(selectedTimeMin) < this.smins) {
