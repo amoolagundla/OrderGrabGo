@@ -33,7 +33,12 @@ export class MessageDetailsPage extends BasePage {
   ionViewDidLoad() {
       this.showLoadingView();
       this.valuesService.GetOrderStatusHistory(this.navParams.get('id')).subscribe((data: any) => {
-            this.orderStatus = data;
+          this.orderStatus = data;
+          if (this.orderStatus != null && this.orderStatus.length > 0) {
+              for (let item of this.orderStatus) {
+                  item.OrderedDate = moment(item.OrderedDate).format('MM/DD/YYYY, h:mm:ss a');  
+              }
+          }
            
     }, error => this.showContentView());
     this.valuesService.GetOrderDetail(this.navParams.get('id')).subscribe((data: any) => {

@@ -26,7 +26,7 @@ import {
   LaunchNavigatorOptions
 } from "@ionic-native/launch-navigator";
 import swal from "sweetalert2";
-import { ReverseGeocoder } from '../../providers/ReverseGeocoder';
+//import { ReverseGeocoder } from '../../providers/ReverseGeocoder';
 /**
  * Generated class for the ParkingPage page.
  *
@@ -59,7 +59,7 @@ export class ParkingPage extends BasePage {
     private events: Events,
     private storage: LocalStorage,
     public geolocation: Geolocation,
-    public reverse:ReverseGeocoder
+    //public reverse:ReverseGeocoder
   ) {
     super(injector);
     
@@ -128,10 +128,10 @@ export class ParkingPage extends BasePage {
       .then(resp => {
         
         this.sharedData.latLongChanged(resp);
-          this.reverse.ReverseGeoCode(resp.coords.latitude,resp.coords.longitude).then((data:any)=>
-        {
+        //  this.reverse.ReverseGeoCode(resp.coords.latitude,resp.coords.longitude).then((data:any)=>
+        //{
           
-        });
+        //});
         this.valuesService.GetAddress(resp.coords.latitude, resp.coords.longitude).subscribe((data: any) => {
           
           this.showContentView();

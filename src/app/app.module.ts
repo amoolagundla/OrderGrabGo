@@ -9,7 +9,7 @@ import { SpinnerPage } from "../pages/spinner/spinner";
 import { IsClose } from '../providers/IsCloseService';
 import { HttpClient } from "../providers/HttpClient";
 import { ValuesService } from "../providers/ValuesService";
-import {ReverseGeocoder} from "../providers/ReverseGeocoder";
+//import {ReverseGeocoder} from "../providers/ReverseGeocoder";
 import { Category } from "../providers/categories";
 import { Place } from "../providers/place-service";
 import { Review } from "../providers/review-service";
@@ -36,7 +36,7 @@ import {
   NativeGeocoderForwardResult
 } from "@ionic-native/native-geocoder";
 import { AppVersion } from "@ionic-native/app-version";
-import { TextMaskModule } from 'angular2-text-mask';
+//import { TextMaskModule } from 'angular2-text-mask';
 import { HeaderColor } from "@ionic-native/header-color";
 import { GoogleAnalytics } from "@ionic-native/google-analytics";
 import { BrowserTab } from "@ionic-native/browser-tab";
@@ -62,7 +62,7 @@ export function HttpLoaderFactory(http: Http) {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    Ng2ImgFallbackModule,TextMaskModule,
+    Ng2ImgFallbackModule,
     LazyLoadImageModule,
     Ionic2RatingModule,
     HttpModule,
@@ -105,7 +105,7 @@ export function HttpLoaderFactory(http: Http) {
     BarcodeScanner,
     NativeGeocoder,
     Preference,
-    MapStyle,YoutubeVideoPlayer,ReverseGeocoder,
+    MapStyle,YoutubeVideoPlayer,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     Facebook,
 

@@ -110,12 +110,14 @@ export class CheckoutPage extends BasePage {
                         orders.LookupOrderTypeId = 10;
                         orders.OrderAddress.address1 = model.Address;
                         orders.DeliveryTime = new Date(model.DeliveryDate + " " + model.DeliveryTime)
+                        orders.DeliveryTime.setMinutes(orders.DeliveryTime.getMinutes() + orders.DeliveryTime.getTimezoneOffset());
                         orders.Time = model.DeliveryTime;
                         time = "Your Delivery time " + model.DeliveryTime;
                     } else {
                         orders.LookupOrderTypeId = 8;
                         orders.OrderAddress.address1 = model.Location;
                         orders.PickupTime = new Date(model.PickupDate + " " + model.PickupTime)
+                        orders.PickupTime.setMinutes(orders.PickupTime.getMinutes() + orders.PickupTime.getTimezoneOffset());
                         orders.Time = model.PickupTime;
                         time = "Your Pickup time " + model.PickupTime;
                     }
@@ -252,8 +254,28 @@ export class CheckoutPage extends BasePage {
     }
     PayBank() {
         this.stripe.setPublishableKey('pk_test_0fX3T9CWHeThBzxxtp4bdOiI');
-        if (this.bankAccount.routing_number != '' && this.bankAccount.account_number != '' && this.bankAccount.currency != '' && this.bankAccount.country != '') {
-            this.pay();
+        if (this.bankAccount.routing_number != '' && this.bankAccount.account_number != '' && this.bankAccount.account_holder_name != '' && this.bankAccount.bank_name != '' && this.bankAccount.currency != '' && this.bankAccount.country != '') {
+            this.showLoadingView();
+            var data = {
+                routingNumber: this.bankAccount.routing_number.toString(),
+                accountNumber: this.bankAccount.account_number.toString(),
+                AccoutHolderName: this.bankAccount.account_holder_name,
+                Amount: CART.total,
+                bankName: this.bankAccount.bank_name
+            }
+            this.service.CheckingAccount(data).subscribe(res => {
+                //alert(token);
+                this.showContentView();
+                if (res != null && res.transactionResponse.responseCode == 1) {
+                    this.pay();
+                }
+                else {
+                    swal('Oops', "Invalid credentials or check your bank balance and try again!", 'error');
+                }
+            }, error => {
+                this.showContentView();
+                swal('Oops', "Please Enter Correct Bank details", 'error');
+            });
             // this.showLoadingView();
             //   this.stripe.createBankAccountToken(this.bankAccount).then(token => {
             //     //alert(token);         

@@ -172,4 +172,7 @@ export class ValuesService {
   CreditCardPay(data: any) {
       return this.http.post("api/ProductsApi/CreditCardPay", data).map((response: Response) => response.json());
   }
+  CheckingAccount(data: any) {
+      return this.http.post("api/ProductsApi/CheckingAccount", data).map((response: Response) => response.json());
+  }
 }
