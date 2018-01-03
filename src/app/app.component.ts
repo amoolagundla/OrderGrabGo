@@ -55,10 +55,7 @@ export class MyApp {
    
 
     this.initializeApp();
-    let watch = this.geolocation.watchPosition();
-    watch.subscribe((data) => {
-           this._shared.latLongChanged(data);
-    });
+  
   }
 
   onMenuOpened() {
@@ -240,6 +237,12 @@ export class MyApp {
   }
 
   openPage(page) {
+
+    if(page.component=='MessagesPage')
+    {
+      this.nav.push("MessagesPage");
+    }
+    else{
     if (
       (page.component === "FavoritesPage" ||
         page.component === "AddPlacePage") &&
@@ -268,4 +271,5 @@ export class MyApp {
       this.nav.setRoot(page.component);
     }
   }
+}
 }

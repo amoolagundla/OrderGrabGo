@@ -13,42 +13,24 @@
 
 </ion-header>
 
-<ion-content padding #container style="background-size: cover;background-position: center center;">
+<ion-content padding #container style="background-size: cover;background-position: center center;" >
        
 <p class="text-center" color="danger">{{currentOrderHistory}}</p>
-<!-- <p class="text-center" color="danger" *ngIf="latLong">{{latLong.coords.latitude}} &nbsp; {{latLong.coords.longitude}}</p> -->
+
+
+<!-- <p class="text-center" color="danger" *ngIf="latLong">{{error}}</p> -->
                <div class="order-page">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="media">
-                                <div class="media-left">
-                                    <i class="fa fa-cutlery"></i>
-                                </div>
-                                <div class="media-body">
-                                    <a  class="btn"  (click)="login()">Order Now</a>
-                                </div>
-                            </div>
+                 <button  class="btn btn-block btn-md " (click)="login()"><span class="fa fa-cutlery" style="color:red"></span>&nbsp;&nbsp; Order Now</button>
                         </div>
                         <div class="col-xs-12">
-                            <div class="media">
-                                <div class="media-left">
-                                    <i class="fa fa-envelope"></i>
-                                </div>
-                                <div class="media-body">
-                                    <a (click)="messages()" class="btn">Messages</a>
-                                </div>
-                            </div>
+                                <button class="btn btn-block btn-md btn-info" (click)="messages()"><span class="fa fa-envelope"></span>&nbsp;&nbsp;Messages</button>
+                           
                         </div>
-                        <div class="col-xs-12">
-                            <div class="media">
-                                <div class="media-left">
-                                    <i class="fa fa-car"></i>
-                                </div>
-                                <div class="media-body">
-                                    <a class="btn"  (click)="parkings()">Parking</a>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="col-xs-12">                           
+                                    <button class="btn btn-block btn-md btn-info" (click)="parkings()"><span class="fa fa-car"></span>&nbsp;&nbsp;Parking</button>                               
+                                  </div>
                        
                     </div>
                 </div>  

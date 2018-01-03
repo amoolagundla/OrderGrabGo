@@ -4,11 +4,12 @@ import { BasePage } from "../base-page/base-page";
 import { Geolocation } from "@ionic-native/geolocation";
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
 import { Storage } from '@ionic/storage';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import { ValuesService } from "../../providers/ValuesService";
 import { LocationsearchPage } from "../locationsearch/locationsearch";
 import { DomSanitizer } from '@angular/platform-browser';
 import { IsClose } from '../../providers/IsCloseService';
+import { ActionSheetController } from 'ionic-angular';
 import {
     GoogleMap,
     GoogleMapsEvent,
@@ -41,7 +42,7 @@ export class RestaurantsbycusinePage extends BasePage{
     public searchlocation: any = "";
     public searchCuisine: any;
     public cuisines: any; ShowVideo: any = false; video: any = '';
-    constructor(injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator,
+    constructor(public actionSheetCtrl: ActionSheetController,injector: Injector, public geolocation: Geolocation, public sanitizer: DomSanitizer, private modlCtrl: ModalController, public atrCtrl: AlertController, private valuesService: ValuesService, public youtube: YoutubeVideoPlayer, public storage: Storage, private launchNavigator: LaunchNavigator,
         public isClose: IsClose) {
         super(injector);
         this.places = this.navParams.data;
@@ -62,6 +63,62 @@ export class RestaurantsbycusinePage extends BasePage{
     home() {
         this.setRoot("DashPage");
     }
+
+    presentActionSheet(rest:any) {
+        let actionSheet = this.actionSheetCtrl.create({
+          title: 'Restaurant Menu',
+          buttons: [
+            {
+              text: 'Menu',
+              role: 'Menu',
+              icon:'cart',             
+              handler: () => {
+                this.menu(rest)
+              }
+            },{
+              text: 'Video',
+              role: 'Video',
+              icon:'logo-youtube',
+              handler: () => {
+                this.openvideo(rest);
+              }
+            },{
+              text: 'Reserve Table',
+              role: 'Reserve Table',
+              icon:'clock',
+              handler: () => {
+                if(rest.has_table_booking==0)
+                {
+                   this.notavailable();
+                }
+                else
+                {
+                   this.reservetable(rest);
+                }
+              }
+            },
+            {
+                text: 'Restaurant Directions',
+                icon:'pin',
+                handler: () => {
+                  this.directions(rest);
+                }
+              },{
+                text: 'Close',
+                icon:'close',
+                role: 'cancel',
+                handler: () => {
+                 
+                }
+              }
+          ]
+        });
+        actionSheet.present();
+      }
+    
+    
+
+
   loadMap() {
 
     if(this.latLong!=null || this.latLong!=undefined)
@@ -95,6 +152,7 @@ export class RestaurantsbycusinePage extends BasePage{
         zoom: 6,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+  
     this.map = new google.maps.Map(
         this.mapElement.nativeElement,
         mapOptions

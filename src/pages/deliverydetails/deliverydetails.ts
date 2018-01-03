@@ -29,7 +29,7 @@ export class DeliverydetailsPage extends BasePage {
     public user: any;
     public address: string = "";
     public firstName: string = "";
-
+    
     autocompleteItems;
     autocomplete;
     minDate: any;

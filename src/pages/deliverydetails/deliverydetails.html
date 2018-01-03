@@ -54,7 +54,7 @@
                 <div class="cols-sm-10">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
-                        <input type="tel" class="form-control" name="PhoneNumber" [ngModel]="user.PhoneNumber" placeholder="Phone Number"
+                        <input type="tel" class="form-control" name="PhoneNumber"   [ngModel]="user.PhoneNumber" placeholder="Phone Number(444-444-4444)"
                                required #PhoneNumber="ngModel">
                     </div>
                     <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">

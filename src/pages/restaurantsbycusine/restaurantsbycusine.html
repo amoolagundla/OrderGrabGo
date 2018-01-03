@@ -33,33 +33,90 @@
         <ion-searchbar color="dark" debounce="500"
                        placeholder="zipcode search" [(ngModel)]="searchlocation" (click)="filter()"></ion-searchbar>
     </div>
-    <ion-card *ngFor="let place of places">
-        <ion-item>
-            <ion-row style="margin:0px;">
-                <ion-col col-8 text-left>
-                    <ion-col col-12>
-                        <h2>{{place.restaurant.name}}</h2>
-                    </ion-col>
-                    <ion-col col-12 style="overflow: initial;  white-space: initial;">
-                        <h3>{{place.restaurant.location.address}},{{place.restaurant.location.city}},{{place.restaurant.location.zipcode}}</h3>
-                    </ion-col>
 
+
+    <ion-card *ngFor="let place of places">
+            
+              <ion-item>
+                <ion-avatar item-start>
+                  <img src="{{place.restaurant.featured_image}}">
+                </ion-avatar>
+                <h2>{{place.restaurant.name}}</h2>
+              
+              </ion-item>
+            
+              <img  class="rest-img" src="{{place.restaurant.featured_image}}">
+              
+              <ion-card-content class="address">
+                    {{place.restaurant.location.address}}
+                   
+              </ion-card-content>
+              <ion-row>
+                  <ion-col>
+                        <button class="actionbutton" (click)="presentActionSheet(place.restaurant)"  data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                                <ion-icon name="basket"></ion-icon>
+                              </button> 
+                  </ion-col>
+              </ion-row>
+              <!-- <ion-row>
+                <ion-col>
+                  <button ion-button icon-left clear small (click)="menu(place.restaurant)">
+                        <ion-icon name="text"></ion-icon>
+                    <div>Menu</div>
+                  </button>
                 </ion-col>
-                <ion-col col-4>
-                    <img style="width:100%;" src="{{place.restaurant.featured_image}}">
-                    <!--<img style="width:100%;" *ngIf="place.restaurant.Logo != null " src="data:image/png;base64,{{place.restaurant.Logo}}">-->
+                <ion-col>
+                  <button ion-button icon-left clear small (click)="openvideo(place.restaurant)">
+                        <i class="fa fa-youtube-play"></i>
+                    <div>Video</div>
+                  </button>
                 </ion-col>
-            </ion-row>
-            <ul class="list-inline text-center">
-                <li (click)="menu(place.restaurant)"><a><i class="fa fa-glass"></i>&nbsp; Menu</a></li>
-                <li (click)="openvideo(place.restaurant)"><a><i class="fa fa-youtube-play"></i>&nbsp; Video</a></li>
-                <li *ngIf="place.restaurant.has_table_booking==1" (click)="reservetable(place.restaurant)"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
-                <li *ngIf="place.restaurant.has_table_booking==0" (click)="notavailable()"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
-            </ul>
-            <ul class="list-inline text-center">
-                <li (click)="directions(place.restaurant)"><a><i class="fa fa-map-marker"></i>&nbsp; Restaurant Directions</a></li>
-                <!--<li><a href="tel:{{place.restaurant.MobileNumber}}"><i class="fa fa-phone-square"></i>&nbsp; Call</a></li>-->
-            </ul>
-        </ion-item>
-    </ion-card>
+                <ion-col center text-center *ngIf="place.restaurant.has_table_booking==1" >
+                        <button ion-button icon-left clear small (click)="reservetable(place.restaurant)">
+                                <i class="fa fa-table"></i>
+                            <div>Reserve Table</div>
+                          </button>
+                </ion-col>
+                <ion-col center text-center *ngIf="place.restaurant.has_table_booking==0" >
+                        <button ion-button icon-left clear small (click)="notavailable()">
+                                <i class="fa fa-table"></i>
+                            <div>Reserve Table</div>
+                          </button>
+                </ion-col>
+                <ion-col center text-center  >
+                        <button ion-button icon-left clear small (click)="directions(place.restaurant)">
+                                <i class="fa fa-map-marker"></i>
+                            <div>Restaurant Directions</div>
+                          </button>
+                </ion-col>
+              </ion-row> -->
+            
+            </ion-card>
+
+
+
+    <!-- <div class="row" *ngFor="let place of places">
+    <div class="col-md-4">
+            <h3 class="text-center mb-5"></h3>
+          <div class="card card-01">
+          <img class="card-img-top" src="{{place.restaurant.featured_image}}" alt="Card image cap">
+          <div class="card-body">
+           
+            <h4 class="card-title">{{place.restaurant.name}}</h4>
+            <!-- <p class="card-text">{{place.restaurant.location.address}}...</p> -->
+            <!-- <ul class="list-inline text-center">
+                    <li (click)="menu(place.restaurant)"><a><i class="fa fa-glass"></i>&nbsp; Menu</a></li>
+                    <li (click)="openvideo(place.restaurant)"><a><i class="fa fa-youtube-play"></i>&nbsp; Video</a></li>
+                    <li *ngIf="place.restaurant.has_table_booking==1" (click)="reservetable(place.restaurant)"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
+                    <li *ngIf="place.restaurant.has_table_booking==0" (click)="notavailable()"><a><i class="fa fa-table"></i>&nbsp; Reserve Table</a></li>
+                </ul>
+                <ul class="list-inline text-center">
+                    <li (click)="directions(place.restaurant)"><a><i class="fa fa-map-marker"></i>&nbsp; Restaurant Directions</a></li>
+                   
+                </ul>
+          </div>
+        </div>
+        </div> 
+    </div> --> 
+   
 </ion-content>

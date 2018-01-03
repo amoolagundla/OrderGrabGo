@@ -25,7 +25,7 @@ export class ValuesService {
 
   GetPlacesWithZomato(start: any, end: any,zip:any) {
     return this.http
-      .get("api/ads/GetPlaceswithzomato/" + start + "/" + end+"/"+zip)
+      .get("api/ads/GetPlaceswithzomato/" + start + "/" + end+"/"+"50266")
       .map((response: Response) => response.json());
   }
   FindCuisineWithZomato(start: any, end: any) {
