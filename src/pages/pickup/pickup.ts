@@ -36,6 +36,9 @@ export class PickupPage extends BasePage {
         this.sharedData.UserInfo.subscribe((data) => {
             if (data != undefined && data.FirstName != undefined) {
                 this.user = data;
+                if (this.user.PhoneNumber != null && this.user.PhoneNumber != "") {
+                    this.user.PhoneNumber = this.formatPhoneNumber(this.user.PhoneNumber);
+                }
                 //this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
             } else {
                 this.user.FirstName = "";
@@ -101,16 +104,20 @@ checkout(){
             var selecteddaTe = new Date(model.PickupDate);
             selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
             var sdate = selecteddaTe.getDate();
+            var ispast = false;
             if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                 if (Number(selectedTimeHour) < new Date().getHours()) {
                     isopened = false;
+                    ispast = true;
                 }
                 else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                     isopened = false;
+                    ispast = true;
                 }
             }
             else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
                 isopened = false;
+                ispast = true;
             }
             if (isopened) {
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
@@ -137,7 +144,12 @@ checkout(){
                 this.navigateTo('CheckoutPage', res);
             }
             else {
-                swal('Closed', 'Restaurant is closed on the selected date and time! Kindly set pickup time in open hours', 'error');
+                if (ispast) {
+                    swal('Oops', 'You have selected the past time. Kindly select the valid present time', 'error');
+                }
+                else {
+                    swal('Closed', 'Restaurant is closed on the selected date and time! Kindly set pickup time in open hours', 'error');
+                }
             }
         }
         else {
@@ -164,5 +176,10 @@ checkout(){
         else {
             this.setRoot("DashPage");
         }
+    }
+    formatPhoneNumber(s) {
+        var s2 = ("" + s).replace(/\D/g, '');
+        var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+        return (!m) ? "" : "(" + m[1] + ") " + m[2] + "-" + m[3];
     }
 }

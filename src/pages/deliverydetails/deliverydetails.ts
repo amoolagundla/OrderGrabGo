@@ -12,6 +12,7 @@ import { AddressdetailPage } from "../addressdetail/addressdetail";
 import { LocalStorage } from "../../providers/local-storage";
 import { CART } from '../cart/cartitems';
 import swal from 'sweetalert';
+
 declare var google;
 /**
  * Generated class for the DeliverydetailsPage page.
@@ -61,6 +62,9 @@ export class DeliverydetailsPage extends BasePage {
             if (data != undefined && data.FirstName != undefined) {
                 this.user = data;
                 this.firstName = data.FirstName;
+                if (this.user.PhoneNumber != null && this.user.PhoneNumber != "") {
+                    this.user.PhoneNumber = this.formatPhoneNumber(this.user.PhoneNumber);
+                }
                 //this.user.FirstName = this.user.FirstName + " " + this.user.LastName;
             } else {
                 this.firstName = "";
@@ -156,16 +160,20 @@ export class DeliverydetailsPage extends BasePage {
             var selecteddaTe = new Date(model.DeliveryDate);
             selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
             var sdate = selecteddaTe.getDate();
+            var ispast = false;
             if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                 if (Number(selectedTimeHour) < new Date().getHours()) {
                     isopened = false;
+                    ispast = true;
                 }
                 else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                     isopened = false;
+                    ispast = true;
                 }
             }
             else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
                 isopened = false;
+                ispast = true;
             }
             if (isopened) {
                 if (Number(selectedTimeHour) >= this.shours && Number(selectedTimeHour) <= this.ehours) {
@@ -192,7 +200,12 @@ export class DeliverydetailsPage extends BasePage {
                 this.navigateTo("CheckoutPage", res);
             }
             else {
-                swal('Closed', 'Restaurant is closed on the selected date and time! Kindly delivery time in open hours', 'error');
+                if (ispast) {
+                    swal('Oops', 'You have selected the past time. Kindly select the valid present time', 'error');
+                }
+                else {
+                    swal('Closed', 'Restaurant is closed on the selected date and time! Kindly set pickup time in open hours', 'error');
+                }
             }
         } else {
             swal('Required', 'All fields are required!', 'error');
@@ -218,5 +231,10 @@ export class DeliverydetailsPage extends BasePage {
         else {
             this.setRoot("DashPage");
         }
+    }
+    formatPhoneNumber(s) {
+        var s2 = ("" + s).replace(/\D/g, '');
+        var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+        return (!m) ? "" : "(" + m[1] + ") " + m[2] + "-" + m[3];
     }
 }

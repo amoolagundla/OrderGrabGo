@@ -52,19 +52,20 @@ import { Facebook } from "@ionic-native/facebook";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner";
 import { Toast } from "@ionic-native/toast";
 import { OneSignal } from "@ionic-native/onesignal";
+
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 @NgModule({
-  declarations: [MyApp, LocationsearchPage, AddressdetailPage, SpinnerPage],
+    declarations: [MyApp, LocationsearchPage, AddressdetailPage, SpinnerPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    Ng2ImgFallbackModule,
+      Ng2ImgFallbackModule,
     LazyLoadImageModule,
-    Ionic2RatingModule,
+      Ionic2RatingModule,
     HttpModule,
     TranslateModule.forRoot({
       loader: {

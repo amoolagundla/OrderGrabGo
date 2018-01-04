@@ -14,6 +14,7 @@ import swal from 'sweetalert2';
 import { Stripe } from '@ionic-native/stripe';
 import { Card } from "ionic-angular/components/card/card";
 import { error } from "util";
+import * as moment from 'moment';
 /**
  * Generated class for the CheckoutPage page.
  *
@@ -110,16 +111,20 @@ export class CheckoutPage extends BasePage {
                         orders.LookupOrderTypeId = 10;
                         orders.OrderAddress.address1 = model.Address;
                         orders.DeliveryTime = new Date(model.DeliveryDate + " " + model.DeliveryTime)
-                        orders.DeliveryTime.setMinutes(orders.DeliveryTime.getMinutes() + orders.DeliveryTime.getTimezoneOffset());
-                        orders.Time = model.DeliveryTime;
-                        time = "Your Delivery time " + model.DeliveryTime;
+                        //orders.DeliveryTime.setMinutes(orders.DeliveryTime.getMinutes() + orders.DeliveryTime.getTimezoneOffset());
+                        var s = moment(orders.DeliveryTime).format('MM/DD/YYYY h:mm:ss a');  
+                        orders.Time = s;
+                            //model.DeliveryTime;
+                        time = "Your Delivery time " + moment(orders.DeliveryTime).format('h:mm:ss a');
                     } else {
                         orders.LookupOrderTypeId = 8;
                         orders.OrderAddress.address1 = model.Location;
                         orders.PickupTime = new Date(model.PickupDate + " " + model.PickupTime)
-                        orders.PickupTime.setMinutes(orders.PickupTime.getMinutes() + orders.PickupTime.getTimezoneOffset());
-                        orders.Time = model.PickupTime;
-                        time = "Your Pickup time " + model.PickupTime;
+                        //orders.PickupTime.setMinutes(orders.PickupTime.getMinutes() + orders.PickupTime.getTimezoneOffset());
+                        var s = moment(orders.PickupTime).format('MM/DD/YYYY h:mm:ss a');
+                        orders.Time = s;
+                            //model.PickupTime;
+                        time = "Your Pickup time " + moment(orders.PickupTime).format('h:mm:ss a');
                     }
                     orders.Instructions = model.Special;
                     orders.OrderAddress.firstName = model.FirstName;

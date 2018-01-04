@@ -25,12 +25,21 @@
 <ion-content style="margin-top:15%">
 		<div class="view-rest" >            
                 <div class="row">
-                    <div class="col-xs-6"  *ngFor="let place of orders">
-                        <div class="rest-addr" (click)="itemdetails(place.OrderId)">
-                          <img src="{{place.ImagePath}}"  />
-                            <h5 class="cardText">{{place.OrderType}} <span *ngIf="place.OrderType!='Table Reservation'">Price: ${{place.OrderTotal}}</span></h5>
-                        </div>
-                    </div>
+                    <ion-list style="width:100%">
+                        <ion-item padding *ngFor="let d of data" >
+                            <ion-icon color="primary" (click)="toggleDetails(d)" item-right [name]="d.icon"></ion-icon>
+                            {{d.title}}
+                            <div *ngIf="d.showDetails">
+                                <div class="col-xs-6" *ngFor="let place of orders">
+                                    <div class="rest-addr" (click)="itemdetails(place.OrderId)">
+                                        <img src="{{place.ImagePath}}" />
+                                        <h5 class="cardText">{{place.OrderType}} <span *ngIf="place.OrderType!='Table Reservation'">Price: ${{place.OrderTotal}}</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-item>
+                    </ion-list>
+                    
                     
                 </div>
 		</div>

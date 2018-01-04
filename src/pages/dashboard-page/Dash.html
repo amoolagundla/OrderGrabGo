@@ -14,10 +14,38 @@
 </ion-header>
 
 <ion-content padding #container style="background-size: cover;background-position: center center;" >
-       
+    <p class="text-center" color="danger">{{orderid}}</p>       
 <p class="text-center" color="danger">{{currentOrderHistory}}</p>
 
-
+    <div class="progress-outer">
+        <div class="progress-inner" [style.width]="progress + '%'">
+            &nbsp;
+        </div>
+    </div>
+    <!--<div class="row" style="padding-top:0px !important; margin-top:0px !important">
+        <div class="col-xs-1">
+            &nbsp;
+        </div>
+        <div class="col-xs-2">
+            Received
+        </div>
+        <div class="col-xs-2">
+            Preparing
+        </div>
+        <div class="col-xs-2">
+            Packing
+        </div>
+        <div class="col-xs-2">
+            Ready to Pickup
+        </div>
+        <div class="col-xs-2">
+            Pickup
+        </div>
+        <div class="col-xs-1">
+            &nbsp;
+        </div>
+    </div>-->
+   
 <!-- <p class="text-center" color="danger" *ngIf="latLong">{{error}}</p> -->
                <div class="order-page">
                     <div class="row">

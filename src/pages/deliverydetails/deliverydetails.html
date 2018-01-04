@@ -54,8 +54,9 @@
                 <div class="cols-sm-10">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
-                        <input type="tel" class="form-control" name="PhoneNumber"   [ngModel]="user.PhoneNumber" placeholder="Phone Number(444-444-4444)"
+                        <input type="tel" class="form-control" name="PhoneNumber" mask="(999) 999-9999"   [ngModel]="user.PhoneNumber" placeholder="Phone Number(444-444-4444)"
                                required #PhoneNumber="ngModel">
+                        <!--<ion-input type="text" mask="(99) 9999-9999" name="PhoneNumber" placeholder="Phone" [ngModel]="phoneNumber" required #PhoneNumber="ngModel"></ion-input>-->
                     </div>
                     <small [hidden]="PhoneNumber.valid || (PhoneNumber.pristine && !f.submitted)" class="text-danger">
                         PhoneNumber is required .

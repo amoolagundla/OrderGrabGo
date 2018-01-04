@@ -1,7 +1,7 @@
 /// <reference path="../../providers/shareddataservice.ts" />
 
 import { IonicPage } from "ionic-angular";
-import { Component, Injector } from "@angular/core";
+import { Component, Injector,Input } from "@angular/core";
 import { BasePage } from "../base-page/base-page";
 import { Platform } from "ionic-angular";
 import { ValuesService } from "../../providers/ValuesService";
@@ -16,6 +16,7 @@ import { Geolocation } from "@ionic-native/geolocation";
   templateUrl: "Dash.html"
 })
 export class DashPage extends BasePage {
+    @Input('progress') progress;
   error:any;
   address: any;
   qrData = null;
@@ -28,7 +29,8 @@ export class DashPage extends BasePage {
   public scannedObject: string = "";
   public scanData: boolean = false;
   public restaurants: any;
-  public currentOrderHistory:any;
+  public currentOrderHistory: any;
+  public orderid: any;
   constructor(
     injector: Injector,private oneSignal: OneSignal,
     private _barcodeScanner: BarcodeScanner,
@@ -38,7 +40,7 @@ export class DashPage extends BasePage {
     public geolocation: Geolocation
   ) {
     super(injector);
-   
+    this.progress = 0;
     this.sharedData.latLong.subscribe(data=>    {      this.latLong=data;      });
     this.sharedData.Zip.subscribe(      data => {       this.zip=data;}, err => {console.log(err);});
     this.sharedData.Address.subscribe(      data => {       this.address=data;}, err => {console.log(err);});
@@ -69,7 +71,29 @@ export class DashPage extends BasePage {
   {
    if(data!=null && data.length>0)
    {
-     this.currentOrderHistory = 'Your Current Order Staus :'+ data[data.length-1].Status;
+       this.orderid = 'Order ID ' + data[data.length - 1].OrderId;
+       this.currentOrderHistory = 'Your Current Order Staus :' + data[data.length - 1].Status;
+       if (data[data.length - 1].Status == "Received") {
+           this.progress = 20;
+       }
+       else if (data[data.length - 1].Status == "Preparing") {
+           this.progress = 40;
+       }
+       else if (data[data.length - 1].Status == "Packing") {
+           this.progress = 60;
+       }
+       else if (data[data.length - 1].Status == "Ready") {
+           this.progress = 80;
+       }
+       else if (data[data.length - 1].Status == "Completed") {
+           this.progress = 100;
+       }
+       else if (data[data.length - 1].Status == "Confirmed") {
+           this.progress = 60;
+       }
+       else if (data[data.length - 1].Status == "Occupied") {
+           this.progress = 100;
+       }
    }
   })
     

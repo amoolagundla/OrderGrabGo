@@ -29,7 +29,7 @@
               </div>
           </div>
           <div class="form-group">
-              <div class="cols-sm-10">
+              <div class="cols-sm-10"  style="text-align:left;">
                   <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                       <input type="password" class="form-control" name="password" [ngModel]="user.password" placeholder="Password"
@@ -38,7 +38,7 @@
                   <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">
                       Password is required
                   </small>
-                  <small class="text-danger">Password should have one Number,Upper Case Letter, special letter</small>
+                  <small style="text-align:left;">**Password should have one Number,Upper Case Letter, special letter</small>
               </div>
           </div>
           <div class="form-group">
@@ -57,7 +57,7 @@
               <div class="cols-sm-10">
                   <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
-                      <input type="tel" class="form-control" name="phonenumber" [ngModel]="user.phonenumber" placeholder="Phone Number"
+                      <input type="tel" class="form-control" name="phonenumber" mask="(999) 999-9999" [ngModel]="user.phonenumber" placeholder="Phone Number"
                              required #phonenumber="ngModel">                     
                   </div>
                   <small [hidden]="phonenumber.valid || (phonenumber.pristine && !f.submitted)" class="text-danger">

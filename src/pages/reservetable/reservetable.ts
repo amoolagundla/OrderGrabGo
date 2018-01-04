@@ -6,6 +6,7 @@ import { ValuesService } from '../../providers/ValuesService';
 import { Geolocation } from '@ionic-native/geolocation';
 import { SharedDataService } from "../../providers/SharedDataService";
 import swal from 'sweetalert';
+import * as moment from 'moment';
 /**
  * Generated class for the ReservetablePage page.
  *
@@ -36,6 +37,9 @@ export class ReservetablePage extends BasePage {
 
             if (data != undefined && data.FirstName != undefined) {
                 this.user = data;
+                if (this.user.PhoneNumber != null && this.user.PhoneNumber != "") {
+                    this.user.PhoneNumber = this.formatPhoneNumber(this.user.PhoneNumber);
+                }
             } else {
                 this.firstName = "";
             }
@@ -109,16 +113,20 @@ export class ReservetablePage extends BasePage {
                 selecteddaTe.setMinutes(selecteddaTe.getMinutes() + selecteddaTe.getTimezoneOffset());
                 var sdate = selecteddaTe.getDate();
                 var ndate = new Date();
+                var ispast = false;
                 if (selecteddaTe.getDate() == new Date().getDate() && selecteddaTe.getMonth() == new Date().getMonth()) {
                     if (Number(selectedTimeHour) < new Date().getHours()) {
                         isopened = false;
+                        ispast = true;
                     }
                     else if (Number(selectedTimeHour) == new Date().getHours() && Number(selectedTimeMin) < new Date().getMinutes()) {
                         isopened = false;
+                        ispast = true;
                     }
                 }
                 else if (selecteddaTe.getMonth() < new Date().getMonth() || selecteddaTe.getFullYear() < new Date().getFullYear()) {
                     isopened = false;
+                    ispast = true;
                 }
                
                 if (isopened) {
@@ -149,7 +157,9 @@ export class ReservetablePage extends BasePage {
                         orders.OrderAddress.phoneNo = model.PhoneNumber;
                         orders.ReservationPeopleCount = model.Guests;
                         orders.ReservationTime = new Date(model.ReservationDate + " " + model.ReservationTime);
-                        orders.Time = model.ReservationTime;
+                        var s = moment(orders.ReservationTime).format('MM/DD/YYYY h:mm:ss a');
+                        orders.Time = s;
+                            //model.ReservationTime;
                         orders.OrderAddress.city = "Des Moines";
                         orders.OrderDetail = [];
                         this.showLoadingView();
@@ -170,7 +180,12 @@ export class ReservetablePage extends BasePage {
                     });
                 }
                 else {
-                    swal('Closed', 'Restaurant is closed on the selected date and time! Kindly reserve in open hours', 'error');
+                    if (ispast) {
+                        swal('Oops', 'You have selected the past time. Kindly select the valid present time', 'error');
+                    }
+                    else {
+                        swal('Closed', 'Restaurant is closed on the selected date and time! Kindly set pickup time in open hours', 'error');
+                    }
                 }
             }
             else {
@@ -182,7 +197,11 @@ export class ReservetablePage extends BasePage {
         }
 
     }
-
+    formatPhoneNumber(s) {
+        var s2 = ("" + s).replace(/\D/g, '');
+        var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+        return (!m) ? "" : "(" + m[1] + ") " + m[2] + "-" + m[3];
+    }
 
 
 }
